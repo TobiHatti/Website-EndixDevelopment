@@ -1,0 +1,563 @@
+/*===================================================================================*/
+/* (Y01) FormElements > Buttons                                                      */
+/*===================================================================================*/
+/* DESIGN A - Simple Flat Responsive Buttons (Modern) */
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="color"],
+button {
+  background: #2B2B2B;
+  border: none;
+  border-radius: 10px;
+  height: 35px;
+  color: #FFFFFF;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+input[type="color"]:hover,
+button:hover {
+  color: #FF8C00; }
+
+input[type="button"]:disabled,
+input[type="reset"]:disabled,
+input[type="submit"]:disabled,
+input[type="color"]:disabled,
+button:disabled {
+  color: #999999; }
+
+/*===================================================================================*/
+/* (Y02) FormElements > Textboxes                                                    */
+/*===================================================================================*/
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="tel"],
+input[type="url"] {
+  padding: 5px;
+  margin: 0;
+  border: 1px solid #2E2E2E;
+  color: #000000;
+  display: inline-block;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus {
+  border-bottom: 1px solid #FF8C00;
+  color: #000000; }
+
+input[type="text"]:read-only:focus,
+input[type="number"]:read-only:focus,
+input[type="password"]:read-only:focus,
+input[type="email"]:read-only:focus,
+input[type="search"]:read-only:focus,
+input[type="tel"]:read-only:focus,
+input[type="url"]:read-only:focus,
+textarea:read-only:focus {
+  border: 1px solid #2E2E2E;
+  color: #000000; }
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder,
+input[type="search"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="url"]::placeholder,
+textarea::placeholder {
+  opacity: 0.5;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+input[type="text"]:focus::placeholder,
+input[type="number"]:focus::placeholder,
+input[type="password"]:focus::placeholder,
+input[type="email"]:focus::placeholder,
+input[type="search"]:focus::placeholder,
+input[type="tel"]:focus::placeholder,
+input[type="url"]:focus::placeholder,
+textarea:focus::placeholder {
+  opacity: 0.7;
+  color: #000000; }
+
+/*===================================================================================*/
+/* (Y03) FormElements > Textarea                                                     */
+/*===================================================================================*/
+textarea {
+  padding: 2px;
+  font-size: 12pt;
+  margin: 3px;
+  border: 1px solid #636363;
+  color: #000000;
+  display: inline-block;
+  outline: none;
+  font-family: Calibri, Arial, sans-serif;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+/* :focus in (Y02) */
+/*===================================================================================*/
+/* (Y04) FormElements > Selectbox                                                    */
+/*===================================================================================*/
+select {
+  padding: 4px 1px 4px 1px;
+  margin: 3px;
+  border: 1px solid #2E2E2E;
+  color: #000000;
+  display: inline-block;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+select:focus {
+  border: 1px solid #FF8C00; }
+
+select:disabled {
+  color: #696969;
+  background: #DCDCDC; }
+
+/*===================================================================================*/
+/* (Y05) FormElements > Checkbox                                                     */
+/*===================================================================================*/
+input[type=checkbox].slidecheckbox {
+  height: 0;
+  width: 0;
+  display: none; }
+
+.checkbox_toggle_lable {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 50px;
+  height: 25px;
+  background: grey;
+  display: block;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  border-radius: 100px;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  position: relative; }
+
+.checkbox_toggle_lable:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  -webkit-border-radius: 90px;
+  -moz-border-radius: 90px;
+  -ms-border-radius: 90px;
+  border-radius: 90px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+input.slidecheckbox:checked + .checkbox_toggle_lable {
+  background: #FF8C00; }
+
+input.slidecheckbox:checked + .checkbox_toggle_lable:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%); }
+
+/*===================================================================================*/
+/* (Y06) FormElements > Togglebox                                                    */
+/*===================================================================================*/
+input[type=checkbox].togglecheckbox {
+  height: 0;
+  width: 0;
+  display: none; }
+
+.checkbox_toggle2_lable {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 50px;
+  height: 25px;
+  background: #FF8C00;
+  display: block;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  border-radius: 100px;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  position: relative; }
+
+.checkbox_toggle2_lable:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  -webkit-border-radius: 90px;
+  -moz-border-radius: 90px;
+  -ms-border-radius: 90px;
+  border-radius: 90px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+input.togglecheckbox:checked + .checkbox_toggle2_lable {
+  background: #FF8C00; }
+
+input.togglecheckbox:checked + .checkbox_toggle2_lable:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%); }
+
+/*===================================================================================*/
+/* (Y07) FormElements > Tickbox                                                      */
+/*===================================================================================*/
+.tickbox {
+  margin: 5px 0px 5px 0px; }
+  .tickbox [type="checkbox"]:not(:checked),
+  .tickbox [type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px; }
+  .tickbox [type="checkbox"]:not(:checked) + label,
+  .tickbox [type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 1.40em;
+    cursor: pointer; }
+  .tickbox [type="checkbox"]:not(:checked) + label:before,
+  .tickbox [type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.25em;
+    height: 1.25em;
+    border: 1px solid #333333;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); }
+  .tickbox [type="checkbox"]:not(:checked) + label:after,
+  .tickbox [type="checkbox"]:checked + label:after {
+    content: '\2713\0020';
+    position: absolute;
+    top: .15em;
+    left: .22em;
+    font-size: 1.3em;
+    line-height: 0.8;
+    color: #FF8C00;
+    transition: all .2s;
+    font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial; }
+  .tickbox [type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0); }
+  .tickbox [type="checkbox"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1); }
+  .tickbox [type="checkbox"]:disabled:not(:checked) + label:before,
+  .tickbox [type="checkbox"]:disabled:checked + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd; }
+  .tickbox [type="checkbox"]:disabled:checked + label:after {
+    color: #999; }
+  .tickbox [type="checkbox"]:disabled + label {
+    color: #aaa; }
+  .tickbox [type="checkbox"]:checked:hover + label:before,
+  .tickbox [type="checkbox"]:not(:checked):hover + label:before {
+    border: 1px solid #FF8C00; }
+  .tickbox label:hover:before {
+    border: 1px solid #FF8C00;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+
+/*===================================================================================*/
+/* (Y08) FormElements > Radio Button                                                 */
+/*===================================================================================*/
+.radiolabel {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  cursor: pointer; }
+
+.radiolabel input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer; }
+
+.radiocheckmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%; }
+
+.radiolabel:hover input[type="radio"] ~ .radiocheckmark {
+  background-color: #ccc; }
+
+.radiolabel input[type="radio"]:checked ~ .radiocheckmark {
+  background-color: #FF8C00; }
+
+.radiocheckmark:after {
+  content: "";
+  position: absolute;
+  display: none; }
+
+.radiolabel input[type="radio"]:checked ~ .radiocheckmark:after {
+  display: block; }
+
+.radiolabel .radiocheckmark:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  background: white; }
+
+/*===================================================================================*/
+/* (Y09) FormElements > Range Slider                                                 */
+/*===================================================================================*/
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 2px solid #FF8C00;
+  height: 20px;
+  width: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+  background: #FFFFFF;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8.5px; }
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 2px solid #FF8C00;
+  height: 20px;
+  width: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+  background: #FFFFFF;
+  cursor: pointer; }
+
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px #000000;
+  border: 2px solid #FF8C00;
+  height: 20px;
+  width: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+  background: #FFFFFF;
+  cursor: pointer; }
+
+input[type=range]::-ms-fill-lower {
+  background: #828282;
+  border: 0px solid #FF8C00;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000; }
+
+input[type=range]::-ms-fill-upper {
+  background: #828282;
+  border: 0px solid #FF8C00;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000; }
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #828282; }
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #828282; }
+
+input[type=range]:focus {
+  outline: none; }
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #828282; }
+
+input[type=range] {
+  height: 10px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 200px; }
+
+input[type=range]::-ms-track {
+  width: 200px;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent; }
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 200px;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000;
+  background: #828282;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  border: 0px solid #FF8C00; }
+
+input[type=range]::-moz-range-track {
+  width: 200px;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000;
+  background: #828282;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  border: 0px solid #FF8C00; }
+
+/*===================================================================================*/
+/* (Y10) FormElements > File Selectors                                               */
+/*===================================================================================*/
+input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1; }
+
+input[type="file"] + label {
+  max-width: 80%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 20px; }
+
+.no-js input[type="file"] + label {
+  display: none; }
+
+input[type="file"]:focus + label,
+input[type="file"].has-focus + label {
+  outline: 1px dotted #000000;
+  outline: -webkit-focus-ring-color auto 5px; }
+
+input[type="file"] + label svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -4px;
+  margin-right: 4px; }
+
+input[type="file"] + label {
+  color: #FFFFFF;
+  background-color: #2B2B2B; }
+
+input[type="file"]:focus + label,
+input[type="file"].has-focus + label,
+input[type="file"] + label:hover {
+  color: #FF8C00; }
+
+/*===================================================================================*/
+/* (Y11) FormElements > Date/Time Selectors                                          */
+/*===================================================================================*/
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"],
+input[type="week"] {
+  padding: 2px;
+  margin: 3px;
+  border: 1px solid #2E2E2E;
+  color: #000000;
+  display: inline-block;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+input[type="date"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus {
+  border-bottom: 1px solid #FF8C00;
+  color: #416586; }
+
+/*# sourceMappingURL=formelements.css.map */

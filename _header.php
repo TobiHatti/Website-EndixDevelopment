@@ -1,5 +1,7 @@
 <?php
+    session_start();
 
+    include("_headerincludes.php");
 
     echo '
         <!DOCTYPE html>
@@ -14,22 +16,38 @@
             <body id="mainBody">
                 <header>
 
-                    <div class="startLoader">
-                        <center>
-                            <div class="startLoaderImageContainer">
-                                <div class="startLogoImage">
-                                    <img src="/content/LogoBackground.png" alt="" />
-                                    <img src="/content/***REMOVED***.png" alt="" />
+                    ';
 
-                                </div>
-                                <span class="loaderTitle">Endix Development</span>
+                    if(!isset($_SESSION['firstLoadExecuted']))
+                    {
+                        echo '
+                            <div class="startLoader">
+                                <center>
+                                    <div class="startLoaderImageContainer">
+                                        <div class="startLogoImage">
+                                            <img src="/content/LogoBackground.png" alt="" />
+                                            <img src="/content/***REMOVED***.png" alt="" />
+
+                                        </div>
+                                        <span class="loaderTitle">Endix Development</span>
+                                    </div>
+                                    <div class="startLoaderCover"></div>
+                                </center>
                             </div>
-                            <div class="startLoaderCover"></div>
+                        ';
 
-                        </center>
-                    </div>
+                        $firstLoadMenuItems = true;
+                        $firstLoadHeader = true;
+                    }
+                    else
+                    {
+                        $firstLoadMenuItems = false;
+                        $firstLoadHeader = false;
+                    }
 
-                    <div class="headerLogoContainer">
+                    echo '
+
+                    <div class="headerLogoContainer" id="'.($firstLoadHeader ? 'headerLogoFlyIn' : '').'">
                         <div class="headerLogo">
                             <img src="/content/LogoBackground.png" alt="" />
                             <img src="/content/***REMOVED***.png" alt="" />
@@ -41,11 +59,11 @@
                     <nav>
                         <center>
                             <ul>
-                                <a href="#"><li id="menuItem1">Home</li></a>
-                                <a href="#"><li id="menuItem2">Projects</li></a>
-                                <a href="#"><li id="menuItem3">Support</li></a>
-                                <a href="#"><li id="menuItem4">More</li></a>
-                                <a href="#"><li id="menuItem5">Evenmore</li></a>
+                                <a href="#"><li id="'.($firstLoadMenuItems ? 'menuItem1' : '').'">Home</li></a>
+                                <a href="#"><li id="'.($firstLoadMenuItems ? 'menuItem2' : '').'">Projects</li></a>
+                                <a href="#"><li id="'.($firstLoadMenuItems ? 'menuItem3' : '').'">Support</li></a>
+                                <a href="#"><li id="'.($firstLoadMenuItems ? 'menuItem4' : '').'">More</li></a>
+                                <a href="#"><li id="'.($firstLoadMenuItems ? 'menuItem5' : '').'">Evenmore</li></a>
                             </ul>
                         </center>
                     </nav>
@@ -53,5 +71,7 @@
                 <main>
     ';
 
+
+    $_SESSION['firstLoadExecuted'] = 1;
 
 ?>
