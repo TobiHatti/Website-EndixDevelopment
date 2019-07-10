@@ -1,0 +1,50 @@
+##############################################
+##############################################
+##           Apache Server Config           ##
+##               KEEP ORDERED               ##
+##############################################
+##############################################
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+
+##############################################
+#                URL Rewrites                #
+##############################################
+
+############## Custom Rewrites ###############
+
+#RewriteRule ^page1/page2/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/?$/?$ argA.php?argB=$1&argC=$2 [NC,QSA,L]
+
+
+RewriteRule ^de/projekte/badminton-ooe/support support.php [NC,QSA,L]
+
+
+############## General Rewrites ###############          
+
+# Ignore .php-Extension
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+##############################################
+#           Forbidden Directories            #
+##############################################
+RewriteRule (^|/)backup(/|$) - [F]
+RewriteRule (^|/)sass(/|$) - [F]
+
+##############################################
+#              Error Documents               #
+##############################################
+# ERROR 400: Bad Request
+ErrorDocument 400 /400.php
+
+# ERROR 401: Unauthorised
+ErrorDocument 401 /401.php
+
+# ERROR 403: Forbidden
+ErrorDocument 403 /403.php
+
+# Error 404: Not Found
+ErrorDocument 404 /404.php
+
+# Error 500: Internal Server Error
+ErrorDocument 500 /500.php
