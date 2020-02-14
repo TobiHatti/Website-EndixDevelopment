@@ -1,9 +1,0 @@
-<?php
-    include("lib/formelements.php");
-    include("lib/mysql.lib.php");
-    include("lib/page.lib.php");
-    include("lib/pager.lib.php");
-    include("lib/setting.lib.php");
-    include("lib/upload.lib.php");
-    include("lib/sqlLibConnect.php");
-?>
