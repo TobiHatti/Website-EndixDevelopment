@@ -1,29 +1,52 @@
 ﻿@supports (grid-area: auto) {
   * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  html {
+    scroll-behavior: smooth; }
   body {
     margin: 0;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 150px auto 100px;
-    grid-template-areas: "header" "main" "."; }
+    grid-template-rows: 150px auto 200px;
+    grid-template-areas: "." "main" "."; }
   header {
-    grid-area: header;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background: #001259;
     background: -moz-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
     background: -webkit-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
     background: linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+    background-size: auto 2200px;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#001259",endColorstr="#001259",GradientType=1);
     display: grid;
     grid-template-columns: 2fr 3fr;
     grid-template-rows: 1fr;
-    grid-template-areas: "logo menu"; }
+    grid-template-areas: "logo menu";
+    z-index: 150;
+    transition: all 0.2s ease-in-out; }
+  .headerDefault {
+    height: 150px; }
+    .headerDefault nav {
+      transition: all 0.2s ease-in-out;
+      margin-top: 50px; }
+    .headerDefault img {
+      transition: all 0.2s ease-in-out;
+      margin-top: 25px;
+      height: 100px; }
+  .headerTopMost {
+    height: 50px; }
+    .headerTopMost nav {
+      transition: all 0.2s ease-in-out;
+      margin-top: 0px; }
+    .headerTopMost img {
+      transition: all 0.2s ease-in-out;
+      margin-top: 5px;
+      height: 40px; }
   .endevHeaderLogo {
     grid-area: logo;
     text-align: center; }
-    .endevHeaderLogo img {
-      margin-top: 25px;
-      height: 100px; }
   nav {
     grid-area: menu;
     background: black;
@@ -34,7 +57,7 @@
     width: 100%;
     height: 50px;
     padding-left: 50px;
-    margin-top: 50px; }
+    box-sizing: border-box; }
     nav a {
       font-weight: bolder;
       color: white;
@@ -44,14 +67,21 @@
       display: inline-block;
       height: 100%;
       width: 100px;
-      margin: 0; }
+      margin: 0;
+      transition: color 0.4s ease-in-out; }
+    nav a:hover {
+      transition: color 0.2s ease-in-out;
+      color: #38B596; }
   main {
     grid-area: main;
-    background-color: white; }
+    background-color: white;
+    padding: 0 15%;
+    z-index: 100; }
   footer {
-    background-color: #111;
+    background-color: #111111;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 200px; } }
+    height: 200px;
+    z-index: 50; } }

@@ -14,5 +14,9 @@
   {
     "outputFile": "Shared/Styles/layoutMain.css",
     "inputFile": "Shared/Styles/layoutMain.scss"
+  },
+  {
+    "outputFile": "Shared/Styles/layoutGeneral.css",
+    "inputFile": "Shared/Styles/layoutGeneral.scss"
   }
 ]

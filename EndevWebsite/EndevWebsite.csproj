@@ -88,11 +88,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Shared\Styles\layoutMain.css">
-      <DependentUpon>layoutMain.scss</DependentUpon>
+    <Content Include="Shared\Styles\layoutGeneral.css">
+      <DependentUpon>layoutGeneral.scss</DependentUpon>
     </Content>
-    <Content Include="Shared\Styles\layoutMain.min.css">
-      <DependentUpon>layoutMain.css</DependentUpon>
+    <Content Include="Shared\Styles\layoutGeneral.min.css">
+      <DependentUpon>layoutGeneral.css</DependentUpon>
     </Content>
     <Content Include="Shared\Styles\style.css">
       <DependentUpon>style.scss</DependentUpon>
@@ -114,7 +114,7 @@
     <None Include="packages.config" />
     <Content Include="Shared\Layouts\_Layout.cshtml" />
     <Content Include="Shared\Styles\style.scss" />
-    <Content Include="Shared\Styles\layoutMain.scss" />
+    <Content Include="Shared\Styles\layoutGeneral.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

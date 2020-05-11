@@ -1,0 +1,32 @@
+﻿h1{
+    font-weight: lighter;
+    font-size: 40pt;
+    text-align: center;
+}
+
+
+
+.navigateToTop {
+    position: fixed;
+    right: -80px;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+    font-size: 28pt;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 15px;
+    color: white;
+    background: rgb(86,12,170);
+    background: -moz-linear-gradient(45deg, rgba(86,12,170,1) 0%, rgba(10,164,125,1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(86,12,170,1) 0%, rgba(10,164,125,1) 100%);
+    background: linear-gradient(45deg, rgba(86,12,170,1) 0%, rgba(10,164,125,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#560caa",endColorstr="#0aa47d",GradientType=1);
+    z-index: 110;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigateToTop:hover {
+    text-shadow: 0px 5px 2px #111;
+    line-height: 20px;
+}
