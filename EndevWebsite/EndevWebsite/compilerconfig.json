@@ -1,0 +1,18 @@
+﻿[
+  {
+    "outputFile": "Shared/Styles/style.css",
+    "inputFile": "Shared/Styles/style.scss"
+  },
+  {
+    "outputFile": "Shared/Styles/grid.css",
+    "inputFile": "Shared/Styles/grid.scss"
+  },
+  {
+    "outputFile": "Shared/Styles/gridMain.css",
+    "inputFile": "Shared/Styles/gridMain.scss"
+  },
+  {
+    "outputFile": "Shared/Styles/layoutMain.css",
+    "inputFile": "Shared/Styles/layoutMain.scss"
+  }
+]
