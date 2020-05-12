@@ -4,13 +4,6 @@
 html {
   scroll-behavior: smooth; }
 
-body {
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 150px auto 200px;
-  grid-template-areas: "." "main" "."; }
-
 main {
   grid-area: main;
   background-color: white;

@@ -1,0 +1,127 @@
+﻿
+
+// In General file
+$defaultHeaderHeight: 200px;
+$defaultFooterHeight: 200px;
+$defaultNavHeight: 50px;
+$defaultNavTopOffset: 50px;
+
+// In specific file
+$headerHeight : 300px;
+$footerHeight : 200px;
+$navHeight: 50px;
+$navTopOffset: 100px;
+
+// G
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+// G
+body {
+    margin: 0;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "main";
+    // Default header-height
+    grid-template-rows: $defaultHeaderHeight auto;
+}
+
+// +
+body {
+    grid-template-rows: $headerHeight auto;
+}
+
+// G
+header {
+    grid-area: header;
+    background: rgb(0,18,89);
+    background: -moz-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
+    background: -webkit-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
+    background: linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
+    z-index: 110;
+}
+
+// G
+header.sticky {
+    height: $defaultNavHeight;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-position: bottom;
+    background-size: 100vw $defaultHeaderHeight;
+}
+
+// +
+header.sticky {
+    height: $navHeight;
+    background-size: 100vw $headerHeight;
+}
+
+// G
+main {
+    grid-area: main;
+    background-color: white;
+    min-height: 100vh;
+    margin-bottom: $defaultFooterHeight;
+    z-index: 100;
+}
+
+// +
+main {
+    margin-bottom: $footerHeight;
+}
+
+// G
+nav {
+    width: 50%;
+    height: $defaultNavHeight;
+    z-index: 120;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+
+// +
+nav {
+    height: $navHeight;
+}
+
+
+// G
+nav.default{
+    position: absolute; 
+    top: $defaultNavTopOffset;
+    right: 0;
+}
+
+// +
+nav.default {
+    top: $navTopOffset;
+}
+
+// G
+nav.sticky{
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+// G
+footer {
+    position: fixed;
+    background-color: #111;
+    color: white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: $defaultFooterHeight;
+    z-index: 90;
+}
+
+// +
+footer {
+    height: $footerHeight;
+}

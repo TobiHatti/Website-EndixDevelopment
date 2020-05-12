@@ -1,0 +1,81 @@
+﻿* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "main";
+  grid-template-rows: 200px auto; }
+
+body {
+  grid-template-rows: 300px auto; }
+
+header {
+  grid-area: header;
+  background: #001259;
+  background: -moz-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+  background: -webkit-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+  background: linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+  z-index: 110; }
+
+header.sticky {
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-position: bottom;
+  background-size: 100vw 200px; }
+
+header.sticky {
+  height: 50px;
+  background-size: 100vw 300px; }
+
+main {
+  grid-area: main;
+  background-color: white;
+  min-height: 100vh;
+  margin-bottom: 200px;
+  z-index: 100; }
+
+main {
+  margin-bottom: 200px; }
+
+nav {
+  width: 50%;
+  height: 50px;
+  z-index: 120;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white; }
+
+nav {
+  height: 50px; }
+
+nav.default {
+  position: absolute;
+  top: 50px;
+  right: 0; }
+
+nav.default {
+  top: 100px; }
+
+nav.sticky {
+  position: fixed;
+  top: 0;
+  right: 0; }
+
+footer {
+  position: fixed;
+  background-color: #111;
+  color: white;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  z-index: 90; }
+
+footer {
+  height: 200px; }

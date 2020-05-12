@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Tests/test.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+
+    <script>
+
+        window.onload = SetPageLayout;
+        window.addEventListener('scroll', SetPageLayout);
+        window.addEventListener('resize', SetPageLayout);
+
+        function SetPageLayout()
+        {
+            // Stick Nav to top
+            // TODO: replace constant with nav.default top distance
+            if (window.scrollY > 100) this.document.getElementsByTagName("nav")[0].className = "sticky";
+            else this.document.getElementsByTagName("nav")[0].className = "default";
+
+            // Stick Header to top
+            // TODO: replace contant with nav height
+            var viewport = document.getElementsByTagName("main")[0].getBoundingClientRect();
+            if (viewport.top - 50 <= 0) document.getElementsByTagName("header")[0].className = "sticky";
+            else document.getElementsByTagName("header")[0].className = "";
+        }
+
+    </script>
+</head>
+<body>
+    <header>Hi</header>
+    <nav class="default">
+        <div class="opaqueContainer">
+            Menuuuu
+        </div>
+    </nav>
+    <main>Hello</main>
+    <footer>hoho</footer>
+</body>
+</html>

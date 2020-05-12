@@ -132,6 +132,12 @@
     <Content Include="Shared\Styles\style.min.css">
       <DependentUpon>style.css</DependentUpon>
     </Content>
+    <Content Include="Tests\test.css">
+      <DependentUpon>test.scss</DependentUpon>
+    </Content>
+    <Content Include="Tests\test.min.css">
+      <DependentUpon>test.css</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +165,8 @@
     <Content Include="Shared\Styles\layoutStartPage.scss" />
     <Content Include="Shared\Styles\layoutSimpleProject.scss" />
     <Content Include="Shared\Styles\layoutAdvancedProject.scss" />
+    <Content Include="Tests\test.cshtml" />
+    <Content Include="Tests\test.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

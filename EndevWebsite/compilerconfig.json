@@ -38,5 +38,9 @@
   {
     "outputFile": "Shared/Styles/layoutStartPage.css",
     "inputFile": "Shared/Styles/layoutStartPage.scss"
+  },
+  {
+    "outputFile": "Tests/test.css",
+    "inputFile": "Tests/test.scss"
   }
 ]
