@@ -42,5 +42,17 @@
   {
     "outputFile": "Tests/test.css",
     "inputFile": "Tests/test.scss"
+  },
+  {
+    "outputFile": "Shared/Styles/headings.css",
+    "inputFile": "Shared/Styles/headings.scss"
+  },
+  {
+    "outputFile": "Shared/Styles/textElements.css",
+    "inputFile": "Shared/Styles/textElements.scss"
+  },
+  {
+    "outputFile": "Shared/Styles/formElements.css",
+    "inputFile": "Shared/Styles/formElements.scss"
   }
 ]

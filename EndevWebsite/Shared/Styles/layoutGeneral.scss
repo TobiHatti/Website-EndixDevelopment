@@ -75,7 +75,7 @@ main {
     min-height: 100vh;
     margin-bottom: $defaultFooterHeight;
     z-index: 100;
-    padding: 0 15%;
+    padding: 20px 15%;
 }
 
 nav {
@@ -89,11 +89,11 @@ nav {
     background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 5%);
     background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 5%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
-    color: white;
+    color: #eee;
 
     a {
         font-weight: bolder;
-        color: white;
+        color: #ccc;
         text-decoration: none;
         text-align: center;
         line-height: $defaultNavHeight;
@@ -105,8 +105,8 @@ nav {
     }
 
     a:hover {
-        transition: color 0.2s ease-in-out;
-        color: #38B596;
+        transition: color 0.1s ease-in-out;
+        color: #fff;
     }
 }
 

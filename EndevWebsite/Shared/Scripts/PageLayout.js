@@ -1,4 +1,5 @@
-﻿window.onload = SetPageLayout;
+﻿
+window.onload = SetPageLayout;
 window.addEventListener('scroll', SetPageLayout);
 window.addEventListener('resize', SetPageLayout);
 

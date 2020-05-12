@@ -89,7 +89,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\EndevBanner.png" />
+    <Content Include="Content\Icons\error.png" />
     <Content Include="Shared\Layouts\_LayoutContentPage.cshtml" />
+    <Content Include="Shared\Styles\formElements.css">
+      <DependentUpon>formElements.scss</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\formElements.min.css">
+      <DependentUpon>formElements.css</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\textElements.css">
+      <DependentUpon>textElements.scss</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\textElements.min.css">
+      <DependentUpon>textElements.css</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\textElements.scss" />
+    <Content Include="Shared\Styles\formElements.scss" />
     <None Include="Shared\Styles\layoutContentPage.scss" />
     <Content Include="Shared\Scripts\PageLayout.js" />
     <Content Include="Shared\Styles\layoutAdvancedProject.css">
@@ -164,6 +179,8 @@
     <Content Include="Tests\test.scss" />
     <Content Include="Shared\Templates\_DefaultLinks.cshtml" />
     <Content Include="TestPages\DefaultPage.cshtml" />
+    <Content Include="TestPages\FormElements.cshtml" />
+    <Content Include="TestPages\TextElements.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
