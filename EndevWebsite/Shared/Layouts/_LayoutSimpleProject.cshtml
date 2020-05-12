@@ -1,30 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
     <title>Endix Development</title>
-    <link href="~/Shared/Styles/style.css" rel="stylesheet" />
-    <link href="~/Shared/Styles/layoutGeneral.css" rel="stylesheet" />
+    @RenderPage("~/Shared/Templates/_DefaultLinks.cshtml");
     <link href="~/Shared/Styles/layoutSimpleProject.css" rel="stylesheet" />
-    <link href="~/Shared/Styles/menu.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <script src="~/Shared/Scripts/ScrollActions.js"></script>
 </head>
 <body>
-    <header class="headerDefault">
-        <div class="endevHeaderLogo">
-            <a href="~/">
-                <img src="https://development.endix.at/wp-content/uploads/2019/12/EndevBannerS.png" alt="Endev" />
-            </a>
-        </div>
+    <header>
+        <img class="endevLogo" id="endevLogo" src="~/Content/EndevBanner.png" alt="Endev" />
+        <img class="endevLogoSticky" id="endevLogoSticky" src="~/Content/EndevBanner.png" alt="Endev" />
         @RenderPage("~/Shared/Templates/_Menu.cshtml");
     </header>
-    <a name="top"></a>
-    <main>
-        @RenderBody()
-    </main>
-    <a href="#top"><div class="navigateToTop"><i class="fa fa-chevron-up"></i></div></a>
+    <main>@RenderBody()</main>
     @RenderPage("~/Shared/Templates/_Footer.cshtml");
 </body>
 </html>

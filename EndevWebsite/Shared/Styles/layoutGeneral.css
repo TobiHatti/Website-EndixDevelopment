@@ -1,20 +1,104 @@
-﻿* {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+﻿body {
+  margin: 0;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "main";
+  grid-template-rows: 200px auto; }
 
-html {
-  scroll-behavior: smooth; }
+header {
+  grid-area: header;
+  background: #001259;
+  background: -moz-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+  background: -webkit-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+  background: linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+  z-index: 110; }
+  header img.endevLogo {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    height: 100px;
+    margin: 5px;
+    animation: endevLogoFadeIn;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1; }
+  header img.endevLogoSticky {
+    position: fixed;
+    left: 20px;
+    top: 0;
+    height: 40px;
+    margin: 5px;
+    opacity: 1;
+    animation: endevLogoFadeIn;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1; }
+
+@keyframes endevLogoFadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+header.sticky {
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-position: bottom;
+  background-size: 100vw 200px; }
 
 main {
   grid-area: main;
   background-color: white;
-  padding: 0 15%;
-  z-index: 100; }
+  min-height: 100vh;
+  margin-bottom: 200px;
+  z-index: 100;
+  padding: 0 15%; }
+
+nav {
+  width: 60%;
+  padding-left: 50px;
+  box-sizing: border-box;
+  height: 50px;
+  z-index: 120;
+  background: black;
+  background: -moz-linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
+  background: -webkit-linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+  color: white; }
+  nav a {
+    font-weight: bolder;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    display: inline-block;
+    height: 100%;
+    width: 100px;
+    margin: 0;
+    transition: color 0.4s ease-in-out; }
+  nav a:hover {
+    transition: color 0.2s ease-in-out;
+    color: #38B596; }
+
+nav.default {
+  position: absolute;
+  top: 50px;
+  right: 0; }
+
+nav.sticky {
+  position: fixed;
+  top: 0;
+  right: 0; }
 
 footer {
-  background-color: #111111;
   position: fixed;
+  background-color: #111;
+  color: white;
   bottom: 0;
   left: 0;
   right: 0;
   height: 200px;
-  z-index: 50; }
+  z-index: 90; }

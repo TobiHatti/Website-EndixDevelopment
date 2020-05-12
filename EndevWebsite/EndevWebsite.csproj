@@ -88,8 +88,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Shared\Scripts\ScrollActions.js" />
+    <Content Include="Content\EndevBanner.png" />
+    <Content Include="Shared\Layouts\_LayoutContentPage.cshtml" />
     <None Include="Shared\Styles\layoutContentPage.scss" />
+    <Content Include="Shared\Scripts\PageLayout.js" />
     <Content Include="Shared\Styles\layoutAdvancedProject.css">
       <DependentUpon>layoutAdvancedProject.scss</DependentUpon>
     </Content>
@@ -119,12 +121,6 @@
     </Content>
     <Content Include="Shared\Styles\layoutStartPage.min.css">
       <DependentUpon>layoutStartPage.css</DependentUpon>
-    </Content>
-    <Content Include="Shared\Styles\menu.css">
-      <DependentUpon>menu.scss</DependentUpon>
-    </Content>
-    <Content Include="Shared\Styles\menu.min.css">
-      <DependentUpon>menu.css</DependentUpon>
     </Content>
     <Content Include="Shared\Styles\style.css">
       <DependentUpon>style.scss</DependentUpon>
@@ -160,13 +156,14 @@
     <Content Include="TestPages\ContentPage.cshtml" />
     <Content Include="Shared\Layouts\_LayoutSimpleProject.cshtml" />
     <Content Include="Shared\Layouts\_LayoutAdvancedProject.cshtml" />
-    <Content Include="Shared\Styles\menu.scss" />
     <Content Include="Shared\Layouts\_LayoutStartPage.cshtml" />
     <Content Include="Shared\Styles\layoutStartPage.scss" />
     <Content Include="Shared\Styles\layoutSimpleProject.scss" />
     <Content Include="Shared\Styles\layoutAdvancedProject.scss" />
     <Content Include="Tests\test.cshtml" />
     <Content Include="Tests\test.scss" />
+    <Content Include="Shared\Templates\_DefaultLinks.cshtml" />
+    <Content Include="TestPages\DefaultPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

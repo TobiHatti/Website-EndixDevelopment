@@ -7,6 +7,7 @@
 <html>
 <head>
     <link href="~/Tests/test.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width" />
     <title></title>
 
@@ -16,30 +17,52 @@
         window.addEventListener('scroll', SetPageLayout);
         window.addEventListener('resize', SetPageLayout);
 
-        function SetPageLayout()
-        {
+        function SetPageLayout() {
             // Stick Nav to top
             // TODO: replace constant with nav.default top distance
             if (window.scrollY > 100) this.document.getElementsByTagName("nav")[0].className = "sticky";
             else this.document.getElementsByTagName("nav")[0].className = "default";
 
             // Stick Header to top
-            // TODO: replace contant with nav height
             var viewport = document.getElementsByTagName("main")[0].getBoundingClientRect();
-            if (viewport.top - 50 <= 0) document.getElementsByTagName("header")[0].className = "sticky";
+            var navInstance = getComputedStyle(this.document.querySelector("nav"));
+
+            if (viewport.top - parseInt(navInstance.height) <= 0) document.getElementsByTagName("header")[0].className = "sticky";
             else document.getElementsByTagName("header")[0].className = "";
+
+            // Stick Logo to top
+            var logoInstance = getComputedStyle(this.document.querySelector(".endevLogo"));
+
+            if (window.scrollY > parseInt(logoInstance.top) + parseInt(logoInstance.height)) {
+                document.getElementsByClassName("endevLogo")[0].style.display = "none";
+                document.getElementsByClassName("endevLogoSticky")[0].style.display = "block";
+            }
+            else {
+                document.getElementsByClassName("endevLogo")[0].style.display = "block";
+                document.getElementsByClassName("endevLogoSticky")[0].style.display = "none";
+            }
+
+            // Show "To-Top" button
+            if (viewport.top <= 0) this.document.getElementsByClassName("navigateToTop")[0].style.right = "40px";
+            else this.document.getElementsByClassName("navigateToTop")[0].style.right = "-80px";
         }
 
     </script>
 </head>
 <body>
-    <header>Hi</header>
-    <nav class="default">
-        <div class="opaqueContainer">
-            Menuuuu
-        </div>
-    </nav>
+    <header>
+        <img class="endevLogo" id="endevLogo" src="~/Content/EndevBanner.png" alt="Endev" />
+        <img class="endevLogoSticky" id="endevLogoSticky" src="~/Content/EndevBanner.png" alt="Endev" />
+        <nav class="default">
+            <a href="~/">Home</a>
+            <a href="~/TestPages/SimpleProject.cshtml">S. Project</a>
+            <a href="~/TestPages/AdvancedProject.cshtml">A. Project</a>
+            <a href="~/TestPages/ContentPage.cshtml">Content</a>
+        </nav>
+    </header>
+
     <main>Hello</main>
+    <a href="#top"><div class="navigateToTop"><i class="fa fa-chevron-up"></i></div></a>
     <footer>hoho</footer>
 </body>
 </html>

@@ -1,63 +1,41 @@
-﻿body {
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 150px auto 200px;
-    grid-template-areas: "." "main" ".";
+﻿$headerHeight: 100vh;
+$footerHeight: 200px;
+$navHeight: 50px;
+$navTopOffset: 100px;
+
+$logoTopOffset: 30vh;
+$logoLeftOffset: 150px;
+$logoHeight: 200px;
+
+body {
+    grid-template-rows: $headerHeight auto;
 }
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgb(0,18,89);
-    background: -moz-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
-    background: -webkit-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
-    background: linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
-    background-size: auto 2200px;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#001259",endColorstr="#001259",GradientType=1);
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "logo menu";
-    z-index: 150;
-    transition: all 0.2s ease-in-out;
-}
-
-// Used when page is not (or little) scrolled
-.headerDefault {
-    height: 150px;
-
-    nav {
-        transition: all 0.2s ease-in-out;
-        margin-top: 50px;
-    }
-
-    img {
-        transition: all 0.2s ease-in-out;
-        margin-top: 25px;
-        height: 100px;
+    img.endevLogo {
+        left: $logoLeftOffset;
+        top: $logoTopOffset;
+        height: $logoHeight;
     }
 }
 
-// Used when scrolled into the page
-.headerTopMost {
-    height: 50px;
-
-    nav {
-        transition: all 0.2s ease-in-out;
-        margin-top: 0px;
-    }
-
-    img {
-        transition: all 0.2s ease-in-out;
-        margin-top: 5px;
-        height: 40px;
-    }
+header.sticky {
+    height: $navHeight;
+    background-size: 100vw $headerHeight;
 }
 
-.endevHeaderLogo {
-    grid-area: logo;
-    text-align: center;
+main {
+    margin-bottom: $footerHeight;
+}
+
+nav {
+    height: $navHeight;
+}
+
+nav.default {
+    top: $navTopOffset;
+}
+
+footer {
+    height: $footerHeight;
 }
