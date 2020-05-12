@@ -88,11 +88,43 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Shared\Scripts\ScrollActions.js" />
+    <None Include="Shared\Styles\layoutContentPage.scss" />
+    <Content Include="Shared\Styles\layoutAdvancedProject.css">
+      <DependentUpon>layoutAdvancedProject.scss</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\layoutAdvancedProject.min.css">
+      <DependentUpon>layoutAdvancedProject.css</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\layoutContentPage.css">
+      <DependentUpon>layoutContentPage.scss</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\layoutContentPage.min.css">
+      <DependentUpon>layoutContentPage.css</DependentUpon>
+    </Content>
     <Content Include="Shared\Styles\layoutGeneral.css">
       <DependentUpon>layoutGeneral.scss</DependentUpon>
     </Content>
     <Content Include="Shared\Styles\layoutGeneral.min.css">
       <DependentUpon>layoutGeneral.css</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\layoutSimpleProject.css">
+      <DependentUpon>layoutSimpleProject.scss</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\layoutSimpleProject.min.css">
+      <DependentUpon>layoutSimpleProject.css</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\layoutStartPage.css">
+      <DependentUpon>layoutStartPage.scss</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\layoutStartPage.min.css">
+      <DependentUpon>layoutStartPage.css</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\menu.css">
+      <DependentUpon>menu.scss</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\menu.min.css">
+      <DependentUpon>menu.css</DependentUpon>
     </Content>
     <Content Include="Shared\Styles\style.css">
       <DependentUpon>style.scss</DependentUpon>
@@ -115,6 +147,18 @@
     <Content Include="Shared\Layouts\_Layout.cshtml" />
     <Content Include="Shared\Styles\style.scss" />
     <Content Include="Shared\Styles\layoutGeneral.scss" />
+    <Content Include="Shared\Templates\_Menu.cshtml" />
+    <Content Include="Shared\Templates\_Footer.cshtml" />
+    <Content Include="TestPages\SimpleProject.cshtml" />
+    <Content Include="TestPages\AdvancedProject.cshtml" />
+    <Content Include="TestPages\ContentPage.cshtml" />
+    <Content Include="Shared\Layouts\_LayoutSimpleProject.cshtml" />
+    <Content Include="Shared\Layouts\_LayoutAdvancedProject.cshtml" />
+    <Content Include="Shared\Styles\menu.scss" />
+    <Content Include="Shared\Layouts\_LayoutStartPage.cshtml" />
+    <Content Include="Shared\Styles\layoutStartPage.scss" />
+    <Content Include="Shared\Styles\layoutSimpleProject.scss" />
+    <Content Include="Shared\Styles\layoutAdvancedProject.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -122,6 +166,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

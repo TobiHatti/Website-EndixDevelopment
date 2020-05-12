@@ -18,5 +18,25 @@
   {
     "outputFile": "Shared/Styles/layoutGeneral.css",
     "inputFile": "Shared/Styles/layoutGeneral.scss"
+  },
+  {
+    "outputFile": "Shared/Styles/menu.css",
+    "inputFile": "Shared/Styles/menu.scss"
+  },
+  {
+    "outputFile": "Shared/Styles/layoutAdvancedProject.css",
+    "inputFile": "Shared/Styles/layoutAdvancedProject.scss"
+  },
+  {
+    "outputFile": "Shared/Styles/layoutContentPage.css",
+    "inputFile": "Shared/Styles/layoutContentPage.scss"
+  },
+  {
+    "outputFile": "Shared/Styles/layoutSimpleProject.css",
+    "inputFile": "Shared/Styles/layoutSimpleProject.scss"
+  },
+  {
+    "outputFile": "Shared/Styles/layoutStartPage.css",
+    "inputFile": "Shared/Styles/layoutStartPage.scss"
   }
 ]

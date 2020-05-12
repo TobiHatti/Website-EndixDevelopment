@@ -1,4 +1,32 @@
-﻿h1 {
+﻿* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+html {
+  scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 150px auto 200px;
+  grid-template-areas: "." "main" "."; }
+
+main {
+  grid-area: main;
+  background-color: white;
+  padding: 0 15%;
+  z-index: 100; }
+
+footer {
+  background-color: #111111;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  z-index: 50; }
+
+h1 {
   font-weight: lighter;
   font-size: 40pt;
   text-align: center; }
