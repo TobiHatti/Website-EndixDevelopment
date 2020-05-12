@@ -105,6 +105,10 @@
     </Content>
     <Content Include="Shared\Styles\textElements.scss" />
     <Content Include="Shared\Styles\formElements.scss" />
+    <Content Include="Sites\projects.cshtml" />
+    <Content Include="Sites\downloads.cshtml" />
+    <Content Include="Sites\contact.cshtml" />
+    <Content Include="Sites\more.cshtml" />
     <None Include="Shared\Styles\layoutContentPage.scss" />
     <Content Include="Shared\Scripts\PageLayout.js" />
     <Content Include="Shared\Styles\layoutAdvancedProject.css">
@@ -181,6 +185,7 @@
     <Content Include="TestPages\DefaultPage.cshtml" />
     <Content Include="TestPages\FormElements.cshtml" />
     <Content Include="TestPages\TextElements.cshtml" />
+    <Content Include="Sites\support.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
