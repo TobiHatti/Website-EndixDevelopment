@@ -1,0 +1,26 @@
+﻿@for $i from 0 through 90 {
+    .stagFade *:not(.sfIgnore):nth-child(#{$i}) {
+        animation: stagFadeIn#{$i};
+        animation-duration: 5s;
+    }
+
+    $startFrame : $i;
+    $endFrame : $i + 10;
+
+    @keyframes stagFadeIn#{$i}{
+        0% {
+            opacity: 0; 
+        }
+        #{$startFrame}% {
+            opacity: 0;
+        }
+        #{$endFrame}% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+}
+

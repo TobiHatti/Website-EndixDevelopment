@@ -3,48 +3,59 @@
     Page.Title = "Projects";
 }
 
-<h1>Projects</h1>
+<div class="stagFade">
 
-<h3>Featured</h3>
-<div class="featuredProjects">
-    <div tabindex="0">
-        <img src="~/Content/Projects/MintBanner1080.png" />
-        <span>
-            <b>Mint</b>
-            Mint is a Multi-Platform virtual assistant, that adapts to your actions and habits!
-        </span>
-        <x-pnav>
-            <button>View Project</button>
-            <button>Visit on GitHub</button>
-            <button>Download</button>
-        </x-pnav>
-    </div>
+    @if (Request.Params["project"] == null)
+    {
+        <h1>Projects</h1>
+
+        <h3>Featured</h3>
+        <div class=" featuredProjects">
+            <input type="checkbox" id="pchb1" />
+            <label for="pchb1">
+                <img src="~/Content/Projects/MintBanner1080.png" />
+                <span class="sfIgnore">
+                    <b>Mint</b>
+                    Mint is a Multi-Platform virtual assistant, that adapts to your actions and habits!
+                </span>
+                <x-pnav>
+                    <a href="~/Sites/projects.cshtml?project=1">View Project</a>
+                    <a href="#/">Visit on GitHub</a>
+                    <a href="#/">Download</a>
+                </x-pnav>
+            </label>
 
 
 
-    <div tabindex="0">
-        <img src="~/Content/Projects/PiDexBanner1080.png" />
-        <span>
-            <b>PiDex</b>
-            The PiDex is a fully featured Pokédex as seen in the original anime, powered by a Raspberry Pi
-        </span>
-        <x-pnav>
-            <button>View Project</button>
-            <button>Visit on GitHub</button>
-            <button>Download</button>
-        </x-pnav>
-    </div>
+            <input type="checkbox" id="pchb2" />
+            <label for="pchb2">
+                <img src="~/Content/Projects/PiDexBanner1080.png" />
+                <span class="sfIgnore">
+                    <b>PiDex</b>
+                    The PiDex is a fully featured Pokédex as seen in the original anime, powered by a Raspberry Pi
+                </span>
+                <x-pnav>
+                    <a href="~/Sites/projects.cshtml?project=2">View Project</a>
+                    <a href="#/">Visit on GitHub</a>
+                    <a href="#/">Download</a>
+                </x-pnav>
+            </label>
 
-    <div tabindex="0">
-        <img src="~/Content/Projects/RBCBanner1080.png" />
-        <span>
-            <b>RBC+</b>
-            The RBC+ NAS-System is a simple tool to manage and maintain your personal NAS
-        </span>
-        <x-pnav>
-            <button>View Project</button>
-            <button disabled>Visit on GitHub</button>
-            <button>Download</button>
-        </x-pnav>
-    </div>
+            <input type="checkbox" id="pchb3" />
+            <label for="pchb3">
+                <img src="~/Content/Projects/RBCBanner1080.png" />
+                <span class="sfIgnore">
+                    <b>RBC+</b>
+                    The RBC+ NAS-System is a simple tool to manage and maintain your personal NAS
+                </span>
+                <x-pnav>
+                    <a href="~/Sites/projects.cshtml?project=3">View Project</a>
+                    <a href="#/">Visit on GitHub</a>
+                    <a href="#/">Download</a>
+                </x-pnav>
+            </label>
+        </div>
+
+    }
+
 </div>

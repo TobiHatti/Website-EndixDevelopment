@@ -94,11 +94,18 @@
     <Content Include="Content\Projects\PiDexBanner1080.png" />
     <Content Include="Content\Projects\RBCBanner1080.png" />
     <Content Include="Shared\Layouts\_LayoutContentPage.cshtml" />
+    <Content Include="Shared\Scripts\CommonScripts.js" />
     <Content Include="Shared\Styles\formElements.css">
       <DependentUpon>formElements.scss</DependentUpon>
     </Content>
     <Content Include="Shared\Styles\formElements.min.css">
       <DependentUpon>formElements.css</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\staggeredFade.css">
+      <DependentUpon>staggeredFade.scss</DependentUpon>
+    </Content>
+    <Content Include="Shared\Styles\staggeredFade.min.css">
+      <DependentUpon>staggeredFade.css</DependentUpon>
     </Content>
     <Content Include="Shared\Styles\textElements.css">
       <DependentUpon>textElements.scss</DependentUpon>
@@ -189,6 +196,7 @@
     <Content Include="TestPages\FormElements.cshtml" />
     <Content Include="TestPages\TextElements.cshtml" />
     <Content Include="Sites\support.cshtml" />
+    <Content Include="Shared\Styles\staggeredFade.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
