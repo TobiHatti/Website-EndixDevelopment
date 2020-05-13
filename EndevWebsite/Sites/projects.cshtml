@@ -1,3 +1,50 @@
 ﻿@{
     Layout = "~/Shared/Layouts/_Layout.cshtml";
+    Page.Title = "Projects";
 }
+
+<h1>Projects</h1>
+
+<h3>Featured</h3>
+<div class="featuredProjects">
+    <div tabindex="0">
+        <img src="~/Content/Projects/MintBanner1080.png" />
+        <span>
+            <b>Mint</b>
+            Mint is a Multi-Platform virtual assistant, that adapts to your actions and habits!
+        </span>
+        <x-pnav>
+            <button>View Project</button>
+            <button>Visit on GitHub</button>
+            <button>Download</button>
+        </x-pnav>
+    </div>
+
+
+
+    <div tabindex="0">
+        <img src="~/Content/Projects/PiDexBanner1080.png" />
+        <span>
+            <b>PiDex</b>
+            The PiDex is a fully featured Pokédex as seen in the original anime, powered by a Raspberry Pi
+        </span>
+        <x-pnav>
+            <button>View Project</button>
+            <button>Visit on GitHub</button>
+            <button>Download</button>
+        </x-pnav>
+    </div>
+
+    <div tabindex="0">
+        <img src="~/Content/Projects/RBCBanner1080.png" />
+        <span>
+            <b>RBC+</b>
+            The RBC+ NAS-System is a simple tool to manage and maintain your personal NAS
+        </span>
+        <x-pnav>
+            <button>View Project</button>
+            <button disabled>Visit on GitHub</button>
+            <button>Download</button>
+        </x-pnav>
+    </div>
+</div>

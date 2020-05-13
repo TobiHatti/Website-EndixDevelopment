@@ -1,6 +1,0 @@
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.cshtml [NC,L]
-ErrorDocument 403 /403.cshtml
-ErrorDocument 404 /404.cshtml
-ErrorDocument 500 /500.cshtml
