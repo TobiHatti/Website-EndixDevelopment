@@ -47,5 +47,6 @@ input[type="time"]:focus,
 input[type="url"]:focus,
 input[type="week"]:focus,
 textarea:focus {
+  position: relative;
   border-bottom: 1px solid darkorange;
   outline: none; }

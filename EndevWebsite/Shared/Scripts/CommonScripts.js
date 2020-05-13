@@ -1,5 +1,8 @@
-﻿function UncheckIfChecked(elementID)
+﻿function SelectProjectTab(tabPage)
 {
-    var element = document.getElementById(elementID);
-    if (element.Checked) element.checked = false;
+    for (var i = 0; i < document.getElementsByClassName("projectTab").length; i++)
+    {
+        if (i == tabPage) document.getElementsByClassName("projectTab")[i].style.display = "inline-block";
+        else document.getElementsByClassName("projectTab")[i].style.display = "none";
+    }
 }

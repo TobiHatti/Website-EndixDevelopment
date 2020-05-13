@@ -197,6 +197,7 @@
     <Content Include="TestPages\TextElements.cshtml" />
     <Content Include="Sites\support.cshtml" />
     <Content Include="Shared\Styles\staggeredFade.scss" />
+    <Content Include="Sites\SubSites\projectsOverview.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

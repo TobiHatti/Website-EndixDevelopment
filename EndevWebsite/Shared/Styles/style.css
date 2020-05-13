@@ -120,3 +120,51 @@
       opacity: 1; }
       .featuredProjects input[type="checkbox"]:checked + label x-pnav a {
         display: block; }
+
+.projectBrowser {
+  position: relative;
+  background: #eeeeee;
+  border-radius: 25px;
+  height: 500px;
+  width: 100%;
+  overflow: hidden; }
+  .projectBrowser ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    border-right: 1px solid gray; }
+    .projectBrowser ul li {
+      position: relative;
+      list-style: none;
+      margin: 0;
+      padding: 10px;
+      margin-left: 0;
+      margin-right: 15px;
+      transition: all 0.5s ease-in-out;
+      cursor: pointer; }
+    .projectBrowser ul li::before {
+      position: absolute;
+      left: -15px;
+      bottom: 0px;
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #001259;
+      background: -moz-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+      background: -webkit-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+      background: linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+      transition: all 0.5s ease-in-out; }
+    .projectBrowser ul li:hover {
+      margin-left: 15px;
+      margin-right: 0;
+      transition: all 0.1s ease-in-out;
+      color: #1305af; }
+    .projectBrowser ul li:hover::before {
+      width: 100%;
+      transition: all 0.1s ease-in-out; }
+  .projectBrowser div {
+    display: none;
+    vertical-align: top;
+    padding: 10px; }
