@@ -101,26 +101,67 @@ main {
   padding: 20px 15%; }
 
 nav {
-  box-sizing: border-box;
-  z-index: 120;
-  background: black;
-  background: -moz-linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
-  background: -webkit-linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
-  background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
-  color: #eee;
   transition: width 0.2s ease-in-out; }
-  nav a {
-    font-weight: bolder;
-    color: #ccc;
-    text-decoration: none;
+  nav div.fullWidthMenu, nav div.mobileMenu {
+    box-sizing: border-box;
+    z-index: 120;
+    background: black;
+    background: -moz-linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
+    background: -webkit-linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
+    background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+    color: #eee;
+    padding-left: 50px; }
+    nav div.fullWidthMenu a, nav div.mobileMenu a {
+      font-weight: bolder;
+      color: #ccc;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+      margin: 0;
+      transition: color 0.4s ease-in-out; }
+    nav div.fullWidthMenu a:hover, nav div.mobileMenu a:hover {
+      transition: color 0.1s ease-in-out;
+      color: #fff; }
+  nav div.mobileMenu {
     text-align: center;
-    display: inline-block;
-    margin: 0;
-    transition: color 0.4s ease-in-out; }
-  nav a:hover {
-    transition: color 0.1s ease-in-out;
-    color: #fff; }
+    font-size: 20pt; }
+    nav div.mobileMenu a {
+      width: 100%;
+      display: inline-block; }
+    nav div.mobileMenu input {
+      display: none; }
+    nav div.mobileMenu div.mobileMenuOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.96);
+      display: none;
+      z-index: 200; }
+      nav div.mobileMenu div.mobileMenuOverlay a {
+        width: 100%;
+        line-height: 12vh;
+        height: 12vh;
+        display: block; }
+      nav div.mobileMenu div.mobileMenuOverlay label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0; }
+        nav div.mobileMenu div.mobileMenuOverlay label a {
+          color: white; }
+  @media only screen and (min-width: 690px) {
+    nav div.fullWidthMenu {
+      display: block; }
+    nav div.mobileMenu {
+      display: none; } }
+  @media only screen and (max-width: 690px) {
+    nav div.fullWidthMenu {
+      display: none; }
+    nav div.mobileMenu {
+      display: block; } }
 
 nav.default {
   position: absolute; }

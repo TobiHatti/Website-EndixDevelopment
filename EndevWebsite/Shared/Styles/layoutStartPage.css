@@ -1,5 +1,5 @@
 ﻿body {
-  grid-template-rows: 100vh auto; }
+  grid-template-rows: 85vh auto; }
 
 @media only screen and (min-width: 1140px) {
   header div.endevLogo {
@@ -18,7 +18,7 @@
 
 header.sticky {
   height: 50px;
-  background-size: 100vw 100vh; }
+  background-size: 100vw 85vh; }
 
 @media only screen and (max-width: 1140px) {
   nav {
