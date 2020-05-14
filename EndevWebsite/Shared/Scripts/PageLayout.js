@@ -6,7 +6,9 @@ window.addEventListener('resize', SetPageLayout);
 function SetPageLayout() {
     // Stick Nav to top
     // TODO: replace constant with nav.default top distance
-    if (window.scrollY > 50) this.document.getElementsByTagName("nav")[0].className = "sticky";
+
+    var navDefaultInstance = getComputedStyle(this.document.querySelector("nav.default"));
+    if (window.scrollY > parseInt(navDefaultInstance.top)) this.document.getElementsByTagName("nav")[0].className = "sticky";
     else this.document.getElementsByTagName("nav")[0].className = "default";
 
     // Stick Header to top
