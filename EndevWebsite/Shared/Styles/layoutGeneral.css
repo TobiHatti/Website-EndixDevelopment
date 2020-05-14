@@ -24,6 +24,7 @@ body {
   grid-template-rows: 200px auto; }
 
 header {
+  overflow: hidden;
   grid-area: header;
   background: #001259;
   background: -moz-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
@@ -32,10 +33,6 @@ header {
   z-index: 110; }
   header div.endevLogo {
     position: absolute;
-    left: 50px;
-    top: 50px;
-    height: 100px;
-    width: 290px;
     margin: 5px;
     animation: endevLogoFadeIn;
     animation-duration: 0.5s;
@@ -43,15 +40,20 @@ header {
     background-repeat: no-repeat; }
     @media only screen and (min-width: 1140px) {
       header div.endevLogo {
+        left: 50px;
+        top: 50px;
+        height: 100px;
+        width: 290px;
         background-size: auto 100px;
         background-image: url("../../Content/EndevBanner.png"); } }
     @media only screen and (max-width: 1140px) {
       header div.endevLogo {
-        background-size: auto 40px;
-        background-image: url("../../Content/EndevBannerLogoOnly.png");
-        width: 40px;
         left: 20px;
         top: 50px;
+        height: 40px;
+        width: 40px;
+        background-size: auto 40px;
+        background-image: url("../../Content/EndevBannerLogoOnly.png");
         z-index: 121; } }
   header div.endevLogoSticky {
     position: fixed;

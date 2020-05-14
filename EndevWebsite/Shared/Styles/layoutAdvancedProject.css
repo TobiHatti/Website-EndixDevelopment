@@ -1,19 +1,20 @@
 ﻿body {
   grid-template-rows: 80vh auto; }
 
-header div.endevLogo {
-  left: 50px;
-  top: 50px;
-  height: 100px;
-  width: 290px; }
-  @media only screen and (min-width: 1140px) {
-    header div.endevLogo {
-      background-size: auto 100px; } }
-  @media only screen and (max-width: 1140px) {
-    header div.endevLogo {
-      background-size: auto 40px;
-      left: 20px;
-      top: 100px; } }
+@media only screen and (min-width: 1140px) {
+  header div.endevLogo {
+    left: 50px;
+    top: 50px;
+    height: 100px;
+    width: 290px;
+    background-size: auto 100px; } }
+
+@media only screen and (max-width: 1140px) {
+  header div.endevLogo {
+    top: 100px;
+    height: 40px;
+    width: 40px;
+    background-size: auto 40px; } }
 
 header.sticky {
   height: 50px;

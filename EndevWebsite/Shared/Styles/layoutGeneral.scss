@@ -41,6 +41,7 @@ body {
 }
 
 header {
+    overflow: hidden;
     grid-area: header;
     background: rgb(0,18,89);
     background: -moz-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
@@ -50,10 +51,6 @@ header {
 
     div.endevLogo {
         position: absolute;
-        left: $defaultLogoLeftOffset;
-        top: $defaultLogoTopOffset;
-        height: $defaultLogoHeight;
-        width: $defaultLogoHeight * $fullLogoDimensionRatio;
         margin: 5px;
         animation: endevLogoFadeIn;
         animation-duration: 0.5s;
@@ -61,16 +58,21 @@ header {
         background-repeat: no-repeat;
 
         @media only screen and (min-width: $navBreakpoint1) {
+            left: $defaultLogoLeftOffset;
+            top: $defaultLogoTopOffset;
+            height: $defaultLogoHeight;
+            width: $defaultLogoHeight * $fullLogoDimensionRatio;
             background-size: auto $defaultLogoHeight;
             background-image: url("../../Content/EndevBanner.png");
         }
 
         @media only screen and (max-width: $navBreakpoint1) {
-            background-size: auto #{$defaultNavHeight - 10px};
-            background-image: url("../../Content/EndevBannerLogoOnly.png");
-            width: 40px;
             left: 20px;
             top: $defaultNavTopOffset;
+            height: #{$defaultNavHeight - 10px};
+            width: #{$defaultNavHeight - 10px};
+            background-size: auto #{$defaultNavHeight - 10px};
+            background-image: url("../../Content/EndevBannerLogoOnly.png");
             z-index: 121;
         }
     }
