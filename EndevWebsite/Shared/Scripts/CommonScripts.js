@@ -2,7 +2,7 @@
 {
     for (var i = 0; i < document.getElementsByClassName("projectTab").length; i++)
     {
-        if (i == tabPage) document.getElementsByClassName("projectTab")[i].style.display = "inline-block";
+        if (i == tabPage) document.getElementsByClassName("projectTab")[i].style.display = "grid";
         else document.getElementsByClassName("projectTab")[i].style.display = "none";
     }
 }

@@ -167,6 +167,7 @@ nav {
         a {
             width: 100%;
             display: inline-block;
+            text-align: right;
         }
 
         input {
@@ -188,6 +189,7 @@ nav {
                 line-height: 12vh;
                 height: 12vh;
                 display: block;
+                text-align: center;
             }
 
             label {
@@ -202,8 +204,8 @@ nav {
             }
         }
 
-        text-align: center;
         font-size: 20pt;
+        padding-right: 20px;
     }
 
     @media only screen and (min-width: $navBreakpoint2) {

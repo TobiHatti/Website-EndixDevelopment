@@ -96,6 +96,7 @@
     <Content Include="Content\Projects\RBCBanner1080.png" />
     <Content Include="Shared\Layouts\_LayoutContentPage.cshtml" />
     <Content Include="Shared\Scripts\CommonScripts.js" />
+    <Content Include="Shared\Styles\fontawesome.min.css" />
     <Content Include="Shared\Styles\formElements.css">
       <DependentUpon>formElements.scss</DependentUpon>
     </Content>
