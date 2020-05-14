@@ -133,6 +133,7 @@
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 250px;
     border-right: 1px solid gray; }
     .projectBrowser ul li {
       position: relative;
@@ -164,7 +165,33 @@
     .projectBrowser ul li:hover::before {
       width: 100%;
       transition: all 0.1s ease-in-out; }
-  .projectBrowser div {
+  .projectBrowser .projectTab {
     display: none;
     vertical-align: top;
-    padding: 10px; }
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100%;
+    width: calc(100% - 250px - 10px); }
+    .projectBrowser .projectTab div {
+      position: relative;
+      border-top: 1px solid darkgray;
+      padding: 5px;
+      box-sizing: border-box;
+      width: 100%;
+      background-color: aquamarine; }
+      .projectBrowser .projectTab div img {
+        width: 150px;
+        vertical-align: middle;
+        display: inline-block; }
+      .projectBrowser .projectTab div span {
+        display: inline-block;
+        vertical-align: middle;
+        background-color: lime;
+        text-overflow: ellipsis; }
+        .projectBrowser .projectTab div span b {
+          display: block;
+          font-size: 20pt;
+          font-weight: lighter;
+          vertical-align: top; }
+      .projectBrowser .projectTab div x-pnav a {
+        display: block; }

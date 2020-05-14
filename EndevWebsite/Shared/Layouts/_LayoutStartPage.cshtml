@@ -6,8 +6,10 @@
 </head>
 <body>
     <header>
-        <img class="endevLogo" id="endevLogo" src="~/Content/EndevBanner.png" alt="Endev" />
-        <img class="endevLogoSticky" id="endevLogoSticky" src="~/Content/EndevBanner.png" alt="Endev" />
+        <a href="~/">
+            <div class="endevLogo" id="endevLogo"></div>
+            <div class="endevLogoSticky" id="endevLogoSticky"></div>
+        </a>
         @RenderPage("~/Shared/Templates/_Menu.cshtml")
     </header>
     <main>@RenderBody()</main>

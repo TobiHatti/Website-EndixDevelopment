@@ -1,4 +1,6 @@
-﻿$headerHeight: 40vh;
+﻿@import 'commonVariables';
+
+$headerHeight: 40vh;
 $footerHeight: 200px;
 $navHeight: 50px;
 $navTopOffset: 100px;
@@ -12,10 +14,21 @@ body {
 }
 
 header {
-    img.endevLogo {
+    div.endevLogo {
         left: $logoLeftOffset;
         top: $logoTopOffset;
         height: $logoHeight;
+        width: $logoHeight * $fullLogoDimensionRatio;
+
+        @media only screen and (min-width: $navBreakpoint1) {
+            background-size: auto $logoHeight;
+        }
+
+        @media only screen and (max-width: $navBreakpoint1) {
+            background-size: auto #{$navHeight - 10px};
+            left: 20px; // required -> else override 
+            top: $navTopOffset;
+        }
     }
 }
 
@@ -24,17 +37,39 @@ header.sticky {
     background-size: 100vw $headerHeight;
 }
 
-main {
-    margin-bottom: $footerHeight;
+// Desktop small
+@media only screen and (max-width: $navBreakpoint1) {
+
+    nav {
+        height: $navHeight;
+
+        a {
+            line-height: $navHeight;
+        }
+    }
+
+    nav.default {
+        top: $navTopOffset;
+    }
 }
 
-nav {
-    height: $navHeight;
+
+// Desktop full
+@media only screen and (min-width: $navBreakpoint1) {
+
+    nav {
+        height: $navHeight;
+
+        a {
+            line-height: $navHeight;
+        }
+    }
+
+    nav.default {
+        top: $navTopOffset;
+    }
 }
 
-nav.default {
-    top: $navTopOffset;
-}
 
 footer {
     height: $footerHeight;

@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\EndevBanner.png" />
+    <Content Include="Content\EndevBannerLogoOnly.png" />
     <Content Include="Content\Icons\error.png" />
     <Content Include="Content\Projects\MintBanner1080.png" />
     <Content Include="Content\Projects\PiDexBanner1080.png" />
@@ -198,6 +199,7 @@
     <Content Include="Sites\support.cshtml" />
     <Content Include="Shared\Styles\staggeredFade.scss" />
     <Content Include="Sites\SubSites\projectsOverview.cshtml" />
+    <Content Include="Shared\Styles\_commonVariables.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

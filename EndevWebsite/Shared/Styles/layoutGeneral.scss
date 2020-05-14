@@ -1,4 +1,5 @@
-﻿// In general file
+﻿@import 'commonVariables';
+
 $defaultHeaderHeight: 200px;
 $defaultFooterHeight: 200px;
 $defaultNavHeight: 50px;
@@ -7,6 +8,28 @@ $defaultNavTopOffset: 50px;
 $defaultLogoTopOffset: 50px;
 $defaultLogoLeftOffset: 50px;
 $defaultLogoHeight: 100px;
+
+
+html{
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    background-color: #777;
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar {
+    width: 10px;
+    background-color: #777;
+}
+
+html::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #222;
+    z-index: 110;
+}
 
 body {
     margin: 0;
@@ -25,18 +48,34 @@ header {
     background: linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
     z-index: 110;
 
-    img.endevLogo {
+    div.endevLogo {
         position: absolute;
         left: $defaultLogoLeftOffset;
         top: $defaultLogoTopOffset;
         height: $defaultLogoHeight;
+        width: $defaultLogoHeight * $fullLogoDimensionRatio;
         margin: 5px;
         animation: endevLogoFadeIn;
         animation-duration: 0.5s;
         animation-iteration-count: 1;
+        background-repeat: no-repeat;
+
+        @media only screen and (min-width: $navBreakpoint1) {
+            background-size: auto $defaultLogoHeight;
+            background-image: url("../../Content/EndevBanner.png");
+        }
+
+        @media only screen and (max-width: $navBreakpoint1) {
+            background-size: auto #{$defaultNavHeight - 10px};
+            background-image: url("../../Content/EndevBannerLogoOnly.png");
+            width: 40px;
+            left: 20px;
+            top: $defaultNavTopOffset;
+            z-index: 121;
+        }
     }
 
-    img.endevLogoSticky {
+    div.endevLogoSticky {
         position: fixed;
         left: 20px;
         top: 0;
@@ -46,6 +85,19 @@ header {
         animation: endevLogoFadeIn;
         animation-duration: 0.5s;
         animation-iteration-count: 1;
+        background-size: auto #{$defaultNavHeight - 10px};
+        background-repeat: no-repeat;
+        z-index: 121;
+
+        @media only screen and (min-width: $navBreakpoint1) {
+            background-image: url("../../Content/EndevBanner.png");
+            width: 120px;
+        }
+
+        @media only screen and (max-width: $navBreakpoint1) {
+            background-image: url("../../Content/EndevBannerLogoOnly.png");
+            width: 40px;
+        }
     }
 }
 
@@ -79,10 +131,7 @@ main {
 }
 
 nav {
-    width: 60%;
-    padding-left: 50px;
     box-sizing: border-box;
-    height: $defaultNavHeight;
     z-index: 120;
     background: rgb(0,0,0);
     background: -moz-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 5%);
@@ -91,15 +140,14 @@ nav {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
     color: #eee;
 
+    transition: width 0.2s ease-in-out;
+
     a {
         font-weight: bolder;
         color: #ccc;
         text-decoration: none;
         text-align: center;
-        line-height: $defaultNavHeight;
         display: inline-block;
-        height: 100%;
-        width: 100px;
         margin: 0;
         transition: color 0.4s ease-in-out;
     }
@@ -112,14 +160,65 @@ nav {
 
 nav.default {
     position: absolute;
-    top: $defaultNavTopOffset;
-    right: 0;
 }
 
 nav.sticky {
     position: fixed;
-    top: 0;
-    right: 0;
+}
+
+
+
+// Desktop small
+@media only screen and (max-width: $navBreakpoint1) {
+
+    nav {
+        width: 100%;
+        padding-left: 50px;
+        height: $defaultNavHeight;
+
+        a {
+            line-height: $defaultNavHeight;
+            height: 100%;
+            width: 100px;
+        }
+    }
+
+    nav.default {
+        top: $defaultNavTopOffset;
+        right: 0;
+    }
+
+    nav.sticky {
+        top: 0;
+        right: 0;
+    }
+}
+
+
+// Desktop full
+@media only screen and (min-width: $navBreakpoint1) {
+
+    nav {
+        width: 60%;
+        padding-left: 50px;
+        height: $defaultNavHeight;
+
+        a {
+            line-height: $defaultNavHeight;
+            height: 100%;
+            width: 100px;
+        }
+    }
+
+    nav.default {
+        top: $defaultNavTopOffset;
+        right: 0;
+    }
+
+    nav.sticky {
+        top: 0;
+        right: 0;
+    }
 }
 
 footer {
