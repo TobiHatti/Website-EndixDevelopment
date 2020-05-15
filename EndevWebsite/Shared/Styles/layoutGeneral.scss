@@ -12,6 +12,7 @@ $defaultLogoHeight: 100px;
 
 html{
     overflow-x: hidden;
+    min-width: 300px;
 }
 
 html::-webkit-scrollbar-track {
@@ -75,6 +76,16 @@ header {
             background-image: url("../../Content/EndevBannerLogoOnly.png");
             z-index: 121;
         }
+
+        @media only screen and (max-width: $navBreakpoint2) {
+            left: 20px;
+            top: $defaultNavTopOffset;
+            height: #{$defaultNavHeight - 10px};
+            width: $defaultNavHeight * $fullLogoDimensionRatio;
+            background-size: auto #{$defaultNavHeight - 10px};
+            background-image: url("../../Content/EndevBanner.png");
+            z-index: 121;
+        }
     }
 
     div.endevLogoSticky {
@@ -99,6 +110,11 @@ header {
         @media only screen and (max-width: $navBreakpoint1) {
             background-image: url("../../Content/EndevBannerLogoOnly.png");
             width: 40px;
+        }
+
+        @media only screen and (max-width: $navBreakpoint2) {
+            background-image: url("../../Content/EndevBanner.png");
+            width: 120px;
         }
     }
 }
@@ -133,6 +149,8 @@ main {
 }
 
 nav {
+
+
     transition: width 0.2s ease-in-out;
 
     div.fullWidthMenu, div.mobileMenu {
@@ -163,9 +181,19 @@ nav {
     }
 
     div.mobileMenu {
+        position: relative;
+
+        span {
+            width: calc(100% - 20px);
+            text-align: center;
+            display: inline-block;
+            padding-left: 40px;
+            box-sizing: border-box;
+        }
 
         a {
-            width: 100%;
+            right: 0;
+            width: 20px;
             display: inline-block;
             text-align: right;
         }
@@ -197,6 +225,7 @@ nav {
                 bottom: 0;
                 left: 0;
                 right: 0;
+
 
                 a {
                     color: white;
@@ -264,7 +293,6 @@ nav.sticky {
         right: 0;
     }
 }
-
 
 // Desktop full
 @media only screen and (min-width: $navBreakpoint1) {

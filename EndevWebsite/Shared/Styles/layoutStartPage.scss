@@ -29,6 +29,13 @@ header {
             width: #{$navHeight - 10px};
             background-size: auto #{$navHeight - 10px};
         }
+
+        @media only screen and (max-width: $navBreakpoint2) {
+            top: $navTopOffset;
+            height: #{$navHeight - 10px};
+            width: #{$navHeight - 10px};
+            background-size: auto #{$navHeight - 10px};
+        }
     }
 }
 

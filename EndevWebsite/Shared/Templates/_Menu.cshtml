@@ -8,7 +8,7 @@
         <a href="~/Sites/more.cshtml">More</a>
     </div>
     <div class="mobileMenu stagFade">
-        <label for="toggleMobileMenuOverlay"><a><i class="fa fa-bars"></i></a></label>
+        <label for="toggleMobileMenuOverlay"><span>@Page.Title</span><a><i class="fa fa-bars"></i></a></label>
         <input type="checkbox" id="toggleMobileMenuOverlay" onchange="ShowElementIfChecked(this, 'mobileMenuOverlay')"/>
         <div class="mobileMenuOverlay" id="mobileMenuOverlay">
             <a href="~/">Home</a>
