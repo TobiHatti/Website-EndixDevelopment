@@ -252,6 +252,7 @@
     <Content Include="Shared\Styles\staggeredFade.scss" />
     <Content Include="Sites\SubSites\projectsOverview.cshtml" />
     <Content Include="Shared\Styles\_commonVariables.scss" />
+    <Content Include="Sites\SubSites\projectDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

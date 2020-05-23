@@ -112,7 +112,7 @@ main {
   min-height: 100vh;
   margin-bottom: 200px;
   z-index: 100;
-  padding: 20px 15%; }
+  padding: 20px 20%; }
 
 nav {
   transition: width 0.2s ease-in-out; }
@@ -234,3 +234,46 @@ footer {
   right: 0;
   height: 200px;
   z-index: 90; }
+
+aside {
+  position: absolute;
+  width: 200px;
+  min-height: 200px;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  left: 10px;
+  margin-top: 20vh;
+  box-sizing: border-box;
+  transition: top 0.005s linear; }
+  aside ul {
+    padding: 0; }
+    aside ul li {
+      position: relative;
+      transition: all 0.5s ease-in-out;
+      cursor: pointer;
+      list-style: none;
+      margin: 25px 20px; }
+      aside ul li i {
+        width: 20px;
+        color: orangered; }
+    aside ul li::before {
+      position: absolute;
+      left: -15px;
+      bottom: -8px;
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #001259;
+      background: -moz-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+      background: -webkit-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+      background: linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+      transition: all 0.5s ease-in-out; }
+    aside ul li:hover {
+      margin-left: 30px;
+      margin-right: 0;
+      transition: all 0.1s ease-in-out;
+      color: #1305af; }
+    aside ul li:hover::before {
+      width: 100%;
+      transition: all 0.1s ease-in-out; }

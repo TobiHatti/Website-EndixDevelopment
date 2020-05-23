@@ -12,3 +12,7 @@ function ShowElementIfChecked(e, targetElement)
     if (e.checked) document.getElementById(targetElement).style.display = "block";
     else document.getElementById(targetElement).style.display = "none";
 }
+
+function SetProjectTitle(title) {
+    document.getElementById("headerProjectTitle").innerHTML = title;
+}

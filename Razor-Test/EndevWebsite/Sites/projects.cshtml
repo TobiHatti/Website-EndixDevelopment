@@ -1,5 +1,7 @@
 ﻿@{
-    Layout = "~/Shared/Layouts/_Layout.cshtml";
+    if (Request.Params["project"] == null) { Layout = "~/Shared/Layouts/_Layout.cshtml"; }
+    else { Layout = "~/Shared/Layouts/_LayoutAdvancedProject.cshtml"; }
+
     Page.Title = "Projects";
 }
 
@@ -11,7 +13,7 @@
     }
     else
     {
-
+        @RenderPage("~/Sites/SubSites/projectDetails.cshtml");
     }
 
 </div>

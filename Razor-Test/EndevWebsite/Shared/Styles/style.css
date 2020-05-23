@@ -132,7 +132,7 @@
 .projectBrowser {
   position: relative;
   display: grid;
-  background: #eeeeee;
+  border: 1px solid #aaa;
   border-radius: 25px;
   height: auto;
   min-height: 500px;

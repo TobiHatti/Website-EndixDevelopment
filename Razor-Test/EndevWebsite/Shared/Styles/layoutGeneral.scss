@@ -145,7 +145,7 @@ main {
     min-height: 100vh;
     margin-bottom: $defaultFooterHeight;
     z-index: 100;
-    padding: 20px 15%;
+    padding: 20px 20%;
 }
 
 nav {
@@ -329,4 +329,60 @@ footer {
     right: 0;
     height: $defaultFooterHeight;
     z-index: 90;
+}
+
+aside {
+    position: absolute;
+    width: 200px;
+    min-height: 200px;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+    left: 10px;
+    margin-top: 20vh;
+    box-sizing: border-box;
+    transition: top 0.005s linear;
+
+    ul {
+        padding: 0;
+
+        li {
+            position: relative;
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            list-style: none;
+            margin: 25px 20px;
+
+            i {
+                width: 20px;
+                color: orangered;
+            }
+        }
+
+        li::before {
+            position: absolute;
+            left: -15px;
+            bottom: -8px;
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: rgb(0,18,89);
+            background: -moz-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
+            background: -webkit-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
+            background: linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
+            transition: all 0.5s ease-in-out;
+        }
+
+        li:hover {
+            margin-left: 30px;
+            margin-right: 0;
+            transition: all 0.1s ease-in-out;
+            color: rgba(19,5,175,1);
+        }
+
+        li:hover::before {
+            width: 100%;
+            transition: all 0.1s ease-in-out;
+        }
+    }
 }

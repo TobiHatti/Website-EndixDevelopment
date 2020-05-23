@@ -33,4 +33,19 @@ function SetPageLayout() {
     // Show "To-Top" button
     if (viewport.top <= 0) this.document.getElementsByClassName("navigateToTop")[0].style.right = "40px";
     else this.document.getElementsByClassName("navigateToTop")[0].style.right = "-80px";
+
+
+
+    // Sticky Aside
+    try
+    {
+        var headerInstance = getComputedStyle(this.document.querySelector("header"));
+
+        if (parseInt(viewport.top) <= 50) document.getElementsByTagName("aside")[0].style.top = window.scrollY + 50 + "px";
+        else document.getElementsByTagName("aside")[0].style.top = parseInt(headerInstance.height) + "px";
+    }
+    catch
+    {
+
+    }
 }
