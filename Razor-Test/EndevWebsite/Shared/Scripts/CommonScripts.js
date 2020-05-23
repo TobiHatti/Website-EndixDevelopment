@@ -7,6 +7,14 @@
     }
 }
 
+function SelectProjectPage(tabPage) {
+    for (var i = 0; i < document.getElementsByClassName("projectSubpage").length; i++) {
+        if (i == tabPage) document.getElementsByClassName("projectSubpage")[i].style.display = "block";
+        else document.getElementsByClassName("projectSubpage")[i].style.display = "none";
+    }
+}
+
+
 function ShowElementIfChecked(e, targetElement)
 {
     if (e.checked) document.getElementById(targetElement).style.display = "block";
@@ -15,4 +23,12 @@ function ShowElementIfChecked(e, targetElement)
 
 function SetProjectTitle(title) {
     document.getElementById("headerProjectTitle").innerHTML = title;
+}
+
+function SetProjectBanner(bannerURL)
+{
+    document.getElementsByTagName("header")[0].style.background = "white";
+    document.getElementById("bannerCover").style.display = "block";
+    document.getElementById("headerBGImage").style.display = "block";
+    document.getElementById("headerBGImage").style.backgroundImage = "url(" + bannerURL + ")";
 }

@@ -34,18 +34,29 @@ function SetPageLayout() {
     if (viewport.top <= 0) this.document.getElementsByClassName("navigateToTop")[0].style.right = "40px";
     else this.document.getElementsByClassName("navigateToTop")[0].style.right = "-80px";
 
-
-
-    // Sticky Aside
+    
     try
     {
+        // Sticky Aside
         var headerInstance = getComputedStyle(this.document.querySelector("header"));
-
         if (parseInt(viewport.top) <= 50) document.getElementsByTagName("aside")[0].style.top = window.scrollY + 50 + "px";
         else document.getElementsByTagName("aside")[0].style.top = parseInt(headerInstance.height) + "px";
     }
-    catch
-    {
+    catch { }
+
+    try {
+        // Header-BG-Image Manipulation
+        var blurFactor = window.scrollY / 25;
+        var transparencyFactor = window.scrollY / 750 + 0.1;
+
+        if (transparencyFactor > 0.6) transparencyFactor = 0.6;
+        document.getElementById("bannerCover").style.opacity = transparencyFactor;
+
+        if (blurFactor > 50) blurFactor = 50;
+        document.getElementById("headerBGImage").style.filter = "blur(" + blurFactor + "px)";
+        document.getElementById("headerBGImage").style.webkitFilter = "blur(" + blurFactor + "px)";
+        document.getElementById("headerBGImage").style.marginTop = "-" + (blurFactor * 1.5) + "px";
 
     }
+    catch{ }
 }

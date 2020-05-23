@@ -50,6 +50,38 @@ header {
     background: linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
     z-index: 110;
 
+    h1 {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        color: white;
+        top: 30vh;
+        font-size: 120pt;
+        text-shadow: 0px 0px 30px black;
+    }
+
+    div#headerBGImage {
+        overflow: hidden;
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 80vh;
+        background-attachment: fixed;
+        background-position-y: -10vh;
+        background-size: cover;
+        
+
+    }
+
+    div#bannerCover {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 80vh;
+        background-color: #000032;
+        opacity: 0.1
+    }
+
     div.endevLogo {
         position: absolute;
         margin: 5px;

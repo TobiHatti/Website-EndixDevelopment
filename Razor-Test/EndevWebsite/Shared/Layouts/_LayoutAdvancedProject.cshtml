@@ -5,14 +5,15 @@
     <link href="~/Shared/Styles/layoutAdvancedProject.css" rel="stylesheet" />
 </head>
 <body>
-    <header style="background-image: url(../../Content/Projects/MintBanner1080.png); background-attachment: fixed; background-position-y: -10vh; background-size: cover;">
-        <div style="position: absolute; width: 100%; height: 80vh; background-color: rgba(0, 0, 50, 0.6)"></div>
+    <header>
+        <div id="headerBGImage"></div>
+        <div id="bannerCover"></div>
         <a href="~/">
             <div class="endevLogo" id="endevLogo"></div>
             <div class="endevLogoSticky" id="endevLogoSticky"></div>
         </a>
 
-        <h1 id="headerProjectTitle" style="position: absolute; width: 100%; text-align: center; color: white; top: 30vh; font-size: 60pt;">Test</h1>
+        <h1 id="headerProjectTitle">Test</h1>
 
         @RenderPage("~/Shared/Templates/_Menu.cshtml")
 
