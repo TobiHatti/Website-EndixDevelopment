@@ -1,0 +1,22 @@
+﻿@* Shared Stylesheets*@
+<link href="~/Shared/Styles/fontawesome.min.css" rel="stylesheet" />
+<link href="~/Shared/Styles/style.min.css" rel="stylesheet" />
+<link href="~/Shared/Styles/staggeredFade.min.css" rel="stylesheet" />
+<link href="~/Shared/Styles/textElements.min.css" rel="stylesheet" />
+<link href="~/Shared/Styles/formElements.min.css" rel="stylesheet" />
+<link href="~/Shared/Styles/layoutGeneral.min.css" rel="stylesheet" />
+
+@* External Stylesheets *@
+
+
+@* Shared scripts *@
+<script src="~/Shared/Scripts/PageLayout.js"></script>
+<script src="~/Shared/Scripts/CommonScripts.js"></script>
+
+@* External scripts *@
+
+@* Meta-Tags *@
+<meta name="viewport" content="width=device-width" />
+
+@* Other *@
+<title>@Page.Title | Endev</title>

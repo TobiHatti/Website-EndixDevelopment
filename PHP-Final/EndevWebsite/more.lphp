@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Shared/Layouts/_Layout.cshtml";
+    Page.Title = "More";
+}
+
+<h1>More</h1>
+
+<b>Elements</b>
+<ul>
+    <li><a href="~/TestPages/TextElements.cshtml">Text-Elements</a></li>
+    <li><a href="~/TestPages/FormElements.cshtml">Form-Elements</a></li>
+</ul>
+<br />
+<b>Test-Pages</b>
+<ul>
+    <li><a href="~/TestPages/DefaultPage.cshtml">DefaultPage</a></li>
+    <li><a href="~/TestPages/ContentPAge.cshtml">ContentPage</a></li>
+    <li><a href="~/TestPages/AdvancedProject.cshtml">AdvancedProjectPage</a></li>
+    <li><a href="~/TestPages/SimpleProject.cshtml">SimpleProjectPage</a></li>
+</ul>
+
+<b>Categories</b>
+<ul>
+    <li>Tools for IT-Specialists (Surgit)</li>
+    <li>Tools for Developers (XPS, SNMP-SCF, API2OOP, Utilis)</li>
+    <li>Tools for Enterprices (EasRP)</li>
+    <li>Consumer Programs (Velox, DialAssist, SimpleSudoku)</li>
+    <li>IoT Devices and embeded systems (PiDex, PiDex2.0, Mint)</li>
+    <li>Libraries (Atlas-API-Wrapper, WrapSQL, PHP-Library-Collection)</li>
+    <li>Games (Tenebris)</li>
+</ul>
+
+
+
+

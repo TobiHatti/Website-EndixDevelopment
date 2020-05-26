@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Name>EndevWebsite</Name>
-    <ProjectGuid>{acbd6e75-4a04-440f-8e27-1d62ccb25bc7}</ProjectGuid>
+    <ProjectGuid>{ac592c8d-d0f9-47a3-af39-e47e6775c568}</ProjectGuid>
     <RootNamespace>
     </RootNamespace>
     <OutputType>Library</OutputType>
@@ -15,15 +15,53 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="composer.json" />
+    <Folder Include="layouts\" />
+    <Folder Include="libraries\" />
+    <Folder Include="templates\" />
+    <Folder Include="subSites\" />
+    <Folder Include="scripts\" />
+    <Folder Include="styles\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Layouts\" />
-    <Folder Include="Test\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="index.php" />
-    <Compile Include="Layouts\Layout.php" />
-    <Compile Include="Test\Render.php" />
+    <Content Include="compilerconfig.json.defaults">
+      <SubType>Content</SubType>
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </Content>
+    <Content Include="contact.lphp" />
+    <Content Include="downloads.lphp" />
+    <Content Include="more.lphp" />
+    <Content Include="projects.lphp" />
+    <Content Include="styles\formElements.css" />
+    <Content Include="styles\formElements.min.css" />
+    <Content Include="styles\textElements.css">
+      <SubType>Content</SubType>
+      <DependentUpon>styles\textElements.scss</DependentUpon>
+    </Content>
+    <Content Include="styles\textElements.min.css" />
+    <Content Include="subSites\projectDetails.lphp" />
+    <Content Include="subSites\projectsOverview.lphp" />
+    <Content Include="support.lphp" />
+    <Content Include="templates\_DefaultLinks.lphp" />
+    <Content Include="templates\_Footer.lphp" />
+    <Content Include="templates\_Menu.lphp" />
+    <None Include="compilerconfig.json" />
+    <Content Include="layouts\_Layout.lphp" />
+    <Content Include="layouts\_LayoutAdvancedProject.lphp" />
+    <Content Include="layouts\_LayoutContentPage.lphp" />
+    <Content Include="layouts\_LayoutSimpleProject.lphp" />
+    <Content Include="layouts\_LayoutStartPage.lphp" />
+    <Content Include="scripts\CommonScripts.js" />
+    <Content Include="scripts\PageLayout.js" />
+    <Content Include="styles\fontawesome.min.css" />
+    <Content Include="styles\formElements.scss" />
+    <Content Include="styles\layoutAdvancedProject.scss" />
+    <Content Include="styles\layoutContentPage.scss" />
+    <Content Include="styles\layoutGeneral.scss" />
+    <Content Include="styles\layoutSimpleProject.scss" />
+    <Content Include="styles\layoutStartPage.scss" />
+    <Content Include="styles\staggeredFade.scss" />
+    <Content Include="styles\style.scss" />
+    <Content Include="styles\textElements.scss" />
+    <Content Include="styles\_commonVariables.scss" />
   </ItemGroup>
 </Project>

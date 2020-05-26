@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{A0786B88-2ADB-4C21-ABE8-AA2D79766269}") = "EndevWebsite", "..\..\..\..\Git\Endev-Web\PHP-Final\EndevWebsite\EndevWebsite.phpproj", "{ACBD6E75-4A04-440F-8E27-1D62CCB25BC7}"
+Project("{A0786B88-2ADB-4C21-ABE8-AA2D79766269}") = "EndevWebsite", "..\..\..\..\Git\Endev-Web\PHP-Final\EndevWebsite\EndevWebsite.phpproj", "{AC592C8D-D0F9-47A3-AF39-E47E6775C568}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +11,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ACBD6E75-4A04-440F-8E27-1D62CCB25BC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ACBD6E75-4A04-440F-8E27-1D62CCB25BC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC592C8D-D0F9-47A3-AF39-E47E6775C568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC592C8D-D0F9-47A3-AF39-E47E6775C568}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {727010F5-0A62-463E-96EC-203B7509FB7F}
+		SolutionGuid = {1F07F51C-8F15-4794-878E-05A480882EF3}
 	EndGlobalSection
 EndGlobal

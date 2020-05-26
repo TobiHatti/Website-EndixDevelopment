@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "styles/textElements.css",
+    "inputFile": "styles/textElements.scss"
+  },
+  {
+    "outputFile": "styles/formElements.css",
+    "inputFile": "styles/formElements.scss"
+  }
+]

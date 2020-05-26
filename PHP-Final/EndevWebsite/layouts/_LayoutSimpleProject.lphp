@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @RenderPage("~/Shared/Templates/_DefaultLinks.cshtml")
+    <link href="~/Shared/Styles/layoutSimpleProject.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="~/">
+            <div class="endevLogo" id="endevLogo"></div>
+            <div class="endevLogoSticky" id="endevLogoSticky"></div>
+        </a>
+        @RenderPage("~/Shared/Templates/_Menu.cshtml")
+    </header>
+    <main>@RenderBody()</main>
+    @RenderPage("~/Shared/Templates/_Footer.cshtml")
+</body>
+</html>
