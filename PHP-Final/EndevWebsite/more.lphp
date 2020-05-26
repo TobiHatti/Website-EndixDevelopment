@@ -1,22 +1,22 @@
-﻿@{
-    Layout = "~/Shared/Layouts/_Layout.cshtml";
-    Page.Title = "More";
+$${
+    Layout = "layouts/_Layout.lphp";
+    set PageTitle = "More";
 }
 
-<h1>More</h1>
+<h1>More</h1> 
 
 <b>Elements</b>
 <ul>
-    <li><a href="~/TestPages/TextElements.cshtml">Text-Elements</a></li>
-    <li><a href="~/TestPages/FormElements.cshtml">Form-Elements</a></li>
+    <li><a href="/testPages/TextElements">Text-Elements</a></li>
+    <li><a href="/testPages/FormElements">Form-Elements</a></li>
 </ul>
-<br />
+<br />  
 <b>Test-Pages</b>
 <ul>
-    <li><a href="~/TestPages/DefaultPage.cshtml">DefaultPage</a></li>
-    <li><a href="~/TestPages/ContentPAge.cshtml">ContentPage</a></li>
-    <li><a href="~/TestPages/AdvancedProject.cshtml">AdvancedProjectPage</a></li>
-    <li><a href="~/TestPages/SimpleProject.cshtml">SimpleProjectPage</a></li>
+    <li><a href="/testPages/DefaultPage">DefaultPage</a></li>
+    <li><a href="/testPages/ContentPAge">ContentPage</a></li>
+    <li><a href="/testPages/AdvancedProject">AdvancedProjectPage</a></li>
+    <li><a href="/testPages/SimpleProject">SimpleProjectPage</a></li>
 </ul>
 
 <b>Categories</b>

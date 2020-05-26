@@ -17,8 +17,8 @@
   <ItemGroup>
     <Folder Include="layouts\" />
     <Folder Include="libraries\" />
+    <Folder Include="testPages\" />
     <Folder Include="templates\" />
-    <Folder Include="subSites\" />
     <Folder Include="scripts\" />
     <Folder Include="styles\" />
   </ItemGroup>
@@ -29,21 +29,41 @@
     </Content>
     <Content Include="contact.lphp" />
     <Content Include="downloads.lphp" />
+    <Content Include="index.lphp" />
     <Content Include="more.lphp" />
+    <Content Include="project.lphp" />
     <Content Include="projects.lphp" />
     <Content Include="styles\formElements.css" />
     <Content Include="styles\formElements.min.css" />
+    <Content Include="styles\layoutAdvancedProject.css" />
+    <Content Include="styles\layoutAdvancedProject.min.css" />
+    <Content Include="styles\layoutContentPage.css" />
+    <Content Include="styles\layoutContentPage.min.css" />
+    <Content Include="styles\layoutGeneral.css" />
+    <Content Include="styles\layoutGeneral.min.css" />
+    <Content Include="styles\layoutSimpleProject.css" />
+    <Content Include="styles\layoutSimpleProject.min.css" />
+    <Content Include="styles\layoutStartPage.css" />
+    <Content Include="styles\layoutStartPage.min.css" />
+    <Content Include="styles\staggeredFade.css" />
+    <Content Include="styles\staggeredFade.min.css" />
+    <Content Include="styles\style.css" />
+    <Content Include="styles\style.min.css" />
     <Content Include="styles\textElements.css">
       <SubType>Content</SubType>
       <DependentUpon>styles\textElements.scss</DependentUpon>
     </Content>
     <Content Include="styles\textElements.min.css" />
-    <Content Include="subSites\projectDetails.lphp" />
-    <Content Include="subSites\projectsOverview.lphp" />
     <Content Include="support.lphp" />
     <Content Include="templates\_DefaultLinks.lphp" />
     <Content Include="templates\_Footer.lphp" />
     <Content Include="templates\_Menu.lphp" />
+    <Content Include="testPages\AdvancedProject.lphp" />
+    <Content Include="testPages\ContentPage.lphp" />
+    <Content Include="testPages\DefaultPage.lphp" />
+    <Content Include="testPages\FormElements.lphp" />
+    <Content Include="testPages\SimpleProject.lphp" />
+    <Content Include="testPages\TextElements.lphp" />
     <None Include="compilerconfig.json" />
     <Content Include="layouts\_Layout.lphp" />
     <Content Include="layouts\_LayoutAdvancedProject.lphp" />

@@ -1,22 +1,26 @@
-﻿@* Shared Stylesheets*@
-<link href="~/Shared/Styles/fontawesome.min.css" rel="stylesheet" />
-<link href="~/Shared/Styles/style.min.css" rel="stylesheet" />
-<link href="~/Shared/Styles/staggeredFade.min.css" rel="stylesheet" />
-<link href="~/Shared/Styles/textElements.min.css" rel="stylesheet" />
-<link href="~/Shared/Styles/formElements.min.css" rel="stylesheet" />
-<link href="~/Shared/Styles/layoutGeneral.min.css" rel="stylesheet" />
+$${
+    NoCompile = true;
+}
 
-@* External Stylesheets *@
+<!-- Shared Stylesheets -->
+<link href="/styles/fontawesome.min.css" rel="stylesheet" />
+<link href="/styles/style.min.css" rel="stylesheet" />
+<link href="/styles/staggeredFade.min.css" rel="stylesheet" />
+<link href="/styles/textElements.min.css" rel="stylesheet" />
+<link href="/styles/formElements.min.css" rel="stylesheet" />
+<link href="/styles/layoutGeneral.min.css" rel="stylesheet" />
+
+<!-- External Stylesheets -->
 
 
-@* Shared scripts *@
-<script src="~/Shared/Scripts/PageLayout.js"></script>
-<script src="~/Shared/Scripts/CommonScripts.js"></script>
+<!-- Shared scripts -->
+<script src="/scripts/PageLayout.js"></script>
+<script src="/scripts/CommonScripts.js"></script>
 
-@* External scripts *@
+<!-- External scripts -->
 
-@* Meta-Tags *@
+<!-- Meta-Tags -->
 <meta name="viewport" content="width=device-width" />
 
-@* Other *@
-<title>@Page.Title | Endev</title>
+<!-- Other -->
+<title>$$?PageTitle | Endev</title>

@@ -1,4 +1,9 @@
-﻿<script>
+$${
+    Layout = "layouts/_LayoutAdvancedProject.lphp";
+    set PageTitle = "Projects";
+}
+
+<script>
     SetProjectTitle("Mint");
     SetProjectBanner("../../Content/Projects/MintBanner1080.png");
 </script>
@@ -16,7 +21,7 @@
     </ul>
 </aside>
 
-@*TODO: Check for URL GET seleced page*@
+<!-- TODO: Check for URL GET seleced page -->
 
 <div class="projectSubpageContainer">
     <div class="projectSubpage" style="display: block;">

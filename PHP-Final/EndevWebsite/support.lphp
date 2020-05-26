@@ -1,4 +1,4 @@
-﻿@{
-    Layout = "~/Shared/Layouts/_Layout.cshtml";
-    Page.Title = "Support";
+$${
+    Layout = "layouts/_Layout.lphp";
+    set PageTitle = "Support";
 }

@@ -1,18 +1,21 @@
-﻿<!DOCTYPE html>
+$${
+    NoCompile = true; 
+}
+<!DOCTYPE html>
 <html>
 <head>
-    @RenderPage("~/Shared/Templates/_DefaultLinks.cshtml")
-    <link href="~/Shared/Styles/layoutContentPage.css" rel="stylesheet" />
+    $$RenderPage("../templates/_DefaultLinks.lphp")
+    <link href="/styles/layoutContentPage.css" rel="stylesheet" />
 </head>
 <body>
     <header>
-        <a href="~/">
+        <a href="/">
             <div class="endevLogo" id="endevLogo"></div>
             <div class="endevLogoSticky" id="endevLogoSticky"></div>
         </a>
-        @RenderPage("~/Shared/Templates/_Menu.cshtml")
+        $$RenderPage("../templates/_Menu.lphp")
     </header>
-    <main>@RenderBody()</main>
-    @RenderPage("~/Shared/Templates/_Footer.cshtml")
+    <main>$$RenderBody()</main>
+    $$RenderPage("../templates/_Footer.lphp")
 </body>
 </html>

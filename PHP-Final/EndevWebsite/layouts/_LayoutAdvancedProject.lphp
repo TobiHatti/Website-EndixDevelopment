@@ -1,26 +1,25 @@
-﻿<!DOCTYPE html>
+$${
+    NoCompile = true; 
+}
+<!DOCTYPE html>
 <html>
 <head>
-    @RenderPage("~/Shared/Templates/_DefaultLinks.cshtml")
-    <link href="~/Shared/Styles/layoutAdvancedProject.css" rel="stylesheet" />
+    $$RenderPage("../templates/_DefaultLinks.lphp")
+    <link href="/styles/layoutAdvancedProject.css" rel="stylesheet" />
 </head>
 <body>
     <header>
         <div id="headerBGImage"></div>
         <div id="bannerCover"></div>
-        <a href="~/">
+        <a href="/">
             <div class="endevLogo" id="endevLogo"></div>
             <div class="endevLogoSticky" id="endevLogoSticky"></div>
         </a>
 
-        <h1 id="headerProjectTitle">Test</h1>
-
-        @RenderPage("~/Shared/Templates/_Menu.cshtml")
-
-
-
+        <h1 id="headerProjectTitle"></h1> 
+        $$RenderPage("../templates/_Menu.lphp")
     </header>
-    <main>@RenderBody()</main>
-    @RenderPage("~/Shared/Templates/_Footer.cshtml")
+    <main>$$RenderBody()</main>
+    $$RenderPage("../templates/_Footer.lphp")
 </body>
 </html>

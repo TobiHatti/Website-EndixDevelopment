@@ -6,5 +6,33 @@
   {
     "outputFile": "styles/formElements.css",
     "inputFile": "styles/formElements.scss"
+  },
+  {
+    "outputFile": "styles/style.css",
+    "inputFile": "styles/style.scss"
+  },
+  {
+    "outputFile": "styles/staggeredFade.css",
+    "inputFile": "styles/staggeredFade.scss"
+  },
+  {
+    "outputFile": "styles/layoutStartPage.css",
+    "inputFile": "styles/layoutStartPage.scss"
+  },
+  {
+    "outputFile": "styles/layoutSimpleProject.css",
+    "inputFile": "styles/layoutSimpleProject.scss"
+  },
+  {
+    "outputFile": "styles/layoutGeneral.css",
+    "inputFile": "styles/layoutGeneral.scss"
+  },
+  {
+    "outputFile": "styles/layoutContentPage.css",
+    "inputFile": "styles/layoutContentPage.scss"
+  },
+  {
+    "outputFile": "styles/layoutAdvancedProject.css",
+    "inputFile": "styles/layoutAdvancedProject.scss"
   }
 ]
