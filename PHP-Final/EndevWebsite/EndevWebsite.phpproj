@@ -84,4 +84,7 @@
     <Content Include="styles\textElements.scss" />
     <Content Include="styles\_commonVariables.scss" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="libraries\WrapMySQL.php" />
+  </ItemGroup>
 </Project>

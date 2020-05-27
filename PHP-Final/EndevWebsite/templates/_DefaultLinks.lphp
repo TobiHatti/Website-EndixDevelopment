@@ -2,6 +2,10 @@ $${
     NoCompile = true;
 }
 
+<?php 
+include("libraries/WrapMySQL.php");
+?>
+
 <!-- Shared Stylesheets -->
 <link href="/styles/fontawesome.min.css" rel="stylesheet" />
 <link href="/styles/style.min.css" rel="stylesheet" />
