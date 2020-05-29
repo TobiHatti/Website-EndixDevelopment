@@ -17,6 +17,7 @@
   <ItemGroup>
     <Folder Include="layouts\" />
     <Folder Include="libraries\" />
+    <Folder Include="data\" />
     <Folder Include="testPages\" />
     <Folder Include="templates\" />
     <Folder Include="scripts\" />
@@ -85,6 +86,7 @@
     <Content Include="styles\_commonVariables.scss" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="data\dbConnect.php" />
     <Compile Include="libraries\WrapMySQL.php" />
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@ $${
     Layout = "layouts/_LayoutStartPage.lphp"; 
     set PageTitle = "Home";
 }
- 
+  
 <div>
     <h1>Start-Page</h1>
     <p>

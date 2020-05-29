@@ -2,13 +2,14 @@ $${
     NoCompile = true;
 }
 
-<?php 
+<?php
+include("data/dbConnect.php");
 include("libraries/WrapMySQL.php");
 ?>
 
 <!-- Shared Stylesheets -->
 <link href="/styles/fontawesome.min.css" rel="stylesheet" />
-<link href="/styles/style.min.css" rel="stylesheet" />
+<link href="/styles/style.min.css" rel="stylesheet" /> 
 <link href="/styles/staggeredFade.min.css" rel="stylesheet" />
 <link href="/styles/textElements.min.css" rel="stylesheet" />
 <link href="/styles/formElements.min.css" rel="stylesheet" />

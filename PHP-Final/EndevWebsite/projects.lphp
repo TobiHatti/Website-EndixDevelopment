@@ -3,6 +3,11 @@ $${
     set PageTitle = "Projects";
 }
 
+<?php 
+    $sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("DBPass"));
+    $sql->Open();    
+?>
+
 <div class="stagFade">
     <h1>Projects</h1>
 
@@ -67,22 +72,40 @@ $${
         </ul>
 
         <div class="browser">
-            <div class="projectTab" style="display: inline-block">
+
+            <?php
+            $first = true;    
+            foreach($sql->ExecuteQuery("SELECT * FROM projectcategories") as $row): ?>
+
+            <div class="projectTab" <?php if($first): ?>style="display: grid"<?php endif; $first = false; ?>>
+                <h4><?= $row["CategoryLongName"] ?></h4>
+
+                <?php foreach($sql->ExecuteQuery("SELECT * FROM projects WHERE CategoryID = ?", $row["ID"]) as $subRow): ?>
+
+                    <div class="projectItem">
+                        <div><img src="/content/Projects/MintBanner1080.png" /></div>
+                        <div>
+                            <h5><?= $subRow["ProjectName"] ?></h5>
+                            <?= $subRow["ProjectFlavorText"] ?>
+                        </div>
+                        <div>
+                            <a href="/project/<?= $subRow["ProjectID"] ?>">View Project</a>
+                            <a href="<?= $subRow["GithubLink"] ?>" target="_blank">Visit on GitHub</a>
+                            <a href="/download/<?= $subRow["ProjectID"] ?>">Download</a>
+                        </div>
+                    </div>
+
+                
+
+                <?php endforeach; ?>
+            </div>
+
+            <?php endforeach; ?>
+
+            <div class="projectTab">
                 <h4>Consumer Programs</h4>
 
-                <div class="projectItem">
-                    <div><img src="/content/Projects/MintBanner1080.png" /></div>
-                    <div>
-                        <h5>Mint</h5>
-                        Mint is a Multi-Platform virtual assistant, that adapts to your actions and habits!
-                    </div>
-                    <div>
-                        <a href="/project?project=2">View Project</a>
-                        <a href="#/">Visit on GitHub</a>
-                        <a href="#/">Download</a>
-                    </div>
-                </div>
-
+                
                 <div class="projectItem">
                     <div><img src="/content/Projects/MintBanner1080.png" /></div>
                     <div>Description</div>
@@ -94,25 +117,8 @@ $${
                 </div>
 
             </div>
-            <div class="projectTab">
-                <h4>Tools for Developers</h4>
-
-            </div>
-            <div class="projectTab">
-                <h4>Tools for IT-Specialists</h4>
-            </div>
-            <div class="projectTab">
-                <h4>Tools for Enterprices</h4>
-            </div>
-            <div class="projectTab">
-                <h4>IoT Devices and embeded systems</h4>
-            </div>
-            <div class="projectTab">
-                <h4>Games</h4>
-            </div>
-            <div class="projectTab">
-                <h4>Libraries</h4>
-            </div>
         </div>
     </div>
 </div>
+
+<?php $sql->Close(); ?>

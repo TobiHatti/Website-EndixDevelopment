@@ -3,10 +3,7 @@ $${
     set PageTitle = "Projects";
 }
 
-<script>
-    SetProjectTitle("Mint");
-    SetProjectBanner("../../Content/Projects/MintBanner1080.png");
-</script>
+
 
 <aside>
     <ul>
@@ -20,6 +17,11 @@ $${
         <li onclick="SelectProjectPage(7, 2)"><i class="fas fa-file-alt"></i> Licence</li>
     </ul>
 </aside>
+
+<script>
+    SetProjectTitle("Mint");
+    SetProjectBanner("../../Content/Projects/MintBanner1080.png");
+</script>
 
 <!-- TODO: Check for URL GET seleced page -->
 
