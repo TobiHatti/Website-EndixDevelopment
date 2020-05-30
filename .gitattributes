@@ -1,5 +1,2 @@
-*.html.php linguist-language=HTML+PHP
-*.html.lphp linguist-language=HTML+PHP
-
-*.php linguist-language=PHP
-*.lphp linguist-language=PHP
+*.php linguist-language=HTML+PHP
+*.lphp linguist-language=HTML+PHP
