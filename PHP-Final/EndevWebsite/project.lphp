@@ -20,7 +20,7 @@ $${
 
 <script>
     SetProjectTitle("Mint");
-    SetProjectBanner("../../Content/Projects/MintBanner1080.png");
+    SetProjectBanner("/content/projects/Mint/MintBanner1080.png");
 </script>
 
 <!-- TODO: Check for URL GET seleced page -->

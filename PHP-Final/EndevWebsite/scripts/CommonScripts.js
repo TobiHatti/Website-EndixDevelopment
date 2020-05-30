@@ -4,6 +4,11 @@
     {
         if (i == tabPage) document.getElementsByClassName("projectTab")[i].style.display = "grid";
         else document.getElementsByClassName("projectTab")[i].style.display = "none";
+
+        var subpageItemCount = document.getElementsByClassName("projectTab")[tabPage].childElementCount - 1;
+
+
+        document.getElementsByClassName("projectBrowser")[0].style.height = (100 + 131 * subpageItemCount) + "px"; 
     }
 }
 

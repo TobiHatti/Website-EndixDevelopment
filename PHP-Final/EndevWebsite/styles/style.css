@@ -137,7 +137,8 @@
   height: auto;
   min-height: 500px;
   width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  transition: all 0.5s ease-in-out; }
   .projectBrowser ul {
     grid-area: projectMenu;
     margin: 15px 0;
@@ -180,7 +181,8 @@
       width: 100%;
       transition: all 0.1s ease-in-out; }
   .projectBrowser div.browser {
-    grid-area: projectBrowser; }
+    grid-area: projectBrowser;
+    align-self: start; }
     .projectBrowser div.browser .projectTab {
       display: none;
       vertical-align: top;

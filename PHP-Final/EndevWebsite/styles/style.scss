@@ -183,6 +183,8 @@
     width: 100%;
     overflow: hidden;
 
+    transition: all 0.5s ease-in-out;
+
     ul {
         grid-area: projectMenu;
         margin: 15px 0;
@@ -240,6 +242,7 @@
 
     div.browser {
         grid-area: projectBrowser;
+        align-self: start;
 
         .projectTab {
             display: none;
@@ -309,6 +312,7 @@
                     grid-area: projectLinks;
                     vertical-align: middle;
                     text-align: center;
+
                     a {
                         text-decoration: none;
                         line-height: 30px;
