@@ -50,7 +50,7 @@ $${
     <div class="projectSubpage">
         <h1>Readme (GitHub)</h1>
         <div class="githubReadmeContainer">
-            Insert ReadMe Here
+            <iframe src="https://github.com/TobiHatti/Surgit-Network-Manager/blob/master/README.md"></iframe>
         </div>
     </div>
 
