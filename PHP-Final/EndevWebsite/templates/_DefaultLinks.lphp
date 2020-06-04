@@ -5,6 +5,7 @@ $${
 <?php
 include("data/dbConnect.php");
 include("libraries/WrapMySQL.php");
+include("libraries/Parsedown.php");
 ?>
 
 <!-- Shared Stylesheets -->

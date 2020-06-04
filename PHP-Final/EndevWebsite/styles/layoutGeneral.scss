@@ -56,8 +56,14 @@ header {
         text-align: center;
         color: white;
         top: 30vh;
-        font-size: 120pt;
+        font-size: 15vw;
         text-shadow: 0px 0px 30px black;
+    }
+
+    @media screen and (min-width: 1200px) {
+        h1 {
+            font-size: 150pt;
+        }
     }
 
     div#headerBGImage {
@@ -69,8 +75,6 @@ header {
         background-attachment: fixed;
         background-position-y: -10vh;
         background-size: cover;
-        
-
     }
 
     div#bannerCover {
@@ -96,7 +100,7 @@ header {
             height: $defaultLogoHeight;
             width: $defaultLogoHeight * $fullLogoDimensionRatio;
             background-size: auto $defaultLogoHeight;
-            background-image: url("../../Content/EndevBanner.png");
+            background-image: url("../../content/EndevBanner.png");
         }
 
         @media only screen and (max-width: $navBreakpoint1) {
@@ -105,7 +109,7 @@ header {
             height: #{$defaultNavHeight - 10px};
             width: #{$defaultNavHeight - 10px};
             background-size: auto #{$defaultNavHeight - 10px};
-            background-image: url("../../Content/EndevBannerLogoOnly.png");
+            background-image: url("../../content/EndevBannerLogoOnly.png");
             z-index: 121;
         }
 
@@ -115,7 +119,7 @@ header {
             height: #{$defaultNavHeight - 10px};
             width: $defaultNavHeight * $fullLogoDimensionRatio;
             background-size: auto #{$defaultNavHeight - 10px};
-            background-image: url("../../Content/EndevBanner.png");
+            background-image: url("../../content/EndevBanner.png");
             z-index: 121;
         }
     }
@@ -135,17 +139,17 @@ header {
         z-index: 121;
 
         @media only screen and (min-width: $navBreakpoint1) {
-            background-image: url("../../Content/EndevBanner.png");
+            background-image: url("../../content/EndevBanner.png");
             width: 120px;
         }
 
         @media only screen and (max-width: $navBreakpoint1) {
-            background-image: url("../../Content/EndevBannerLogoOnly.png");
+            background-image: url("../../content/EndevBannerLogoOnly.png");
             width: 40px;
         }
 
         @media only screen and (max-width: $navBreakpoint2) {
-            background-image: url("../../Content/EndevBanner.png");
+            background-image: url("../../content/EndevBanner.png");
             width: 120px;
         }
     }
@@ -364,15 +368,10 @@ footer {
 }
 
 aside {
-    position: absolute;
-    width: 200px;
-    min-height: 200px;
-    border: 1px solid #aaa;
-    border-radius: 20px;
-    left: 10px;
-    margin-top: 20vh;
-    box-sizing: border-box;
-    transition: top 0.005s linear;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: top 0.005s linear, width 0.3s ease-in-out;
+
 
     ul {
         padding: 0;
@@ -384,9 +383,14 @@ aside {
             list-style: none;
             margin: 25px 20px;
 
+            span {
+                transition: all 0.2s ease-in-out;
+            }
+
             i {
                 width: 20px;
                 color: orangered;
+                transition: all 0.1s ease-in-out;
             }
         }
 
@@ -405,16 +409,82 @@ aside {
             transition: all 0.5s ease-in-out;
         }
 
-        li:hover {
-            margin-left: 30px;
-            margin-right: 0;
-            transition: all 0.1s ease-in-out;
-            color: rgba(19,5,175,1);
-        }
+        
+    }
+}
 
-        li:hover::before {
-            width: 100%;
-            transition: all 0.1s ease-in-out;
+$asideBreakpoint : 1100px;
+
+@media only screen and (min-width: $asideBreakpoint) {
+    aside {
+        position: absolute;
+        width: 200px;
+        min-height: 200px;
+        border: 1px solid #aaa;
+        border-radius: 20px;
+        left: 10px;
+        margin-top: 20vh;
+        box-sizing: border-box;
+
+        ul {
+            li {
+                span {
+                    opacity: 1;
+                }
+            }
+
+            li:hover {
+                margin-left: 30px;
+                margin-right: 0;
+                transition: all 0.1s ease-in-out;
+                color: rgba(19,5,175,1);
+            }
+
+            li:hover::before {
+                width: 100%;
+                transition: all 0.1s ease-in-out;
+            }
         }
     }
 }
+
+@media only screen and (max-width: $asideBreakpoint) {
+    aside {
+        position: absolute;
+        width: 50px;
+        min-height: 200px;
+        border: 1px solid #aaa;
+        border-radius: 20px;
+        left: 10px;
+        margin-top: 20vh;
+        box-sizing: border-box;
+
+
+        ul {
+            li {
+                margin: 20px 10px;
+
+                span {
+                    opacity: 0;
+                }
+
+                i {
+                    font-size: 20pt;
+                }
+            }
+
+            li::before {
+                position: absolute;
+                left: 0px;
+                bottom: -8px;
+                height: 2px;
+            }
+
+            li:hover::before {
+                width: 100%;
+                transition: all 0.1s ease-in-out;
+            }
+        }
+    }
+}
+

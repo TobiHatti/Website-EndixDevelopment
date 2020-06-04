@@ -4,14 +4,14 @@ class WrapMySQL
 {
     private $pdo;
 
-    private string $dbHostname = "";
-    private string $dbDatabase = "";
-    private string $dbUsername = "";
-    private string $dbPassword = "";
+    private $dbHostname = "";
+    private $dbDatabase = "";
+    private $dbUsername = "";
+    private $dbPassword = "";
 
-    private bool $isPersistent = true;
+    private $isPersistent = true;
 
-    private bool $isOpen = false;
+    private $isOpen = false;
 
     // Creates a new SQL-Wrapper object.
     public function __construct(string $hostname, string $database, string $username, string $password, bool $persistentConnection = true)
@@ -104,4 +104,5 @@ class WrapMySQL
         $stmt->execute($parameters);
         return $stmt->fetchColumn();
     }
+
 }

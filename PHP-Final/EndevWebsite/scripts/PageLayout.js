@@ -47,9 +47,9 @@ function SetPageLayout() {
     try {
         // Header-BG-Image Manipulation
         var blurFactor = window.scrollY / 25;
-        var transparencyFactor = window.scrollY / 750 + 0.1;
+        var transparencyFactor = window.scrollY / 750 + 0.5;
 
-        if (transparencyFactor > 0.6) transparencyFactor = 0.6;
+        if (transparencyFactor > 0.7) transparencyFactor = 0.7;
         document.getElementById("bannerCover").style.opacity = transparencyFactor;
 
         if (blurFactor > 50) blurFactor = 50;

@@ -12,6 +12,8 @@ RewriteCond %{REQUEST_FILENAME} !-f
 #         URL Rewrites        #
 ###############################
 
+RewriteRule ^project/([a-zA-Z0-9-]+) project.php?projectID=$1 [NC,QSA,L]
+RewriteRule ^download/([a-zA-Z0-9-]+) download.php?projectID=$1 [NC,QSA,L]
 
 #Ignore .php-Extension
 RewriteRule ^([^\.]+)$ $1.php [NC,L]

@@ -1,68 +1,154 @@
 $${
+    // Test
     Layout = "layouts/_LayoutAdvancedProject.lphp";
-    set PageTitle = "Projects";
+    set PageTitle = "Projects"; // Test No 2
 }
 
+<?php
+// Check if project-id is set, otherwise return to projects.php
+if(isset($_GET['projectID'])) $projectID =$_GET['projectID'];
+else
+{
+    header("Location: /projects");
+    die();
+}
 
+$sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("DBPass"));
+$sql->Open();
+
+$test = "http://test-to-page";
+
+// Check if project-id is set, otherwise return to projects.php
+$project = $sql->ExecuteQuery("SELECT * FROM projects WHERE ProjectID = ?", $projectID);
+if(count($project) == 0)
+{
+    header("Location: /projects");
+    die();
+}
+else $project = $project[0];
+?>
 
 <aside>
     <ul>
-        <li onclick="SelectProjectPage(0, 2)"><i class="fas fa-home"></i> Overview</li>
-        <li onclick="SelectProjectPage(1, 2)"><i class="fas fa-headset"></i> Support &amp; FAQ</li>
-        <li onclick="SelectProjectPage(2, 2)"><i class="fas fa-exclamation-circle"></i> Issues</li>
-        <li onclick="SelectProjectPage(3, 2)"><i class="fas fa-download"></i> Downloads</li>
-        <li onclick="SelectProjectPage(4, 2)"><i class="fas fa-history"></i> Version History</li>
-        <li onclick="SelectProjectPage(5, 2)"><i class="fas fa-book-reader"></i> Readme</li>
-        <li onclick="SelectProjectPage(6, 2)"><i class="fas fa-cogs"></i> Tech. Information</li>
-        <li onclick="SelectProjectPage(7, 2)"><i class="fas fa-file-alt"></i> Licence</li>
+        <li onclick="SelectProjectPage(0)"><i class="fas fa-home"></i> <span>Overview</span></li>
+        <li onclick="SelectProjectPage(1)"><i class="fas fa-headset"></i> <span>Support &amp; FAQ</span></li>
+        <li onclick="SelectProjectPage(2)"><i class="fas fa-exclamation-circle"></i> <span>Issues</span></li>
+        <li onclick="SelectProjectPage(3)"><i class="fas fa-download"></i> <span>Downloads</span></li>
+        <li onclick="SelectProjectPage(4)"><i class="fas fa-history"></i> <span>Version History</span></li>
+        <li onclick="SelectProjectPage(5)"><i class="fas fa-book-reader"></i> <span>Readme</span></li>
+        <li onclick="SelectProjectPage(6)"><i class="fas fa-cogs"></i> <span>Tech. Information</span></li>
+        <li onclick="SelectProjectPage(7)"><i class="fas fa-file-alt"></i> <span>Licence</span></li>
     </ul>
 </aside>
 
 <script>
-    SetProjectTitle("Mint");
-    SetProjectBanner("/content/projects/Mint/MintBanner1080.png");
+    SetProjectTitle("<?= $project["ProjectNameShort"]?>");
+    SetProjectBanner("<?= $project["ProjectBanner"]?>");
 </script>
 
-<!-- TODO: Check for URL GET seleced page -->
+<?php 
 
+function TabPageSelected($tabIndex, $isDefaultTab = false)
+{
+    if(isset($_GET['page']) AND $_GET['page'] >= 0 AND $_GET['page'] <= 7)
+    {
+        if($_GET['page'] == $tabIndex) return "block";
+        else return "none";
+    }
+    else if($isDefaultTab) return "block";
+    else return "none";
+}
+
+function GetGithubRawFromGithubProject($githubLink)
+{
+    return str_replace("https://github.com/", "https://raw.githubusercontent.com/", $githubLink);
+}
+
+?>
+
+
+<h1><?= $project["ProjectName"]?> </h1>
+<hr />
 <div class="projectSubpageContainer">
-    <div class="projectSubpage" style="display: block;">
+
+
+    <div class="projectSubpage" style="display: <?= TabPageSelected(0, true) ?>">
         <h1>Overview</h1>
-        
+        <?= $project["ProjectDescription"] ?>
     </div>
 
-    <div class="projectSubpage">
+
+
+    <div class="projectSubpage" style="display: <?= TabPageSelected(1) ?>">
         <h1>Support &amp; FAQ</h1>
     </div>
 
-    <div class="projectSubpage">
+
+
+    <div class="projectSubpage" style="display: <?= TabPageSelected(2) ?>">
         <h1>Issues</h1>
     </div>
 
-    <div class="projectSubpage">
+
+
+    <div class="projectSubpage" style="display: <?= TabPageSelected(3) ?>">
         <h1>Downloads</h1>
     </div>
 
-    <div class="projectSubpage">
+
+
+    <div class="projectSubpage" style="display: <?= TabPageSelected(4) ?>">
         <h1>Version History</h1>
+
+
+        <?php 
+
+
+        $curl = curl_init();
+        curl_setopt_array($curl, [
+        CURLOPT_RETURNTRANSFER => 1,
+        CURLOPT_URL => 'https://api.github.com/repos/TobiHatti/Surgit-Network-Manager/releases',
+        CURLOPT_USERAGENT => 'Endev-Web Github API Link'
+        ]);
+
+        $response = curl_exec($curl);
+
+        foreach(json_decode($response) as $release)
+        {
+            echo $release->url; 
+            var_dump($release);
+            echo '====================================<br>';
+        }
+        ?>
+
     </div>
 
-    <div class="projectSubpage">
+
+
+    <div class="projectSubpage" style="display: <?= TabPageSelected(5) ?>">
         <h1>Readme (GitHub)</h1>
-        <div class="githubReadmeContainer">
-            <iframe src="https://github.com/TobiHatti/Surgit-Network-Manager/blob/master/README.md"></iframe>
-        </div>
+        <x-md>
+            <?php 
+            $parsedown = new Parsedown();
+            $parsedown->setSafeMode(true);
+            echo $parsedown->text(file_get_contents(GetGithubRawFromGithubProject($project["GithubLink"])."/master/README.md"));
+            ?>
+        </x-md>
     </div>
 
-    <div class="projectSubpage">
+
+
+    <div class="projectSubpage" style="display: <?= TabPageSelected(6) ?>">
         <h1>Technical Information</h1>
     </div>
 
-    <div class="projectSubpage">
+    
+
+
+
+    <div class="projectSubpage" style="display: <?= TabPageSelected(7) ?>">
         <h1>Licence</h1>
-        <div class="githubLicenceContainer">
-            Insert Licence Here
-        </div>
+        <?= nl2br(htmlspecialchars(file_get_contents(GetGithubRawFromGithubProject($project["GithubLink"])."/master/LICENSE"))) ?>
     </div>
 </div>
 

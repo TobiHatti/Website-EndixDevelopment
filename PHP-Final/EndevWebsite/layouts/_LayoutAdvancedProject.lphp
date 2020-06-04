@@ -8,15 +8,18 @@ $${
     <link href="/styles/layoutAdvancedProject.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
+    <header style="overflow: hidden;">
         <div id="headerBGImage"></div>
-        <div id="bannerCover"></div>
+        <div id="bannerCover" style="opacity: 0.5">
+            
+        </div>
+        <h1 id="headerProjectTitle"></h1> 
         <a href="/">
             <div class="endevLogo" id="endevLogo"></div>
             <div class="endevLogoSticky" id="endevLogoSticky"></div>
         </a>
 
-        <h1 id="headerProjectTitle"></h1> 
+        
         $$RenderPage("../templates/_Menu.lphp")
     </header>
     <main>$$RenderBody()</main>

@@ -63,6 +63,7 @@
             display: block;
             width: 100%;
             transition: all 0.5s ease-in-out;
+            image-rendering: optimizeQuality;
         }
 
         span {
@@ -405,37 +406,4 @@
 
 .projectSubpage{
     display: none;
-}
-
-.githubReadmeContainer, .githubLicenceContainer {
-    display: block;
-    border: 2px solid #aaa;
-    border-radius: 25px;
-    width: 80%;
-    margin: auto;
-    padding: 8px;
-    box-sizing: border-box;
-    min-height: 500px;
-}
-
-.githubReadmeContainer:before, .githubLicenceContainer:before {
-    display: block;
-    background-color: #aaa;
-    margin: -8px;
-    padding-right: 15px;
-    text-align: right;
-    margin-bottom: 15px;
-    border-radius: 25px 25px 0 0;
-    box-sizing: border-box;
-    font-weight: bold;
-    color: #666;
-    line-height: 20px;
-}
-
-.githubReadmeContainer:before {
-    content: "README.md";
-}
-
-.githubLicenceContainer:before {
-    content: "LICENCE";
 }

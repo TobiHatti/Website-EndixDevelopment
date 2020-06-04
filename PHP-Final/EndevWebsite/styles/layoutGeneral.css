@@ -38,8 +38,11 @@ header {
     text-align: center;
     color: white;
     top: 30vh;
-    font-size: 120pt;
+    font-size: 15vw;
     text-shadow: 0px 0px 30px black; }
+  @media screen and (min-width: 1200px) {
+    header h1 {
+      font-size: 150pt; } }
   header div#headerBGImage {
     overflow: hidden;
     display: none;
@@ -70,7 +73,7 @@ header {
         height: 100px;
         width: 290px;
         background-size: auto 100px;
-        background-image: url("../../Content/EndevBanner.png"); } }
+        background-image: url("../../content/EndevBanner.png"); } }
     @media only screen and (max-width: 1140px) {
       header div.endevLogo {
         left: 20px;
@@ -78,7 +81,7 @@ header {
         height: 40px;
         width: 40px;
         background-size: auto 40px;
-        background-image: url("../../Content/EndevBannerLogoOnly.png");
+        background-image: url("../../content/EndevBannerLogoOnly.png");
         z-index: 121; } }
     @media only screen and (max-width: 690px) {
       header div.endevLogo {
@@ -87,7 +90,7 @@ header {
         height: 40px;
         width: 145px;
         background-size: auto 40px;
-        background-image: url("../../Content/EndevBanner.png");
+        background-image: url("../../content/EndevBanner.png");
         z-index: 121; } }
   header div.endevLogoSticky {
     position: fixed;
@@ -104,15 +107,15 @@ header {
     z-index: 121; }
     @media only screen and (min-width: 1140px) {
       header div.endevLogoSticky {
-        background-image: url("../../Content/EndevBanner.png");
+        background-image: url("../../content/EndevBanner.png");
         width: 120px; } }
     @media only screen and (max-width: 1140px) {
       header div.endevLogoSticky {
-        background-image: url("../../Content/EndevBannerLogoOnly.png");
+        background-image: url("../../content/EndevBannerLogoOnly.png");
         width: 40px; } }
     @media only screen and (max-width: 690px) {
       header div.endevLogoSticky {
-        background-image: url("../../Content/EndevBanner.png");
+        background-image: url("../../content/EndevBanner.png");
         width: 120px; } }
 
 @keyframes endevLogoFadeIn {
@@ -260,15 +263,9 @@ footer {
   z-index: 90; }
 
 aside {
-  position: absolute;
-  width: 200px;
-  min-height: 200px;
-  border: 1px solid #aaa;
-  border-radius: 20px;
-  left: 10px;
-  margin-top: 20vh;
-  box-sizing: border-box;
-  transition: top 0.005s linear; }
+  white-space: nowrap;
+  overflow: hidden;
+  transition: top 0.005s linear, width 0.3s ease-in-out; }
   aside ul {
     padding: 0; }
     aside ul li {
@@ -277,9 +274,12 @@ aside {
       cursor: pointer;
       list-style: none;
       margin: 25px 20px; }
+      aside ul li span {
+        transition: all 0.2s ease-in-out; }
       aside ul li i {
         width: 20px;
-        color: orangered; }
+        color: orangered;
+        transition: all 0.1s ease-in-out; }
     aside ul li::before {
       position: absolute;
       left: -15px;
@@ -293,6 +293,19 @@ aside {
       background: -webkit-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
       background: linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
       transition: all 0.5s ease-in-out; }
+
+@media only screen and (min-width: 1100px) {
+  aside {
+    position: absolute;
+    width: 200px;
+    min-height: 200px;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+    left: 10px;
+    margin-top: 20vh;
+    box-sizing: border-box; }
+    aside ul li span {
+      opacity: 1; }
     aside ul li:hover {
       margin-left: 30px;
       margin-right: 0;
@@ -300,4 +313,29 @@ aside {
       color: #1305af; }
     aside ul li:hover::before {
       width: 100%;
-      transition: all 0.1s ease-in-out; }
+      transition: all 0.1s ease-in-out; } }
+
+@media only screen and (max-width: 1100px) {
+  aside {
+    position: absolute;
+    width: 50px;
+    min-height: 200px;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+    left: 10px;
+    margin-top: 20vh;
+    box-sizing: border-box; }
+    aside ul li {
+      margin: 20px 10px; }
+      aside ul li span {
+        opacity: 0; }
+      aside ul li i {
+        font-size: 20pt; }
+    aside ul li::before {
+      position: absolute;
+      left: 0px;
+      bottom: -8px;
+      height: 2px; }
+    aside ul li:hover::before {
+      width: 100%;
+      transition: all 0.1s ease-in-out; } }

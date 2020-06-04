@@ -5,16 +5,17 @@
         if (i == tabPage) document.getElementsByClassName("projectTab")[i].style.display = "grid";
         else document.getElementsByClassName("projectTab")[i].style.display = "none";
 
+        /*
+         * Does not work for mobile view
         var subpageItemCount = document.getElementsByClassName("projectTab")[tabPage].childElementCount - 1;
-
-
         document.getElementsByClassName("projectBrowser")[0].style.height = (100 + 131 * subpageItemCount) + "px"; 
+        */
     }
 }
 
-function SelectProjectPage(tabPage, projectID)
+function SelectProjectPage(tabPage)
 {
-    window.history.pushState('subpage' + tabPage, 'Projects | Endev', "?project=" + projectID +  "&page=" + tabPage);
+    window.history.pushState('subpage' + tabPage, 'Projects | Endev', "?page=" + tabPage);
 
     for (var i = 0; i < document.getElementsByClassName("projectSubpage").length; i++) {
         if (i == tabPage) document.getElementsByClassName("projectSubpage")[i].style.display = "block";
