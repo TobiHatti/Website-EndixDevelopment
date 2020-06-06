@@ -4,7 +4,7 @@ x-md a {
   color: black; }
   x-md a h1::before, x-md a h2::before, x-md a h3::before, x-md a h4::before, x-md a h5::before, x-md a h6::before {
     content: "🔗";
-    font-size: 15pt;
+    font-size: 0.8em;
     visibility: visible;
     opacity: 0;
     transition: opacity 0.4s ease-in-out; }
@@ -16,15 +16,30 @@ x-md a:hover {
     transition: opacity 0.1s ease-in-out; }
 
 x-md h1, x-md h2, x-md h3, x-md h4, x-md h5, x-md h6 {
-  font-weight: lighter;
+  font-weight: 600;
   margin: 5px;
-  text-align: left;
-  border-bottom: 1px solid #aaa; }
+  text-align: left; }
 
-x-md h1::before, x-md h2::before, x-md h3::before, x-md h4::before, x-md h5::before, x-md h6::before {
-  content: "🟦";
-  font-size: 15pt;
-  visibility: hidden; }
+x-md h1, x-md h2 {
+  border-bottom: 1px solid #ccc; }
+
+x-md h1 {
+  font-size: 2em; }
+
+x-md h2 {
+  font-size: 1.5em; }
+
+x-md h3 {
+  font-size: 1.25em; }
+
+x-md h4 {
+  font-size: 1em; }
+
+x-md h5 {
+  font-size: .875em; }
+
+x-md h6 {
+  font-size: .85em; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: lighter;

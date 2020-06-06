@@ -407,3 +407,142 @@
 .projectSubpage{
     display: none;
 }
+
+
+
+.versionBox {
+    display: grid;
+    grid-template-columns: 110px auto;
+    grid-template-rows: 1fr;
+    grid-template-areas: "tagInfo generalInfo";
+    width: 100%;
+    height: auto;
+
+    div.tagInfo {
+        grid-area: tagInfo;
+        padding: 10px 5px;
+        box-sizing: border-box;
+        border-right: 2px solid #ccc;
+
+        span {
+            margin: 5px 5px;
+        }
+
+        span.release, span.prerelease {
+            border-radius: 3px;
+            box-sizing: border-box;
+            padding: 1px 2px;
+            text-align: center;
+            width: auto;
+        }
+
+        span.release {
+            color: limegreen;
+            border: 1px solid limegreen;
+        }
+
+        span.prerelease {
+            color: darkorange;
+            border: 1px solid darkorange;
+        }
+
+        span.tag {
+            display: block;
+            color: #555;
+        }
+
+        span.commit {
+            display: block;
+            color: #555;
+        }
+    }
+
+    div.generalInfo {
+        grid-area: generalInfo;
+        padding: 5px;
+        box-sizing: border-box;
+        margin: 0 0 50px 0;
+
+        a {
+            text-decoration: none;
+
+            b {
+                display: block;
+                font-size: 25pt;
+                font-weight: lighter;
+                color: royalblue;
+            }
+
+            b:hover{
+                text-decoration: underline;
+            }
+        }
+
+        span {
+            display: block;
+            color: #555;
+            font-weight: lighter;
+        }
+
+        a.githubBtn {
+            background-color: white;
+            border: 1px solid #222;
+            border-radius: 3px;
+            margin: 8px auto;
+            display: block;
+            width: 150px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 12pt;
+            transition: all 0.3s ease-in-out;
+        }
+
+        a.githubBtn:hover {
+            color: royalblue;
+            border-color: royalblue;
+            transition: all 0.1s ease-in-out;
+            cursor: pointer;
+        }
+
+        a.githubBtn:visited {
+            color: #222;
+        }
+
+        strong {
+            margin: 8px;
+        }
+
+        ul.assets {
+            margin: 0;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 0;
+
+            li {
+                list-style: none;
+                line-height: 20px;
+                padding: 6px 15px;
+
+                a {
+                    text-decoration: none;
+                    color: royalblue;
+                    transition: color 0.3s ease-in-out;
+                }
+
+                a:hover {
+                    color: darkorange;
+                    transition: color 0.1s ease-in-out;
+                }
+            }
+
+            li:nth-child(even) {
+                background: #eee;
+            }
+        }
+
+        hr {
+            border: 1px solid #ccc;
+        }
+    }
+}

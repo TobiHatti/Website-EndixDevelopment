@@ -27,7 +27,7 @@ $${
             </span>
             <x-pnav>
                 <a href="/project/<?= $project["ProjectID"]?>">View Project</a>
-                <a href="<?= $project["GithubLink"] ?>">Visit on GitHub</a>
+                <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>">Visit on GitHub</a>
                 <a href="/download/<?= $project["ProjectID"] ?>">Download</a>
             </x-pnav>
         </label>
@@ -68,7 +68,7 @@ $${
                         </div>
                         <div>
                             <a href="/project/<?= $subRow["ProjectID"] ?>">View Project</a>
-                            <a href="<?= $subRow["GithubLink"] ?>" target="_blank">Visit on GitHub</a>
+                            <a href="https://github.com/TobiHatti/<?= $subRow["GithubID"] ?>" target="_blank">Visit on GitHub</a>
                             <a href="/download/<?= $subRow["ProjectID"] ?>">Download</a>
                         </div>
                     </div>

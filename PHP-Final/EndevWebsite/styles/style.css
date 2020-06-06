@@ -290,3 +290,95 @@
 
 .projectSubpage {
   display: none; }
+
+.versionBox {
+  display: grid;
+  grid-template-columns: 110px auto;
+  grid-template-rows: 1fr;
+  grid-template-areas: "tagInfo generalInfo";
+  width: 100%;
+  height: auto; }
+  .versionBox div.tagInfo {
+    grid-area: tagInfo;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    border-right: 2px solid #ccc; }
+    .versionBox div.tagInfo span {
+      margin: 5px 5px; }
+    .versionBox div.tagInfo span.release, .versionBox div.tagInfo span.prerelease {
+      border-radius: 3px;
+      box-sizing: border-box;
+      padding: 1px 2px;
+      text-align: center;
+      width: auto; }
+    .versionBox div.tagInfo span.release {
+      color: limegreen;
+      border: 1px solid limegreen; }
+    .versionBox div.tagInfo span.prerelease {
+      color: darkorange;
+      border: 1px solid darkorange; }
+    .versionBox div.tagInfo span.tag {
+      display: block;
+      color: #555; }
+    .versionBox div.tagInfo span.commit {
+      display: block;
+      color: #555; }
+  .versionBox div.generalInfo {
+    grid-area: generalInfo;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 0 0 50px 0; }
+    .versionBox div.generalInfo a {
+      text-decoration: none; }
+      .versionBox div.generalInfo a b {
+        display: block;
+        font-size: 25pt;
+        font-weight: lighter;
+        color: royalblue; }
+      .versionBox div.generalInfo a b:hover {
+        text-decoration: underline; }
+    .versionBox div.generalInfo span {
+      display: block;
+      color: #555;
+      font-weight: lighter; }
+    .versionBox div.generalInfo a.githubBtn {
+      background-color: white;
+      border: 1px solid #222;
+      border-radius: 3px;
+      margin: 8px auto;
+      display: block;
+      width: 150px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 12pt;
+      transition: all 0.3s ease-in-out; }
+    .versionBox div.generalInfo a.githubBtn:hover {
+      color: royalblue;
+      border-color: royalblue;
+      transition: all 0.1s ease-in-out;
+      cursor: pointer; }
+    .versionBox div.generalInfo a.githubBtn:visited {
+      color: #222; }
+    .versionBox div.generalInfo strong {
+      margin: 8px; }
+    .versionBox div.generalInfo ul.assets {
+      margin: 0;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 0; }
+      .versionBox div.generalInfo ul.assets li {
+        list-style: none;
+        line-height: 20px;
+        padding: 6px 15px; }
+        .versionBox div.generalInfo ul.assets li a {
+          text-decoration: none;
+          color: royalblue;
+          transition: color 0.3s ease-in-out; }
+        .versionBox div.generalInfo ul.assets li a:hover {
+          color: darkorange;
+          transition: color 0.1s ease-in-out; }
+      .versionBox div.generalInfo ul.assets li:nth-child(even) {
+        background: #eee; }
+    .versionBox div.generalInfo hr {
+      border: 1px solid #ccc; }
