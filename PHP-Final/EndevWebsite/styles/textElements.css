@@ -18,10 +18,16 @@ x-md a:hover {
 x-md h1, x-md h2, x-md h3, x-md h4, x-md h5, x-md h6 {
   font-weight: 600;
   margin: 5px;
-  text-align: left; }
+  text-align: left;
+  padding-bottom: .3em;
+  margin-top: 24px;
+  margin-bottom: 16px; }
 
 x-md h1, x-md h2 {
-  border-bottom: 1px solid #ccc; }
+  border-bottom: 1px solid #eaecef; }
+
+x-md x-md > :first-child {
+  margin-top: 0 !important; }
 
 x-md h1 {
   font-size: 2em; }

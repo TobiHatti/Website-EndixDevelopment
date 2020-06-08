@@ -192,7 +192,7 @@ function TabPageSelected($tabIndex, $isDefaultTab = false)
                         preg_match('/https?\:\/\/[\S\s]*?(?=\")/', $line, $httpLink);
                         if(count($httpLink) > 0)
                         {
-                            $rawFileContent = str_replace($line, '<img align="right" width="80" height="80" src="'.$line[0].'">', $rawFileContent);
+                            $rawFileContent = str_replace($line, '<img align="right" width="80" height="80" src="'.$httpLink[0].'">', $rawFileContent);
                         }
                         else $rawFileContent = str_replace($line, '', $rawFileContent);
                     }
