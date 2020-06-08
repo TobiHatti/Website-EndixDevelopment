@@ -1,4 +1,6 @@
-﻿* {
+﻿@import 'commonVariables';
+
+* {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: smooth;
 }
@@ -534,6 +536,13 @@
                     color: darkorange;
                     transition: color 0.1s ease-in-out;
                 }
+
+                em{
+                    float: right;
+                    font-style: normal;
+                    color: #555;
+                    font-size: 9pt;
+                }
             }
 
             li:nth-child(even) {
@@ -543,6 +552,271 @@
 
         hr {
             border: 1px solid #ccc;
+        }
+    }
+}
+
+.downloadLatestPrerelease, .downloadLatestRelease {
+    position: relative;
+    border: none;
+    border-bottom: 8px solid;
+    width: 40%;
+    max-width: 500px;
+    min-width: 300px;
+    padding: 5px;
+    padding-left: 70px;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 30pt;
+    color: #fff;
+    text-shadow: 0px 3px 4px #000;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+    div {
+
+        span {
+            margin: 10px 0;
+            display: block;
+            font-size: 20pt;
+        }
+
+        pre {
+            margin: 5px 0;
+            display: block;
+            font-size: 8pt;
+            font-family: monospace;
+            text-shadow: none;
+        }
+    }
+
+    i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0px;
+        width: 80px;
+        height: 100%;
+        font-size: 45pt;
+        line-height: 100px;
+        padding: 30px 0;
+        box-sizing: border-box;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+@keyframes download_bounce{
+    0%{
+        line-height: 100px;
+    }
+
+    15% {
+        line-height: 80px;
+    }
+
+    45% {
+        line-height: 150px;
+    }
+
+    75% {
+        line-height: 80px;
+    }
+
+    95% {
+        line-height: 100px;
+    }
+
+
+    100% {
+        line-height: 100px;
+    }
+}
+
+.downloadLatestPrerelease:hover, .downloadLatestRelease:hover {
+    transition: all 0.1s ease-in-out;
+
+    i {
+        animation: download_bounce;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        transition: all 0.1s ease-in-out;
+        color: white;
+    }
+}
+
+.downloadLatestPrerelease {
+    background-color: orange;
+    border-color: darkorange;
+
+    i {
+        background-color: darkorange;
+        color: orange;
+    }
+}
+
+.downloadLatestPrerelease:hover {
+    color: lime;
+}
+
+.downloadLatestRelease {
+    background-color: lime;
+    border-color: limegreen;
+
+    i {
+        background-color: limegreen;
+        color: lime;
+    }
+}
+
+.downloadLatestRelease:hover {
+    color: orange;
+}
+
+@media only screen and (max-width: $navBreakpoint2) {
+    .downloadLatestPrerelease, .downloadLatestRelease {
+        font-size: 20pt;
+        width: 80%;
+        min-width: 220px;
+        padding-left: 55px;
+
+        i {
+            width: 50px;
+            font-size: 30pt;
+        }
+    }   
+}
+
+.otherReleases {
+    strong{
+        font-weight: normal;
+        font-size: 14pt;
+        margin-left: 20px;
+        color: #aaa;
+    }
+
+    a.releaseDownload, a.prereleaseDownload {
+        position: relative;
+        border-bottom: 4px solid;
+        text-decoration: none;
+        color: #fff;
+        text-shadow: 0 1px 3px #000;
+        font-size: 15pt;
+        padding: 3px 5px;
+        margin: 6px;
+        padding-left: 30px;
+
+
+        i {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            padding: 3px;
+            line-height: 28px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        em {
+            display: inline-block;
+            background-color: white;
+            text-shadow: none;
+            font-weight: 700;
+            border-radius: 100%;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            padding: 0;
+            font-family: serif;
+            transition: all 0.3s ease-in-out;
+            cursor: default;
+
+            span {
+                color: white;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12pt;
+                text-align: left;
+                padding: 0 5px;
+                box-sizing: border-box;
+                position: absolute;
+                top: 35px;
+                right: 0;
+                width: 100%;
+                height: 0px;
+                overflow: hidden;
+                transition: all 0.2s ease-in-out;
+                z-index: 102;
+                box-shadow: none;
+            }
+        }
+
+        em:hover {
+            color: white;
+            transition: all 0.1s ease-in-out;
+
+            span {
+                transition: all 0.3s ease-in-out;
+                height: 65px;
+                box-shadow: #000 0px 4px 4px;
+            }
+        }
+    }
+
+    a.prereleaseDownload {
+        background-color: orange;
+        border-color: darkorange;
+
+        i {
+            background-color: darkorange;
+        }
+
+        em {
+            color: orangered;
+
+            span {
+                background-color: darkorange;
+            }
+        }
+
+        em:hover {
+            background-color: orangered;
+        }
+    }
+
+    a.releaseDownload {
+        background-color: lime;
+        border-color: limegreen;
+
+        i {
+            background-color: limegreen;
+        }
+
+        em {
+            color: forestgreen;
+
+            span {
+                background-color: limegreen;
+            }
+        }
+
+        em:hover {
+            background-color: forestgreen;
+        }
+    }
+
+    a.prereleaseDownload:hover {
+        i {
+            color: orange;
+        }
+    }
+
+    a.releaseDownload:hover {
+        i {
+            color: lime;
         }
     }
 }

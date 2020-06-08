@@ -3,6 +3,7 @@ $${
 }
 
 <h1>License</h1>
+<p>
 <?php 
 $licence = @file_get_contents("https://raw.githubusercontent.com/TobiHatti/".$project["GithubID"]."/master/LICENSE");
             
@@ -10,7 +11,7 @@ if($licence !== false):
     echo nl2br(htmlspecialchars($licence));
 else:
 ?>
-
+</p>
 <h2>The License could not be found, or no License exists.</h2>
 <h3>Error 404</h3>
 

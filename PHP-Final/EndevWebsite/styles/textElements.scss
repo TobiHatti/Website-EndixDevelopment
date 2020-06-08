@@ -1,7 +1,7 @@
 ﻿x-md {
     a {
         text-decoration: none;
-        color: black;
+        color: dodgerblue;
 
         h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
             content: "🔗";
@@ -19,6 +19,7 @@
         }
 
         color: dodgerblue;
+        text-decoration: underline;
     }
 
     h1, h2, h3, h4, h5, h6 {

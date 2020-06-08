@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{A0786B88-2ADB-4C21-ABE8-AA2D79766269}") = "EndevWebsite", "..\..\..\..\Git\Endev-Web\PHP-Final\EndevWebsite\EndevWebsite.phpproj", "{AC592C8D-D0F9-47A3-AF39-E47E6775C568}"
+Project("{A0786B88-2ADB-4C21-ABE8-AA2D79766269}") = "EndevWebsite", "EndevWebsite\EndevWebsite.phpproj", "{AC592C8D-D0F9-47A3-AF39-E47E6775C568}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

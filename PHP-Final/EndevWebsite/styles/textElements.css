@@ -1,7 +1,7 @@
 ﻿@charset "UTF-8";
 x-md a {
   text-decoration: none;
-  color: black; }
+  color: dodgerblue; }
   x-md a h1::before, x-md a h2::before, x-md a h3::before, x-md a h4::before, x-md a h5::before, x-md a h6::before {
     content: "🔗";
     font-size: 0.8em;
@@ -10,7 +10,8 @@ x-md a {
     transition: opacity 0.4s ease-in-out; }
 
 x-md a:hover {
-  color: dodgerblue; }
+  color: dodgerblue;
+  text-decoration: underline; }
   x-md a:hover h1::before, x-md a:hover h2::before, x-md a:hover h3::before, x-md a:hover h4::before, x-md a:hover h5::before, x-md a:hover h6::before {
     opacity: 1;
     transition: opacity 0.1s ease-in-out; }

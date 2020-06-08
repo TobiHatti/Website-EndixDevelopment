@@ -3,3 +3,46 @@ $${
 }
 
 <h1>Downloads</h1>
+<?php if(is_countable($releases) AND count($releases) > 0): ?>
+
+    <a href="<?= (count($releases[0]->assets) > 0) ? $releases[0]->assets[0]->browser_download_url : $releases[0]->zipball_url ?>" download class="sfIgnore <?= ($releases[0]->prerelease) ? "downloadLatestPrerelease" : "downloadLatestRelease" ?> ">
+        <i class="fas fa-download"></i>
+        <div>
+            Download<br />
+            <?= ($releases[0]->prerelease) ? "Pre-Release" : "Release" ?>
+            <span>Version <?= $releases[0]->tag_name ?></span>
+            <pre>File: <?= (count($releases[0]->assets) > 0) ? $releases[0]->assets[0]->name : "Source code (zip)" ?></pre>
+        </div>
+    </a>
+
+    <h2>Other releases:</h2>
+
+    <div class="otherReleases">
+        <?php foreach($releases as $release): ?>
+        <h4>Version <?= $release->tag_name ?><strong>(Released on <?= date_format(date_create($release->published_at)," j. M Y")?>)</strong></h4>
+
+            <?php foreach($release->assets as $asset): ?>
+
+            <a class="<?= ($release->prerelease) ? "prereleaseDownload" : "releaseDownload" ?>" href="<?= $asset->browser_download_url ?>">
+                <i class="fas fa-download"></i>
+                <?= $asset->name ?>
+                <em>
+                    i
+                    <span>
+                        <?= ($release->prerelease) ? "Pre-Release" : "Release" ?><br />
+                        Size: <?= ReadableFileSize($asset->size) ?> <br />
+                        Author: <?= $release->author->login ?>
+                    </span>
+                </em>
+            </a>
+
+            <?php endforeach; ?>
+
+        <br /><br /><hr />
+        <?php endforeach; ?>
+    </div>
+
+<?php endif; ?>
+
+
+

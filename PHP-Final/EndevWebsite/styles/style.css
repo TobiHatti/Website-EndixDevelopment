@@ -378,7 +378,201 @@
         .versionBox div.generalInfo ul.assets li a:hover {
           color: darkorange;
           transition: color 0.1s ease-in-out; }
+        .versionBox div.generalInfo ul.assets li em {
+          float: right;
+          font-style: normal;
+          color: #555;
+          font-size: 9pt; }
       .versionBox div.generalInfo ul.assets li:nth-child(even) {
         background: #eee; }
     .versionBox div.generalInfo hr {
       border: 1px solid #ccc; }
+
+.downloadLatestPrerelease, .downloadLatestRelease {
+  position: relative;
+  border: none;
+  border-bottom: 8px solid;
+  width: 40%;
+  max-width: 500px;
+  min-width: 300px;
+  padding: 5px;
+  padding-left: 70px;
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 30pt;
+  color: #fff;
+  text-shadow: 0px 3px 4px #000;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden; }
+  .downloadLatestPrerelease div span, .downloadLatestRelease div span {
+    margin: 10px 0;
+    display: block;
+    font-size: 20pt; }
+  .downloadLatestPrerelease div pre, .downloadLatestRelease div pre {
+    margin: 5px 0;
+    display: block;
+    font-size: 8pt;
+    font-family: monospace;
+    text-shadow: none; }
+  .downloadLatestPrerelease i, .downloadLatestRelease i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0px;
+    width: 80px;
+    height: 100%;
+    font-size: 45pt;
+    line-height: 100px;
+    padding: 30px 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out; }
+
+@keyframes download_bounce {
+  0% {
+    line-height: 100px; }
+  15% {
+    line-height: 80px; }
+  45% {
+    line-height: 150px; }
+  75% {
+    line-height: 80px; }
+  95% {
+    line-height: 100px; }
+  100% {
+    line-height: 100px; } }
+
+.downloadLatestPrerelease:hover, .downloadLatestRelease:hover {
+  transition: all 0.1s ease-in-out; }
+  .downloadLatestPrerelease:hover i, .downloadLatestRelease:hover i {
+    animation: download_bounce;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    transition: all 0.1s ease-in-out;
+    color: white; }
+
+.downloadLatestPrerelease {
+  background-color: orange;
+  border-color: darkorange; }
+  .downloadLatestPrerelease i {
+    background-color: darkorange;
+    color: orange; }
+
+.downloadLatestPrerelease:hover {
+  color: lime; }
+
+.downloadLatestRelease {
+  background-color: lime;
+  border-color: limegreen; }
+  .downloadLatestRelease i {
+    background-color: limegreen;
+    color: lime; }
+
+.downloadLatestRelease:hover {
+  color: orange; }
+
+@media only screen and (max-width: 690px) {
+  .downloadLatestPrerelease, .downloadLatestRelease {
+    font-size: 20pt;
+    width: 80%;
+    min-width: 220px;
+    padding-left: 55px; }
+    .downloadLatestPrerelease i, .downloadLatestRelease i {
+      width: 50px;
+      font-size: 30pt; } }
+
+.otherReleases strong {
+  font-weight: normal;
+  font-size: 14pt;
+  margin-left: 20px;
+  color: #aaa; }
+
+.otherReleases a.releaseDownload, .otherReleases a.prereleaseDownload {
+  position: relative;
+  border-bottom: 4px solid;
+  text-decoration: none;
+  color: #fff;
+  text-shadow: 0 1px 3px #000;
+  font-size: 15pt;
+  padding: 3px 5px;
+  margin: 6px;
+  padding-left: 30px; }
+  .otherReleases a.releaseDownload i, .otherReleases a.prereleaseDownload i {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 3px;
+    line-height: 28px;
+    transition: color 0.3s ease-in-out; }
+  .otherReleases a.releaseDownload em, .otherReleases a.prereleaseDownload em {
+    display: inline-block;
+    background-color: white;
+    text-shadow: none;
+    font-weight: 700;
+    border-radius: 100%;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    padding: 0;
+    font-family: serif;
+    transition: all 0.3s ease-in-out;
+    cursor: default; }
+    .otherReleases a.releaseDownload em span, .otherReleases a.prereleaseDownload em span {
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12pt;
+      text-align: left;
+      padding: 0 5px;
+      box-sizing: border-box;
+      position: absolute;
+      top: 35px;
+      right: 0;
+      width: 100%;
+      height: 0px;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;
+      z-index: 102;
+      box-shadow: none; }
+  .otherReleases a.releaseDownload em:hover, .otherReleases a.prereleaseDownload em:hover {
+    color: white;
+    transition: all 0.1s ease-in-out; }
+    .otherReleases a.releaseDownload em:hover span, .otherReleases a.prereleaseDownload em:hover span {
+      transition: all 0.3s ease-in-out;
+      height: 65px;
+      box-shadow: #000 0px 4px 4px; }
+
+.otherReleases a.prereleaseDownload {
+  background-color: orange;
+  border-color: darkorange; }
+  .otherReleases a.prereleaseDownload i {
+    background-color: darkorange; }
+  .otherReleases a.prereleaseDownload em {
+    color: orangered; }
+    .otherReleases a.prereleaseDownload em span {
+      background-color: darkorange; }
+  .otherReleases a.prereleaseDownload em:hover {
+    background-color: orangered; }
+
+.otherReleases a.releaseDownload {
+  background-color: lime;
+  border-color: limegreen; }
+  .otherReleases a.releaseDownload i {
+    background-color: limegreen; }
+  .otherReleases a.releaseDownload em {
+    color: forestgreen; }
+    .otherReleases a.releaseDownload em span {
+      background-color: limegreen; }
+  .otherReleases a.releaseDownload em:hover {
+    background-color: forestgreen; }
+
+.otherReleases a.prereleaseDownload:hover i {
+  color: orange; }
+
+.otherReleases a.releaseDownload:hover i {
+  color: lime; }

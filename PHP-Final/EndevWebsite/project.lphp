@@ -57,35 +57,62 @@ function TabPageSelected($tabIndex, $isDefaultTab = false)
     else return "none";
 }
 
+function GetGithubAPIResponse($url)
+{
+    $curl = curl_init();
+
+    curl_setopt_array($curl, [
+    CURLOPT_URL => $url,
+    CURLOPT_USERAGENT => 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)',
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_HTTPHEADER => array(
+        'Authorization: token '.getenv("GithubOAuth")
+        )
+    ]);
+
+    return json_decode(curl_exec($curl));
+}
+
+function ReadableFileSize($byteSize)
+{
+    if($byteSize < 1024) return $byteSize." Bytes"; 
+    else if($byteSize < 1048576) return round(($byteSize / 1024),2)." KB";
+    else return round(($byteSize / 1048576), 2)." MB";
+}
+
+
+
+$releases = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/releases');
+//var_dump($releases);
 ?>
 
 
 <h1><?= $project["ProjectName"]?> </h1>
 <hr />
 <div class="projectSubpageContainer">
-    <div class="projectSubpage" style="display: <?= TabPageSelected(0, true) ?>">
+    <div class="projectSubpage stagFade" style="display: <?= TabPageSelected(0, true) ?>">
         $$RenderPage("projectOverview.lphp")
     </div>
-    <div class="projectSubpage" style="display: <?= TabPageSelected(1) ?>">
+    <div class="projectSubpage stagFade" style="display: <?= TabPageSelected(1) ?>">
         $$RenderPage("projectSupport.lphp")
     </div>
-    <div class="projectSubpage" style="display: <?= TabPageSelected(2) ?>">
+    <div class="projectSubpage stagFade" style="display: <?= TabPageSelected(2) ?>">
         $$RenderPage("projectIssues.lphp")
     </div>
     <div class="projectSubpage" style="display: <?= TabPageSelected(3) ?>">
         $$RenderPage("projectDownloads.lphp")
     </div>
-    <div class="projectSubpage" style="display: <?= TabPageSelected(4) ?>">
+    <div class="projectSubpage stagFade" style="display: <?= TabPageSelected(4) ?>">
         $$RenderPage("projectHistory.lphp")
     </div>
-    <div class="projectSubpage" style="display: <?= TabPageSelected(5) ?>">
+    <div class="projectSubpage stagFade" style="display: <?= TabPageSelected(5) ?>">
         $$RenderPage("projectReadme.lphp")
     </div>
-    <div class="projectSubpage" style="display: <?= TabPageSelected(6) ?>">
+    <div class="projectSubpage stagFade" style="display: <?= TabPageSelected(6) ?>">
         $$RenderPage("projectTechInfo.lphp")
     </div>
-    <div class="projectSubpage" style="display: <?= TabPageSelected(7) ?>">
+    <div class="projectSubpage stagFade" style="display: <?= TabPageSelected(7) ?>">
         $$RenderPage("projectLicense.lphp")
     </div>
 </div>
-
