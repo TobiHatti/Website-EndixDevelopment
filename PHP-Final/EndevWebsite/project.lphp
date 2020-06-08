@@ -57,11 +57,6 @@ function TabPageSelected($tabIndex, $isDefaultTab = false)
     else return "none";
 }
 
-function GetGithubRawFromGithubProject($githubLink)
-{
-    return str_replace("https://github.com/", "", $githubLink);
-}
-
 ?>
 
 
@@ -100,97 +95,84 @@ function GetGithubRawFromGithubProject($githubLink)
 
         <?php 
 
-        $curl = curl_init();
-
-        curl_setopt_array($curl, [
-        CURLOPT_URL => 'https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/releases',
-        CURLOPT_USERAGENT => 'Endev-Web Github API Link',
-        CURLOPT_TIMEOUT => 30,
-        CURLOPT_RETURNTRANSFER => 1,
-        CURLOPT_HTTPHEADER => array(
-            'Authorization: token '.getenv("GithubOAuth")
-        )
-        ]);
-
-        //curl_setopt_array($curl, [
-        //CURLOPT_URL => 'https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/releases',
-        //CURLOPT_USERAGENT => 'Endev-Web Github API Link',
-        //CURLOPT_TIMEOUT => 30,
-        //CURLOPT_RETURNTRANSFER => 1,
-        //CURLOPT_USERPWD => "TobiHatti:".getenv("GithubOAuth")
-        //]);
-
-        $status_code = curl_getinfo($curl, CURLINFO_HTTP_CODE); 
-
-        //var_dump($status_code);
-
-        $response = json_decode(curl_exec($curl));
-
-        var_dump($response);
-
-        foreach($response as $release): 
-        
-
-        try
+        function GetGithubAPIResponse($url)
         {
-            $tmp = $release->url;
-            $requestValid = true;
-            echo "VALID!!!";
+            $curl = curl_init();
+
+            curl_setopt_array($curl, [
+            CURLOPT_URL => $url,
+            CURLOPT_USERAGENT => 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)',
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_HTTPHEADER => array(
+                'Authorization: token '.getenv("GithubOAuth")
+                )
+            ]);
+
+            return json_decode(curl_exec($curl));
         }
-        catch(Exception $ex)
-        {
-            $requestValid = false;
-            echo "NOT VALID!!!";
-        }
-        
+
+        $response = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/releases');
+
+        if(is_countable($response)):
+            if(count($response) > 0):
+                foreach($response as $release): 
+
+                    $downloadCount = 0;
+                    foreach($release->assets as $asset) $downloadCount += $asset->download_count;
         ?>
+                <div class="versionBox">
+                    <div class="tagInfo">
 
-
-        <?php 
-            $downloadCount = 0;
-            foreach($release->assets as $asset) $downloadCount += $asset->download_count;
-        ?>
-
-        <div class="versionBox">
-            <div class="tagInfo">
-
-                <?php if($release->prerelease): ?>
-                <span class="prerelease">Pre-release</span>
-                <?php else: ?>
-                <span class="release">Release</span>
-                <?php endif; ?>
+                        <?php if($release->prerelease): ?>
+                        <span class="prerelease">Pre-release</span>
+                        <?php else: ?>
+                        <span class="release">Release</span>
+                        <?php endif; ?>
                 
-                <span class="tag"><i class="fas fa-tag"></i> <?= $release->tag_name ?></span>
-                <span class="commit"><i class="fas fa-neuter"></i> 1238df32</span>
-            </div>
-            <div class="generalInfo">
-                <a href="<?= $release->html_url ?>" target="_blank"><b><?= $release->name ?></b></a>
-                <span>Released by <a href="<?= $release->author->html_url ?>" target="_blank"><?= $release->author->login ?></a>. Downloaded <?= $downloadCount ?> times.</span>
+                        <span class="tag"><i class="fas fa-tag"></i> <?= $release->tag_name ?></span>
+                        <span class="commit"><i class="fas fa-neuter"></i> 1238df32</span>
+                    </div>
+                    <div class="generalInfo">
+                        <a href="<?= $release->html_url ?>" target="_blank"><b><?= $release->name ?></b></a>
+                        <span>Released by <a href="<?= $release->author->html_url ?>" target="_blank"><?= $release->author->login ?></a>. Downloaded <?= $downloadCount ?> times.</span>
                 
      
-                <x-md>
-                    <?php 
-                    $parsedown = new Parsedown();
-                    $parsedown->setSafeMode(true);
-                    echo $parsedown->text($release->body);
-                    ?>
-                </x-md>
-                <a class="githubBtn" href="<?= $release->html_url ?>" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
-                <hr />
+                        <x-md>
+                            <?php 
+                            $parsedown = new Parsedown();
+                            $parsedown->setSafeMode(true);
+                            echo $parsedown->text($release->body);
+                            ?>
+                        </x-md>
+                        <a class="githubBtn" href="<?= $release->html_url ?>" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                        <hr />
 
-                <strong>Assets:</strong>
-                <ul class="assets">
-                    <?php foreach($release->assets as $asset): ?>
-                    <li><a href="<?= $asset->browser_download_url ?>"><i class="fas fa-cubes"></i> <?= $asset->name ?></a></li>
-                    <?php endforeach; ?>
-                    <li><a href="<?= $release->zipball_url ?>"><i class="far fa-file-archive"></i> Source code (zip)</a></li>
-                    <li><a href="<?= $release->tarball_url ?>"><i class="far fa-file-archive"></i> Source code (tar.gz)</a></li>
-                </ul>
-            </div>
-        </div>
+                        <strong>Assets:</strong>
+                        <ul class="assets">
+                            <?php foreach($release->assets as $asset): ?>
+                            <li><a href="<?= $asset->browser_download_url ?>"><i class="fas fa-cubes"></i> <?= $asset->name ?></a></li>
+                            <?php endforeach; ?>
+                            <li><a href="<?= $release->zipball_url ?>"><i class="far fa-file-archive"></i> Source code (zip)</a></li>
+                            <li><a href="<?= $release->tarball_url ?>"><i class="far fa-file-archive"></i> Source code (tar.gz)</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-        <?php endforeach; ?>
-
+                
+        <?php
+                endforeach; 
+            else:
+        ?>
+        <h2>This project has no official releases yet.</h2>
+        <h3>Check back soon for updates.</h3>
+        <?php 
+            endif; 
+        else:
+        ?>
+        <h2>Could not process your request at the current time.</h2>
+        <h3>Please check back in a few minutes.</h3>
+        <?php endif; ?>
     </div>
 
 
@@ -199,9 +181,28 @@ function GetGithubRawFromGithubProject($githubLink)
         <h1>Readme (GitHub)</h1>
         <x-md>
             <?php 
+
+            function CheckRMDataImage($rawFileContent)
+            {
+                $lines =  explode("\n", $rawFileContent);
+                foreach($lines as $line)
+                {
+                    if(strpos($line, "data-rmimg")) 
+                    {
+                        preg_match('/https?\:\/\/[\S\s]*?(?=\")/', $line, $httpLink);
+                        if(count($httpLink) > 0)
+                        {
+                            $rawFileContent = str_replace($line, '<img align="right" width="80" height="80" src="'.$line[0].'">', $rawFileContent);
+                        }
+                        else $rawFileContent = str_replace($line, '', $rawFileContent);
+                    }
+                }
+                return $rawFileContent;
+            }
+
             $parsedown = new Parsedown();
             $parsedown->setSafeMode(true);
-            echo $parsedown->text(file_get_contents("https://raw.githubusercontent.com/TobiHatti/".$project["GithubID"]."/master/README.md"));
+            echo CheckRMDataImage($parsedown->text(file_get_contents("https://raw.githubusercontent.com/TobiHatti/".$project["GithubID"]."/master/README.md")));
             ?>
         </x-md>
     </div>

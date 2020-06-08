@@ -371,7 +371,7 @@ aside {
     white-space: nowrap;
     overflow: hidden;
     transition: top 0.005s linear, width 0.3s ease-in-out;
-
+    background-color: rgba(255,255,255,0.8);
 
     ul {
         padding: 0;
@@ -484,6 +484,29 @@ $asideBreakpoint : 1100px;
                 width: 100%;
                 transition: all 0.1s ease-in-out;
             }
+        }
+    }
+}
+
+
+x-md {
+    width: 100%;
+    display: block;
+
+    img {
+        width: auto;
+        max-width: 100%;
+    }
+
+    pre {
+        background-color: gainsboro;
+        border-radius: 5px;
+        padding: 5px;
+        box-sizing: border-box;
+        overflow-x: scroll;
+
+        code {
+            font-family: Consolas, monospace;
         }
     }
 }

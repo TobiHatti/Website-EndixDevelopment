@@ -265,7 +265,8 @@ footer {
 aside {
   white-space: nowrap;
   overflow: hidden;
-  transition: top 0.005s linear, width 0.3s ease-in-out; }
+  transition: top 0.005s linear, width 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.8); }
   aside ul {
     padding: 0; }
     aside ul li {
@@ -339,3 +340,18 @@ aside {
     aside ul li:hover::before {
       width: 100%;
       transition: all 0.1s ease-in-out; } }
+
+x-md {
+  width: 100%;
+  display: block; }
+  x-md img {
+    width: auto;
+    max-width: 100%; }
+  x-md pre {
+    background-color: gainsboro;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    overflow-x: scroll; }
+    x-md pre code {
+      font-family: Consolas, monospace; }
