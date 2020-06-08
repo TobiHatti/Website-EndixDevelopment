@@ -5,4 +5,4 @@ putenv("DBName=endev");
 putenv("DBUser=root");
 putenv("DBPass=");
 
-putenv("GithubOAuth=293b6f8c64ce6f82c7803c2cca65a00fe0bb767d");
+putenv("GithubOAuth=2c3e19694a2a15315db3b92642f6252af932377d");

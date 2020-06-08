@@ -34,7 +34,15 @@
     <Content Include="index.lphp" />
     <Content Include="more.lphp" />
     <Content Include="project.lphp" />
+    <Content Include="projectDownloads.lphp" />
+    <Content Include="projectHistory.lphp" />
+    <Content Include="projectIssues.lphp" />
+    <Content Include="projectLicense.lphp" />
+    <Content Include="projectOverview.lphp" />
+    <Content Include="projectReadme.lphp" />
     <Content Include="projects.lphp" />
+    <Content Include="projectSupport.lphp" />
+    <Content Include="projectTechInfo.lphp" />
     <Content Include="styles\formElements.css" />
     <Content Include="styles\formElements.min.css" />
     <Content Include="styles\layoutAdvancedProject.css" />

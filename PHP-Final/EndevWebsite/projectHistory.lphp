@@ -1,0 +1,85 @@
+$${
+    NoCompile = true;
+}
+
+<h1>Version History</h1>
+
+<?php 
+
+function GetGithubAPIResponse($url)
+{
+    $curl = curl_init();
+
+    curl_setopt_array($curl, [
+    CURLOPT_URL => $url,
+    CURLOPT_USERAGENT => 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)',
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_HTTPHEADER => array(
+        'Authorization: token '.getenv("GithubOAuth")
+        )
+    ]);
+
+    return json_decode(curl_exec($curl));
+}
+
+$response = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/releases');
+
+//var_dump($response);
+
+if(is_countable($response)):
+    if(count($response) > 0):
+        foreach($response as $release): 
+
+            $downloadCount = 0;
+            foreach($release->assets as $asset) $downloadCount += $asset->download_count;
+?>
+        <div class="versionBox">
+            <div class="tagInfo">
+
+                <?php if($release->prerelease): ?>
+                <span class="prerelease">Pre-release</span>
+                <?php else: ?>
+                <span class="release">Release</span>
+                <?php endif; ?>
+                
+                <span class="tag"><i class="fas fa-tag"></i> <?= $release->tag_name ?></span>
+                <span class="commit"><i class="fas fa-neuter"></i> 1238df32</span>
+            </div>
+            <div class="generalInfo">
+                <a href="<?= $release->html_url ?>" target="_blank"><b><?= $release->name ?></b></a>
+                <span>Released by <a href="<?= $release->author->html_url ?>" target="_blank"><?= $release->author->login ?></a>. Downloaded <?= $downloadCount ?> times.</span>
+                
+                <x-md>
+                    <?php 
+                    $parsedown = new Parsedown();
+                    $parsedown->setSafeMode(true);
+                    echo $parsedown->text($release->body);
+                    ?>
+                </x-md>
+                <a class="githubBtn" href="<?= $release->html_url ?>" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                <hr />
+
+                <strong>Assets:</strong>
+                <ul class="assets">
+                    <?php foreach($release->assets as $asset): ?>
+                    <li><a href="<?= $asset->browser_download_url ?>"><i class="fas fa-cubes"></i> <?= $asset->name ?></a></li>
+                    <?php endforeach; ?>
+                    <li><a href="<?= $release->zipball_url ?>"><i class="far fa-file-archive"></i> Source code (zip)</a></li>
+                    <li><a href="<?= $release->tarball_url ?>"><i class="far fa-file-archive"></i> Source code (tar.gz)</a></li>
+                </ul>
+            </div>
+        </div>                
+<?php
+        endforeach; 
+    else:
+?>
+<h2>This project has no official releases yet.</h2>
+<h3>Check back soon for updates.</h3>
+<?php 
+    endif; 
+else:
+?>
+<h2>Could not process your request at the current time.</h2>
+<h3>Please check back in a few minutes.</h3>
+<?php endif; ?>
