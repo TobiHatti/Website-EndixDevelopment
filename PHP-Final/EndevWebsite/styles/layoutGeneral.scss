@@ -83,7 +83,7 @@ header {
         position: absolute;
         width: 100%;
         height: 80vh;
-        background-color: #000032;
+        background-color: rgb($overlayBlendColorR,$overlayBlendColorG,$overlayBlendColorB);
         opacity: 0.1;
     }
 

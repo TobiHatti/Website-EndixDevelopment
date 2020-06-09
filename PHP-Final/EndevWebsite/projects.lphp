@@ -26,9 +26,9 @@ $${
                 <?= $project["ProjectFlavorText"] ?>
             </span>
             <x-pnav>
-                <a href="/project/<?= $project["ProjectID"]?>">View Project</a>
-                <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>">Visit on GitHub</a>
-                <a href="/download/<?= $project["ProjectID"] ?>">Download</a>
+                <a href="/project/<?= $project["ProjectID"]?>"><i class="fas fa-play"></i> View Project</a>
+                <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>"><i class="fab fa-github"></i> Visit on GitHub</a>
+                <a href="/download/<?= $project["ProjectID"] ?>"><i class="fas fa-download"></i> Download</a>
             </x-pnav>
         </label>
 
@@ -67,9 +67,9 @@ $${
                             <?= $subRow["ProjectFlavorText"] ?>
                         </div>
                         <div>
-                            <a href="/project/<?= $subRow["ProjectID"] ?>">View Project</a>
-                            <a href="https://github.com/TobiHatti/<?= $subRow["GithubID"] ?>" target="_blank">Visit on GitHub</a>
-                            <a href="/download/<?= $subRow["ProjectID"] ?>">Download</a>
+                            <a href="/project/<?= $subRow["ProjectID"] ?>"><i class="fas fa-play"></i> View Project</a>
+                            <a href="https://github.com/TobiHatti/<?= $subRow["GithubID"] ?>" target="_blank"><i class="fab fa-github"></i> Visit on GitHub</a>
+                            <a href="/download/<?= $subRow["ProjectID"] ?>"><i class="fas fa-download"></i> Download</a>
                         </div>
                     </div>
                 <?php endforeach; ?>

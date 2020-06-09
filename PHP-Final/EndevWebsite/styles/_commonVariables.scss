@@ -8,6 +8,11 @@ $navBreakpoint2: 690px;
     =====================
 */ 
 
+// General
+$overlayBlendColorR: 25;
+$overlayBlendColorG: 25;
+$overlayBlendColorB: 112;
+
 // Release colors
 $releaseColorDark: forestgreen;
 $releaseColorMedium: limegreen;
@@ -37,6 +42,12 @@ $linkHoverColor3: darkorange;
 
 $linkIdleColor4: #222;
 $linkHoverColor4: dodgerblue;
+
+// Form Elements
+$btnFontIdleColor: white;
+$btnFontHoverColor: aqua;
+$btnBackgroundIdleColor: dodgerblue;
+$btnBackgroundHoverColor: dodgerblue;
 
 x-test{
     background-color: deepskyblue
