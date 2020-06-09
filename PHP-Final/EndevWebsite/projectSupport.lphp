@@ -4,8 +4,9 @@ $${
 
 <h1>Support &amp; FAQ</h1>
 
+
 <div class="faqSearch">
-    <span>Search through FAQ</span>
+    <span>How can we help you?</span>
     <input type="search" placeholder="Search for a topic or keyword..."/>
     <button type="submit">Search</button>
     <br />
@@ -15,41 +16,41 @@ $${
 <h2>FAQ - <?= $project["ProjectName"]?>:</h2>
 
 <ul class="faqContainer">
+<?php foreach($sql->ExecuteQuery("SELECT * FROM faq WHERE ProjectID = ?", $project["ProjectID"]) as $faq): ?>
     <li>
-        <b>Question</b>
-        <p>Answer Preview</p>
+        <div class="votes">
+            <span class="voteCounter">0</span>
+            <span class="upvote"><i class="fas fa-play"></i></span>
+            <span class="downvote"><i class="fas fa-play"></i></span>
+        </div>
+        <a href="#/">
+            <div class="faq">
+                <b><?= $faq["Question"] ?></b>
+                <p><?= $faq["Answer"] ?></p>
+            </div>
+        </a>
     </li>
-    <li>
-        <b>Question</b>
-        <p>Answer Preview</p>
-    </li>
-    <li>
-        <b>Question</b>
-        <p>Answer Preview</p>
-    </li>
-    <li>
-        <b>Question</b>
-        <p>Answer Preview</p>
-    </li>
+<?php endforeach; ?>
 </ul>
 
+
+<br />
 <h2>FAQ - General Questions:</h2>
 
 <ul class="faqContainer">
+<?php foreach($sql->ExecuteQuery("SELECT * FROM faq WHERE ProjectID = ''") as $faq): ?>
     <li>
-        <b>Question</b>
-        <p>Answer Preview</p>
+        <div class="votes">
+            <span class="voteCounter">0</span>
+            <span class="upvote"><i class="fas fa-play"></i></span>
+            <span class="downvote"><i class="fas fa-play"></i></span>
+        </div>
+        <a href="#/">
+            <div class="faq">
+                <b><?= $faq["Question"] ?></b>
+                <p><?= $faq["Answer"] ?></p>
+            </div>
+        </a>
     </li>
-    <li>
-        <b>Question</b>
-        <p>Answer Preview</p>
-    </li>
-    <li>
-        <b>Question</b>
-        <p>Answer Preview</p>
-    </li>
-    <li>
-        <b>Question</b>
-        <p>Answer Preview</p>
-    </li>
+<?php endforeach; ?>
 </ul>

@@ -16,14 +16,9 @@ include("libraries/Parsedown.php");
 <link href="/styles/formElements.min.css" rel="stylesheet" />
 <link href="/styles/layoutGeneral.min.css" rel="stylesheet" />
 
-<!-- External Stylesheets -->
-
-
 <!-- Shared scripts -->
 <script src="/scripts/PageLayout.js"></script>
 <script src="/scripts/CommonScripts.js"></script>
-
-<!-- External scripts -->
 
 <!-- Meta-Tags -->
 <meta name="viewport" content="width=device-width" />
