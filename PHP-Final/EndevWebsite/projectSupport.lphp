@@ -3,3 +3,53 @@ $${
 }
 
 <h1>Support &amp; FAQ</h1>
+
+<div class="faqSearch">
+    <span>Search through FAQ</span>
+    <input type="search" placeholder="Search for a topic or keyword..."/>
+    <button type="submit">Search</button>
+    <br />
+    <b>Can't find what you're looking for?<br /><a href="#">Ask a question!</a></b>
+</div>
+
+<h2>FAQ - <?= $project["ProjectName"]?>:</h2>
+
+<ul class="faqContainer">
+    <li>
+        <b>Question</b>
+        <p>Answer Preview</p>
+    </li>
+    <li>
+        <b>Question</b>
+        <p>Answer Preview</p>
+    </li>
+    <li>
+        <b>Question</b>
+        <p>Answer Preview</p>
+    </li>
+    <li>
+        <b>Question</b>
+        <p>Answer Preview</p>
+    </li>
+</ul>
+
+<h2>FAQ - General Questions:</h2>
+
+<ul class="faqContainer">
+    <li>
+        <b>Question</b>
+        <p>Answer Preview</p>
+    </li>
+    <li>
+        <b>Question</b>
+        <p>Answer Preview</p>
+    </li>
+    <li>
+        <b>Question</b>
+        <p>Answer Preview</p>
+    </li>
+    <li>
+        <b>Question</b>
+        <p>Answer Preview</p>
+    </li>
+</ul>

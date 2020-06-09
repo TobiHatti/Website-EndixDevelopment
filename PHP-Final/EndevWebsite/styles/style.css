@@ -1,4 +1,12 @@
-﻿* {
+﻿/*
+    =====================
+            Colors
+    =====================
+*/
+x-test {
+  background-color: deepskyblue; }
+
+* {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth; }
 
@@ -13,11 +21,11 @@
   line-height: 40px;
   border-radius: 15px;
   color: white;
-  background: #560caa;
-  background: -moz-linear-gradient(45deg, #560caa 0%, #0aa47d 100%);
-  background: -webkit-linear-gradient(45deg, #560caa 0%, #0aa47d 100%);
-  background: linear-gradient(45deg, #560caa 0%, #0aa47d 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#560caa",endColorstr="#0aa47d",GradientType=1);
+  background: #1000ff;
+  background: -moz-linear-gradient(45deg, #1000ff 0%, #0092ff 50%, #00e0ff 100%);
+  background: -webkit-linear-gradient(45deg, #1000ff 0%, #0092ff 50%, #00e0ff 100%);
+  background: linear-gradient(45deg, #1000ff 0%, #0092ff 50%, #00e0ff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1000ff",endColorstr="#00e0ff",GradientType=1);
   z-index: 130;
   transition: all 0.2s ease-in-out; }
 
@@ -154,10 +162,11 @@
       margin-left: 0;
       margin-right: 15px;
       transition: all 0.5s ease-in-out;
-      cursor: pointer; }
+      cursor: pointer;
+      color: black; }
       .projectBrowser ul li i {
         width: 20px;
-        color: #1305af; }
+        color: royalblue; }
       .projectBrowser ul li b {
         font-weight: normal; }
     .projectBrowser ul li::before {
@@ -168,16 +177,19 @@
       display: block;
       width: 0;
       height: 2px;
-      background: #001259;
-      background: -moz-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
-      background: -webkit-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
-      background: linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+      background: #1000ff;
+      background: -moz-linear-gradient(45deg, #1000ff 0%, #0092ff 8%, #29d6d6 45%, #29d6d6 55%, #0092ff 92%, #1000ff 100%);
+      background: -webkit-linear-gradient(45deg, #1000ff 0%, #0092ff 8%, #29d6d6 45%, #29d6d6 55%, #0092ff 92%, #1000ff 100%);
+      background: linear-gradient(45deg, #1000ff 0%, #0092ff 8%, #29d6d6 45%, #29d6d6 55%, #0092ff 92%, #1000ff 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1000ff",endColorstr="#1000ff",GradientType=1);
       transition: all 0.5s ease-in-out; }
     .projectBrowser ul li:hover {
       margin-left: 15px;
       margin-right: 0;
       transition: all 0.1s ease-in-out;
-      color: #1305af; }
+      color: deepskyblue; }
+      .projectBrowser ul li:hover i {
+        color: dodgerblue; }
     .projectBrowser ul li:hover::before {
       width: 100%;
       transition: all 0.1s ease-in-out; }
@@ -276,8 +288,7 @@
         left: 0; }
       .projectBrowser ul li:hover {
         margin: 0;
-        transition: all 0.1s ease-in-out;
-        color: #1305af; }
+        transition: all 0.1s ease-in-out; }
       .projectBrowser ul li:hover::before {
         width: 100%;
         transition: all 0.1s ease-in-out; } }
@@ -341,6 +352,10 @@
       display: block;
       color: #555;
       font-weight: lighter; }
+      .versionBox div.generalInfo span a {
+        color: royalblue; }
+      .versionBox div.generalInfo span a:hover {
+        color: deepskyblue; }
     .versionBox div.generalInfo a.githubBtn {
       background-color: white;
       border: 1px solid #222;
@@ -351,14 +366,13 @@
       text-align: center;
       text-decoration: none;
       font-size: 12pt;
-      transition: all 0.3s ease-in-out; }
+      transition: all 0.3s ease-in-out;
+      color: #222; }
     .versionBox div.generalInfo a.githubBtn:hover {
-      color: royalblue;
-      border-color: royalblue;
+      color: dodgerblue;
+      border-color: dodgerblue;
       transition: all 0.1s ease-in-out;
       cursor: pointer; }
-    .versionBox div.generalInfo a.githubBtn:visited {
-      color: #222; }
     .versionBox div.generalInfo strong {
       margin: 8px; }
     .versionBox div.generalInfo ul.assets {
@@ -376,7 +390,7 @@
           color: royalblue;
           transition: color 0.3s ease-in-out; }
         .versionBox div.generalInfo ul.assets li a:hover {
-          color: darkorange;
+          color: deepskyblue;
           transition: color 0.1s ease-in-out; }
         .versionBox div.generalInfo ul.assets li em {
           float: right;
@@ -576,3 +590,65 @@
 
 .otherReleases a.releaseDownload:hover i {
   color: lime; }
+
+.faqSearch {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 35px;
+  background: #0092ff;
+  background: -moz-linear-gradient(45deg, #0092ff 0%, #29d6d6 50%, #00e0ff 100%);
+  background: -webkit-linear-gradient(45deg, #0092ff 0%, #29d6d6 50%, #00e0ff 100%);
+  background: linear-gradient(45deg, #0092ff 0%, #29d6d6 50%, #00e0ff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0092ff",endColorstr="#00e0ff",GradientType=1); }
+  .faqSearch span {
+    color: white;
+    display: block;
+    text-shadow: 0 2px 2px #000;
+    font-size: 26pt;
+    margin: 12px 0; }
+  .faqSearch input[type="search"] {
+    font-size: 18pt;
+    width: 90%;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 18px; }
+  .faqSearch input[type="search"]:hover, .faqSearch input[type="search"]:focus {
+    border: none; }
+  .faqSearch button[type="submit"] {
+    display: block;
+    margin: 20px auto;
+    font-size: 20pt;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 4px 16px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out; }
+  .faqSearch button[type="submit"]:hover {
+    color: aqua;
+    transition: color 0.1s ease-in-out; }
+  .faqSearch button[type="submit"]:before {
+    content: "\1F50D";
+    margin-right: 10px;
+    transition: margin-right 0.3s ease-in-out; }
+  .faqSearch button[type="submit"]:hover:before {
+    content: "\1F50D";
+    margin-right: 20px;
+    transition: margin-right 0.1s ease-in-out; }
+  .faqSearch b {
+    font-weight: normal;
+    color: white;
+    font-size: 14pt;
+    text-shadow: 0 1px 1px #000; }
+    .faqSearch b a {
+      font-size: 16pt;
+      color: orange;
+      transition: all 0.3s ease-in-out; }
+    .faqSearch b a:hover {
+      color: dodgerblue;
+      transition: all 0.1s ease-in-out; }

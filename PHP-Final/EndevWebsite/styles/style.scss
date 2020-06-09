@@ -1,4 +1,6 @@
 ﻿@import 'commonVariables';
+@import 'commonMixins';
+
 
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,11 +18,7 @@
     line-height: 40px;
     border-radius: 15px;
     color: white;
-    background: rgb(86,12,170);
-    background: -moz-linear-gradient(45deg, rgba(86,12,170,1) 0%, rgba(10,164,125,1) 100%);
-    background: -webkit-linear-gradient(45deg, rgba(86,12,170,1) 0%, rgba(10,164,125,1) 100%);
-    background: linear-gradient(45deg, rgba(86,12,170,1) 0%, rgba(10,164,125,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#560caa",endColorstr="#0aa47d",GradientType=1);
+    @include SmallBoxGradient(); 
     z-index: 130;
     transition: all 0.2s ease-in-out;
 }
@@ -185,7 +183,6 @@
     min-height: 500px;
     width: 100%;
     overflow: hidden;
-
     transition: all 0.5s ease-in-out;
 
     ul {
@@ -204,10 +201,11 @@
             margin-right: 15px;
             transition: all 0.5s ease-in-out;
             cursor: pointer;
+            color: $asideIdleFontColor;
 
             i {
                 width: 20px;
-                color: rgba(19,5,175,1);
+                color: $asideIdleFAIconColor;
             }
 
             b {
@@ -223,10 +221,7 @@
             display: block;
             width: 0;
             height: 2px;
-            background: rgb(0,18,89);
-            background: -moz-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
-            background: -webkit-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
-            background: linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
+            @include UnderlineGradient();
             transition: all 0.5s ease-in-out;
         }
 
@@ -234,7 +229,11 @@
             margin-left: 15px;
             margin-right: 0;
             transition: all 0.1s ease-in-out;
-            color: rgba(19,5,175,1);
+            color: $asideHoverFontColor;
+
+            i {
+                color: $asideHoverFAIconColor;
+            }
         }
 
         li:hover::before {
@@ -387,7 +386,6 @@
             li:hover {
                 margin: 0;
                 transition: all 0.1s ease-in-out;
-                color: rgba(19,5,175,1);
             }
 
             li:hover::before {
@@ -406,7 +404,7 @@
     }
 }
 
-.projectSubpage{
+.projectSubpage {
     display: none;
 }
 
@@ -439,13 +437,13 @@
         }
 
         span.release {
-            color: limegreen;
-            border: 1px solid limegreen;
+            color: $releaseColorMedium;
+            border: 1px solid $releaseColorMedium;
         }
 
         span.prerelease {
-            color: darkorange;
-            border: 1px solid darkorange;
+            color: $prereleaseColorMedium;
+            border: 1px solid $prereleaseColorMedium;
         }
 
         span.tag {
@@ -472,10 +470,10 @@
                 display: block;
                 font-size: 25pt;
                 font-weight: lighter;
-                color: royalblue;
+                color: $linkIdleColor1;
             }
 
-            b:hover{
+            b:hover {
                 text-decoration: underline;
             }
         }
@@ -484,11 +482,19 @@
             display: block;
             color: #555;
             font-weight: lighter;
+
+            a {
+                color: $linkIdleColor1;
+            }
+
+            a:hover {
+                color: $linkHoverColor1;
+            }
         }
 
         a.githubBtn {
             background-color: white;
-            border: 1px solid #222;
+            border: 1px solid $linkIdleColor4;
             border-radius: 3px;
             margin: 8px auto;
             display: block;
@@ -497,17 +503,14 @@
             text-decoration: none;
             font-size: 12pt;
             transition: all 0.3s ease-in-out;
+            color: $linkIdleColor4;
         }
 
         a.githubBtn:hover {
-            color: royalblue;
-            border-color: royalblue;
+            color: $linkHoverColor4;
+            border-color: $linkHoverColor4;
             transition: all 0.1s ease-in-out;
             cursor: pointer;
-        }
-
-        a.githubBtn:visited {
-            color: #222;
         }
 
         strong {
@@ -528,16 +531,16 @@
 
                 a {
                     text-decoration: none;
-                    color: royalblue;
+                    color: $linkIdleColor1;
                     transition: color 0.3s ease-in-out;
                 }
 
                 a:hover {
-                    color: darkorange;
+                    color: $linkHoverColor1;
                     transition: color 0.1s ease-in-out;
                 }
 
-                em{
+                em {
                     float: right;
                     font-style: normal;
                     color: #555;
@@ -576,6 +579,7 @@
     cursor: pointer;
     text-decoration: none;
     overflow: hidden;
+
     div {
 
         span {
@@ -608,8 +612,8 @@
     }
 }
 
-@keyframes download_bounce{
-    0%{
+@keyframes download_bounce {
+    0% {
         line-height: 100px;
     }
 
@@ -648,31 +652,31 @@
 }
 
 .downloadLatestPrerelease {
-    background-color: orange;
-    border-color: darkorange;
+    background-color: $prereleaseColorLight;
+    border-color: $prereleaseColorMedium;
 
     i {
-        background-color: darkorange;
-        color: orange;
+        background-color: $prereleaseColorMedium;
+        color: $prereleaseColorLight;
     }
 }
 
 .downloadLatestPrerelease:hover {
-    color: lime;
+    color: $releaseColorLight;
 }
 
 .downloadLatestRelease {
-    background-color: lime;
-    border-color: limegreen;
+    background-color: $releaseColorLight;
+    border-color: $releaseColorMedium;
 
     i {
-        background-color: limegreen;
-        color: lime;
+        background-color: $releaseColorMedium;
+        color: $releaseColorLight;
     }
 }
 
 .downloadLatestRelease:hover {
-    color: orange;
+    color: $prereleaseColorLight;
 }
 
 @media only screen and (max-width: $navBreakpoint2) {
@@ -686,11 +690,11 @@
             width: 50px;
             font-size: 30pt;
         }
-    }   
+    }
 }
 
 .otherReleases {
-    strong{
+    strong {
         font-weight: normal;
         font-size: 14pt;
         margin-left: 20px;
@@ -767,56 +771,138 @@
     }
 
     a.prereleaseDownload {
-        background-color: orange;
-        border-color: darkorange;
+        background-color: $prereleaseColorLight;
+        border-color: $prereleaseColorMedium;
 
         i {
-            background-color: darkorange;
+            background-color: $prereleaseColorMedium;
         }
 
         em {
-            color: orangered;
+            color: $prereleaseColorDark;
 
             span {
-                background-color: darkorange;
+                background-color: $prereleaseColorMedium;
             }
         }
 
         em:hover {
-            background-color: orangered;
+            background-color: $prereleaseColorDark;
         }
     }
 
     a.releaseDownload {
-        background-color: lime;
-        border-color: limegreen;
+        background-color: $releaseColorLight;
+        border-color: $releaseColorMedium;
 
         i {
-            background-color: limegreen;
+            background-color: $releaseColorMedium;
         }
 
         em {
-            color: forestgreen;
+            color: $releaseColorDark;
 
             span {
-                background-color: limegreen;
+                background-color: $releaseColorMedium;
             }
         }
 
         em:hover {
-            background-color: forestgreen;
+            background-color: $releaseColorDark;
         }
     }
 
     a.prereleaseDownload:hover {
         i {
-            color: orange;
+            color: $prereleaseColorLight;
         }
     }
 
     a.releaseDownload:hover {
         i {
-            color: lime;
+            color: $releaseColorLight;
         }
     }
 }
+
+.faqSearch {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 35px;
+    @include BigBoxGradient();
+
+    span {
+        color: white;
+        display: block;
+        text-shadow: 0 2px 2px #000;
+        font-size: 26pt;
+        margin: 12px 0;
+    }
+
+    input[type="search"] {
+        font-size: 18pt;
+        width: 90%;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 18px;
+    }
+
+    input[type="search"]:hover, input[type="search"]:focus {
+        border: none;
+    }
+
+    button[type="submit"] {
+        display: block;
+        margin: 20px auto;
+        font-size: 20pt;
+        background-color: dodgerblue;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 4px 16px;
+        cursor: pointer;
+        transition: color 0.3s ease-in-out;
+    }
+
+    button[type="submit"]:hover {
+        color: aqua;
+        transition: color 0.1s ease-in-out;
+    }
+
+
+    button[type="submit"]:before {
+        content: "\1F50D";
+        margin-right: 10px;
+        transition: margin-right 0.3s ease-in-out;
+    }
+
+    button[type="submit"]:hover:before {
+        content: "\1F50D";
+        margin-right: 20px;
+        transition: margin-right 0.1s ease-in-out;
+    }
+
+    b {
+        font-weight: normal;
+        color: white;
+        font-size: 14pt;
+        text-shadow: 0 1px 1px #000;
+
+        a {
+            font-size: 16pt;
+            color: $linkIdleColor2;
+            transition: all 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: $linkHoverColor2;
+            transition: all 0.1s ease-in-out;
+        }
+    }
+}
+
+

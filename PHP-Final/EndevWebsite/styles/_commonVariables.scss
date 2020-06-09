@@ -1,3 +1,43 @@
 ﻿$fullLogoDimensionRatio: 2.9;
 $navBreakpoint1: 1140px;
 $navBreakpoint2: 690px;
+
+/*
+    =====================
+            Colors
+    =====================
+*/ 
+
+// Release colors
+$releaseColorDark: forestgreen;
+$releaseColorMedium: limegreen;
+$releaseColorLight: lime;
+
+// Prerelease colors
+$prereleaseColorDark: orangered;
+$prereleaseColorMedium: darkorange;
+$prereleaseColorLight: orange;
+
+// Aside/Menu colors
+$asideIdleFontColor: black;
+$asideHoverFontColor: deepskyblue;
+
+$asideIdleFAIconColor: royalblue;
+$asideHoverFAIconColor: dodgerblue;
+
+// Links / Anchors
+$linkIdleColor1: royalblue;
+$linkHoverColor1: deepskyblue;
+
+$linkIdleColor2: orange;
+$linkHoverColor2: dodgerblue;
+
+$linkIdleColor3: royalblue;
+$linkHoverColor3: darkorange;
+
+$linkIdleColor4: #222;
+$linkHoverColor4: dodgerblue;
+
+x-test{
+    background-color: deepskyblue
+}

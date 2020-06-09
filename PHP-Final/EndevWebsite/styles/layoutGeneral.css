@@ -1,4 +1,12 @@
-﻿html {
+﻿/*
+    =====================
+            Colors
+    =====================
+*/
+x-test {
+  background-color: deepskyblue; }
+
+html {
   overflow-x: hidden;
   min-width: 300px; }
 
@@ -16,6 +24,12 @@ html::-webkit-scrollbar-thumb {
   background-color: #222;
   z-index: 110; }
 
+a {
+  color: royalblue; }
+
+a:hover {
+  color: deepskyblue; }
+
 body {
   margin: 0;
   background-color: white;
@@ -27,10 +41,15 @@ body {
 header {
   overflow: hidden;
   grid-area: header;
-  background: #001259;
-  background: -moz-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
-  background: -webkit-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
-  background: linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+  /*background: rgb(0,18,89);
+    background: -moz-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
+    background: -webkit-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
+    background: linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);*/
+  background: #1000ff;
+  background: -moz-linear-gradient(80deg, #1000ff 0%, #0092ff 8%, #29d6d6 45%, #29d6d6 55%, #0092ff 92%, #1000ff 100%);
+  background: -webkit-linear-gradient(80deg, #1000ff 0%, #0092ff 8%, #29d6d6 45%, #29d6d6 55%, #0092ff 92%, #1000ff 100%);
+  background: linear-gradient(80deg, #1000ff 0%, #0092ff 8%, #29d6d6 45%, #29d6d6 55%, #0092ff 92%, #1000ff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1000ff",endColorstr="#1000ff",GradientType=1);
   z-index: 110; }
   header h1 {
     position: absolute;
@@ -271,16 +290,21 @@ aside {
     padding: 0; }
     aside ul li {
       position: relative;
-      transition: all 0.5s ease-in-out;
+      transition: all 0.3s ease-in-out;
       cursor: pointer;
       list-style: none;
-      margin: 25px 20px; }
+      margin: 25px 20px;
+      color: black; }
       aside ul li span {
         transition: all 0.2s ease-in-out; }
       aside ul li i {
         width: 20px;
-        color: orangered;
+        color: royalblue;
         transition: all 0.1s ease-in-out; }
+    aside ul li:hover {
+      color: deepskyblue; }
+      aside ul li:hover i {
+        color: dodgerblue; }
     aside ul li::before {
       position: absolute;
       left: -15px;
@@ -289,10 +313,11 @@ aside {
       display: block;
       width: 0;
       height: 2px;
-      background: #001259;
-      background: -moz-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
-      background: -webkit-linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
-      background: linear-gradient(80deg, #001259 2%, #1305af 5%, #560caa 20%, #0aa47d 45%, #0aa47d 55%, #560caa 80%, #1305af 95%, #001259 98%);
+      background: #1000ff;
+      background: -moz-linear-gradient(45deg, #1000ff 0%, #0092ff 8%, #29d6d6 45%, #29d6d6 55%, #0092ff 92%, #1000ff 100%);
+      background: -webkit-linear-gradient(45deg, #1000ff 0%, #0092ff 8%, #29d6d6 45%, #29d6d6 55%, #0092ff 92%, #1000ff 100%);
+      background: linear-gradient(45deg, #1000ff 0%, #0092ff 8%, #29d6d6 45%, #29d6d6 55%, #0092ff 92%, #1000ff 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1000ff",endColorstr="#1000ff",GradientType=1);
       transition: all 0.5s ease-in-out; }
 
 @media only screen and (min-width: 1100px) {
@@ -310,8 +335,7 @@ aside {
     aside ul li:hover {
       margin-left: 30px;
       margin-right: 0;
-      transition: all 0.1s ease-in-out;
-      color: #1305af; }
+      transition: all 0.1s ease-in-out; }
     aside ul li:hover::before {
       width: 100%;
       transition: all 0.1s ease-in-out; } }
@@ -331,7 +355,10 @@ aside {
       aside ul li span {
         opacity: 0; }
       aside ul li i {
-        font-size: 20pt; }
+        font-size: 20pt;
+        display: block;
+        margin: 0 auto;
+        text-align: center; }
     aside ul li::before {
       position: absolute;
       left: 0px;

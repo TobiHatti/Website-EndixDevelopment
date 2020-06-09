@@ -1,4 +1,5 @@
 ﻿@import 'commonVariables';
+@import 'commonMixins';
 
 $defaultHeaderHeight: 200px;
 $defaultFooterHeight: 200px;
@@ -16,20 +17,23 @@ html{
 }
 
 html::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
-    background-color: #777;
-    border-radius: 10px;
+    @include CustomScrollbar-Track();
 }
 
 html::-webkit-scrollbar {
-    width: 10px;
-    background-color: #777;
+    @include CustomScrollbar();
 }
 
 html::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #222;
-    z-index: 110;
+    @include CustomScrollbar-Thumb();
+}
+
+a{
+    color: $linkIdleColor1;
+}
+
+a:hover{
+    color: $linkHoverColor1;
 }
 
 body {
@@ -44,10 +48,7 @@ body {
 header {
     overflow: hidden;
     grid-area: header;
-    background: rgb(0,18,89);
-    background: -moz-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
-    background: -webkit-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
-    background: linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
+    @include HeaderGradient();
     z-index: 110;
 
     h1 {
@@ -378,10 +379,11 @@ aside {
 
         li {
             position: relative;
-            transition: all 0.5s ease-in-out;
+            transition: all 0.3s ease-in-out;
             cursor: pointer;
             list-style: none;
             margin: 25px 20px;
+            color: $asideIdleFontColor;
 
             span {
                 transition: all 0.2s ease-in-out;
@@ -389,8 +391,16 @@ aside {
 
             i {
                 width: 20px;
-                color: orangered;
+                color: $asideIdleFAIconColor;
                 transition: all 0.1s ease-in-out;
+            }
+        }
+
+        li:hover {
+            color: $asideHoverFontColor;
+
+            i {
+                color: $asideHoverFAIconColor;
             }
         }
 
@@ -402,14 +412,9 @@ aside {
             display: block;
             width: 0;
             height: 2px;
-            background: rgb(0,18,89);
-            background: -moz-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
-            background: -webkit-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
-            background: linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
+            @include UnderlineGradient();
             transition: all 0.5s ease-in-out;
         }
-
-        
     }
 }
 
@@ -437,7 +442,6 @@ $asideBreakpoint : 1100px;
                 margin-left: 30px;
                 margin-right: 0;
                 transition: all 0.1s ease-in-out;
-                color: rgba(19,5,175,1);
             }
 
             li:hover::before {
@@ -470,6 +474,9 @@ $asideBreakpoint : 1100px;
 
                 i {
                     font-size: 20pt;
+                    display: block;
+                    margin: 0 auto;
+                    text-align: center;
                 }
             }
 
