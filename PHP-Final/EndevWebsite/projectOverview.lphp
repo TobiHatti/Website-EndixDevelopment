@@ -3,6 +3,8 @@ $${
 }
 
 <h1>Overview</h1>
-<p>
-    <?= $project["ProjectDescription"] ?>
-</p>
+<article>
+    <p>
+        <?= $project["ProjectDescription"] ?>
+    </p>
+</article>

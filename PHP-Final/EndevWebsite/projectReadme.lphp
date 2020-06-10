@@ -3,39 +3,40 @@ $${
 }
 
 <h1>Readme (GitHub)</h1>
+<article>
+    <?php 
 
-<?php 
-
-function CheckRMDataImage($rawFileContent)
-{
-    $lines =  explode("\n", $rawFileContent);
-    foreach($lines as $line)
+    function CheckRMDataImage($rawFileContent)
     {
-        if(strpos($line, "data-rmimg")) 
+        $lines =  explode("\n", $rawFileContent);
+        foreach($lines as $line)
         {
-            preg_match('/https?\:\/\/[\S\s]*?(?=\")/', $line, $httpLink);
-            if(count($httpLink) > 0)
+            if(strpos($line, "data-rmimg")) 
             {
-                $rawFileContent = str_replace($line, '<img align="right" width="80" height="80" src="'.$httpLink[0].'">', $rawFileContent);
+                preg_match('/https?\:\/\/[\S\s]*?(?=\")/', $line, $httpLink);
+                if(count($httpLink) > 0)
+                {
+                    $rawFileContent = str_replace($line, '<img align="right" width="80" height="80" src="'.$httpLink[0].'">', $rawFileContent);
+                }
+                else $rawFileContent = str_replace($line, '', $rawFileContent);
             }
-            else $rawFileContent = str_replace($line, '', $rawFileContent);
         }
+        return $rawFileContent;
     }
-    return $rawFileContent;
-}
 
-$readme = @file_get_contents("https://raw.githubusercontent.com/TobiHatti/".$project["GithubID"]."/master/README.md");
+    $readme = @file_get_contents("https://raw.githubusercontent.com/TobiHatti/".$project["GithubID"]."/master/README.md");
 
-    if($readme !== false):
-    $parsedown = new Parsedown();
-    $parsedown->setSafeMode(true);
-?>
+        if($readme !== false):
+        $parsedown = new Parsedown();
+        $parsedown->setSafeMode(true);
+    ?>
 
-<x-md><?= CheckRMDataImage($parsedown->text($readme)) ?></x-md>
+    <x-md><?= CheckRMDataImage($parsedown->text($readme)) ?></x-md>
 
-<?php else: ?>
+    <?php else: ?>
 
-<h2>The Readme could not be found, or no Readme exists.</h2>
-<h3>Error 404</h3>
+    <h2>The Readme could not be found, or no Readme exists.</h2>
+    <h3>Error 404</h3>
 
-<?php endif; ?>
+    <?php endif; ?>
+</article>

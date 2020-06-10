@@ -13,9 +13,10 @@
     }
 }
 
-function SelectProjectPage(tabPage)
+function SelectProjectPage(tabPage, projectID, urlName)
 {
-    window.history.pushState('subpage' + tabPage, 'Projects | Endev', "?page=" + tabPage);
+    // .htaccess must be set too!
+    window.history.pushState('subpage' + tabPage, 'Projects | Endev', "/project/" + projectID + "/" + urlName);
 
     for (var i = 0; i < document.getElementsByClassName("projectSubpage").length; i++) {
         if (i == tabPage) document.getElementsByClassName("projectSubpage")[i].style.display = "block";

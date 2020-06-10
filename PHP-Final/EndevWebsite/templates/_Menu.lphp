@@ -29,3 +29,6 @@ $${
 
 <!-- Required for menu-top-stick -->
 <nav class="default" style="display: none;"></nav>
+
+<!-- Helper-Class to check NAV-Breakpoints in js -->
+<div class="breakpointCheck"></div>

@@ -37,10 +37,14 @@ function SetPageLayout() {
     
     try
     {
-        // Sticky Aside
-        var headerInstance = getComputedStyle(this.document.querySelector("header"));
-        if (parseInt(viewport.top) <= 50) document.getElementsByTagName("aside")[0].style.top = window.scrollY + 50 + "px";
-        else document.getElementsByTagName("aside")[0].style.top = parseInt(headerInstance.height) + "px";
+        if (getComputedStyle(document.querySelector('.breakpointCheck'), '').content != '"Mobile"')
+        {
+            // Sticky Aside
+            var headerInstance = getComputedStyle(this.document.querySelector("header"));
+            if (parseInt(viewport.top) <= 50) document.getElementsByTagName("aside")[0].style.top = window.scrollY + 50 + "px";
+            else document.getElementsByTagName("aside")[0].style.top = parseInt(headerInstance.height) + "px";
+        }
+        else document.getElementsByTagName("aside")[0].style.top = "auto";
     }
     catch { }
 

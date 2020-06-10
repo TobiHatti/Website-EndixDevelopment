@@ -13,44 +13,55 @@ $${
     <b>Can't find what you're looking for?<br /><a href="#">Ask a question!</a></b>
 </div>
 
-<h2>FAQ - <?= $project["ProjectName"]?>:</h2>
+<article>
 
-<ul class="faqContainer">
-<?php foreach($sql->ExecuteQuery("SELECT * FROM faq WHERE ProjectID = ?", $project["ProjectID"]) as $faq): ?>
-    <li>
-        <div class="votes">
-            <span class="voteCounter">0</span>
-            <span class="upvote"><i class="fas fa-play"></i></span>
-            <span class="downvote"><i class="fas fa-play"></i></span>
-        </div>
-        <a href="#/">
-            <div class="faq">
-                <b><?= $faq["Question"] ?></b>
-                <p><?= $faq["Answer"] ?></p>
+    <h2><?= $project["ProjectName"]?>:</h2>
+
+    <?php if($sql->ExecuteScalar("SELECT COUNT(*) FROM faq WHERE ProjectID = ?", $project["ProjectID"]) > 0): ?>
+
+    <ul class="faqContainer">
+    <?php foreach($sql->ExecuteQuery("SELECT * FROM faq WHERE ProjectID = ?", $project["ProjectID"]) as $faq): ?>
+        <li>
+            <div class="votes">
+                <span class="voteCounter">0</span>
             </div>
-        </a>
-    </li>
-<?php endforeach; ?>
-</ul>
+            <a href="#/" title="Click to see the full entry">
+                <div class="faq">
+                    <b><?= $faq["Question"] ?></b>
+                    <p><?= $faq["Answer"] ?></p>
+                </div>
+            </a>
+        </li>
+    <?php endforeach; ?>
+    </ul>
 
+    <?php else: ?>
+    <h3>Sorry, there are no questions yet.</h3>
+    <?php endif; ?>
 
-<br />
-<h2>FAQ - General Questions:</h2>
+    <br />
+    <h2>General Questions:</h2>
 
-<ul class="faqContainer">
-<?php foreach($sql->ExecuteQuery("SELECT * FROM faq WHERE ProjectID = ''") as $faq): ?>
-    <li>
-        <div class="votes">
-            <span class="voteCounter">0</span>
-            <span class="upvote"><i class="fas fa-play"></i></span>
-            <span class="downvote"><i class="fas fa-play"></i></span>
-        </div>
-        <a href="#/">
-            <div class="faq">
-                <b><?= $faq["Question"] ?></b>
-                <p><?= $faq["Answer"] ?></p>
+    <?php if($sql->ExecuteScalar("SELECT COUNT(*) FROM faq WHERE ProjectID = ''") > 0): ?>
+
+    <ul class="faqContainer">
+    <?php foreach($sql->ExecuteQuery("SELECT * FROM faq WHERE ProjectID = ''") as $faq): ?>
+        <li>
+            <div class="votes">
+                <span class="voteCounter">0</span>
             </div>
-        </a>
-    </li>
-<?php endforeach; ?>
-</ul>
+            <a href="#/" title="Click to see the full entry">
+                <div class="faq">
+                    <b><?= $faq["Question"] ?></b>
+                    <p><?= $faq["Answer"] ?></p>
+                </div>
+            </a>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+
+    <?php else: ?>
+    <h3>Sorry, there are no questions yet.</h3>
+    <?php endif; ?>
+
+</article>

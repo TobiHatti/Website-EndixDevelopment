@@ -13,6 +13,12 @@ else
     die();
 }
 
+if(isset($_GET['page']) AND $_GET['page'] == -1) 
+{
+    header("Location: /project/".$projectID);
+    die();
+}
+
 $sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("DBPass"));
 $sql->Open();
 
@@ -20,7 +26,7 @@ $sql->Open();
 $project = $sql->ExecuteQuery("SELECT * FROM projects WHERE ProjectID = ?", $projectID);
 if(count($project) == 0)
 {
-    header("Location: /projects2");
+    header("Location: /projects");
     die();
 }
 else $project = $project[0];
@@ -28,14 +34,14 @@ else $project = $project[0];
 
 <aside>
     <ul>
-        <li onclick="SelectProjectPage(0)"><i class="fas fa-home"></i> <span>Overview</span></li>
-        <li onclick="SelectProjectPage(1)"><i class="fas fa-headset"></i> <span>Support &amp; FAQ</span></li>
-        <li onclick="SelectProjectPage(2)"><i class="fas fa-exclamation-circle"></i> <span>Issues</span></li>
-        <li onclick="SelectProjectPage(3)"><i class="fas fa-download"></i> <span>Downloads</span></li>
-        <li onclick="SelectProjectPage(4)"><i class="fas fa-history"></i> <span>Version History</span></li>
-        <li onclick="SelectProjectPage(5)"><i class="fas fa-book-reader"></i> <span>Readme</span></li>
-        <li onclick="SelectProjectPage(6)"><i class="fas fa-cogs"></i> <span>Tech. Information</span></li>
-        <li onclick="SelectProjectPage(7)"><i class="fas fa-file-alt"></i> <span>License</span></li>
+        <li onclick="SelectProjectPage(0, '<?= $project["ProjectID"] ?>', 'Overview')"><i class="fas fa-home"></i> <span>Overview</span></li>
+        <li onclick="SelectProjectPage(1, '<?= $project["ProjectID"] ?>', 'Support')"><i class="fas fa-headset"></i> <span>Support &amp; FAQ</span></li>
+        <li onclick="SelectProjectPage(2, '<?= $project["ProjectID"] ?>', 'Issues')"><i class="fas fa-exclamation-circle"></i> <span>Issues</span></li>
+        <li onclick="SelectProjectPage(3, '<?= $project["ProjectID"] ?>', 'Downloads')"><i class="fas fa-download"></i> <span>Downloads</span></li>
+        <li onclick="SelectProjectPage(4, '<?= $project["ProjectID"] ?>', 'Version-History')"><i class="fas fa-history"></i> <span>Version History</span></li>
+        <li onclick="SelectProjectPage(5, '<?= $project["ProjectID"] ?>', 'Readme')"><i class="fas fa-book-reader"></i> <span>Readme</span></li>
+        <li onclick="SelectProjectPage(6, '<?= $project["ProjectID"] ?>', 'tech-info')"><i class="fas fa-cogs"></i> <span>Tech. Information</span></li>
+        <li onclick="SelectProjectPage(7, '<?= $project["ProjectID"] ?>', 'license')"><i class="fas fa-file-alt"></i> <span>License</span></li>
     </ul>
 </aside>
 

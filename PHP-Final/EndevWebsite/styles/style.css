@@ -29,6 +29,10 @@ x-test {
   z-index: 130;
   transition: all 0.2s ease-in-out; }
 
+@media only screen and (max-width: 690px) {
+  .navigateToTop {
+    display: none; } }
+
 .navigateToTop:hover {
   text-shadow: 0px 5px 2px #111;
   line-height: 20px; }
@@ -48,7 +52,7 @@ x-test {
       padding-bottom: 56.25%; } }
   .featuredProjects label {
     position: relative;
-    margin: 5px;
+    margin: 0px;
     display: inline-block;
     text-align: left;
     border-radius: 25px;
@@ -123,6 +127,9 @@ x-test {
         transition: background-color 0.1s ease-in-out;
         background-color: gray;
         color: lightgray; }
+  @media only screen and (max-width: 510px) {
+    .featuredProjects label {
+      border-radius: 0; } }
   .featuredProjects label:hover {
     cursor: pointer; }
     .featuredProjects label:hover img {
@@ -154,7 +161,8 @@ x-test {
   min-height: 500px;
   width: 100%;
   overflow: hidden;
-  transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out;
+  box-sizing: border-box; }
   .projectBrowser ul {
     grid-area: projectMenu;
     margin: 15px 0;
@@ -277,6 +285,10 @@ x-test {
             transition: background-color 0.1s ease-in-out;
             background-color: gray;
             color: lightgray; }
+
+@media only screen and (max-width: 690px) {
+  .projectBrowser {
+    border-radius: 0; } }
 
 @media only screen and (min-width: 1100px) {
   .projectBrowser {
@@ -529,7 +541,9 @@ x-test {
   font-size: 15pt;
   padding: 3px 5px;
   margin: 6px;
-  padding-left: 30px; }
+  padding-left: 30px;
+  white-space: nowrap;
+  display: inline-block; }
   .otherReleases a.releaseDownload i, .otherReleases a.prereleaseDownload i {
     position: absolute;
     top: 0;
@@ -567,7 +581,6 @@ x-test {
       height: 0px;
       overflow: hidden;
       transition: all 0.2s ease-in-out;
-      z-index: 102;
       box-shadow: none; }
   .otherReleases a.releaseDownload em:hover, .otherReleases a.prereleaseDownload em:hover {
     color: white;
@@ -670,66 +683,40 @@ x-test {
       color: dodgerblue;
       transition: all 0.1s ease-in-out; }
 
+@media only screen and (max-width: 690px) {
+  .faqSearch {
+    border-radius: 0; } }
+
 ul.faqContainer {
   padding: 0;
   margin: 10px auto;
-  border: 1px solid dodgerblue;
-  border-radius: 20px;
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
   width: 90%; }
   ul.faqContainer li {
     list-style: none;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
     display: flex;
     max-width: 100vw; }
     ul.faqContainer li div.votes {
       padding: 10px 0px;
       transition: background-color 0.3s ease-in-out;
-      width: 75px;
+      width: 55px;
       box-sizing: border-box;
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      grid-template-columns: 3fr 2fr;
-      grid-template-areas: "votecount upvote" "votecount downvote"; }
+      text-align: center; }
       ul.faqContainer li div.votes .voteCounter {
-        grid-area: votecount;
-        text-align: right;
+        text-align: center;
         align-self: center;
         font-size: 30pt;
-        color: white;
-        text-shadow: 0px 1px 2px black; }
-      ul.faqContainer li div.votes .upvote {
-        cursor: pointer;
-        grid-area: upvote;
-        text-align: center;
-        align-self: end;
-        transition: all 0.1s ease-in-out; }
-        ul.faqContainer li div.votes .upvote i {
-          transform: rotate(-90deg); }
-      ul.faqContainer li div.votes .upvote:hover {
-        padding-bottom: 7px;
-        transition: all 0.3s ease-in-out;
-        color: lime; }
-      ul.faqContainer li div.votes .downvote {
-        cursor: pointer;
-        grid-area: downvote;
-        text-align: center;
-        align-self: start;
-        transition: all 0.1s ease-in-out; }
-        ul.faqContainer li div.votes .downvote i {
-          transform: rotate(90deg); }
-      ul.faqContainer li div.votes .downvote:hover {
-        padding-top: 7px;
-        transition: all 0.3s ease-in-out;
-        color: red; }
+        color: #666; }
     ul.faqContainer li a {
       padding: 10px;
       color: black;
       text-decoration: none;
-      width: calc(100% - 80px);
-      box-sizing: border-box; }
+      width: calc(100% - 60px);
+      box-sizing: border-box;
+      transition: color 0.3s ease-in-out; }
       ul.faqContainer li a div.faq b {
         display: block;
         font-weight: normal;
@@ -745,18 +732,12 @@ ul.faqContainer {
         margin: 0;
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis; }
-  ul.faqContainer li:nth-child(even) {
-    background-color: #d1ecfa; }
-    ul.faqContainer li:nth-child(even) div.votes {
-      background-color: dodgerblue; }
+        text-overflow: ellipsis;
+        color: #aaa; }
   ul.faqContainer li:nth-child(odd) {
+    background-color: #edf8fa; }
+  ul.faqContainer li:nth-child(even) {
     background-color: white; }
-    ul.faqContainer li:nth-child(odd) div.votes {
-      background-color: lightskyblue; }
-  ul.faqContainer li:hover {
-    transition: all 0.1s ease-in-out;
-    background-color: skyblue; }
-    ul.faqContainer li:hover div.votes {
-      transition: background-color 0.1s ease-in-out;
-      background-color: cornflowerblue; }
+  ul.faqContainer li:hover a {
+    transition: color 0.1s ease-in-out;
+    color: royalblue; }

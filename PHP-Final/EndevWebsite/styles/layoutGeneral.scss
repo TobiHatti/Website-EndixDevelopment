@@ -11,6 +11,28 @@ $defaultLogoLeftOffset: 50px;
 $defaultLogoHeight: 100px;
 
 
+@media only screen and (min-width: $navBreakpoint1) {
+    .breakpointCheck {
+        display: none;
+        content: 'DesktopFull';
+    }
+}
+
+@media only screen and (min-width: $navBreakpoint2) {
+    .breakpointCheck {
+        display: none;
+        content: 'DesktopSmall';
+    }
+}
+
+@media only screen and (max-width: $navBreakpoint2) {
+    .breakpointCheck {
+        display: none;
+        content: 'Mobile';
+    }
+}
+
+
 html{
     overflow-x: hidden;
     min-width: 300px;
@@ -74,6 +96,7 @@ header {
         width: 100%;
         height: 80vh;
         background-attachment: fixed;
+        background-position-x: center;
         background-position-y: -10vh;
         background-size: cover;
     }
@@ -183,12 +206,21 @@ main {
     margin-bottom: $defaultFooterHeight;
     z-index: 100;
     padding: 20px 20%;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: $navBreakpoint2) {
+    main {
+        padding: 20px 0;
+    }
+}
+
+article{
+    padding: 0 2%;
 }
 
 nav {
-
-
-    transition: width 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out ;
 
     div.fullWidthMenu, div.mobileMenu {
         box-sizing: border-box;
@@ -369,10 +401,17 @@ footer {
 }
 
 aside {
+    position: absolute;
     white-space: nowrap;
     overflow: hidden;
     transition: top 0.005s linear, width 0.3s ease-in-out;
     background-color: rgba(255,255,255,0.8);
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+    margin-top: 20vh;
+    left: 10px;
+    z-index: 115;
 
     ul {
         padding: 0;
@@ -415,54 +454,66 @@ aside {
             @include UnderlineGradient();
             transition: all 0.5s ease-in-out;
         }
+
+        li:hover::before {
+            width: 100%;
+            transition: all 0.1s ease-in-out;
+        }
     }
 }
 
 $asideBreakpoint : 1100px;
 
-@media only screen and (min-width: $asideBreakpoint) {
+@media only screen and (max-width: $navBreakpoint2) {
     aside {
-        position: absolute;
-        width: 200px;
-        min-height: 200px;
-        border: 1px solid #aaa;
-        border-radius: 20px;
-        left: 10px;
-        margin-top: 20vh;
-        box-sizing: border-box;
-
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 70px;
+        background-color: white;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        border-top: 1px solid #222;
+        overflow-x: scroll;
         ul {
+            display: flex;
+            justify-content: space-evenly;
+
             li {
+                margin: 0 0;
+                display: inline-block;
+
                 span {
-                    opacity: 1;
+                    opacity: 0;
+                    display: none;
+                }
+
+                i {
+                    width: auto;
+                    padding: 0 10px;
+                    font-size: 22pt;
+                    display: block;
+                    margin: 0 auto;
+                    text-align: center;
                 }
             }
 
-            li:hover {
-                margin-left: 30px;
-                margin-right: 0;
-                transition: all 0.1s ease-in-out;
-            }
-
-            li:hover::before {
-                width: 100%;
-                transition: all 0.1s ease-in-out;
+            li::before {
+                position: absolute;
+                left: 0px;
+                bottom: -8px;
+                height: 2px;
             }
         }
     }
 }
 
-@media only screen and (max-width: $asideBreakpoint) {
+@media only screen and (min-width: $navBreakpoint2) {
     aside {
-        position: absolute;
         width: 50px;
         min-height: 200px;
-        border: 1px solid #aaa;
-        border-radius: 20px;
-        left: 10px;
-        margin-top: 20vh;
-        box-sizing: border-box;
-
 
         ul {
             li {
@@ -486,14 +537,48 @@ $asideBreakpoint : 1100px;
                 bottom: -8px;
                 height: 2px;
             }
+        }
+    }
+}
 
-            li:hover::before {
-                width: 100%;
+
+@media only screen and (min-width: $asideBreakpoint) {
+    aside {
+        width: 200px;
+        min-height: 200px;
+
+        ul {
+            li {
+                span {
+                    opacity: 1;
+                }
+
+                i {
+                    font-size: 12pt;
+                    display: block;
+                    width: 20px;
+                    text-align: center;
+                }
+            }
+
+            li::before {
+                left: -15px;
+                bottom: -8px;
+            }
+
+            li:hover {
+                margin-left: 30px;
+                margin-right: 0;
                 transition: all 0.1s ease-in-out;
             }
         }
     }
 }
+
+
+
+
+
 
 
 x-md {

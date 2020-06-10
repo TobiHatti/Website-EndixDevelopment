@@ -3,6 +3,7 @@ $${
 }
 
 <h1>Downloads</h1>
+<article>
 <?php if(is_countable($releases) AND count($releases) > 0): ?>
 
     <a href="<?= (count($releases[0]->assets) > 0) ? $releases[0]->assets[0]->browser_download_url : $releases[0]->zipball_url ?>" download class="sfIgnore <?= ($releases[0]->prerelease) ? "downloadLatestPrerelease" : "downloadLatestRelease" ?> ">
@@ -44,5 +45,5 @@ $${
 
 <?php endif; ?>
 
-
+</article>
 

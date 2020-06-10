@@ -24,6 +24,7 @@
     <Folder Include="styles\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".htaccess" />
     <Content Include="compilerconfig.json.defaults">
       <SubType>Content</SubType>
       <DependentUpon>compilerconfig.json</DependentUpon>
