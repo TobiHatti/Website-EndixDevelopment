@@ -4,14 +4,16 @@ $${
 
 <h1>Support &amp; FAQ</h1>
 
-
-<div class="faqSearch">
-    <span>How can we help you?</span>
-    <input type="search" placeholder="Search for a topic or keyword..."/>
-    <button type="submit">Search</button>
-    <br />
-    <b>Can't find what you're looking for?<br /><a href="#">Ask a question!</a></b>
-</div>
+<form action="/support" method="get" accept-charset="utf-8">
+    <div class="faqSearch">
+        <span>How can we help you?</span>
+        <input type="hidden" value="<?= $project["ProjectID"] ?>" name="project" />
+        <input type="search" placeholder="Search for a topic or keyword..." name="search" required/>
+        <button type="submit">Search</button>
+        <br />
+        <b>Can't find what you're looking for?<br /><a href="#">Contact our support here!</a></b>
+    </div>
+</form>
 
 <article>
 
@@ -25,7 +27,7 @@ $${
             <div class="votes">
                 <span class="voteCounter">0</span>
             </div>
-            <a href="#/" title="Click to see the full entry">
+            <a href="/support" title="Click to see the full entry">
                 <div class="faq">
                     <b><?= $faq["Question"] ?></b>
                     <p><?= $faq["Answer"] ?></p>

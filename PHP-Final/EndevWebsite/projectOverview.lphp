@@ -5,6 +5,6 @@ $${
 <h1>Overview</h1>
 <article>
     <p>
-        <?= $project["ProjectDescription"] ?>
+        <?= nl2br($project["ProjectDescription"]) ?>
     </p>
 </article>

@@ -5,5 +5,18 @@ $${
 <h1>Technical Information</h1>
 
 <article>
-
+    <table>
+        <tr>
+            <td>Project Language</td>
+            <td>English, German</td>
+        </tr>
+        <tr>
+            <td>Appveyor Build:</td>
+            <td><img alt="AppVeyor" src="https://ci.appveyor.com/api/projects/status/j681lnwlj4dgybxd?svg=true"></td>
+        </tr>
+        <tr>
+            <td>Code Coverage (Codecov):</td>
+            <td><img alt="Codecov" src="https://img.shields.io/codecov/c/github/TobiHatti/LPHP-Engine?flag=FLAG&style=flat-square&token=TOKEN"></td>
+        </tr>
+    </table>
 </article>
