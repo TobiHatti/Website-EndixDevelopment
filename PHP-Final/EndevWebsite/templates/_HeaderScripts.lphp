@@ -1,0 +1,7 @@
+$${
+    NoCompile=true;
+}
+
+<!-- Shared scripts -->
+<script src="/scripts/PageLayout.js"></script>
+<script src="/scripts/CommonScripts.js"></script>

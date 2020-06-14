@@ -6,7 +6,7 @@ $${
 <!DOCTYPE html>
 <html>
 <head>
-    $$RenderPage("../templates/_DefaultLinks.lphp")
+    $$RenderPage("../templates/_DefaultHeader.lphp")
     <link href="/styles/layoutStartPage.css" rel="stylesheet" />
 </head>
 <body>

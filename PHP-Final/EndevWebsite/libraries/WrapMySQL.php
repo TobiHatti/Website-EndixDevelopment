@@ -97,6 +97,17 @@ class WrapMySQL
         return $stmt->fetchAll();
     }
 
+    // Executes a query-statement.
+    public function ExecuteQueryRow(string $sqlStatement, ...$parameters)
+    {
+        $stmt = $this->GetPDO()->prepare($sqlStatement);
+        $stmt->execute($parameters);
+        $result = $stmt->fetchAll();
+        if(count($result) > 0) return $result[0];
+        else return array();
+    }
+
+
     // Executes a execute-scalar statement. 
     public function ExecuteScalar(string $sqlStatement, ...$parameters)
     {

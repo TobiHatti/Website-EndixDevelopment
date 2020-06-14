@@ -1,0 +1,81 @@
+﻿@import 'commonVariables';
+
+$headerHeight: 0;
+$footerHeight: 0;
+$navHeight: 0;
+$navTopOffset: 0;
+
+$logoTopOffset: 0;
+$logoLeftOffset: 0;
+$logoHeight: 0;
+
+body {
+    grid-template-rows: $headerHeight auto;
+}
+
+header {
+    div.endevLogo {
+        @media only screen and (min-width: $navBreakpoint1) {
+            left: $logoLeftOffset;
+            top: $logoTopOffset;
+            height: $logoHeight;
+            width: $logoHeight * $fullLogoDimensionRatio;
+            background-size: auto $logoHeight;
+        }
+
+        @media only screen and (max-width: $navBreakpoint1) {
+            top: $navTopOffset;
+            height: #{$navHeight - 10px};
+            width: #{$navHeight - 10px};
+            background-size: auto #{$navHeight - 10px};
+        }
+    }
+}
+
+header.sticky {
+    height: $navHeight;
+    background-size: 100vw $headerHeight;
+}
+
+// Desktop small
+@media only screen and (max-width: $navBreakpoint1) {
+
+    nav {
+        height: $navHeight;
+
+        a {
+            line-height: $navHeight;
+        }
+    }
+
+    nav.default {
+        top: $navTopOffset;
+    }
+}
+
+
+// Desktop full
+@media only screen and (min-width: $navBreakpoint1) {
+
+    nav {
+        height: $navHeight;
+
+        a {
+            line-height: $navHeight;
+        }
+    }
+
+    nav.default {
+        top: $navTopOffset;
+    }
+}
+
+
+main{
+    min-height: 0;
+    padding: 0;
+}
+
+footer {
+    height: $footerHeight;
+}

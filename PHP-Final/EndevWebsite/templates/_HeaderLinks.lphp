@@ -1,12 +1,6 @@
 $${
-    NoCompile = true;
+    NoCompile=true;
 }
-
-<?php
-include("data/dbConnect.php");
-include("libraries/WrapMySQL.php");
-include("libraries/Parsedown.php");
-?>
 
 <!-- Shared Stylesheets -->
 <link href="/styles/fontawesome.min.css" rel="stylesheet" />
@@ -15,13 +9,3 @@ include("libraries/Parsedown.php");
 <link href="/styles/textElements.min.css" rel="stylesheet" />
 <link href="/styles/formElements.min.css" rel="stylesheet" />
 <link href="/styles/layoutGeneral.min.css" rel="stylesheet" />
-
-<!-- Shared scripts -->
-<script src="/scripts/PageLayout.js"></script>
-<script src="/scripts/CommonScripts.js"></script>
-
-<!-- Meta-Tags -->
-<meta name="viewport" content="width=device-width" />
-
-<!-- Other -->
-<title>$$?PageTitle | Endev</title>

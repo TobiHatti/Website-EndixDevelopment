@@ -693,7 +693,7 @@ ul.faqContainer {
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
-  width: 90%; }
+  width: 100%; }
   ul.faqContainer li {
     list-style: none;
     transition: background-color 0.3s ease-in-out;
@@ -741,3 +741,9 @@ ul.faqContainer {
   ul.faqContainer li:hover a {
     transition: color 0.1s ease-in-out;
     color: royalblue; }
+
+iframe.faqResults {
+  width: 100%;
+  min-height: 500px;
+  margin: 20px 0;
+  overflow-y: hidden; }

@@ -1,0 +1,13 @@
+$${
+    NoCompile=true;
+}
+
+
+<!-- Meta-Tags -->
+<meta name="viewport" content="width=device-width" />
+
+<!--
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+<meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+<meta http-equiv="X-WebKit-CSP" content="default-src 'self'; script-src 'self'">
+-->

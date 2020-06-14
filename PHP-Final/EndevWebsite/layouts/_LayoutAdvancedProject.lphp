@@ -4,7 +4,7 @@ $${
 <!DOCTYPE html>
 <html>
 <head>
-    $$RenderPage("../templates/_DefaultLinks.lphp")
+    $$RenderPage("../templates/_DefaultHeader.lphp")
     <link href="/styles/layoutAdvancedProject.css" rel="stylesheet" />
 </head>
 <body>

@@ -23,25 +23,24 @@ $sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("
 $sql->Open();
 
 // Check if project-id is set, otherwise return to projects.php
-$project = $sql->ExecuteQuery("SELECT * FROM projects WHERE ProjectID = ?", $projectID);
-if(count($project) == 0)
+$project = $sql->ExecuteQueryRow("SELECT * FROM projects WHERE ProjectID = ?", $projectID);
+if($project == null)
 {
     header("Location: /projects");
     die();
 }
-else $project = $project[0];
 ?>
 
 <aside>
     <ul>
-        <li onclick="SelectProjectPage(0, '<?= $project["ProjectID"] ?>', 'Overview')"><i class="fas fa-home"></i> <span>Overview</span></li>
-        <li onclick="SelectProjectPage(1, '<?= $project["ProjectID"] ?>', 'Support')"><i class="fas fa-headset"></i> <span>Support &amp; FAQ</span></li>
-        <li onclick="SelectProjectPage(2, '<?= $project["ProjectID"] ?>', 'Issues')"><i class="fas fa-exclamation-circle"></i> <span>Issues</span></li>
-        <li onclick="SelectProjectPage(3, '<?= $project["ProjectID"] ?>', 'Downloads')"><i class="fas fa-download"></i> <span>Downloads</span></li>
-        <li onclick="SelectProjectPage(4, '<?= $project["ProjectID"] ?>', 'Version-History')"><i class="fas fa-history"></i> <span>Version History</span></li>
-        <li onclick="SelectProjectPage(5, '<?= $project["ProjectID"] ?>', 'Readme')"><i class="fas fa-book-reader"></i> <span>Readme</span></li>
-        <li onclick="SelectProjectPage(6, '<?= $project["ProjectID"] ?>', 'tech-info')"><i class="fas fa-cogs"></i> <span>Tech. Information</span></li>
-        <li onclick="SelectProjectPage(7, '<?= $project["ProjectID"] ?>', 'license')"><i class="fas fa-file-alt"></i> <span>License</span></li>
+        <li onclick="SelectProjectPage(0, '<?= $project["ProjectID"] ?>', 'Overview')"><i class="fas fa-home"></i> <span>[N] Overview</span></li>
+        <li onclick="SelectProjectPage(1, '<?= $project["ProjectID"] ?>', 'Support')"><i class="fas fa-headset"></i> <span>[W] Support &amp; FAQ</span></li>
+        <li onclick="SelectProjectPage(2, '<?= $project["ProjectID"] ?>', 'Issues')"><i class="fas fa-exclamation-circle"></i> <span>[N] Issues</span></li>
+        <li onclick="SelectProjectPage(3, '<?= $project["ProjectID"] ?>', 'Downloads')"><i class="fas fa-download"></i> <span>[Y] Downloads</span></li>
+        <li onclick="SelectProjectPage(4, '<?= $project["ProjectID"] ?>', 'Version-History')"><i class="fas fa-history"></i> <span>[Y] Version History</span></li>
+        <li onclick="SelectProjectPage(5, '<?= $project["ProjectID"] ?>', 'Readme')"><i class="fas fa-book-reader"></i> <span>[Y] Readme</span></li>
+        <li onclick="SelectProjectPage(6, '<?= $project["ProjectID"] ?>', 'tech-info')"><i class="fas fa-cogs"></i> <span>[N] Tech. Information</span></li>
+        <li onclick="SelectProjectPage(7, '<?= $project["ProjectID"] ?>', 'license')"><i class="fas fa-file-alt"></i> <span>[Y] License</span></li>
     </ul>
 </aside>
 
@@ -106,7 +105,7 @@ $releases = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$proj
     <div class="projectSubpage stagFade" style="display: <?= TabPageSelected(2) ?>">
         $$RenderPage("projectIssues.lphp")
     </div>
-    <div class="projectSubpage" style="display: <?= TabPageSelected(3) ?>">
+    <div class="projectSubpage stagFade" style="display: <?= TabPageSelected(3) ?>">
         $$RenderPage("projectDownloads.lphp")
     </div>
     <div class="projectSubpage stagFade" style="display: <?= TabPageSelected(4) ?>">

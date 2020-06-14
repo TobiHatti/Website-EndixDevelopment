@@ -1,0 +1,15 @@
+$${
+    NoCompile = true; 
+}
+<!DOCTYPE html>
+<html>
+<head>
+    $$RenderPage("../templates/_IFrameHeader.lphp")
+    <link href="/styles/layoutIFramePage.css" rel="stylesheet" />
+</head>
+<body>
+    <main>
+        $$RenderBody()
+    </main>
+</body>
+</html>

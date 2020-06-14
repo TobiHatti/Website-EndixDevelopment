@@ -4,66 +4,17 @@ $${
 
 <h1>Support &amp; FAQ</h1>
 
-<form action="/support" method="get" accept-charset="utf-8">
+<form action="/projectSupportResult" target="faqOutput" method="get" accept-charset="utf-8" onsubmit="document.getElementsByName('faqOutput')[0].scrollIntoView(true)">
     <div class="faqSearch">
         <span>How can we help you?</span>
         <input type="hidden" value="<?= $project["ProjectID"] ?>" name="project" />
         <input type="search" placeholder="Search for a topic or keyword..." name="search" required/>
-        <button type="submit">Search</button>
+        <button type="submit" >Search</button>
         <br />
-        <b>Can't find what you're looking for?<br /><a href="#">Contact our support here!</a></b>
+        <b>Can't find what you're looking for?<br /><a href="/support">Contact our support here!</a></b>
     </div>
 </form>
 
 <article>
-
-    <h2><?= $project["ProjectName"]?>:</h2>
-
-    <?php if($sql->ExecuteScalar("SELECT COUNT(*) FROM faq WHERE ProjectID = ?", $project["ProjectID"]) > 0): ?>
-
-    <ul class="faqContainer">
-    <?php foreach($sql->ExecuteQuery("SELECT * FROM faq WHERE ProjectID = ?", $project["ProjectID"]) as $faq): ?>
-        <li>
-            <div class="votes">
-                <span class="voteCounter">0</span>
-            </div>
-            <a href="/support" title="Click to see the full entry">
-                <div class="faq">
-                    <b><?= $faq["Question"] ?></b>
-                    <p><?= $faq["Answer"] ?></p>
-                </div>
-            </a>
-        </li>
-    <?php endforeach; ?>
-    </ul>
-
-    <?php else: ?>
-    <h3>Sorry, there are no questions yet.</h3>
-    <?php endif; ?>
-
-    <br />
-    <h2>General Questions:</h2>
-
-    <?php if($sql->ExecuteScalar("SELECT COUNT(*) FROM faq WHERE ProjectID = ''") > 0): ?>
-
-    <ul class="faqContainer">
-    <?php foreach($sql->ExecuteQuery("SELECT * FROM faq WHERE ProjectID = ''") as $faq): ?>
-        <li>
-            <div class="votes">
-                <span class="voteCounter">0</span>
-            </div>
-            <a href="#/" title="Click to see the full entry">
-                <div class="faq">
-                    <b><?= $faq["Question"] ?></b>
-                    <p><?= $faq["Answer"] ?></p>
-                </div>
-            </a>
-        </li>
-    <?php endforeach; ?>
-    </ul>
-
-    <?php else: ?>
-    <h3>Sorry, there are no questions yet.</h3>
-    <?php endif; ?>
-
+    <iframe src="/projectSupportResult?project=<?= $project["ProjectID"] ?>" name="faqOutput" class="faqResults" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';"></iframe>
 </article>

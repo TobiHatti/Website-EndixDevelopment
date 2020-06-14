@@ -5,18 +5,16 @@ $${
 <h1>Technical Information</h1>
 
 <article>
-    <table>
-        <tr>
-            <td>Project Language</td>
-            <td>English, German</td>
-        </tr>
-        <tr>
-            <td>Appveyor Build:</td>
-            <td><img alt="AppVeyor" src="https://ci.appveyor.com/api/projects/status/j681lnwlj4dgybxd?svg=true"></td>
-        </tr>
-        <tr>
-            <td>Code Coverage (Codecov):</td>
-            <td><img alt="Codecov" src="https://img.shields.io/codecov/c/github/TobiHatti/LPHP-Engine?flag=FLAG&style=flat-square&token=TOKEN"></td>
-        </tr>
-    </table>
+    <h4>VS-Projects</h4>
+    <img alt="AppVeyor" src="https://ci.appveyor.com/api/projects/status/j681lnwlj4dgybxd?svg=true">
+
+    <h4>Websites & APIs</h4>
+    <img alt="Website" src="https://img.shields.io/website?down_color=red&down_message=offline&up_color=limegreen&up_message=online&url=https%3A%2F%2Fendev.at">
+    <img alt="Mozilla HTTP Observatory Grade" src="https://img.shields.io/mozilla-observatory/grade/endev.at?publish">
+
+    <h4>General</h4>
+    <img alt="GitHub file size in bytes" src="https://img.shields.io/github/size/TobiHatti/LPHP-Engine/release">
+    <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/TobiHatti/LPHP-Engine">
+    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/TobiHatti/LPHP-Engine">
+    <img alt="GitHub" src="https://img.shields.io/github/license/TobiHatti/LPHP-Engine">
 </article>

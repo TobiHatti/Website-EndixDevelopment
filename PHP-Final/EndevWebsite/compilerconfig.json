@@ -34,5 +34,9 @@
   {
     "outputFile": "styles/layoutAdvancedProject.css",
     "inputFile": "styles/layoutAdvancedProject.scss"
+  },
+  {
+    "outputFile": "styles/layoutIFramePage.css",
+    "inputFile": "styles/layoutIFramePage.scss"
   }
 ]
