@@ -746,4 +746,42 @@ iframe.faqResults {
   width: 100%;
   min-height: 500px;
   margin: 20px 0;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  transition: height 0.3s ease-in-out; }
+
+@keyframes iconWiggle {
+  0% {
+    transform: rotate(0deg); }
+  20% {
+    transform: rotate(-5deg); }
+  40% {
+    transform: rotate(8deg); }
+  60% {
+    transform: rotate(-8deg); }
+  80% {
+    transform: rotate(5deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+form.voteBox {
+  display: inline; }
+  form.voteBox button {
+    border: none;
+    background-color: white;
+    font-size: 14pt;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer; }
+  form.voteBox button:hover {
+    transition: color 0.1s ease-in-out; }
+  form.voteBox button:first-of-type {
+    color: green; }
+  form.voteBox button:last-of-type {
+    color: red; }
+  form.voteBox button:first-of-type:hover {
+    color: limegreen; }
+  form.voteBox button:last-of-type:hover {
+    color: darkred; }
+  form.voteBox button:first-of-type:hover i, form.voteBox button:last-of-type:hover i {
+    animation: iconWiggle;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s; }

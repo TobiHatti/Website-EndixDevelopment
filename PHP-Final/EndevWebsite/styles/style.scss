@@ -1041,4 +1041,73 @@ iframe.faqResults{
     min-height: 500px;
     margin: 20px 0;
     overflow-y: hidden;
+
+    transition: height 0.3s ease-in-out;
+}
+
+@keyframes iconWiggle{
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(-5deg);
+    }
+
+    40% {
+        transform: rotate(+8deg);
+    }
+
+    60% {
+        transform: rotate(-8deg);
+    }
+
+    80% {
+        transform: rotate(+5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+form.voteBox {
+    display: inline;
+
+    button {
+        border: none;
+        background-color: white;
+        font-size: 14pt;
+        transition: color 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    button:hover {
+        transition: color 0.1s ease-in-out;
+    }
+
+    button:first-of-type {
+        color: green;
+    }
+
+    button:last-of-type {
+        color: red;
+    }
+
+    button:first-of-type:hover {
+        color: limegreen;
+    }
+
+    button:last-of-type:hover {
+        color: darkred;
+    }
+
+
+    button:first-of-type:hover, button:last-of-type:hover {
+        i {
+            animation: iconWiggle;
+            animation-iteration-count: 1;
+            animation-duration: 0.5s;
+        }
+    }
 }

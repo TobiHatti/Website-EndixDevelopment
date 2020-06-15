@@ -2,12 +2,35 @@ $${
     Layout = "layouts/_LayoutIFrame.lphp";
 }
 
+<?php 
+
+$sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("DBPass"));
+$sql->Open();
+    
+if(isset($_POST["faqUpvote"]) AND !isset($_COOKIE['endevFAQSurvey'.$_POST['faqID']]))
+{
+    setcookie('endevFAQSurvey'.$_POST['faqID'], "1", time() + (10 * 365 * 24 * 60 * 60));
+    $sql->ExecuteNonQuery("UPDATE faq SET Votes = Votes + 1 WHERE ID = ?", $_POST['faqID']);
+    header("Refresh:0");
+    die();
+
+}
+
+if(isset($_POST["faqDownvote"]) AND !isset($_COOKIE['endevFAQSurvey'.$_POST['faqID']]))
+{
+    setcookie('endevFAQSurvey'.$_POST['faqID'], "1", time() + (10 * 365 * 24 * 60 * 60));
+    //$sql->ExecuteNonQuery("UPDATE faq SET Votes = Votes - 1 WHERE ID = ? AND Votes > 0", $_POST['faqID']);
+    header("Refresh:0");
+    die();
+}
+
+?>
+
 <div class="stagFade">
 
     <?php
 
-    $sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("DBPass"));
-    $sql->Open();
+    
 
     $parsedown = new Parsedown();
     $parsedown->setSafeMode(true);
@@ -49,7 +72,7 @@ $${
         <?php foreach($faqTopic as $faq): ?>
             <li>
                 <div class="votes">
-                    <span class="voteCounter">0</span>
+                    <span class="voteCounter"><?= $faq["Votes"] ?></span>
                 </div>
                 <a href="?q=<?= $faq["ID"] ?>&project=<?= htmlspecialchars($_GET['project']) ?>" title="Click to see the full entry">
                     <div class="faq">
@@ -62,7 +85,7 @@ $${
         </ul>
 
         <?php else: ?>
-        <h3>Sorry, there are no questions yet. </h3>
+        <h3>Sorry, there's nothing about this topic yet.</h3>
         <?php endif; ?>
 
         <br />
@@ -74,7 +97,7 @@ $${
         <?php foreach($faqGeneral as $faq): ?>
             <li>
                 <div class="votes">
-                    <span class="voteCounter">0</span>
+                    <span class="voteCounter"><?= $faq["Votes"] ?></span>
                 </div>
                 <a href="?q=<?= $faq["ID"] ?>&project=<?=  htmlspecialchars($_GET['project']) ?>" title="Click to see the full entry">
                     <div class="faq">
@@ -87,7 +110,7 @@ $${
         </ul>
 
         <?php else: ?>
-        <h3>Sorry, there are no questions yet.</h3>
+        <h3>Sorry, there's nothing about this topic yet.</h3>
         <?php endif; ?>
 
     
@@ -100,13 +123,31 @@ $${
         if(count($faq) == 0) die();
         ?>
 
-        <h2><?= $parsedown->text($faq["Question"]) ?></h2>
+        <h2><?= $parsedown->text('Q: '.$faq["Question"]) ?></h2>
 
         <p>
+            <?php if($faq["Votes"] > 0): ?>
+            <?= $faq["Votes"] ?> People found this usefull:<br />
+            <?php endif; ?>
+            
             <?= $parsedown->text($faq["Answer"]) ?>
         </p>
+        <br />
 
-    
+        <?php if(!isset($_COOKIE['endevFAQSurvey'.$faq['ID']])): ?>
+            <form action="" method="post" class="voteBox">
+                <span>Did you find this answer usefull?</span> 
+                <input type="hidden" value="<?= $faq['ID'] ?>" name="faqID"/>
+                <button type="submit" name="faqUpvote">
+                    <i class="far fa-thumbs-up sfIgnore"></i> Yes
+                </button>
+                <button type="submit" name="faqDownvote">
+                    <i class="far fa-thumbs-down sfIgnore"></i> No
+                </button>
+            </form>
+        <?php else: ?>
+            <p style="color: #ccc;">Thank you for voting!</p>
+        <?php endif; ?>
 
     <?php endif; ?>
 

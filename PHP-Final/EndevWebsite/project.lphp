@@ -34,7 +34,7 @@ if($project == null)
 <aside>
     <ul>
         <li onclick="SelectProjectPage(0, '<?= $project["ProjectID"] ?>', 'Overview')"><i class="fas fa-home"></i> <span>[N] Overview</span></li>
-        <li onclick="SelectProjectPage(1, '<?= $project["ProjectID"] ?>', 'Support')"><i class="fas fa-headset"></i> <span>[W] Support &amp; FAQ</span></li>
+        <li onclick="SelectProjectPage(1, '<?= $project["ProjectID"] ?>', 'Support')"><i class="fas fa-headset"></i> <span>[Y] Support &amp; FAQ</span></li>
         <li onclick="SelectProjectPage(2, '<?= $project["ProjectID"] ?>', 'Issues')"><i class="fas fa-exclamation-circle"></i> <span>[N] Issues</span></li>
         <li onclick="SelectProjectPage(3, '<?= $project["ProjectID"] ?>', 'Downloads')"><i class="fas fa-download"></i> <span>[Y] Downloads</span></li>
         <li onclick="SelectProjectPage(4, '<?= $project["ProjectID"] ?>', 'Version-History')"><i class="fas fa-history"></i> <span>[Y] Version History</span></li>
