@@ -12,6 +12,8 @@ $${
     <h1>Projects</h1>
 
     <h3>Featured</h3>
+    <hr />
+    <br />
     <div class=" featuredProjects">
 
         <?php
@@ -36,9 +38,9 @@ $${
 
     </div>
     <br />
-    <hr />
     <h3>More</h3>
-
+    <hr />
+    <br />
     <?php $projectCatoryResultSet = $sql->ExecuteQuery("SELECT * FROM projectcategories"); ?>
    
     <div class="projectBrowser">
@@ -58,10 +60,14 @@ $${
 
             <div class="projectTab" <?php if($first): ?>style="display: grid"<?php endif; $first = false; ?>>
                 <h4><i class="<?= $row["CategoryFAIcon"] ?>"></i> <?= $row["CategoryLongName"] ?></h4>
-
                 <?php foreach($sql->ExecuteQuery("SELECT * FROM projects WHERE CategoryID = ?", $row["ID"]) as $subRow): ?>
+                    
                     <div class="projectItem">
-                        <div><img src="<?= $subRow["ProjectBanner"] ?>" /></div>
+                        <div>
+                            <a href="/project/<?= $subRow["ProjectID"] ?>">
+                                <img src="<?= $subRow["ProjectBanner"] ?>" />
+                            </a>
+                        </div>
                         <div>
                             <h5><?= $subRow["ProjectName"] ?></h5>
                             <?= $subRow["ProjectFlavorText"] ?>

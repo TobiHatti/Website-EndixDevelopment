@@ -42,3 +42,33 @@ function SetProjectBanner(bannerURL)
     document.getElementById("headerBGImage").style.display = "block";
     document.getElementById("headerBGImage").style.backgroundImage = "url(" + bannerURL + ")";
 }
+
+function SelectIssueTab(issueTab)
+{
+    document.getElementById("msgNoOpenIssues").style.display = "none";
+    document.getElementById("msgNoClosedIssues").style.display = "none";
+
+
+    if (issueTab == 0)
+    {
+        for (var i = 0; i < document.getElementsByClassName("issueStateOpen").length; i++)
+            document.getElementsByClassName("issueStateOpen")[i].style.display = "block";
+
+        for (var i = 0; i < document.getElementsByClassName("issueStateClosed").length; i++)
+            document.getElementsByClassName("issueStateClosed")[i].style.display = "none";
+
+        if (document.getElementsByClassName("issueStateOpen").length == 0)
+            document.getElementById("msgNoOpenIssues").style.display = "block";
+    }
+    else if (issueTab == 1)
+    {
+        for (var i = 0; i < document.getElementsByClassName("issueStateOpen").length; i++)
+            document.getElementsByClassName("issueStateOpen")[i].style.display = "none";
+
+        for (var i = 0; i < document.getElementsByClassName("issueStateClosed").length; i++)
+            document.getElementsByClassName("issueStateClosed")[i].style.display = "block";
+
+        if (document.getElementsByClassName("issueStateClosed").length == 0)
+            document.getElementById("msgNoClosedIssues").style.display = "block";
+    }
+}

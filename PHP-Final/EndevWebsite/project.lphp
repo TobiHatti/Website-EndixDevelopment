@@ -34,13 +34,13 @@ if($project == null)
 <aside>
     <ul>
         <li onclick="SelectProjectPage(0, '<?= $project["ProjectID"] ?>', 'Overview')"><i class="fas fa-home"></i> <span>[N] Overview</span></li>
-        <li onclick="SelectProjectPage(1, '<?= $project["ProjectID"] ?>', 'Support')"><i class="fas fa-headset"></i> <span>[Y] Support &amp; FAQ</span></li>
-        <li onclick="SelectProjectPage(2, '<?= $project["ProjectID"] ?>', 'Issues')"><i class="fas fa-exclamation-circle"></i> <span>[N] Issues</span></li>
-        <li onclick="SelectProjectPage(3, '<?= $project["ProjectID"] ?>', 'Downloads')"><i class="fas fa-download"></i> <span>[Y] Downloads</span></li>
-        <li onclick="SelectProjectPage(4, '<?= $project["ProjectID"] ?>', 'Version-History')"><i class="fas fa-history"></i> <span>[Y] Version History</span></li>
-        <li onclick="SelectProjectPage(5, '<?= $project["ProjectID"] ?>', 'Readme')"><i class="fas fa-book-reader"></i> <span>[Y] Readme</span></li>
+        <li onclick="SelectProjectPage(1, '<?= $project["ProjectID"] ?>', 'Support')"><i class="fas fa-headset"></i> <span>Support &amp; FAQ</span></li>
+        <li onclick="SelectProjectPage(2, '<?= $project["ProjectID"] ?>', 'Issues')"><i class="fas fa-exclamation-circle"></i> <span>Issues</span></li>
+        <li onclick="SelectProjectPage(3, '<?= $project["ProjectID"] ?>', 'Downloads')"><i class="fas fa-download"></i> <span>Downloads</span></li>
+        <li onclick="SelectProjectPage(4, '<?= $project["ProjectID"] ?>', 'Version-History')"><i class="fas fa-history"></i> <span>Version History</span></li>
+        <li onclick="SelectProjectPage(5, '<?= $project["ProjectID"] ?>', 'Readme')"><i class="fas fa-book-reader"></i> <span>Readme</span></li>
         <li onclick="SelectProjectPage(6, '<?= $project["ProjectID"] ?>', 'tech-info')"><i class="fas fa-cogs"></i> <span>[N] Tech. Information</span></li>
-        <li onclick="SelectProjectPage(7, '<?= $project["ProjectID"] ?>', 'license')"><i class="fas fa-file-alt"></i> <span>[Y] License</span></li>
+        <li onclick="SelectProjectPage(7, '<?= $project["ProjectID"] ?>', 'license')"><i class="fas fa-file-alt"></i> <span>License</span></li>
     </ul>
 </aside>
 
@@ -89,7 +89,8 @@ function ReadableFileSize($byteSize)
 
 
 $releases = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/releases');
-//var_dump($releases);
+$issues = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/issues?state=all');
+//var_dump($issues);
 ?>
 
 

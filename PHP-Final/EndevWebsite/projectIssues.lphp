@@ -4,6 +4,54 @@ $${
 
 <h1>Issues</h1>
 
-<article>
+<p>
+    Should you encounter any problems or issues with this project, let us know by either <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/issues/new" target="_blank">submitting an issue via GitHub</a>, 
+    or by sending a bug-report via the <a href="">support page!</a>
+    <br /><br />
+    Before submitting a new issue or bug report, please make sure the same problem has not been reported already.
+    <br />
+</p>
 
-</article>
+<div class="issueStateSelector">
+    <div onclick="SelectIssueTab(0);"><i class="fas fa-exclamation-circle"></i> Open</div>
+    <div onclick="SelectIssueTab(1);">Closed <i class="fas fa-check-circle"></i></div>
+</div>
+
+<?php 
+
+$openCtr = 0;
+
+if(is_countable($issues)):
+    if(count($issues) > 0):
+        foreach($issues as $issue): 
+            if(!isset($issue->pull_request)):
+                if($issue->state == "open") $openCtr++;
+?>
+            <div class="issueBox <?= ($issue->state == "open") ? 'issueStateOpen' : 'issueStateClosed' ?>">
+                <h4><i class="fas <?= ($issue->state == "open") ? 'fa-exclamation-circle' : 'fa-check-circle' ?>"></i> <a href="<?= $issue->html_url ?>" target="_blank"><?= $issue->title ?></a></h4>  
+                
+                <?php foreach($issue->labels as $label): ?>
+                <div class="issueLabel" style="background-color: #<?= $label->color ?>" title="<?= $label->description ?>"><?= $label->name ?></div>
+                <?php endforeach; ?>
+                <br />
+                <span>#<?= $issue->number ?> opened on <?= date_format(date_create($issue->created_at)," j. M Y") ?> by <a href="<?= $issue->user->html_url ?>" target="_blank"><?= $issue->user->login ?></a></span>
+            </div>  
+<?php       
+            endif;
+        endforeach; 
+?>
+
+<h3 style="margin: 20px 0; display: <?= ($openCtr == 0) ? "block" : "none"?>;" id="msgNoOpenIssues">There are currently no open issues.</h3>
+<h3 style="margin: 20px 0; display: none;" id="msgNoClosedIssues">No issues have been closed yet.</h3>
+<?php
+    else:
+?>
+<h2>This project has no known issues yet.</h2>
+<h3>Report here</h3>
+<?php 
+    endif; 
+else:
+?>
+<h2>Could not process your request at the current time.</h2>
+<h3>Please check back in a few minutes.</h3>
+<?php endif; ?>

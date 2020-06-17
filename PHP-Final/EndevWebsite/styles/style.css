@@ -155,8 +155,6 @@ x-test {
 .projectBrowser {
   position: relative;
   display: grid;
-  border: 1px solid #aaa;
-  border-radius: 25px;
   height: auto;
   min-height: 500px;
   width: 100%;
@@ -234,8 +232,7 @@ x-test {
             display: block; } }
       .projectBrowser div.browser .projectTab div.projectItem {
         display: grid;
-        border-top: 1px solid gray;
-        padding: 5px 0; }
+        padding: 15px 0; }
         .projectBrowser div.browser .projectTab div.projectItem div {
           height: 100%; }
         .projectBrowser div.browser .projectTab div.projectItem div:nth-of-type(1) {
@@ -785,3 +782,52 @@ form.voteBox {
     animation: iconWiggle;
     animation-iteration-count: 1;
     animation-duration: 0.5s; }
+
+.issueStateSelector {
+  width: 100%;
+  border-bottom: 1px solid gainsboro;
+  display: flex;
+  align-content: space-evenly;
+  padding: 5px 0;
+  box-sizing: border-box; }
+  .issueStateSelector div {
+    width: 50%;
+    text-align: center;
+    font-size: 16pt;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out; }
+  .issueStateSelector div:hover {
+    transition: color 0.1s ease-in-out; }
+  .issueStateSelector div:first-of-type {
+    border-right: 1px solid gainsboro; }
+    .issueStateSelector div:first-of-type i {
+      color: red; }
+  .issueStateSelector div:last-of-type i {
+    color: limegreen; }
+  .issueStateSelector div:first-of-type:hover {
+    color: darkred; }
+  .issueStateSelector div:last-of-type:hover {
+    color: green; }
+
+.issueBox {
+  border-bottom: 1px solid gainsboro;
+  padding: 20px 0; }
+  .issueBox h4 a {
+    text-decoration: none; }
+
+.issueStateOpen {
+  display: block; }
+  .issueStateOpen h4 i {
+    color: red; }
+
+.issueStateClosed {
+  display: none; }
+  .issueStateClosed h4 i {
+    color: limegreen; }
+
+.issueLabel {
+  border-radius: 3px;
+  display: inline-block;
+  padding: 2px 5px;
+  margin: 2px 5px 8px;
+  cursor: help; }

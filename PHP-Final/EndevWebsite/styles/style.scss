@@ -200,8 +200,8 @@ $featuredProjectBreakpoint: 510px;
 .projectBrowser {
     position: relative;
     display: grid;
-    border: 1px solid #aaa;
-    border-radius: 25px;
+    //border: 1px solid #aaa;
+    //border-radius: 25px;
     height: auto;
     min-height: 500px;
     width: 100%;
@@ -308,8 +308,8 @@ $featuredProjectBreakpoint: 510px;
 
             div.projectItem {
                 display: grid;
-                border-top: 1px solid gray;
-                padding: 5px 0;
+                //border-top: 1px solid gray;
+                padding: 15px 0;
 
                 div {
                     height: 100%;
@@ -1110,4 +1110,84 @@ form.voteBox {
             animation-duration: 0.5s;
         }
     }
+}
+
+.issueStateSelector {
+    width: 100%;
+    border-bottom: 1px solid gainsboro;
+    display: flex;
+    align-content: space-evenly;
+    padding: 5px 0;
+    box-sizing: border-box;
+
+
+    div {
+        width: 50%;
+        text-align: center;
+        font-size: 16pt;
+        cursor: pointer;
+        transition: color 0.3s ease-in-out;
+    }
+
+    div:hover {
+        transition: color 0.1s ease-in-out;
+    }
+
+    div:first-of-type {
+        border-right: 1px solid gainsboro;
+        i {
+            color: red;
+        }
+    }
+
+    div:last-of-type {
+        i {
+            color: limegreen;
+        }
+    }
+
+    div:first-of-type:hover {
+        color: darkred;
+    }
+
+    div:last-of-type:hover {
+        color: green;
+    }
+}
+
+.issueBox {
+    border-bottom: 1px solid gainsboro;
+    padding: 20px 0;
+
+    h4 {
+        a{
+            text-decoration: none;
+        }
+    }
+}
+
+.issueStateOpen {
+    display: block;
+    h4 {
+        i {
+            color: red;
+        }
+    }
+}
+
+.issueStateClosed {
+    display: none;
+    h4 {
+        i {
+            color: limegreen;
+        }
+    }
+}
+
+.issueLabel{
+    border-radius: 3px;
+    display: inline-block;
+    padding: 2px 5px;
+    margin: 2px 5px 8px;
+    cursor: help;
 }
