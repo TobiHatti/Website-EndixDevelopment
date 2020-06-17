@@ -246,6 +246,9 @@ x-test {
           grid-area: projectDescription;
           padding: 5px;
           overflow: hidden;
+          white-space: nowrap;
+          max-lines: 3;
+          -webkit-line-clamp: 3;
           text-overflow: ellipsis;
           box-sizing: border-box; }
         .projectBrowser div.browser .projectTab div.projectItem div:nth-of-type(3) {

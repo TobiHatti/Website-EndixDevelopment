@@ -588,7 +588,25 @@ $asideBreakpoint : 1100px;
 }
 
 
+table {
+    tr {
+        td {
+            border-right: 1px solid gainsboro;
+            border-bottom: 1px solid gainsboro;
+            padding: 5px 10px;
+        }
 
+        td:last-of-type {
+            border-right: none;
+        }
+    }
+
+    tr:last-of-type {
+        td {
+            border-bottom: none;
+        }
+    }
+}
 
 
 

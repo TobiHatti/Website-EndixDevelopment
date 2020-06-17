@@ -5,16 +5,104 @@ $${
 <h1>Technical Information</h1>
 
 <article>
-    <h4>VS-Projects</h4>
-    <img alt="AppVeyor" src="https://ci.appveyor.com/api/projects/status/j681lnwlj4dgybxd?svg=true">
+    <?php if($sql->ExecuteScalar("SELECT * FROM projectlanguages WHERE ProjectID = ?", $project["ProjectID"]) > 0): ?>
+    <h4>Supported Languages</h4>
+    <table>
+        <?php foreach($sql->ExecuteQuery("SELECT * FROM projectlanguages WHERE ProjectID = ?", $project["ProjectID"]) as $lang): ?>
+        <tr>
+            <td><?= $lang["Language"] ?></td>
+            <td>Supported</td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+    <br />
+    <?php endif; ?>
+    
+    <?php if($sql->ExecuteScalar("SELECT * FROM projectbadges WHERE Category = 'Status' AND ProjectID = ?", $project["ProjectID"]) > 0): ?>
+    <h4>Status</h4>
+    <table>
+        <?php foreach($sql->ExecuteQuery("SELECT * FROM projectbadges WHERE Category = 'Status' AND ProjectID = ?", $project["ProjectID"]) as $status): ?>
+        <tr>
+            <td><?= $status["Title"] ?></td>
+            <td><img alt="<?= $status["Title"] ?>" src="<?= $status["Badge"] ?>"></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+    <br />
+    <?php endif; ?>
+    
+    <?php if($sql->ExecuteScalar("SELECT * FROM projectbadges WHERE Category = 'BuildAndTestResults' AND ProjectID = ?", $project["ProjectID"]) > 0): ?>
+    <h4>Build and Test results</h4>
+    <table>
+        <?php foreach($sql->ExecuteQuery("SELECT * FROM projectbadges WHERE Category = 'BuildAndTestResults' AND ProjectID = ?", $project["ProjectID"]) as $buildAndTest): ?>
+        <tr>
+            <td><?= $buildAndTest["Title"] ?></td>
+            <td><img alt="<?= $buildAndTest["Title"] ?>" src="<?= $buildAndTest["Badge"] ?>"></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+    <br />
+    <?php endif; ?>
+    
+    <h4>General project info</h4>
+    <table>
+        <tr>
+            <td>Created-Date</td>
+            <td><img alt="GitHub Created" src="https://img.shields.io/badge/created-<?= date_format(date_create($projectData->created_at)," j. M Y") ?>-yellow"></td>
+        </tr>
+        <tr>
+            <td>Last Updated</td>
+            <td><img alt="GitHub Updated" src="https://img.shields.io/badge/updated-<?= date_format(date_create($projectData->updated_at)," j. M Y") ?>-green"></td>
+        </tr>
+        <tr>
+            <td>Last Commit</td>
+            <td><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/TobiHatti/<?= $project["GithubID"]?>"></td>
+        </tr>
+        <tr>
+            <td>Last Release</td>
+            <td>
+                <img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/TobiHatti/<?= $project["GithubID"]?>?include_prereleases"><br />
+                <img alt="GitHub (Pre-)Release Date" src="https://img.shields.io/github/release-date-pre/TobiHatti/<?= $project["GithubID"]?>">
+            </td>
+        </tr>
+        <tr>
+            <td>Downloads</td>
+            <td><img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/TobiHatti/<?= $project["GithubID"]?>/total"></td>
+        </tr>
+        <tr>
+            <td>Primary Programming Language</td>
+            <td><img alt="GitHub top language" src="https://img.shields.io/github/languages/top/TobiHatti/<?= $project["GithubID"]?>"></td>
+        </tr>
+        <tr>
+            <td>All Programming Languages</td>
+            <td>
+                <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/TobiHatti/<?= $project["GithubID"]?>"><br />
 
-    <h4>Websites & APIs</h4>
-    <img alt="Website" src="https://img.shields.io/website?down_color=red&down_message=offline&up_color=limegreen&up_message=online&url=https%3A%2F%2Fendev.at">
-    <img alt="Mozilla HTTP Observatory Grade" src="https://img.shields.io/mozilla-observatory/grade/endev.at?publish">
+                <?php foreach($languages as $key => $language): ?>
+                <img alt="language" src="https://img.shields.io/badge/-<?= urlencode($key) ?>-blue" />
+                <?php endforeach; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>License</td>
+            <td><img alt="GitHub" src="https://img.shields.io/github/license/TobiHatti/<?= $project["GithubID"]?>"></td>
+        </tr>
+        <tr>
+            <td>Repository Size</td>
+            <td><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/TobiHatti/<?= $project["GithubID"]?>"></td>
+        </tr>
+        <tr>
+            <td>Raw Code Size</td>
+            <td><img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/TobiHatti/<?= $project["GithubID"]?>"></td>
+        </tr>
+        <tr>
+            <td>Open Issues</td>
+            <td><img alt="GitHub issues" src="https://img.shields.io/github/issues/TobiHatti/<?= $project["GithubID"]?>"></td>
+        </tr>
+        <tr>
+            <td>Open Pull-Requests</td>
+            <td><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/TobiHatti/<?= $project["GithubID"]?>"></td>
+        </tr>
+    </table>
 
-    <h4>General</h4>
-    <img alt="GitHub file size in bytes" src="https://img.shields.io/github/size/TobiHatti/LPHP-Engine/release">
-    <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/TobiHatti/LPHP-Engine">
-    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/TobiHatti/LPHP-Engine">
-    <img alt="GitHub" src="https://img.shields.io/github/license/TobiHatti/LPHP-Engine">
 </article>

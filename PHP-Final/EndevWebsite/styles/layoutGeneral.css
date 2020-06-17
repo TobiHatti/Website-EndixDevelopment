@@ -435,6 +435,17 @@ aside {
       margin-right: 0;
       transition: all 0.1s ease-in-out; } }
 
+table tr td {
+  border-right: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+  padding: 5px 10px; }
+
+table tr td:last-of-type {
+  border-right: none; }
+
+table tr:last-of-type td {
+  border-bottom: none; }
+
 x-md {
   width: 100%;
   display: block; }

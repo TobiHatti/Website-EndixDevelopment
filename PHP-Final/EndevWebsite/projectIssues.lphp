@@ -47,7 +47,7 @@ if(is_countable($issues)):
     else:
 ?>
 <h2>This project has no known issues yet.</h2>
-<h3>Report here</h3>
+<h3>Report <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/issues/new" target="_blank">here</a></h3>
 <?php 
     endif; 
 else:

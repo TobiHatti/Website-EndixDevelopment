@@ -39,7 +39,7 @@ if($project == null)
         <li onclick="SelectProjectPage(3, '<?= $project["ProjectID"] ?>', 'Downloads')"><i class="fas fa-download"></i> <span>Downloads</span></li>
         <li onclick="SelectProjectPage(4, '<?= $project["ProjectID"] ?>', 'Version-History')"><i class="fas fa-history"></i> <span>Version History</span></li>
         <li onclick="SelectProjectPage(5, '<?= $project["ProjectID"] ?>', 'Readme')"><i class="fas fa-book-reader"></i> <span>Readme</span></li>
-        <li onclick="SelectProjectPage(6, '<?= $project["ProjectID"] ?>', 'tech-info')"><i class="fas fa-cogs"></i> <span>[N] Tech. Information</span></li>
+        <li onclick="SelectProjectPage(6, '<?= $project["ProjectID"] ?>', 'tech-info')"><i class="fas fa-cogs"></i> <span>Tech. Information</span></li>
         <li onclick="SelectProjectPage(7, '<?= $project["ProjectID"] ?>', 'license')"><i class="fas fa-file-alt"></i> <span>License</span></li>
     </ul>
 </aside>
@@ -90,6 +90,11 @@ function ReadableFileSize($byteSize)
 
 $releases = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/releases');
 $issues = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/issues?state=all');
+$projectData = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"]);
+$languages = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/languages');
+//$readme = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/readme');
+//$license = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/license');
+
 //var_dump($issues);
 ?>
 
