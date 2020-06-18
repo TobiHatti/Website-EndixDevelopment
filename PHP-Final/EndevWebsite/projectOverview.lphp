@@ -5,6 +5,42 @@ $${
 <h1>Overview</h1>
 <article>
     <p>
-        <?= nl2br($project["ProjectDescription"]) ?>
+        <div class="overviewSideContent">
+            <?php if(is_countable($releases) AND count($releases) > 0): ?>
+            <div class="downloadShortcuts">
+                <a download href="<?= (count($releases[0]->assets) > 0) ? $releases[0]->assets[0]->browser_download_url : $releases[0]->zipball_url ?>" class="<?= ($releases[0]->prerelease) ? "prerelease" : "release" ?>">
+                    <i class="fas fa-download"></i>
+                    Download latest
+                </a>
+                <em>Latest version: <?= $releases[0]->tag_name ?></em>
+                <span>or</span>
+                <a onclick="SelectProjectPage(3, '<?= $project["ProjectID"] ?>', 'Downloads')">
+                    <i class="fas fa-history"></i>
+                    View prev. versions
+                </a>
+            </div>
+            <?php endif; ?>
+            <div class="socialInfo">
+                <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>">
+                    <i class="fab fa-github"></i> View this project on Github!
+                </a>
+                <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/network/members" target="_blank">
+                    <img alt="GitHub forks" src="https://img.shields.io/github/forks/TobiHatti/<?= $project["GithubID"] ?>?label=Forks&style=social">
+                </a>
+                <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/stargazers" target="_blank">
+                    <img alt="GitHub stars" src="https://img.shields.io/github/stars/TobiHatti/<?= $project["GithubID"] ?>?label=Stars&style=social">
+                </a>
+                <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/watchers" target="_blank">
+                    <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/TobiHatti/<?= $project["GithubID"] ?>?label=Watchers&style=social">
+                </a>
+            </div>
+            <div class="reports">
+                <a href="/support">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Report a problem
+                </a>
+            </div>
+        </div>
+        <?= $parsedown->text($project["ProjectDescription"]) ?>
     </p>
 </article>

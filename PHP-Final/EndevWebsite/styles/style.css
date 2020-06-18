@@ -1,4 +1,5 @@
-﻿/*
+﻿@charset "UTF-8";
+/*
     =====================
             Colors
     =====================
@@ -834,3 +835,80 @@ form.voteBox {
   padding: 2px 5px;
   margin: 2px 5px 8px;
   cursor: help; }
+
+.overviewSideContent {
+  float: right;
+  text-align: center;
+  margin: 0 0 15px 15px; }
+  .overviewSideContent .downloadShortcuts {
+    margin-bottom: 20px; }
+    .overviewSideContent .downloadShortcuts a {
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      border-bottom: 4px solid;
+      border-left: 15px solid;
+      color: #fff;
+      text-shadow: 0 1px 3px #000;
+      padding: 3px 5px;
+      margin: 6px;
+      transition: color 0.3s ease-in-out; }
+    .overviewSideContent .downloadShortcuts a:hover {
+      transition: color 0.1s ease-in-out; }
+    .overviewSideContent .downloadShortcuts a:first-of-type {
+      font-size: 15pt;
+      height: 80px;
+      line-height: 80px;
+      white-space: nowrap; }
+    .overviewSideContent .downloadShortcuts a:nth-of-type(2) {
+      font-size: 13pt;
+      background-color: lime;
+      border-color: limegreen; }
+    .overviewSideContent .downloadShortcuts a.prerelease {
+      background-color: orange;
+      border-color: darkorange; }
+    .overviewSideContent .downloadShortcuts a.release {
+      background-color: lime;
+      border-color: limegreen; }
+    .overviewSideContent .downloadShortcuts a.prerelease:hover {
+      color: lime; }
+    .overviewSideContent .downloadShortcuts a:hover, .overviewSideContent .downloadShortcuts a.release:hover {
+      color: orange; }
+    .overviewSideContent .downloadShortcuts a:first-of-type {
+      font-size: 16pt; }
+    .overviewSideContent .downloadShortcuts em {
+      display: block; }
+    .overviewSideContent .downloadShortcuts span {
+      font-size: 14pt;
+      color: #333; }
+    .overviewSideContent .downloadShortcuts span::before {
+      content: "— "; }
+    .overviewSideContent .downloadShortcuts span::after {
+      content: " —"; }
+  .overviewSideContent .socialInfo a {
+    text-decoration: none; }
+  .overviewSideContent .socialInfo a:first-of-type {
+    display: block;
+    border-radius: 50px;
+    border: 1px solid royalblue;
+    padding: 3px 6px;
+    margin: 10px 0;
+    transition: all 0.3s ease-in-out; }
+  .overviewSideContent .socialInfo a:first-of-type:hover {
+    border: 1px solid deepskyblue;
+    transition: all 0.1s ease-in-out; }
+  .overviewSideContent .reports {
+    margin-top: 20px; }
+    .overviewSideContent .reports a {
+      text-decoration: none;
+      color: red;
+      transition: color 0.3s ease-in-out; }
+      .overviewSideContent .reports a i {
+        color: darkred;
+        transition: color 0.3s ease-in-out; }
+    .overviewSideContent .reports a:hover {
+      transition: color 0.1s ease-in-out;
+      color: orangered; }
+      .overviewSideContent .reports a:hover i {
+        color: orangered;
+        transition: color 0.1s ease-in-out; }

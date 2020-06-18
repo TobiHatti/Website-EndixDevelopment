@@ -30,8 +30,6 @@ if(isset($_POST["faqDownvote"]) AND !isset($_COOKIE['endevFAQSurvey'.$_POST['faq
 
     <?php
 
-    
-
     $parsedown = new Parsedown();
     $parsedown->setSafeMode(true);
 

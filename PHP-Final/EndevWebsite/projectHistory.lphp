@@ -28,11 +28,7 @@ if(is_countable($releases)):
                 <span>Released by <a href="<?= $release->author->html_url ?>" target="_blank"><?= $release->author->login ?></a> on the <?= date_format(date_create($release->published_at)," j. M Y")?>. Downloaded <?= $downloadCount ?> times.</span>
                 
                 <x-md>
-                    <?php 
-                    $parsedown = new Parsedown();
-                    $parsedown->setSafeMode(true);
-                    echo $parsedown->text($release->body);
-                    ?>
+                    <?= $parsedown->text($release->body) ?>
                 </x-md>
                 <a class="githubBtn" href="<?= $release->html_url ?>" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
                 <hr />
