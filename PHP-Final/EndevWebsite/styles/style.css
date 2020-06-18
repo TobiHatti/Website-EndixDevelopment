@@ -912,3 +912,29 @@ form.voteBox {
       .overviewSideContent .reports a:hover i {
         color: orangered;
         transition: color 0.1s ease-in-out; }
+
+.sortDropdown {
+  text-align: right;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px; }
+  .sortDropdown span {
+    font-size: 13pt; }
+  .sortDropdown select {
+    font-size: 13pt;
+    padding: 3px 5px;
+    width: 150px;
+    margin-left: 5px; }
+
+.downloadProjectRaster {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto; }
+  .downloadProjectRaster .rasterBox {
+    margin: 20px 10px;
+    border-bottom: 1px solid gainsboro; }
+    .downloadProjectRaster .rasterBox img {
+      max-width: 300px; }

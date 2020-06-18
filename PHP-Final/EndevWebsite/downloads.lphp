@@ -2,3 +2,36 @@ $${
     Layout = "layouts/_Layout.lphp";
     set PageTitle = "Downloads";
 }
+
+<?php 
+
+$sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("DBPass"));
+$sql->Open();
+
+?>
+
+<h1>Downloads</h1>
+<article>
+    <div class="sortDropdown">
+        <span>Sort by:</span>
+        <select>
+            <option>Category</option>
+            <option>Name</option>
+        </select>
+    </div>
+
+    <div class="downloadProjectRaster">
+
+        <?php foreach($sql->ExecuteQuery("SELECT * FROM projects") as $project): ?>
+
+        <div class="rasterBox">
+            <img src="<?= $project["ProjectBanner"] ?>" />
+            <div class="boxInfo">
+                <h5><?= $project["ProjectName"] ?></h5>
+            </div>
+        </div>
+
+        <?php endforeach; ?> 
+
+    </div>
+</article>
