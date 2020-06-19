@@ -26,23 +26,23 @@ $sql->Open();
 foreach($sql->ExecuteQuery("SELECT * FROM projects") as $project)
 {
     $apiQueryList = array(
-    "https://api.github.com/repos/TobiHatti/".$project["GithubID"],
-    "https://api.github.com/repos/TobiHatti/".$project["GithubID"]."/releases",
-    "https://api.github.com/repos/TobiHatti/".$project["GithubID"]."/issues?state=all",
-    "https://api.github.com/repos/TobiHatti/".$project["GithubID"]."/languages",
-    "https://api.github.com/repos/TobiHatti/".$project["GithubID"]."/readme",
-    "https://api.github.com/repos/TobiHatti/".$project["GithubID"]."/license",
+    "General" => "https://api.github.com/repos/TobiHatti/".$project["GithubID"],
+    "Releases" => "https://api.github.com/repos/TobiHatti/".$project["GithubID"]."/releases",
+    "Issues" => "https://api.github.com/repos/TobiHatti/".$project["GithubID"]."/issues?state=all",
+    "Languages" => "https://api.github.com/repos/TobiHatti/".$project["GithubID"]."/languages",
+    "Readme" => "https://api.github.com/repos/TobiHatti/".$project["GithubID"]."/readme",
+    "License" => "https://api.github.com/repos/TobiHatti/".$project["GithubID"]."/license",
     );
 
-    foreach($apiQueryList as $query)
+    foreach($apiQueryList as $key => $query)
     {
-        if($sql->ExecuteScalar("SELECT COUNT(*) FROM apicache WHERE ProjectID = ? AND URL = ?", $project["ProjectID"], $query) == 0)
+        if($sql->ExecuteScalar("SELECT COUNT(*) FROM apicache WHERE ProjectID = ? AND Request = ?", $project["ProjectID"], $key) == 0)
         {
-            $sql->ExecuteNonQuery("INSERT INTO apicache (ProjectID, URL, LastUpdate, APIResult) VALUES (?, ?, NOW(), ?)", $project["ProjectID"], $query, GetGithubAPIResponse($query));
+            $sql->ExecuteNonQuery("INSERT INTO apicache (ProjectID, Request, URL, LastUpdate, APIResult) VALUES (?, ?, ?, NOW(), ?)", $project["ProjectID"], $key, $query, GetGithubAPIResponse($query));
         }
         else
         {
-            $sql->ExecuteNonQuery("UPDATE apicache SET LastUpdate = NOW(), APIResult = ? WHERE ProjectID = ? AND URL = ?", GetGithubAPIResponse($query), $project["ProjectID"], $query);
+            $sql->ExecuteNonQuery("UPDATE apicache SET LastUpdate = NOW(), APIResult = ?, URL = ? WHERE ProjectID = ? AND Request = ?", GetGithubAPIResponse($query), $query, $project["ProjectID"], $key);
         }
     }
 }

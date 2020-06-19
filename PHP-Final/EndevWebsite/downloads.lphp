@@ -12,6 +12,9 @@ $sql->Open();
 
 <h1>Downloads</h1>
 <article>
+    <h2>Open Source and Freeware</h2>
+    <hr />
+
     <div class="sortDropdown">
         <span>Sort by:</span>
         <select>
@@ -19,19 +22,36 @@ $sql->Open();
             <option>Name</option>
         </select>
     </div>
-
     <div class="downloadProjectRaster">
-
-        <?php foreach($sql->ExecuteQuery("SELECT * FROM projects") as $project): ?>
-
+        <?php foreach($sql->ExecuteQuery("SELECT * FROM projects WHERE IsOpenSource = 1") as $project): ?>
         <div class="rasterBox">
             <img src="<?= $project["ProjectBanner"] ?>" />
+            <div class="boxInfo">
+                <h5><?= $project["ProjectNameShort"] ?></h5>
+            </div>
+        </div>
+        <?php endforeach; ?> 
+    </div>
+
+    <h2>Closed Source and Proprietary Software</h2>
+    <hr />
+    <div class="sortDropdown">
+        <span>Sort by:</span>
+        <select>
+            <option>Category</option>
+            <option>Name</option>
+        </select>
+    </div>
+    <div class="downloadProjectRaster">
+        <?php foreach($sql->ExecuteQuery("SELECT * FROM projects WHERE IsOpenSource = 0") as $project): ?>
+        <div class="rasterBox">
+            <div class="<?= $project["IsWIP"] ? "filterWIP" : "" ?> <?= $project["IsDiscontinued"] ? "filterDiscontinued" : "" ?> <?= false ? "filterSale" : "" ?>">
+                <img src="<?= $project["ProjectBanner"] ?>" />
+            </div>
             <div class="boxInfo">
                 <h5><?= $project["ProjectName"] ?></h5>
             </div>
         </div>
-
         <?php endforeach; ?> 
-
     </div>
 </article>

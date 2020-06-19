@@ -6,10 +6,9 @@ $${
 <article>
 <p>
     <?php 
-    $licence = @file_get_contents("https://raw.githubusercontent.com/TobiHatti/".$project["GithubID"]."/master/LICENSE");
-            
-    if($licence !== false):
-        echo nl2br(htmlspecialchars($licence));
+
+    if($license !== false):
+        echo nl2br(htmlspecialchars(base64_decode($license->content)));
     else:
     ?>
     </p>

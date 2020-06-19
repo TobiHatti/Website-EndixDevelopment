@@ -24,12 +24,10 @@ $${
         return $rawFileContent;
     }
 
-    $readme = @file_get_contents("https://raw.githubusercontent.com/TobiHatti/".$project["GithubID"]."/master/README.md");
-
         if($readme !== false):
     ?>
 
-    <x-md><?= CheckRMDataImage($parsedown->text($readme)) ?></x-md>
+    <x-md><?= CheckRMDataImage($parsedown->text(base64_decode($readme->content))) ?></x-md>
 
     <?php else: ?>
 

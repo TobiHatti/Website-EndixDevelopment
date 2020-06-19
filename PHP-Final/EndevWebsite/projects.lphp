@@ -10,6 +10,18 @@ $${
 
 <div class="stagFade">
     <h1>Projects</h1>
+    <h3>Featured NEW!</h3>
+    <hr />
+    <br />
+
+
+    <div class="featuredSlideContainer">
+
+
+    </div>
+    
+
+
 
     <h3>Featured</h3>
     <hr />
@@ -69,13 +81,25 @@ $${
                             </a>
                         </div>
                         <div>
-                            <h5><?= $subRow["ProjectName"] ?></h5>
+                            <h5>
+                                <?= $subRow["ProjectName"] ?>
+                                <?= $subRow["IsWIP"] ? '<span class="badgeWIP">WIP</span>' : '' ?>
+                                <?= $subRow["IsOnSale"] ? '<span class="badgeSale">Sale</span>' : '' ?>
+                                <?= $subRow["IsDiscontinued"] ? '<span class="badgeDiscontinued">Discontinued</span>' : '' ?>
+                            </h5>
                             <?= $subRow["ProjectFlavorText"] ?>
                         </div>
                         <div>
                             <a href="/project/<?= $subRow["ProjectID"] ?>"><i class="fas fa-play"></i> View Project</a>
                             <a href="https://github.com/TobiHatti/<?= $subRow["GithubID"] ?>" target="_blank"><i class="fab fa-github"></i> Visit on GitHub</a>
-                            <a href="/download/<?= $subRow["ProjectID"] ?>"><i class="fas fa-download"></i> Download</a>
+
+                            <?php if(!$subRow["IsWIP"] AND !$subRow["IsDiscontinued"]): ?>
+                                <?php if($subRow["IsFree"]): ?>
+                                <a href="/download/<?= $subRow["ProjectID"] ?>"><i class="fas fa-download"></i> Download</a>
+                                <?php else: ?>
+                                <a href="#"><i class="fas fa-shopping-cart"></i> Buy</a>
+                                <?php endif; ?>
+                            <?php endif; ?>
                         </div>
                     </div>
                 <?php endforeach; ?>

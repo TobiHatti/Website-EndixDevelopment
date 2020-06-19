@@ -90,16 +90,32 @@ function ReadableFileSize($byteSize)
 }
 
 
+foreach($sql->ExecuteQuery("SELECT * FROM apicache WHERE ProjectID = ?", $project["ProjectID"]) as $result)
+{
+    switch($result["Request"])
+    {
+        case "General":
+            $projectData = json_decode($result["APIResult"]);
+            break;
+        case "Releases":
+            $releases = json_decode($result["APIResult"]);
+            break;
+        case "Issues":
+            $issues = json_decode($result["APIResult"]);
+            break;
+        case "Languages":
+            $languages = json_decode($result["APIResult"]);
+            break;
+        case "Readme":
+            $readme = json_decode($result["APIResult"]);
+            break;
+        case "License":
+            $license = json_decode($result["APIResult"]);
+            break;
+    }
+}
 
-$releases = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/releases');
-$issues = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/issues?state=all');
-$projectData = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"]);
-$languages = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/languages');
-
-//$readme = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/readme');
-//$license = GetGithubAPIResponse('https://api.github.com/repos/TobiHatti/'.$project["GithubID"].'/license');
-
-//var_dump($issues);
+//var_dump($readme);
 ?>
 
 
