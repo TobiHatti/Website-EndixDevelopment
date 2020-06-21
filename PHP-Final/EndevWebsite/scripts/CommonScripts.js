@@ -72,3 +72,13 @@ function SelectIssueTab(issueTab)
             document.getElementById("msgNoClosedIssues").style.display = "block";
     }
 }
+
+function SelectFeaturedSlide(slideID)
+{
+    for (var i = 0; i < document.getElementsByClassName("featureSlide").length; i++)
+    {
+        document.getElementsByClassName("featureSlide")[i].style.transform = "translateX(-" + (slideID * 100) + "%)";
+    }
+
+
+}

@@ -21,7 +21,7 @@ $${
             </div>
             <?php endif; ?>
             <div class="socialInfo">
-                <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>">
+                <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>" target="_blank">
                     <i class="fab fa-github"></i> View this project on Github!
                 </a>
                 <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/network/members" target="_blank">

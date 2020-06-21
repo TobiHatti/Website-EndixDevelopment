@@ -11,24 +11,66 @@ x-test {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth; }
 
-.badgeWIP, .badgeSale, .badgeDiscontinued {
+.badgeWIP::after, .badgeSale::after, .badgeDiscontinued::after {
   border: 1px solid;
   border-radius: 3px;
   font-size: 0.75em;
   line-height: 0.75em;
   padding: 0 4px; }
 
-.badgeWIP {
+.badgeWIP::after {
+  content: "WIP";
   border-color: darkorange;
   color: darkorange; }
 
-.badgeSale {
+.badgeSale::after {
+  content: "SALE";
   border-color: limegreen;
   color: limegreen; }
 
-.badgeDiscontinued {
+.badgeDiscontinued::after {
+  content: "DISCONTINUED";
   border-color: darkgray;
   color: darkgray; }
+
+.downloadButtonRelease, .downloadButtonPrerelease {
+  display: block;
+  text-align: center;
+  border-bottom: 3px solid;
+  border-left: 5px solid;
+  font-size: 1.25em;
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  padding: 3px 10px;
+  width: auto;
+  transition: color 0.3s ease-in-out; }
+
+.downloadButtonRelease:hover, .downloadButtonPrerelease:hover {
+  transition: color 0.1s ease-in-out; }
+
+.downloadButtonRelease::before, .downloadButtonPrerelease::before {
+  content: "\f019";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 10px;
+  top: 4px; }
+
+.downloadButtonRelease {
+  background-color: limegreen;
+  border-color: forestgreen; }
+
+.downloadButtonPrerelease {
+  background-color: darkorange;
+  border-color: orangered; }
+
+.downloadButtonRelease:hover {
+  color: orange; }
+
+.downloadButtonPrerelease:hover {
+  color: lime; }
 
 /*.filterWIP, .filterSale, .filterDiscontinued {
     overflow: hidden;
@@ -1008,14 +1050,95 @@ form.voteBox {
     margin: 20px 10px; }
     .downloadProjectRaster .rasterBox img {
       max-width: 300px;
+      border: 1px solid gainsboro;
+      border-bottom: none;
       border-radius: 25px 25px 0 0;
       margin: 0; }
-    .downloadProjectRaster .rasterBox .boxInfo h5 {
-      border-bottom: 1px solid gainsboro; }
+    .downloadProjectRaster .rasterBox .boxInfo {
+      padding: 0 5px 20px; }
+      .downloadProjectRaster .rasterBox .boxInfo h5 {
+        border-bottom: 1px solid gainsboro; }
 
 .featuredSlideContainer {
-  background: red;
   width: 100vw;
   margin-left: -20vw;
   left: 0;
-  height: 500px; }
+  height: 700px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative; }
+  .featuredSlideContainer .featureSlide {
+    width: 100vw;
+    height: 100%;
+    display: inline-block;
+    margin: 0;
+    background-position-y: -240px;
+    position: relative;
+    transition: transform 0.8s ease-in-out;
+    transform: translateX(0%); }
+    .featuredSlideContainer .featureSlide .featureBackgroundBlur {
+      background-color: midnightblue;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8; }
+    .featuredSlideContainer .featureSlide .textContainer {
+      position: absolute;
+      top: 15%;
+      left: 15%;
+      width: 50%;
+      color: white; }
+      .featuredSlideContainer .featureSlide .textContainer h1 {
+        text-align: left;
+        font-size: 80pt; }
+      .featuredSlideContainer .featureSlide .textContainer p {
+        font-size: 30pt;
+        font-weight: lighter;
+        width: 100%;
+        word-wrap: break-all;
+        white-space: normal; }
+        .featuredSlideContainer .featureSlide .textContainer p a {
+          display: block;
+          color: white; }
+        .featuredSlideContainer .featureSlide .textContainer p a:hover {
+          color: deepskyblue; }
+    .featuredSlideContainer .featureSlide a.featureButton {
+      position: absolute;
+      border-radius: 50px;
+      font-weight: lighter;
+      text-decoration: none;
+      width: 200px;
+      text-align: center;
+      background-color: dodgerblue;
+      color: white; }
+    .featuredSlideContainer .featureSlide a.featureButton:hover {
+      background-color: dodgerblue;
+      color: aqua; }
+    .featuredSlideContainer .featureSlide a.featureButton:first-of-type {
+      font-size: 22pt;
+      top: 40%;
+      right: 20%;
+      padding: 8px 20px; }
+    .featuredSlideContainer .featureSlide a.featureButton:nth-of-type(2) {
+      font-size: 18pt;
+      top: 60%;
+      right: 20%;
+      padding: 8px 0;
+      margin: 0 20px; }
+  .featuredSlideContainer .bulletSelector {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center; }
+    .featuredSlideContainer .bulletSelector span {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border-radius: 10px;
+      background-color: white;
+      margin: 0 5px;
+      opacity: 0.3;
+      cursor: pointer; }
+    .featuredSlideContainer .bulletSelector span:hover {
+      opacity: 1; }

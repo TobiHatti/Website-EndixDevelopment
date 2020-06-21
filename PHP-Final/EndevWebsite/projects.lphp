@@ -10,20 +10,41 @@ $${
 
 <div class="stagFade">
     <h1>Projects</h1>
-    <h3>Featured NEW!</h3>
-    <hr />
+    <h2>Featured</h2>
     <br />
 
 
+    <script>
+
+    </script>
+
     <div class="featuredSlideContainer">
+        <?php $first = true;  foreach($sql->ExecuteQuery("SELECT * FROM projects ORDER BY IsFeatured DESC, RAND() ASC LIMIT 3") as $project): ?>
+        <div class="featureSlide" style="background-image: url(<?= $project["ProjectBanner"] ?>); display: <?= $first ? "inline-block" : "inline-block" ?>">
+            <div class="featureBackgroundBlur sfIgnore"></div>
+            <div class="textContainer">
+                <h1><?= $project["ProjectNameShort"] ?></h1>
+                <p>
+                    <?= $project["ProjectFlavorText"] ?>
+                    <a href="/project/<?= $project["ProjectID"]?>">Read more</a>
+                </p>
+            </div>
+            <a href="/project/<?= $project["ProjectID"]?>" class="featureButton"><i class="fas fa-play"></i> View Project</a>
+            <a href="project/<?= $project["ProjectID"] ?>/downloads#content" class="featureButton"><i class="fas fa-download"></i> Download</a>
+        </div>
+        <?php $first = false; endforeach; ?>
 
-
+        <div class="bulletSelector">
+            <span class="sfIgnore" onclick="SelectFeaturedSlide(0)"></span>
+            <span class="sfIgnore" onclick="SelectFeaturedSlide(1)"></span>
+            <span class="sfIgnore" onclick="SelectFeaturedSlide(2)"></span>
+        </div>
     </div>
     
 
 
 
-    <h3>Featured</h3>
+    <!--<h3>Featured</h3>
     <hr />
     <br />
     <div class=" featuredProjects">
@@ -49,9 +70,10 @@ $${
         <?php endforeach; ?>
 
     </div>
+    <br />-->
     <br />
-    <h3>More</h3>
-    <hr />
+    <h3>All Projects</h3>
+
     <br />
     <?php $projectCatoryResultSet = $sql->ExecuteQuery("SELECT * FROM projectcategories"); ?>
    
@@ -83,9 +105,9 @@ $${
                         <div>
                             <h5>
                                 <?= $subRow["ProjectName"] ?>
-                                <?= $subRow["IsWIP"] ? '<span class="badgeWIP">WIP</span>' : '' ?>
-                                <?= $subRow["IsOnSale"] ? '<span class="badgeSale">Sale</span>' : '' ?>
-                                <?= $subRow["IsDiscontinued"] ? '<span class="badgeDiscontinued">Discontinued</span>' : '' ?>
+                                <?= $subRow["IsWIP"] ? '<span class="badgeWIP"></span>' : '' ?>
+                                <?= $subRow["IsOnSale"] ? '<span class="badgeSale"></span>' : '' ?>
+                                <?= $subRow["IsDiscontinued"] ? '<span class="badgeDiscontinued"></span>' : '' ?>
                             </h5>
                             <?= $subRow["ProjectFlavorText"] ?>
                         </div>
