@@ -54,9 +54,19 @@ x-test {
   content: "\f019";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  line-height: 1.5em;
   position: absolute;
-  left: 10px;
-  top: 4px; }
+  left: 0;
+  top: 0;
+  width: 33px;
+  padding-right: 3px;
+  height: 100%; }
+
+.downloadButtonRelease::before {
+  background-color: forestgreen; }
+
+.downloadButtonPrerelease::before {
+  background-color: orangered; }
 
 .downloadButtonRelease {
   background-color: limegreen;
@@ -1056,8 +1066,10 @@ form.voteBox {
       margin: 0; }
     .downloadProjectRaster .rasterBox .boxInfo {
       padding: 0 5px 20px; }
-      .downloadProjectRaster .rasterBox .boxInfo h5 {
-        border-bottom: 1px solid gainsboro; }
+      .downloadProjectRaster .rasterBox .boxInfo a {
+        text-decoration: none; }
+        .downloadProjectRaster .rasterBox .boxInfo a h5 {
+          border-bottom: 1px solid gainsboro; }
 
 .featuredSlideContainer {
   width: 100vw;
@@ -1074,7 +1086,7 @@ form.voteBox {
     margin: 0;
     background-position-y: -240px;
     position: relative;
-    transition: transform 0.8s ease-in-out;
+    transition: transform 0.8s cubic-bezier(0.5, 0, 0.5, 1);
     transform: translateX(0%); }
     .featuredSlideContainer .featureSlide .featureBackgroundBlur {
       background-color: midnightblue;

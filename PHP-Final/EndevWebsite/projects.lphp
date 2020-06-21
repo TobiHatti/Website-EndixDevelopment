@@ -15,7 +15,9 @@ $${
 
 
     <script>
-
+        window.setInterval(function(){
+            CycleFeaturedSlide();
+        }, 5000);
     </script>
 
     <div class="featuredSlideContainer">
@@ -35,9 +37,9 @@ $${
         <?php $first = false; endforeach; ?>
 
         <div class="bulletSelector">
-            <span class="sfIgnore" onclick="SelectFeaturedSlide(0)"></span>
-            <span class="sfIgnore" onclick="SelectFeaturedSlide(1)"></span>
-            <span class="sfIgnore" onclick="SelectFeaturedSlide(2)"></span>
+            <span class="sfIgnore slideBullet" onclick="SelectFeaturedSlide(0)" style="opacity: 1;"></span>
+            <span class="sfIgnore slideBullet" onclick="SelectFeaturedSlide(1)"></span>
+            <span class="sfIgnore slideBullet" onclick="SelectFeaturedSlide(2)"></span>
         </div>
     </div>
     

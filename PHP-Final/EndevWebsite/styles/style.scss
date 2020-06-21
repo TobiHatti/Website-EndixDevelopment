@@ -58,9 +58,21 @@
     content: "\f019";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
+    line-height: 1.5em;
     position: absolute;
-    left: 10px;
-    top: 4px;
+    left: 0;
+    top: 0;
+    width: 33px;
+    padding-right: 3px;
+    height: 100%;
+}
+
+.downloadButtonRelease::before {
+    background-color: $releaseColorDark;
+}
+
+.downloadButtonPrerelease::before {
+    background-color: $prereleaseColorDark;
 }
 
 .downloadButtonRelease {
@@ -1474,7 +1486,7 @@ form.voteBox {
 
     .rasterBox {
         margin: 20px 10px;
-       
+
         img {
             max-width: 300px;
             border: 1px solid gainsboro;
@@ -1486,8 +1498,12 @@ form.voteBox {
         .boxInfo {
             padding: 0 5px 20px;
 
-            h5 {
-                border-bottom: 1px solid gainsboro;
+            a {
+                text-decoration: none;
+
+                h5 {
+                    border-bottom: 1px solid gainsboro;
+                }
             }
         }
     }
@@ -1510,7 +1526,7 @@ form.voteBox {
         background-position-y: -240px;
         position: relative;
 
-        transition: transform 0.8s ease-in-out;
+        transition: transform 0.8s cubic-bezier(0.5, 0, 0.5, 1);
         transform: translateX(0%);
 
 
@@ -1582,7 +1598,6 @@ form.voteBox {
             padding: 8px 0;
             margin: 0 20px;
         }
-
     }
 
     .bulletSelector {

@@ -80,5 +80,27 @@ function SelectFeaturedSlide(slideID)
         document.getElementsByClassName("featureSlide")[i].style.transform = "translateX(-" + (slideID * 100) + "%)";
     }
 
+    for (var i = 0; i < document.getElementsByClassName("slideBullet").length; i++)
+    {
+        if (i == slideID) document.getElementsByClassName("slideBullet")[i].style.opacity = 1;
+        else document.getElementsByClassName("slideBullet")[i].style.opacity = 0.3;
+    }
+    
+}
 
+function CycleFeaturedSlide()
+{
+    var selectedSlide;
+    var slideCount = document.getElementsByClassName("slideBullet").length;
+
+    for (var i = 0; i < slideCount; i++)
+    {
+        if (document.getElementsByClassName("slideBullet")[i].style.opacity == "1")  selectedSlide = i;
+    }
+
+    selectedSlide++;
+
+    if (selectedSlide >= slideCount) selectedSlide = 0;
+
+    SelectFeaturedSlide(selectedSlide);
 }

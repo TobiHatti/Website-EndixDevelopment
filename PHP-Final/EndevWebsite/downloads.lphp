@@ -32,12 +32,12 @@ $sql->Open();
                 else $released = true;
             ?>
             <div class="rasterBox">
-                <img src="<?= $project["ProjectBanner"] ?>" />
+                <a href="/project/<?= $project["ProjectID"] ?>"><img src="<?= $project["ProjectBanner"] ?>" /></a>
                 <div class="boxInfo">
-                    <h5><?= $project["ProjectNameShort"] ?></h5>
+                    <a href="/project/<?= $project["ProjectID"] ?>"><h5><?= $project["ProjectNameShort"] ?></h5></a>
                     <?php if($released): ?>
                         <span>Latest version: <?= $releases[0]->tag_name ?></span>
-                        <a href="" download class="downloadButtonRelease">Download Latest</a>
+                        <a href="<?= (count($releases[0]->assets) > 0) ? $releases[0]->assets[0]->browser_download_url : $releases[0]->zipball_url ?>" download class="downloadButtonRelease">Download Latest</a>
                         <a href="/project/<?= $project["ProjectID"] ?>/downloads" class="downloadButtonPrerelease">Earlier Releases</a>
                     <?php else: ?>
                         Not available for Download.
@@ -67,11 +67,9 @@ $sql->Open();
                 else $released = true;
             ?>
             <div class="rasterBox">
-                <div class="<?= $project["IsWIP"] ? "filterWIP" : "" ?> <?= $project["IsDiscontinued"] ? "filterDiscontinued" : "" ?> <?= false ? "filterSale" : "" ?>">
-                    <img src="<?= $project["ProjectBanner"] ?>" />
-                </div>
+                <a href="/project/<?= $project["ProjectID"] ?>"><img src="<?= $project["ProjectBanner"] ?>" /></a>
                 <div class="boxInfo">
-                    <h5><?= $project["ProjectName"] ?></h5>
+                    <a href="/project/<?= $project["ProjectID"] ?>"><h5><?= $project["ProjectNameShort"] ?></h5></a>
                     <?php if($released): ?>
                         <span>Latest version: <?= $releases[0]->tag_name ?></span>
                     <?php else: ?>
