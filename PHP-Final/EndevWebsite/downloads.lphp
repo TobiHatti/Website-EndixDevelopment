@@ -36,8 +36,8 @@ $sql->Open();
                 <div class="boxInfo">
                     <a href="/project/<?= $project["ProjectID"] ?>"><h5><?= $project["ProjectNameShort"] ?></h5></a>
                     <?php if($released): ?>
-                        <span>Latest version: <?= $releases[0]->tag_name ?></span>
-                        <a href="<?= (count($releases[0]->assets) > 0) ? $releases[0]->assets[0]->browser_download_url : $releases[0]->zipball_url ?>" download class="downloadButtonRelease">Download Latest</a>
+                        <span>Latest version: <?= $releases[0]->tag_name ?></span><br />
+                        <a href="<?= (count($releases[0]->assets) > 0) ? $releases[0]->assets[0]->browser_download_url : $releases[0]->zipball_url ?>" download class="downloadButtonRelease" style="margin: 0 auto;">Download Latest</a><br />
                         <a href="/project/<?= $project["ProjectID"] ?>/downloads" class="downloadButtonPrerelease">Earlier Releases</a>
                     <?php else: ?>
                         Not available for Download.

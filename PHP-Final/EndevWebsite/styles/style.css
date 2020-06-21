@@ -33,24 +33,38 @@ x-test {
   border-color: darkgray;
   color: darkgray; }
 
+.downloadButtonWrapper {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: start; }
+
 .downloadButtonRelease, .downloadButtonPrerelease {
-  display: block;
+  display: inline-block;
   text-align: center;
   border-bottom: 3px solid;
   border-left: 5px solid;
   font-size: 1.25em;
-  margin: 5px;
+  margin: 5px 0 5px 5px;
   text-decoration: none;
   color: white;
   position: relative;
   padding: 3px 10px;
+  padding-left: 38px;
   width: auto;
-  transition: color 0.3s ease-in-out; }
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease-in-out;
+  box-sizing: border-box;
+  height: 36px; }
+
+.downloadButtonRelease.large, .downloadButtonPrerelease.large {
+  height: 75px;
+  line-height: 72px; }
 
 .downloadButtonRelease:hover, .downloadButtonPrerelease:hover {
   transition: color 0.1s ease-in-out; }
 
-.downloadButtonRelease::before, .downloadButtonPrerelease::before {
+.downloadButtonRelease::after, .downloadButtonPrerelease::after {
   content: "\f019";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -61,6 +75,17 @@ x-test {
   width: 33px;
   padding-right: 3px;
   height: 100%; }
+
+.downloadButtonRelease::before, .downloadButtonPrerelease::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 33px;
+  height: 100%; }
+
+.large.downloadButtonRelease::after, .large.downloadButtonPrerelease::after {
+  line-height: 80px; }
 
 .downloadButtonRelease::before {
   background-color: forestgreen; }
@@ -81,6 +106,187 @@ x-test {
 
 .downloadButtonPrerelease:hover {
   color: lime; }
+
+.downloadButtonRelease::after {
+  color: lime; }
+
+.downloadButtonPrerelease::after {
+  color: orange; }
+
+.downloadButtonRelease:hover::after, .downloadButtonPrerelease:hover::after {
+  animation: downloadSpin;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out; }
+
+@keyframes downloadSpin {
+  0% {
+    transform: translateY(0%); }
+  50% {
+    transform: translateY(90%); }
+  50.001% {
+    transform: translateY(-90%); }
+  100% {
+    transform: translateY(0%); } }
+
+.downloadButtonExtraInfoPrerelease, .downloadButtonExtraInfoRelease {
+  display: block;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 30px;
+  margin-top: 5px;
+  height: 36px;
+  border-bottom: 3px solid;
+  background: darkorange;
+  border-color: orangered;
+  box-sizing: border-box;
+  cursor: pointer; }
+  .downloadButtonExtraInfoPrerelease span, .downloadButtonExtraInfoRelease span {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    overflow: hidden;
+    display: block;
+    background-color: white;
+    box-shadow: black 0 2px 4px;
+    width: 0;
+    height: 0;
+    margin-left: 10px;
+    border-radius: 10px;
+    margin-top: -10px;
+    padding: 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+    z-index: 110;
+    cursor: default; }
+
+.downloadButtonExtraInfoPrerelease {
+  background-color: darkorange;
+  border-color: orangered; }
+
+.downloadButtonExtraInfoRelease {
+  background-color: limegreen;
+  border-color: forestgreen; }
+
+.downloadButtonExtraInfoPrerelease:hover span, .downloadButtonExtraInfoRelease:hover span {
+  padding: 5px;
+  height: 75px;
+  width: 200px; }
+
+.downloadButtonExtraInfoPrerelease::after, .downloadButtonExtraInfoRelease::after {
+  content: "\f129";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: royalblue;
+  background-color: white;
+  text-align: center;
+  border-radius: 30px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  padding: 3px 0;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box; }
+
+.downloadLatestPrerelease, .downloadLatestRelease {
+  position: relative;
+  border: none;
+  border-bottom: 8px solid;
+  width: 40%;
+  max-width: 500px;
+  min-width: 300px;
+  padding: 5px;
+  padding-left: 70px;
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 30pt;
+  color: #fff;
+  text-shadow: 0px 3px 4px #000;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden; }
+  .downloadLatestPrerelease div span, .downloadLatestRelease div span {
+    margin: 10px 0;
+    display: block;
+    font-size: 20pt; }
+  .downloadLatestPrerelease div pre, .downloadLatestRelease div pre {
+    margin: 5px 0;
+    display: block;
+    font-size: 8pt;
+    font-family: monospace;
+    text-shadow: none; }
+  .downloadLatestPrerelease i, .downloadLatestRelease i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0px;
+    width: 80px;
+    height: 100%;
+    font-size: 45pt;
+    line-height: 100px;
+    padding: 30px 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out; }
+
+@keyframes download_bounce {
+  0% {
+    line-height: 100px; }
+  15% {
+    line-height: 80px; }
+  45% {
+    line-height: 150px; }
+  75% {
+    line-height: 80px; }
+  95% {
+    line-height: 100px; }
+  100% {
+    line-height: 100px; } }
+
+.downloadLatestPrerelease:hover, .downloadLatestRelease:hover {
+  transition: all 0.1s ease-in-out; }
+  .downloadLatestPrerelease:hover i, .downloadLatestRelease:hover i {
+    animation: download_bounce;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    transition: all 0.1s ease-in-out;
+    color: white; }
+
+.downloadLatestPrerelease {
+  background-color: darkorange;
+  border-color: orangered; }
+  .downloadLatestPrerelease i {
+    background-color: orangered;
+    color: darkorange; }
+
+.downloadLatestPrerelease:hover {
+  color: limegreen; }
+
+.downloadLatestRelease {
+  background-color: limegreen;
+  border-color: forestgreen; }
+  .downloadLatestRelease i {
+    background-color: forestgreen;
+    color: limegreen; }
+
+.downloadLatestRelease:hover {
+  color: darkorange; }
+
+@media only screen and (max-width: 690px) {
+  .downloadLatestPrerelease, .downloadLatestRelease {
+    font-size: 20pt;
+    width: 80%;
+    min-width: 220px;
+    padding-left: 55px; }
+    .downloadLatestPrerelease i, .downloadLatestRelease i {
+      width: 50px;
+      font-size: 30pt; } }
 
 /*.filterWIP, .filterSale, .filterDiscontinued {
     overflow: hidden;
@@ -553,102 +759,6 @@ x-test {
     .versionBox div.generalInfo hr {
       border: 1px solid #ccc; }
 
-.downloadLatestPrerelease, .downloadLatestRelease {
-  position: relative;
-  border: none;
-  border-bottom: 8px solid;
-  width: 40%;
-  max-width: 500px;
-  min-width: 300px;
-  padding: 5px;
-  padding-left: 70px;
-  box-sizing: border-box;
-  display: block;
-  text-align: center;
-  margin: 20px auto;
-  font-size: 30pt;
-  color: #fff;
-  text-shadow: 0px 3px 4px #000;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  text-decoration: none;
-  overflow: hidden; }
-  .downloadLatestPrerelease div span, .downloadLatestRelease div span {
-    margin: 10px 0;
-    display: block;
-    font-size: 20pt; }
-  .downloadLatestPrerelease div pre, .downloadLatestRelease div pre {
-    margin: 5px 0;
-    display: block;
-    font-size: 8pt;
-    font-family: monospace;
-    text-shadow: none; }
-  .downloadLatestPrerelease i, .downloadLatestRelease i {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0px;
-    width: 80px;
-    height: 100%;
-    font-size: 45pt;
-    line-height: 100px;
-    padding: 30px 0;
-    box-sizing: border-box;
-    transition: all 0.3s ease-in-out; }
-
-@keyframes download_bounce {
-  0% {
-    line-height: 100px; }
-  15% {
-    line-height: 80px; }
-  45% {
-    line-height: 150px; }
-  75% {
-    line-height: 80px; }
-  95% {
-    line-height: 100px; }
-  100% {
-    line-height: 100px; } }
-
-.downloadLatestPrerelease:hover, .downloadLatestRelease:hover {
-  transition: all 0.1s ease-in-out; }
-  .downloadLatestPrerelease:hover i, .downloadLatestRelease:hover i {
-    animation: download_bounce;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    transition: all 0.1s ease-in-out;
-    color: white; }
-
-.downloadLatestPrerelease {
-  background-color: orange;
-  border-color: darkorange; }
-  .downloadLatestPrerelease i {
-    background-color: darkorange;
-    color: orange; }
-
-.downloadLatestPrerelease:hover {
-  color: lime; }
-
-.downloadLatestRelease {
-  background-color: lime;
-  border-color: limegreen; }
-  .downloadLatestRelease i {
-    background-color: limegreen;
-    color: lime; }
-
-.downloadLatestRelease:hover {
-  color: orange; }
-
-@media only screen and (max-width: 690px) {
-  .downloadLatestPrerelease, .downloadLatestRelease {
-    font-size: 20pt;
-    width: 80%;
-    min-width: 220px;
-    padding-left: 55px; }
-    .downloadLatestPrerelease i, .downloadLatestRelease i {
-      width: 50px;
-      font-size: 30pt; } }
-
 .otherReleases strong {
   font-weight: normal;
   font-size: 14pt;
@@ -964,41 +1074,61 @@ form.voteBox {
   margin: 0 0 15px 15px;
   max-width: 300px; }
   .overviewSideContent .downloadShortcuts {
-    margin-bottom: 20px; }
-    .overviewSideContent .downloadShortcuts a {
-      cursor: pointer;
-      text-decoration: none;
-      display: block;
-      border-bottom: 4px solid;
-      border-left: 15px solid;
-      color: #fff;
-      text-shadow: 0 1px 3px #000;
-      padding: 3px 5px;
-      margin: 6px;
-      transition: color 0.3s ease-in-out; }
-    .overviewSideContent .downloadShortcuts a:hover {
-      transition: color 0.1s ease-in-out; }
-    .overviewSideContent .downloadShortcuts a:first-of-type {
-      font-size: 15pt;
-      height: 80px;
-      line-height: 80px;
-      white-space: nowrap; }
-    .overviewSideContent .downloadShortcuts a:nth-of-type(2) {
-      font-size: 13pt;
-      background-color: lime;
-      border-color: limegreen; }
-    .overviewSideContent .downloadShortcuts a.prerelease {
-      background-color: orange;
-      border-color: darkorange; }
-    .overviewSideContent .downloadShortcuts a.release {
-      background-color: lime;
-      border-color: limegreen; }
-    .overviewSideContent .downloadShortcuts a.prerelease:hover {
-      color: lime; }
-    .overviewSideContent .downloadShortcuts a:hover, .overviewSideContent .downloadShortcuts a.release:hover {
-      color: orange; }
-    .overviewSideContent .downloadShortcuts a:first-of-type {
-      font-size: 16pt; }
+    margin-bottom: 20px;
+    /*
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            border-bottom: 4px solid;
+            border-left: 15px solid;
+            color: #fff;
+            text-shadow: 0 1px 3px #000;
+            padding: 3px 5px;
+            margin: 6px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            transition: color 0.1s ease-in-out;
+        }
+
+        a:first-of-type {
+            font-size: 15pt;
+            height: 80px;
+            line-height: 80px;
+            white-space: nowrap;
+        }
+
+        a:nth-of-type(2) {
+            font-size: 13pt;
+            background-color: $releaseColorLight;
+            border-color: $releaseColorMedium;
+        }
+
+        a.prerelease {
+            background-color: $prereleaseColorLight;
+            border-color: $prereleaseColorMedium;
+        }
+
+        a.release {
+            background-color: $releaseColorLight;
+            border-color: $releaseColorMedium;
+        }
+
+        a.prerelease:hover {
+            color: $releaseColorLight;
+        }
+
+        a:hover, a.release:hover {
+            color: $prereleaseColorLight;
+        }
+
+        a:first-of-type {
+            font-size: 16pt;
+        }
+
+        */ }
     .overviewSideContent .downloadShortcuts em {
       display: block; }
     .overviewSideContent .downloadShortcuts span {
@@ -1065,7 +1195,9 @@ form.voteBox {
       border-radius: 25px 25px 0 0;
       margin: 0; }
     .downloadProjectRaster .rasterBox .boxInfo {
-      padding: 0 5px 20px; }
+      padding: 0 5px 20px;
+      text-align: center;
+      width: 100%; }
       .downloadProjectRaster .rasterBox .boxInfo a {
         text-decoration: none; }
         .downloadProjectRaster .rasterBox .boxInfo a h5 {

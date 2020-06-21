@@ -24,7 +24,20 @@ $${
 
             <?php foreach($release->assets as $asset): ?>
 
-            <a class="<?= ($release->prerelease) ? "prereleaseDownload" : "releaseDownload" ?>" href="<?= $asset->browser_download_url ?>">
+            <div class="downloadButtonWrapper sfIgnore">
+                <a download href="<?= $asset->browser_download_url ?>" class="<?= ($release->prerelease) ? "downloadButtonPrerelease" : "downloadButtonRelease" ?> sfIgnore">
+                    <?= $asset->name ?>
+                </a>
+                <div class="<?= ($release->prerelease) ? "downloadButtonExtraInfoPrerelease" : "downloadButtonExtraInfoRelease" ?> sfIgnore">
+                    <span>
+                        <?= ($release->prerelease) ? "Pre-Release" : "Release" ?><br />
+                        Size: <?= ReadableFileSize($asset->size) ?> <br />
+                        Author: <?= $release->author->login ?>
+                    </span>
+                </div>
+            </div>
+
+            <!--<a class="<?= ($release->prerelease) ? "prereleaseDownload" : "releaseDownload" ?>" href="<?= $asset->browser_download_url ?>">
                 <i class="fas fa-download"></i>
                 <?= $asset->name ?>
                 <em>
@@ -35,7 +48,7 @@ $${
                         Author: <?= $release->author->login ?>
                     </span>
                 </em>
-            </a>
+            </a>-->
 
             <?php endforeach; ?>
 
