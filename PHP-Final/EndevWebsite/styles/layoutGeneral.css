@@ -311,7 +311,30 @@ footer {
   left: 0;
   right: 0;
   height: 200px;
-  z-index: 90; }
+  z-index: 90;
+  padding: 20px 10%;
+  box-sizing: border-box; }
+  footer span {
+    display: block;
+    width: 100%; }
+  footer div {
+    display: block;
+    width: 100%;
+    display: flex;
+    align-content: space-evenly; }
+    footer div p {
+      color: #666;
+      width: 30%; }
+      footer div p a {
+        color: #777;
+        text-decoration: none;
+        margin-left: 10px; }
+        footer div p a i {
+          margin-right: 10px;
+          transition: margin-right 0.3s ease-in-out; }
+      footer div p a:hover i {
+        margin-right: 20px;
+        transition: margin-right 0.1s ease-in-out; }
 
 aside {
   position: absolute;

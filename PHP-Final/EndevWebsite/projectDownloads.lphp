@@ -42,7 +42,9 @@ $${
         <br /><br /><hr />
         <?php endforeach; ?>
     </div>
-
+<?php else: ?>
+    <h2>This project has no official releases yet.</h2>
+    <h3>Check back soon for updates.</h3>
 <?php endif; ?>
 
 </article>

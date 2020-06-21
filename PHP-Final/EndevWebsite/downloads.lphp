@@ -17,13 +17,13 @@ $sql->Open();
     <article>
         <h2>Open Source and Freeware</h2>
         <hr />
-        <div class="sortDropdown">
+        <!--<div class="sortDropdown">
             <span>Sort by:</span>
             <select>
                 <option>Category</option>
                 <option>Name</option>
             </select>
-        </div>
+        </div>-->
         <div class="downloadProjectRaster">
             <?php foreach($sql->ExecuteQuery("SELECT * FROM projects WHERE IsFree = 1") as $project): ?>
             <?php 
@@ -52,13 +52,13 @@ $sql->Open();
 
         <h2>Closed Source and Proprietary Software</h2>
         <hr />
-        <div class="sortDropdown">
+        <!--<div class="sortDropdown">
             <span>Sort by:</span>
             <select>
                 <option>Category</option>
                 <option>Name</option>
             </select>
-        </div>
+        </div>-->
         <div class="downloadProjectRaster">
             <?php foreach($sql->ExecuteQuery("SELECT * FROM projects WHERE IsFree = 0") as $project): ?>
             <?php 

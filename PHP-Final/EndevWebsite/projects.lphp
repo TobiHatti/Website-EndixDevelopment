@@ -119,7 +119,7 @@ $${
 
                             <?php if(!$subRow["IsWIP"] AND !$subRow["IsDiscontinued"]): ?>
                                 <?php if($subRow["IsFree"]): ?>
-                                <a href="/download/<?= $subRow["ProjectID"] ?>"><i class="fas fa-download"></i> Download</a>
+                                <a href="project/<?= $subRow["ProjectID"] ?>/downloads#content"><i class="fas fa-download"></i> Download</a>
                                 <?php else: ?>
                                 <a href="#"><i class="fas fa-shopping-cart"></i> Buy</a>
                                 <?php endif; ?>

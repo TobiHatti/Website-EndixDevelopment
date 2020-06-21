@@ -4,5 +4,30 @@ $${
 
 <a href="#top"><div class="navigateToTop"><i class="fas fa-chevron-up"></i></div></a>
 <footer>
-    
+    <span>
+        Copyright &copy; 2020 Tobias Hattinger
+    </span>
+    <div>
+        <p>
+            <b>Endev</b>
+            <br />
+            <a href="/contact"><i class="far fa-address-card"></i> Contact</a><br />
+            <a href="/references"><i class="fas fa-asterisk"></i> References</a><br />
+            <a href="/imprint"><i class="fas fa-stamp"></i> Imprint</a>
+        </p>
+        <p>
+            <b>Navigation</b>
+            <br />
+            <a href="/projects"><i class="fas fa-code"></i> Projects</a><br />
+            <a href="/support"><i class="fas fa-headset"></i> Support</a><br />
+            <a href="/downloads"><i class="fas fa-download"></i> Downloads</a><br />    
+        </p>
+        <p>
+            <b>Social</b>
+            <br />
+            <a href="https://github.com/TobiHatti" target="_blank"><i class="fab fa-github"></i> GitHub</a><br />
+            <a href="https://www.linkedin.com/in/tobias-hattinger-ba0932192" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><br />
+            <a href="https://www.instagram.com/tobihatti/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a><br />    
+        </p>
+    </div>
 </footer>
