@@ -34,6 +34,7 @@
     <Content Include="contact.lphp" />
     <Content Include="downloads.lphp" />
     <Content Include="faq.lphp" />
+    <Content Include="imprint.lphp" />
     <Content Include="index.lphp" />
     <Content Include="layouts\_LayoutIFrame.lphp" />
     <Content Include="more.lphp" />
