@@ -2,3 +2,26 @@ $${
     Layout = "layouts/_Layout.lphp";
     set PageTitle = "Support";
 }
+<div class="stagFade">
+    <article>
+        <h1>Support</h1>
+
+        <h3>How can we help you?</h3>
+
+        <div class="supportCategoryContainer">
+            <a href="/support/general">General <i class="far fa-question-circle"></i></a>
+            <a href="/support/projects">Projects <i class="fas fa-code"></i></a>
+            <a href="/support/website">Website <i class="fas fa-globe"></i></a>
+            <a href="/support/licensing">Licensing <i class="fas fa-balance-scale"></i></a>
+            <a href="/support/payments">Payments <i class="fas fa-shopping-cart"></i></a>
+        </div>
+        <hr />
+        <h3>Got any more questions?</h3>
+        <h3>Contact us!</h3>
+        <div class="supportCategoryContainer">
+            <a href="mailto:support@endev.at">E-Mail <i class="fas fa-at"></i></a>
+            <a href="/support/general">Support-Form<em>(Recommended)</em> <i class="fas fa-file-invoice"></i></a>
+            <a href="#disabled">Live-Chat <i class="far fa-comment-dots"></i></a>
+        </div>
+    </article>
+</div>

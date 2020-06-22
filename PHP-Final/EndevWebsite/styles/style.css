@@ -1286,3 +1286,55 @@ form.voteBox {
       cursor: pointer; }
     .featuredSlideContainer .bulletSelector span:hover {
       opacity: 1; }
+
+.supportCategoryContainer {
+  display: flex;
+  align-content: space-evenly;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  flex-wrap: wrap; }
+  .supportCategoryContainer a {
+    align-self: center;
+    width: 300px;
+    height: 140px;
+    margin: 20px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 2.5em;
+    padding: 10px;
+    text-decoration: none; }
+    .supportCategoryContainer a em {
+      display: block;
+      font-size: 0.5em;
+      margin-bottom: -10px; }
+    .supportCategoryContainer a i {
+      margin-top: 20px;
+      font-size: 1.3em;
+      display: block;
+      color: aqua;
+      transition: color 0.3s ease-in-out; }
+  .supportCategoryContainer a:hover {
+    transition: color 0.1s ease-in-out;
+    color: aqua; }
+    .supportCategoryContainer a:hover i {
+      color: white;
+      transition: color 0.1s ease-in-out; }
+  .supportCategoryContainer a:nth-of-type(even) {
+    background-color: dodgerblue; }
+  .supportCategoryContainer a:nth-of-type(odd) {
+    background-color: #6ab6ff; }
+
+.supportCategoryContainer:nth-of-type(2) a {
+  background-color: darkorange; }
+
+.supportCategoryContainer:nth-of-type(2) a[href="#disabled"] {
+  background-color: gray;
+  color: white;
+  cursor: not-allowed; }
+  .supportCategoryContainer:nth-of-type(2) a[href="#disabled"] i {
+    color: white; }
