@@ -1,0 +1,69 @@
+$${
+    Layout = "layouts/_Layout.lphp";
+    set PageTitle = "Support";
+}
+<div class="stagFade">
+    <article>
+        <h1>Support</h1>
+     
+        <?php 
+          
+        $sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("DBPass"));
+        $sql->Open();
+
+        $parsedown = new Parsedown();
+        $parsedown->setSafeMode(true);
+
+        if(!isset($_GET['id'])) echo '<meta http-equiv="refresh" content="0; url=/support">';
+        else $faq = $sql->ExecuteQueryRow("SELECT * FROM faq LEFT JOIN projects ON faq.ProjectID = projects.ProjectID WHERE faq.id = ?", $_GET['id']);
+
+        if(count($faq) != 0):
+        ?>
+
+            <?php if($faq["ProjectID"] != ""): ?>
+            <div class="pageNav">
+                <a href="/support">Support</a>
+                <a href="/support/projects">Projects</a>
+                <a href="/project/<?= $faq["ProjectID"]?>"><?= $faq["ProjectName"] ?></a>
+            </div>
+            <?php else: ?>
+            <div class="pageNav">
+                <a href="/support">Support</a>
+                <a href="/support/<?= $faq["GeneralCategory"] ?>"><?= $faq["GeneralCategory"] ?></a>
+            </div>
+            <?php endif; ?>
+
+            <h2><?= $parsedown->text('Q: '.$faq["Question"]) ?></h2>
+
+            <p>
+                <?php if($faq["Votes"] > 0): ?>
+                <?= $faq["Votes"] ?> People found this usefull:<br />
+                <?php endif; ?>
+            
+                <?= $parsedown->text($faq["Answer"]) ?>
+            </p>
+            <br />
+
+            <?php if(!isset($_COOKIE['endevFAQSurvey'.$faq['ID']])): ?>
+                <form action="" method="post" class="voteBox">
+                    <span>Did you find this answer usefull?</span> 
+                    <input type="hidden" value="<?= $faq['ID'] ?>" name="faqID"/>
+                    <button type="submit" name="faqUpvote">
+                        <i class="far fa-thumbs-up sfIgnore"></i> Yes
+                    </button>
+                    <button type="submit" name="faqDownvote">
+                        <i class="far fa-thumbs-down sfIgnore"></i> No
+                    </button>
+                </form>
+            <?php else: ?>
+                <p style="color: #ccc;">Thank you for voting!</p>
+            <?php endif; ?>
+
+        <?php else: ?>
+            <meta http-equiv="refresh" content="0; url=/support">
+        <?php endif; ?>
+
+        <br /><br />
+        <h4><a href="/support" style="text-decoration: none;"><i class="fas fa-backward"></i> Go back</a></h4>
+    </article>
+</div>

@@ -2,12 +2,16 @@ $${
     Layout = "layouts/_Layout.lphp";
     set PageTitle = "Support";
 }
+<?php 
+$sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("DBPass"));
+$sql->Open();
+?>
+
 <div class="stagFade">
     <article>
         <h1>Support</h1>
-
+<?php  if(!isset($_GET["page"])): ?>
         <h3>How can we help you?</h3>
-
         <div class="supportCategoryContainer">
             <a href="/support/general">General <i class="far fa-question-circle"></i></a>
             <a href="/support/projects">Projects <i class="fas fa-code"></i></a>
@@ -15,13 +19,73 @@ $${
             <a href="/support/licensing">Licensing <i class="fas fa-balance-scale"></i></a>
             <a href="/support/payments">Payments <i class="fas fa-shopping-cart"></i></a>
         </div>
-        <hr />
-        <h3>Got any more questions?</h3>
-        <h3>Contact us!</h3>
-        <div class="supportCategoryContainer">
-            <a href="mailto:support@endev.at">E-Mail <i class="fas fa-at"></i></a>
-            <a href="/support/general">Support-Form<em>(Recommended)</em> <i class="fas fa-file-invoice"></i></a>
-            <a href="#disabled">Live-Chat <i class="far fa-comment-dots"></i></a>
-        </div>
+       
+<?php elseif(strtolower($_GET["page"]) == "projects"): ?>
+
+        <?php foreach($sql->ExecuteQuery("SELECT * FROM projects") as $project): ?>
+
+        <ul class="projectListView">
+            <li>
+                <img src="<?= $project["ProjectLogo"] ?>" class="sfIgnore"/>
+                <span><?= $project["ProjectName"] ?></span>
+                <a href="/project/<?= $project["ProjectID"] ?>/support#content"> Go to project-support</a>
+            </li>
+        </ul>
+
+        <?php endforeach; ?>
+
+        <br /><br />
+        <h4><a href="/support" style="text-decoration: none;"><i class="fas fa-backward"></i> Go back</a></h4>
+<?php else: ?>
+        <?php 
+        switch(strtolower($_GET["page"]))
+        {
+            case "general":
+                $query = "SELECT * FROM faq WHERE GeneralCategory = 'General'";
+                break;
+            case "website":
+                $query = "SELECT * FROM faq WHERE GeneralCategory = 'Website'";
+                break;  
+            case "licensing":
+                $query = "SELECT * FROM faq WHERE GeneralCategory = 'Licensing'";
+                break;
+            case "payments":
+                $query = "SELECT * FROM faq WHERE GeneralCategory = 'Payments'";
+                break;
+            default:
+                echo '<meta http-equiv="refresh" content="0; url=/support">';
+                die();
+        }
+
+        $faqResults = $sql->ExecuteQuery($query);
+
+        ?>
+
+        <?php if(count($faqResults) > 0): ?>
+            <ul class="faqContainer">
+            <?php foreach($faqResults as $faq): ?>
+                <li>
+                    <div class="votes">
+                        <span class="voteCounter"><?= $faq["Votes"] ?></span>
+                    </div>
+                    <a href="/support/faq/<?= $faq["ID"] ?>" title="Click to see the full entry">
+                        <div class="faq">
+                            <b><?= $faq["Question"] ?></b>
+                            <p><?= $faq["Answer"] ?></p>
+                        </div>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+            </ul>
+        <?php else: ?>
+            <h3>Sorry, there's nothing about this topic yet.</h3>
+        <?php endif; ?>
+
+        <br /><br />
+        <h4><a href="/support" style="text-decoration: none;"><i class="fas fa-backward"></i> Go back</a></h4>
+
+<?php endif; ?>
+    <hr />
+    $$RenderPage("supportFooter.lphp")
     </article>
 </div>

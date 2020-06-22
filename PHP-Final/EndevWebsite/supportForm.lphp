@@ -1,0 +1,10 @@
+$${
+    Layout = "layouts/_Layout.lphp";
+    set PageTitle = "Support";
+}
+<div class="stagFade">
+    <article>
+        <h1>Support</h1>
+
+    </article>
+</div>

@@ -1,0 +1,11 @@
+$${
+    NoCompile=true;
+}
+
+<h3>Got any more questions?</h3>
+<h3>Contact us!</h3>
+<div class="supportCategoryContainer">
+    <a href="mailto:support@endev.at">E-Mail <i class="fas fa-at"></i></a>
+    <a href="/support/form">Support-Form<em>(Recommended)</em> <i class="fas fa-file-invoice"></i></a>
+    <a href="#disabled">Live-Chat <i class="far fa-comment-dots"></i></a>
+</div>

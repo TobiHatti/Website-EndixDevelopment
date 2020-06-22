@@ -21,6 +21,11 @@ RewriteRule ^project/([a-zA-Z0-9-]+)/Readme$ project.php?projectID=$1&page=5 [NC
 RewriteRule ^project/([a-zA-Z0-9-]+)/Tech-Info$ project.php?projectID=$1&page=6 [NC,QSA,L]
 RewriteRule ^project/([a-zA-Z0-9-]+)/License$ project.php?projectID=$1&page=7 [NC,QSA,L]
 
+
+RewriteRule ^support/form$ supportForm.php [NC,QSA,L]
+RewriteRule ^support/faq/([a-zA-Z0-9-]+) faq.php?id=$1 [NC,QSA,L]
+RewriteRule ^support/([a-zA-Z0-9-]+) support.php?page=$1 [NC,QSA,L]
+
 # Invalid Subpage
 RewriteRule ^project/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+) project.php?projectID=$1&page=-1 [NC,QSA,L]
 

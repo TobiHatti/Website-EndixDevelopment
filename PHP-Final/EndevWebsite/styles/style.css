@@ -1329,12 +1329,55 @@ form.voteBox {
   .supportCategoryContainer a:nth-of-type(odd) {
     background-color: #6ab6ff; }
 
-.supportCategoryContainer:nth-of-type(2) a {
+.supportCategoryContainer:last-of-type a {
   background-color: darkorange; }
 
-.supportCategoryContainer:nth-of-type(2) a[href="#disabled"] {
+.supportCategoryContainer:last-of-type a[href="#disabled"] {
   background-color: gray;
   color: white;
   cursor: not-allowed; }
-  .supportCategoryContainer:nth-of-type(2) a[href="#disabled"] i {
+  .supportCategoryContainer:last-of-type a[href="#disabled"] i {
     color: white; }
+
+.pageNav {
+  font-size: 1.2em; }
+  .pageNav a {
+    text-decoration: none; }
+  .pageNav a::after {
+    content: "\f054";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin: 0 8px; }
+  .pageNav *:last-child::after {
+    content: ""; }
+
+.projectListView li {
+  list-style: none;
+  border-bottom: 1px solid gainsboro;
+  padding: 5px 0; }
+  .projectListView li img {
+    display: inline-block;
+    vertical-align: middle;
+    height: 60px;
+    width: 60px;
+    margin-right: 20px;
+    image-rendering: optimizeQuality; }
+  .projectListView li span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.75em;
+    font-weight: lighter; }
+  .projectListView li a {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.75em;
+    font-weight: lighter;
+    text-decoration: none;
+    margin-left: 20px;
+    text-align: right;
+    float: right; }
+  .projectListView li a::after {
+    content: "\f054";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin: 0 8px; }

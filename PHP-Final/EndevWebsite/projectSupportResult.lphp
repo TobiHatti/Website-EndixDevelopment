@@ -150,8 +150,9 @@ if(isset($_POST["faqDownvote"]) AND !isset($_COOKIE['endevFAQSurvey'.$_POST['faq
     <?php endif; ?>
 
     <?php if((isset($_GET['search']) OR isset($_GET['q'])) AND isset($_GET['project'])): ?>
-    <br />
-    <h3 style="font-size: 16pt;"><a href="?project=<?= htmlspecialchars($_GET['project']) ?>">Click here to see all FAQ-entries.</a></h3>
+    <br /> 
+    <h3 style="font-size: 1.5em"><a href="?project=<?= htmlspecialchars($_GET['project']) ?>" style="text-decoration: none;"><i class="fas fa-backward"></i> Click here to see all FAQ-entries.</a></h3>
+    <h5 style="font-size: 1.3em"><a href="/support/faq/<?= $faq['ID'] ?>" style="text-decoration: none;" target="_parent"><i class="fas fa-expand"></i> Open this question in fullscreen</a></h5>
     <?php endif; ?>
 
 </div>

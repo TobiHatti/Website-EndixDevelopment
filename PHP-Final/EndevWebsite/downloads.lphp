@@ -8,9 +8,6 @@ $${
 $sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("DBPass"));
 $sql->Open();
 
-
-
-
 ?>
 <div class="stagFade">
     <h1>Downloads</h1>

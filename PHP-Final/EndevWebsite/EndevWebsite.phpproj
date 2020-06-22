@@ -33,6 +33,7 @@
     <Content Include="composer.json" />
     <Content Include="contact.lphp" />
     <Content Include="downloads.lphp" />
+    <Content Include="faq.lphp" />
     <Content Include="index.lphp" />
     <Content Include="layouts\_LayoutIFrame.lphp" />
     <Content Include="more.lphp" />
@@ -58,6 +59,8 @@
     <Content Include="styles\style.scss" />
     <Content Include="styles\_commonMixins.scss" />
     <Content Include="support.lphp" />
+    <Content Include="supportFooter.lphp" />
+    <Content Include="supportForm.lphp" />
     <Content Include="templates\_HeaderIncludes.lphp" />
     <Content Include="templates\_HeaderMeta.lphp" />
     <Content Include="templates\_IFrameHeader.lphp" />
