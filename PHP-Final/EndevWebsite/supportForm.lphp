@@ -2,9 +2,143 @@ $${
     Layout = "layouts/_Layout.lphp";
     set PageTitle = "Support";
 }
+
+<?php 
+$sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("DBPass"));
+$sql->Open();
+
+function SaveIn($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+if(isset($_POST["submitReport"]))
+{
+    $type = SaveIn($_POST["type"]);
+    $project = SaveIn($_POST["project"]);
+    $os = SaveIn($_POST["os"]);
+    $description = SaveIn($_POST["description"]);
+    $fistname = SaveIn($_POST["firstname"]);
+    $lastname = SaveIn($_POST["lastname"]);
+    $email = SaveIn($_POST["email"]);
+
+    $sql->ExecuteNonQuery(
+        "INSERT INTO reports (ID, ReportType, Project, OS, Description, Firstname, Lastname, Email, ReportDate, Resolved) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, NOW(), 0)",
+        $type, $project, $os, $description, $fistname, $lastname, $email
+    );
+
+    header("Refresh:0");
+    die();
+}
+
+?>
+
+
 <div class="stagFade">
     <article>
         <h1>Support</h1>
+        <?php if(!isset($_GET["submitted"])): ?>
+        <h2>How can we help?</h2>
+        <form action="?submitted" method="post">
 
+            <table class="supportForm">
+                <tr>
+                    <td>How can we help you? *</td>
+                    <td>
+                        <select name="type" required>
+                            <option disabled>--- Please select ---</option>
+                            <option value="General Question">General question</option>
+                            <option value="Bug Report">Something's not working</option>
+                            <option value="Enhancement">Improvements / Enhancements</option>
+                            <option value="Other">Something else</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Project *</td>
+                    <td>
+                        <select name="project" required>
+                            <option disabled>--- Please select ---</option>
+                            <option value="">None</option>
+                            <?php foreach($sql->ExecuteQuery("SELECT * FROM projects") as $project): ?>
+                                <option value="<?= $project["ProjectID"] ?>"><?= $project["ProjectName"] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Operating system</td>
+                    <td>
+                        <select name="os">
+                            <option value="-">-</option>
+                            <optgroup label="Windows">
+                                <option value="Win10">Windows 10</option>
+                                <option value="Win8.1">Windows 8.1</option>
+                                <option value="Win8">Windows 8</option>
+                                <option value="Win7">Windows 7</option>
+                                <option value="WinVista">Windows Vista</option>
+                                <option value="WinXP">Windows XP</option>
+                            </optgroup>
+                            <optgroup label="Other">
+                                <option value="Linux">Linux</option>
+                                <option value="MacOS">MacOS</option>
+                            </optgroup>
+                            <optgroup label="Mobile">
+                                <option value="Android">Android</option>
+                                <option value="iOS">iOS</option>
+                            </optgroup>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Please describe as detailed as possible how we can help you: *
+                        <br />
+                        <textarea required name="description" maxlength="10000"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        Contact Infos
+                    </th>
+                </tr>
+                <tr>
+                    <td>Firstname</td>
+                    <td><input type="text" placeholder="Firstname" name="firstname"/></td>
+                </tr>
+                <tr>
+                    <td>Lastname</td>
+                    <td><input type="text" placeholder="Lastname" name="lastname"/></td>
+                </tr>
+                <tr>
+                    <td>E-Mail *</td>
+                    <td><input type="email" placeholder="E-Mail" name="email" required/></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        CAPTCHA
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" name="submitReport">Send</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <?php else: ?>
+        <h3>Thanks for your Report!</h3>
+        <br />
+        <h6>
+            We'll review your request and reply to you as soon as possible!
+            <br /><br />
+            <span style="color: lightgray;">(Please note that it may take up to 3 days until you receive a reply.)</span>
+        </h6>
+        <br /><br />
+        <h3><a href="/" style="text-decoration:none;">Back to the Start-Page</a></h3>
+        <?php endif; ?>
     </article>
 </div>

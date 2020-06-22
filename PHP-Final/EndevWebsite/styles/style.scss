@@ -1922,3 +1922,42 @@ form.voteBox {
     }
 
 }
+
+.supportForm{
+    display: table;
+    margin: 20px auto;
+    font-size: 1.3em;
+    tr{
+       
+        td{
+            border: none;
+            border-bottom: 1px solid gainsboro;
+            padding: 10px 0;
+            font-weight: lighter;
+
+            input, select, textarea{
+                width: 100%;
+            }
+
+            button{
+                width: 120px;
+                font-size: 1.3em;
+                border-radius: 20px;
+                border: none;
+                background-color: $btnBackgroundIdleColor;
+                color: $btnFontIdleColor;
+            }
+        }
+
+        td[colspan="2"]{
+            text-align: center;
+        }
+
+        th{
+            font-weight: normal;
+            padding: 20px 0;
+        }
+    }
+
+    
+}

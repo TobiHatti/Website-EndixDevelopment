@@ -1381,3 +1381,27 @@ form.voteBox {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin: 0 8px; }
+
+.supportForm {
+  display: table;
+  margin: 20px auto;
+  font-size: 1.3em; }
+  .supportForm tr td {
+    border: none;
+    border-bottom: 1px solid gainsboro;
+    padding: 10px 0;
+    font-weight: lighter; }
+    .supportForm tr td input, .supportForm tr td select, .supportForm tr td textarea {
+      width: 100%; }
+    .supportForm tr td button {
+      width: 120px;
+      font-size: 1.3em;
+      border-radius: 20px;
+      border: none;
+      background-color: dodgerblue;
+      color: white; }
+  .supportForm tr td[colspan="2"] {
+    text-align: center; }
+  .supportForm tr th {
+    font-weight: normal;
+    padding: 20px 0; }

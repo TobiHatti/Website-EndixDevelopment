@@ -49,6 +49,8 @@
     <Content Include="projectSupportResult.lphp" />
     <Content Include="projectTechInfo.lphp" />
     <Content Include="scripts\jquery-3.5.1.min.js" />
+    <Content Include="styles\formElements.css" />
+    <Content Include="styles\formElements.min.css" />
     <Content Include="styles\layoutGeneral.css" />
     <Content Include="styles\layoutGeneral.min.css" />
     <Content Include="styles\layoutIFramePage.css" />

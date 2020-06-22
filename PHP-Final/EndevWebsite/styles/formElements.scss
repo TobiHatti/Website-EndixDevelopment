@@ -18,11 +18,25 @@ input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"],
+select,
 textarea {
     border: 1px solid #aaa;
-    border-bottom: 1px solid #808080;
     font-size: 12pt;
     padding: 5px 8px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    outline: none;
+}
+
+select{
+    border-radius: 25px 0 0 25px;
+}
+
+textarea{
+    resize: vertical;
+    padding: 10px;
+    border-radius: 20px 20px 0 20px;
+    min-height: 80px;
 }
 
 input[type="date"]:hover,
@@ -39,7 +53,7 @@ input[type="time"]:hover,
 input[type="url"]:hover,
 input[type="week"]:hover,
 textarea:hover {
-    border-bottom: 1px solid orange;
+    border: 1px solid dodgerblue;
 }
 
 input[type="date"]:focus,
@@ -57,8 +71,6 @@ input[type="url"]:focus,
 input[type="week"]:focus,
 textarea:focus {
     position: relative;
-    border-bottom: 1px solid darkorange;
-    outline: none;
-    
+    border: 1px solid dodgerblue;
 }
 
