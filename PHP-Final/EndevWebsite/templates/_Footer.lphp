@@ -21,6 +21,7 @@ $${
             <a href="/projects"><i class="fas fa-code"></i> Projects</a><br />
             <a href="/support"><i class="fas fa-headset"></i> Support</a><br />
             <a href="/downloads"><i class="fas fa-download"></i> Downloads</a><br />    
+            <a href="/contact"><i class="far fa-address-book"></i> Contact</a><br />    
         </p>
         <p>
             <b>Social</b>

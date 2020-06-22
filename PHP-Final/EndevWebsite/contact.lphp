@@ -2,3 +2,36 @@ $${
     Layout = "layouts/_Layout.lphp";
     set PageTitle = "Contact";
 }
+
+<div class="stagFade">
+    <article>
+        <h1>Contact</h1>
+
+        <h4><i class="fas fa-life-ring"></i> Help and Support</h4>
+        <p>
+            For help and support concerning any of the projects featured on this website, 
+            please refer to the <a href="/support">Support-Section</a>
+        </p>
+
+        <br /><br />
+
+        <h4><i class="fas fa-handshake"></i> Offers and Business Inquiries</h4>
+        <p>
+            For any questions or offers, contact me at <a href="mailto:office@endev.at">office@endev.at</a>
+        </p>
+
+        <br /><br />
+
+        <h4><i class="fas fa-heart"></i> Ask me anything!</h4>
+        <p>
+            If you have any questions about me, this website or any of my projects, let me know at <a href="mailto:office@endev.at">office@endev.at</a>
+        </p>
+
+        <br /><br /><br /><br />
+
+        <h4><i class="fas fa-user"></i> About me</h4>
+        <p>
+            Tobias Hattinger, Upper Austria, Austria
+        </p>
+    </article>
+</div>
