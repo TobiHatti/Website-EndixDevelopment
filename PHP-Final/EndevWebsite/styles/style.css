@@ -1399,7 +1399,14 @@ form.voteBox {
       border-radius: 20px;
       border: none;
       background-color: dodgerblue;
-      color: white; }
+      color: white;
+      outline: none; }
+    .supportForm tr td button:hover {
+      color: aqua;
+      background-color: dodgerblue; }
+    .supportForm tr td button:disabled {
+      color: white;
+      background-color: gray; }
   .supportForm tr td[colspan="2"] {
     text-align: center; }
   .supportForm tr th {
@@ -1519,5 +1526,4 @@ form.voteBox {
     transition: color 0.1s ease-in-out; }
   .homeSubarticle2 em {
     font-size: 1.5em;
-    margin: 0 30px;
-    line-height: 1.7em; }
+    margin: 0 30px; }

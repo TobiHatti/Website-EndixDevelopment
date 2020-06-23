@@ -1946,6 +1946,17 @@ form.voteBox {
                 border: none;
                 background-color: $btnBackgroundIdleColor;
                 color: $btnFontIdleColor;
+                outline: none;
+            }
+
+            button:hover{
+                color: $btnFontHoverColor;
+                background-color: $btnBackgroundHoverColor;
+            }
+
+            button:disabled{
+                color: white;
+                background-color: gray;
             }
         }
 

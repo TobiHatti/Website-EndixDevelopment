@@ -57,8 +57,21 @@ if(isset($_GET["projectID"]))
         <?php endif; ?>
         
         <?php if(!isset($_GET["submitted"])): ?>
+
+        <script>
+            grecaptcha.ready(function() {
+                grecaptcha.execute("6LeTnKgZAAAAAJg7aZmwhI5mXmWZY3y_mfwikNKA", {action: "homepage"})
+                    .then(function(token) {
+                    document.getElementById("submitButton").disabled = false;
+                }
+                );
+            });
+        </script>
+
+
         <h2>How can we help?</h2>
-        <form action="?submitted" method="post">
+
+        <form action="?submitted" method="post" id="supportForm">
 
             <table class="supportForm">
                 <tr>
@@ -142,12 +155,7 @@ if(isset($_GET["projectID"]))
                 </tr>
                 <tr>
                     <td colspan="2">
-                        CAPTCHA
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <button type="submit" name="submitReport">Send</button>
+                        <button type="submit" name="submitReport" id="submitButton" disabled>Send</button>
                     </td>
                 </tr>
             </table>

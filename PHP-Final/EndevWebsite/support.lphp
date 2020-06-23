@@ -22,7 +22,7 @@ $sql->Open();
        
 <?php elseif(strtolower($_GET["page"]) == "projects"): ?>
 
-        <?php foreach($sql->ExecuteQuery("SELECT * FROM projects") as $project): ?>
+        <?php foreach($sql->ExecuteQuery("SELECT * FROM projects WHERE IsHidden = 0") as $project): ?>
 
         <ul class="projectListView">
             <li>
