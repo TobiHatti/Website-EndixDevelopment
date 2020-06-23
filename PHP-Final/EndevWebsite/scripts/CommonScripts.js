@@ -104,3 +104,12 @@ function CycleFeaturedSlide()
 
     SelectFeaturedSlide(selectedSlide);
 }
+
+function AcceptCookies() {
+    $.post('/tasks/acceptCookies.php');
+}
+
+function HideCookieBar()
+{
+    document.getElementsByClassName("cookieNotify")[0].style.bottom = "-200px";
+}

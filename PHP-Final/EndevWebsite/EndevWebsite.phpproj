@@ -101,6 +101,7 @@
     <Compile Include="data\dbConnect.php" />
     <Compile Include="libraries\Parsedown.php" />
     <Compile Include="libraries\WrapMySQL.php" />
+    <Compile Include="tasks\acceptCookies.php" />
     <Compile Include="tasks\githubApiSync.php" />
   </ItemGroup>
 </Project>

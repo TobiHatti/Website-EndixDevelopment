@@ -71,7 +71,7 @@ $${
         }, 5000);
     </script>
     <div class="featuredSlideContainer">
-        <?php $first = true;  foreach($sql->ExecuteQuery("SELECT * FROM projects ORDER BY RAND() ASC LIMIT 6") as $project): ?>
+        <?php $first = true;  foreach($sql->ExecuteQuery("SELECT * FROM projects WHERE IsHidden = 0 ORDER BY RAND() ASC LIMIT 6") as $project): ?>
         <div class="featureSlide" style="background-image: url(<?= $project["ProjectBanner"] ?>); display: <?= $first ? "inline-block" : "inline-block" ?>">
             <div class="featureBackgroundBlur sfIgnore"></div>
             <div class="textContainer">

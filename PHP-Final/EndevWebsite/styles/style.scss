@@ -8,6 +8,66 @@
 }
 
 
+.cookieNotify {
+    position: fixed;
+    height: 140px; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 300;
+    box-shadow: #333 0 -15px 30px;
+    color: white;
+    padding: 10px 50px 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @include SmallBoxGradient();
+    transition: bottom 0.4s ease-in-out;
+
+    div {
+        margin: 0 30px;
+
+
+        h6 {
+            margin-bottom: 5px;
+            margin-left: 50px;
+            white-space: nowrap;
+        }
+
+        h6::before, h6::after {
+            content: " \f564 ";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin: 0 10px;
+        }
+    }
+
+    button {
+        font-size: 1.5em;
+        border-radius: 30px;
+        border: none;
+        padding: 5px 15px;
+        box-sizing: border-box;
+        margin-top: 15px;
+        outline: none;
+        background-color: $btnBackgroundIdleColor;
+        color: $btnFontIdleColor;
+    }
+
+    button::after {
+        content: " \f564 ";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin: 0 10px;
+    }
+
+    button:hover {
+        background-color: $btnBackgroundHoverColor;
+        color: $btnFontHoverColor;
+    }
+}
+
 .badgeWIP::after, .badgeSale::after, .badgeDiscontinued::after {
     border: 1px solid;
     border-radius: 3px;
