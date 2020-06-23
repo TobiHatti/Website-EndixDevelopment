@@ -21,7 +21,11 @@ RewriteRule ^project/([a-zA-Z0-9-]+)/Readme$ project.php?projectID=$1&page=5 [NC
 RewriteRule ^project/([a-zA-Z0-9-]+)/Tech-Info$ project.php?projectID=$1&page=6 [NC,QSA,L]
 RewriteRule ^project/([a-zA-Z0-9-]+)/License$ project.php?projectID=$1&page=7 [NC,QSA,L]
 
-RewriteRule ^s/([a-zA-Z0-9-]+) project.php?page=1&projectID=$1 [NC,QSA,L]
+
+RewriteRule ^s$ support.php [NC,QSA,L]
+RewriteRule ^s/([a-zA-Z0-9-]+) supportForm.php?projectID=$1 [NC,QSA,L]
+
+RewriteRule ^p$ projects.php [NC,QSA,L]
 RewriteRule ^p/([a-zA-Z0-9-]+) project.php?projectID=$1 [NC,QSA,L]
 
 RewriteRule ^support/form$ supportForm.php [NC,QSA,L]
