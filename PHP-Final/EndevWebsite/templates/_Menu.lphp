@@ -10,7 +10,7 @@ $${
         <a href="/support">Support</a>
         <a href="/downloads">Downloads</a>
         <a href="/contact">Contact</a>
-        <a href="/more">More</a>
+        <!--<a href="/more">More</a>-->
     </div>
     <div class="mobileMenu stagFade">
         <label for="toggleMobileMenuOverlay"><span>$$?PageTitle</span><a><i class="fa fa-bars"></i></a></label>
@@ -21,7 +21,7 @@ $${
             <a href="/support">Support</a>
             <a href="/downloads">Downloads</a>
             <a href="/contact">Contact</a>
-            <a href="/more">More</a>
+            <!--<a href="/more">More</a>-->
             <label for="toggleMobileMenuOverlay"><a>Close</a></label>
         </div>
     </div>

@@ -2,10 +2,99 @@ $${
     Layout = "layouts/_LayoutStartPage.lphp"; 
     set PageTitle = "Home";
 }
-  
+<?php
+    $sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("DBPass"));
+    $sql->Open();    
+?>
+    <article>
+        <h1>Endev - Software solutions for every case</h1>
+        <p>
+           
+        </p>
+    </article>
+
+    <br /><br />    
+
+    <div class="servicesContainer">
+        <div class="blur"></div>
+        <h2>Web, Desktop, Microcontrollers</h2>
+        <span>Development on many platforms for a wide range of applications</span>
+
+        <div class="serviceBoxes">
+            <div>
+                <i class="fas fa-server"></i>
+                <strong>Web and Backend Development</strong>
+                <p>
+                    Websites, APIs, Web-Services
+                </p>
+                <a href="/projects#all">More</a>
+            </div>
+            <div>
+                <i class="fas fa-desktop"></i>
+                <strong>Desktop and Mobile Development</strong>
+                <p>
+                    Windows-Applications, Apps, Programms
+                </p>
+                <a href="/projects#all">More</a>
+            </div>
+            <div>
+                <i class="fas fa-microchip"></i>
+                <strong>Microcontrollers, IoT and Integrated Systems</strong>
+                <p>
+                    Handheld-Devices, Smart-Controllers
+                </p>
+                <a href="/projects#all">More</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <article class="homeSubarticle2">
+        <hr />
+        <br /><br />
+        <h2>Simple, Quick, Reliable</h2>
+        <strong>No matter what you need, we got the right solution for you</strong>
+        <a href="/projects">View Projects</a>
+        <em>or</em>
+        <a href="/contact">Contact us</a>
+        <br /><br /><br />
+        <hr />
+    </article>
+
+
+
+    <h2>Learn more about our projects!</h2>
+    <script>
+        window.setInterval(function(){
+            CycleFeaturedSlide();
+        }, 5000);
+    </script>
+    <div class="featuredSlideContainer">
+        <?php $first = true;  foreach($sql->ExecuteQuery("SELECT * FROM projects ORDER BY RAND() ASC LIMIT 6") as $project): ?>
+        <div class="featureSlide" style="background-image: url(<?= $project["ProjectBanner"] ?>); display: <?= $first ? "inline-block" : "inline-block" ?>">
+            <div class="featureBackgroundBlur sfIgnore"></div>
+            <div class="textContainer">
+                <h1><?= $project["ProjectNameShort"] ?></h1>
+                <p>
+                    <?= $project["ProjectFlavorText"] ?>
+                    <a href="/project/<?= $project["ProjectID"]?>">Read more</a>
+                </p>
+            </div>
+            <a href="/project/<?= $project["ProjectID"]?>" class="featureButton"><i class="fas fa-play"></i> View Project</a>
+            <a href="project/<?= $project["ProjectID"] ?>/downloads#content" class="featureButton"><i class="fas fa-download"></i> Download</a>
+        </div>
+        <?php $first = false; endforeach; ?>
+
+        <div class="bulletSelector">
+            <span class="sfIgnore slideBullet" onclick="SelectFeaturedSlide(0)" style="opacity: 1;"></span>
+            <span class="sfIgnore slideBullet" onclick="SelectFeaturedSlide(1)"></span>
+            <span class="sfIgnore slideBullet" onclick="SelectFeaturedSlide(2)"></span>
+            <span class="sfIgnore slideBullet" onclick="SelectFeaturedSlide(3)"></span>
+            <span class="sfIgnore slideBullet" onclick="SelectFeaturedSlide(4)"></span>
+            <span class="sfIgnore slideBullet" onclick="SelectFeaturedSlide(5)"></span>
+        </div>
+    </div>
+
 <article>
-    <h1>Endev</h1>
-    <p>
-       <h1>NOTE: This website is still under development! Several features are still missing or not completed!</h1>
-    </p>
 </article>

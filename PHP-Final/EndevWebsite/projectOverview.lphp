@@ -42,7 +42,7 @@ $${
             </a>
         </div>
     </div>
-    <p> 
-        <?= $parsedown->text($project["ProjectDescription"]) ?>
-    </p>
+    <div class="sfIgnore">
+    <?= $parsedown->text($project["ProjectDescription"]) ?>
+    </div>
 </article>

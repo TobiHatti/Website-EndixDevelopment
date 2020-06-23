@@ -1405,3 +1405,119 @@ form.voteBox {
   .supportForm tr th {
     font-weight: normal;
     padding: 20px 0; }
+
+.servicesContainer {
+  position: relative;
+  width: 100vw;
+  margin-left: -20vw;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  background-color: dodgerblue;
+  background-image: url("/content/codingBackground001.png");
+  background-position-y: 20%;
+  color: white;
+  margin-top: 30px;
+  margin-bottom: 30px; }
+  .servicesContainer .blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5; }
+  .servicesContainer h2 {
+    display: block;
+    position: relative;
+    margin-bottom: 0px; }
+  .servicesContainer span {
+    text-align: center;
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    color: lightgray; }
+  .servicesContainer .serviceBoxes {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; }
+    .servicesContainer .serviceBoxes div {
+      color: black;
+      height: 300px;
+      background-color: white;
+      width: 300px;
+      white-space: pre-wrap;
+      margin: 10px;
+      padding: 10px;
+      position: relative;
+      box-sizing: border-box;
+      transition: margin 0.4s ease-in-out; }
+      .servicesContainer .serviceBoxes div i {
+        font-size: 3em;
+        display: block;
+        text-align: center;
+        margin: 0 0 15px;
+        color: dodgerblue; }
+      .servicesContainer .serviceBoxes div strong {
+        font-size: 1.5em;
+        font-weight: 400; }
+      .servicesContainer .serviceBoxes div a {
+        position: absolute;
+        bottom: 15px;
+        font-size: 1.3em;
+        text-decoration: none; }
+      .servicesContainer .serviceBoxes div a::after {
+        content: "\f054";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin: 0 8px;
+        transition: margin 0.3s ease-in-out; }
+      .servicesContainer .serviceBoxes div a:hover::after {
+        margin: 0 16px;
+        transition: margin 0.1s ease-in-out; }
+    .servicesContainer .serviceBoxes div:hover {
+      margin: -10px 10px 20px;
+      transition: margin 0.1s ease-in-out; }
+    .servicesContainer .serviceBoxes div::before {
+      content: "";
+      position: absolute;
+      height: 3px;
+      background-color: royalblue;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      transition: all 0.5s ease-in-out; }
+    .servicesContainer .serviceBoxes div:hover::before {
+      width: 100%;
+      transition: all 0.2s ease-in-out;
+      background-color: dodgerblue; }
+
+.homeSubarticle2 {
+  margin: 80px 0;
+  text-align: center; }
+  .homeSubarticle2 strong {
+    font-weight: normal;
+    font-size: 1.2em;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px; }
+  .homeSubarticle2 a {
+    display: block;
+    font-size: 1.6em;
+    text-decoration: none;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 30px;
+    display: inline-block;
+    padding: 10px 20px;
+    transition: color 0.3s ease-in-out; }
+  .homeSubarticle2 a:hover {
+    color: aqua;
+    transition: color 0.1s ease-in-out; }
+  .homeSubarticle2 em {
+    font-size: 1.5em;
+    margin: 0 30px;
+    line-height: 1.7em; }

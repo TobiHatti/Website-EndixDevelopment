@@ -75,7 +75,7 @@ $${
     <br />-->
     <br />
     <h3>All Projects</h3>
-
+    <a name="all"></a>
     <br />
     <?php $projectCatoryResultSet = $sql->ExecuteQuery("SELECT * FROM projectcategories"); ?>
    
