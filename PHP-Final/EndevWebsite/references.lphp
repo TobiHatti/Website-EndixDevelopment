@@ -1,0 +1,26 @@
+$${
+    Layout = "layouts/_Layout.lphp";
+    set PageTitle = "Cookies";
+}
+
+<?php 
+    $sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("DBPass"));
+    $sql->Open();
+?>
+
+<div class="stagFade">
+    <article>
+            <h1>References</h1> 
+
+            <?php foreach($sql->ExecuteQuery("SELECT * FROM projects WHERE IsReference = 1") as $project): ?>
+            <ul class="projectListView">
+                <li>
+                    <img src="<?= $project["ProjectLogo"] ?>" class="sfIgnore"/>
+                    <span><?= $project["ProjectName"] ?></span>
+                    <a href="/project/<?= $project["ProjectID"] ?>/support#content"> Go to project-support</a>
+                </li>
+            </ul>
+            <?php endforeach; ?>
+
+    </article>
+</div>

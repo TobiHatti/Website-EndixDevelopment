@@ -25,6 +25,7 @@ $${
             <br />
             <a href="/contact"><i class="far fa-address-card"></i> Contact</a><br />
             <a href="/references"><i class="fas fa-asterisk"></i> References</a><br />
+            <a href="/s/Website-Endev"><i class="fas fa-bug"></i> Report Bugs</a><br />
             <a href="/imprint"><i class="fas fa-stamp"></i> Imprint</a>
         </p>
         <p>

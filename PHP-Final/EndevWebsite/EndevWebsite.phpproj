@@ -50,6 +50,7 @@
     <Content Include="projectSupport.lphp" />
     <Content Include="projectSupportResult.lphp" />
     <Content Include="projectTechInfo.lphp" />
+    <Content Include="references.lphp" />
     <Content Include="scripts\jquery-3.5.1.min.js" />
     <Content Include="styles\formElements.css" />
     <Content Include="styles\formElements.min.css" />

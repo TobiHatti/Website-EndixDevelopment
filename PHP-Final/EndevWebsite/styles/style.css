@@ -1476,7 +1476,8 @@ form.voteBox {
   background-position-y: 20%;
   color: white;
   margin-top: 30px;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  padding-bottom: 30px; }
   .servicesContainer .blur {
     position: absolute;
     width: 100%;
