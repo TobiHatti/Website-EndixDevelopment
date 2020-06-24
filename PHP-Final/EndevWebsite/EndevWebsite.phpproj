@@ -32,6 +32,7 @@
     </Content>
     <Content Include="composer.json" />
     <Content Include="contact.lphp" />
+    <Content Include="cookies.lphp" />
     <Content Include="downloads.lphp" />
     <Content Include="faq.lphp" />
     <Content Include="imprint.lphp" />
