@@ -3,7 +3,13 @@ $${
 }
 
 <?php
-include("data/dbConnect.php");
-include("libraries/WrapMySQL.php");
-include("libraries/Parsedown.php");
+require("data/dbConnect.php");
+require("libraries/WrapMySQL.php");
+require("libraries/Parsedown.php");
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require("vendor/autoload.php");
 ?>

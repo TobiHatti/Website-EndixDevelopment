@@ -14,6 +14,31 @@ function SaveIn($data) {
     return $data;
 }
 
+function SendMailV2($email, $subject, $message)
+{
+    $mail = new PHPMailer();
+
+    // Anmelden am SMTP-Server
+    $mail->IsSMTP();
+    $mail->Host     = getenv("SMTPHost"); 
+    $mail->SMTPAuth = true; 
+    $mail->Username = getenv("SMTPUser");
+    $mail->Password = getenv("SMTPPass");
+
+    $mail->Subject = $subject;
+    $mail->IsHTML(true);
+    $mail->Body     = $message; 
+    $mail->AltBody   = strip_tags($message) ;
+    $mail->From     = "noreply@endev.at";
+    $mail->FromName = "Endev Software Solutions";
+    $mail->AddReplyTo("support@endev.at");
+    $mail->Sender     = "noreply@endev.at";
+    $mail->CharSet  =  "utf-8"; 
+    $mail->AddAddress($email);
+    $mail->Send();
+}
+
+
 if(isset($_POST["submitReport"]))
 {
     $type = SaveIn($_POST["type"]);
@@ -28,6 +53,89 @@ if(isset($_POST["submitReport"]))
         "INSERT INTO reports (ID, ReportType, Project, OS, Description, Firstname, Lastname, Email, ReportDate, Resolved) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, NOW(), 0)",
         $type, $project, $os, $description, $fistname, $lastname, $email
     );
+
+    $ticketNumber = str_pad($sql->ExecuteScalar("SELECT ID FROM reports ORDER BY ID DESC"), 8, "0", STR_PAD_LEFT);
+
+    $supportTicketHTML = "
+    <table>
+        <tr>
+            <td>Submit-Date:</td>
+            <td>".date("Y-m-d H:i:s")."</td>
+        </tr>
+        <tr>
+            <td>Type</td>
+            <td>$type</td>
+        </tr>
+        <tr>
+            <td>Project</td>
+            <td>$project</td>
+        </tr>
+        <tr>
+            <td>OS</td>
+            <td>$os</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>$fistname $lastname</td>
+        </tr>
+        <tr>
+            <td>Ticket-No.</td>
+            <td>$ticketNumber</td>
+        </tr>
+    </table>
+    <p>
+        <b>Message:</b>
+        <i>
+            $description
+        </i>
+    </p>
+    ";
+
+    $messageConsumer = "
+    <html>
+    <body>
+    <h1>Ticket Received!</h1>
+    <h4>Ticket No. $ticketNumber</h4>
+    <p>
+        Thanks for your message, we'll review your ticket and reply to you as soon as possible!
+    </p>
+    </p>
+        Please note, it may take up to 3 days until you receive a reply.    
+    </p>
+    <hr />
+    <h3>Below you will find a copy of your support-ticket:</h3>
+    <p>
+        $supportTicketHTML
+    </p>
+    <hr />
+    <p>
+        This is an auto-generated message sent from <a href='https://endev.at'>endev.at</a>.<br />
+        Contact us at <a href='mailto:support@endev.at'>support@endev.at</a> 
+        and include your Ticket-Number ($ticketNumber) in any further e-mails.
+    </p>
+    </body>
+    </html>
+    ";
+
+    $messageAdmin = "
+    <html>
+    <body>
+    <h1>New Ticket!</h1>
+    <h4>Ticket No. $ticketNumber</h4>
+    <p>
+        A new Ticket has been submitted via the support-form on <a href='https://endev.at'>endev.at</a>
+    </p>
+    <hr />
+    <h3>Below you will find a copy of the support-ticket:</h3>
+    <p>
+        $supportTicketHTML
+    </p>
+    </body>
+    </html>
+    ";
+
+    SendMailV2($email, "Ticket Received", $messageConsumer);
+    SendMailV2("support@endev.at", "New Ticket", $messageAdmin);
 
     header("Refresh:0");
     die();
@@ -60,7 +168,7 @@ if(isset($_GET["projectID"]))
 
         <script>
             grecaptcha.ready(function() {
-                grecaptcha.execute("6LeTnKgZAAAAAJg7aZmwhI5mXmWZY3y_mfwikNKA", {action: "homepage"})
+                grecaptcha.execute("6Ld_46gZAAAAAEfeiz2Ad4-QQtoeA8nQMSaZBWin", {action: "homepage"})
                     .then(function(token) {
                     document.getElementById("submitButton").disabled = false;
                 }
