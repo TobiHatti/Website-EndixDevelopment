@@ -7,7 +7,7 @@ $${
     $sql->Open();    
 ?>
     <article>
-        <h1>Endev - Software solutions for every case</h1>
+        <h1>Endev <img src="/content/EndevLogo.svg" style="height: 80px; margin-bottom: -20px;"/> Software solutions for every case</h1>
         <p>
            
         </p>

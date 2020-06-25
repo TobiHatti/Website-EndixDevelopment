@@ -142,7 +142,7 @@ header {
             height: $defaultLogoHeight;
             width: $defaultLogoHeight * $fullLogoDimensionRatio;
             background-size: auto $defaultLogoHeight;
-            background-image: url("../../content/EndevBanner.png");
+            background-image: url("../../content/EndevBanner.svg");
         }
 
         @media only screen and (max-width: $navBreakpoint1) {
@@ -151,7 +151,7 @@ header {
             height: #{$defaultNavHeight - 10px};
             width: #{$defaultNavHeight - 10px};
             background-size: auto #{$defaultNavHeight - 10px};
-            background-image: url("../../content/EndevBannerLogoOnly.png");
+            background-image: url("../../content/EndevLogo.svg");
             z-index: 121;
         }
 
@@ -161,7 +161,7 @@ header {
             height: #{$defaultNavHeight - 10px};
             width: $defaultNavHeight * $fullLogoDimensionRatio;
             background-size: auto #{$defaultNavHeight - 10px};
-            background-image: url("../../content/EndevBanner.png");
+            background-image: url("../../content/EndevBanner.svg");
             z-index: 121;
         }
     }
@@ -181,18 +181,18 @@ header {
         z-index: 121;
 
         @media only screen and (min-width: $navBreakpoint1) {
-            background-image: url("../../content/EndevBanner.png");
-            width: 120px;
+            background-image: url("../../content/EndevBanner.svg");
+            width: 160px;
         }
 
         @media only screen and (max-width: $navBreakpoint1) {
-            background-image: url("../../content/EndevBannerLogoOnly.png");
+            background-image: url("../../content/EndevLogo.svg");
             width: 40px;
         }
 
         @media only screen and (max-width: $navBreakpoint2) {
-            background-image: url("../../content/EndevBanner.png");
-            width: 120px;
+            background-image: url("../../content/EndevBanner.svg");
+            width: 160px;
         }
     }
 }

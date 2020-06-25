@@ -155,7 +155,7 @@ if(isset($_GET["projectID"]))
 
 ?>
 
-
+<script src="https://www.google.com/recaptcha/api.js?render=6Ld_46gZAAAAAEfeiz2Ad4-QQtoeA8nQMSaZBWin"></script>
 <div class="stagFade">
     <article>
         <?php if(isset($_GET["projectID"])): ?>
