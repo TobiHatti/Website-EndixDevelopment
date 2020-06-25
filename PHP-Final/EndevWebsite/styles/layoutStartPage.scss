@@ -1,6 +1,6 @@
 ﻿@import 'commonVariables';
 
-$headerHeight: 85vh;
+$headerHeight: 80vh;
 $footerHeight: 200px;
 $navHeight: 50px;
 $navTopOffset: 100px;
@@ -14,6 +14,7 @@ body {
 }
 
 header {
+
     div.endevLogo {
         @media only screen and (min-width: $navBreakpoint1) {
             left: $logoLeftOffset;

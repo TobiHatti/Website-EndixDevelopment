@@ -18,6 +18,7 @@
     <Folder Include="layouts\" />
     <Folder Include="libraries\" />
     <Folder Include="data\" />
+    <Folder Include="Properties\" />
     <Folder Include="tasks\" />
     <Folder Include="testPages\" />
     <Folder Include="templates\" />
@@ -113,5 +114,6 @@
     <Compile Include="libraries\WrapMySQL.php" />
     <Compile Include="tasks\acceptCookies.php" />
     <Compile Include="tasks\githubApiSync.php" />
+    <Compile Include="test.php" />
   </ItemGroup>
 </Project>

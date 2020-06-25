@@ -12,6 +12,8 @@ session_start();
 </head>
 <body>
     <header>
+        <div id="headerBGImage"></div>
+        <div id="bannerCover" style="opacity: 0.5"></div>
         <a href="/">
             <div class="endevLogo" id="endevLogo"></div>
             <div class="endevLogoSticky" id="endevLogoSticky"></div>

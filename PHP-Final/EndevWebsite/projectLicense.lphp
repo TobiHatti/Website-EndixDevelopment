@@ -7,7 +7,7 @@ $${
 <p>
     <?php 
 
-    if($license !== false):
+    if(isset($license->content)):
         echo nl2br(htmlspecialchars(base64_decode($license->content)));
     else:
     ?>

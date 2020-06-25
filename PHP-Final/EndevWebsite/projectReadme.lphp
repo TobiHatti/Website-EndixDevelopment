@@ -24,7 +24,7 @@ $${
         return $rawFileContent;
     }
 
-        if($readme !== false):
+        if(isset($readme->content)):
     ?>
 
     <x-md><?= CheckRMDataImage($parsedown->text(base64_decode($readme->content))) ?></x-md>

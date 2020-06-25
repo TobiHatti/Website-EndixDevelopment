@@ -17,7 +17,7 @@ $${
                 <li>
                     <img src="<?= $project["ProjectLogo"] ?>" class="sfIgnore"/>
                     <span><?= $project["ProjectName"] ?></span>
-                    <a href="/project/<?= $project["ProjectID"] ?>/support#content"> Go to project-support</a>
+                    <a href="/p/<?= $project["ProjectID"] ?>"> View project-info</a>
                 </li>
             </ul>
             <?php endforeach; ?>

@@ -13,9 +13,7 @@ session_start();
 <body>
     <header style="overflow: hidden;">
         <div id="headerBGImage"></div>
-        <div id="bannerCover" style="opacity: 0.5">
-            
-        </div>
+        <div id="bannerCover" style="opacity: 0.5"></div>
         <h1 id="headerProjectTitle"></h1> 
         <a href="/">
             <div class="endevLogo" id="endevLogo"></div>

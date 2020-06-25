@@ -7,7 +7,7 @@ x-test {
   background-color: deepskyblue; }
 
 body {
-  grid-template-rows: 85vh auto; }
+  grid-template-rows: 80vh auto; }
 
 @media only screen and (min-width: 1140px) {
   header div.endevLogo {
@@ -33,7 +33,7 @@ body {
 
 header.sticky {
   height: 50px;
-  background-size: 100vw 85vh; }
+  background-size: 100vw 80vh; }
 
 @media only screen and (max-width: 1140px) {
   nav {

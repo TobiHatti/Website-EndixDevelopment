@@ -2,6 +2,11 @@ $${
     Layout = "layouts/_LayoutStartPage.lphp"; 
     set PageTitle = "Home";
 }
+
+<script>
+    SetProjectBanner("/content/EndevHeaderPrep.png");
+</script>
+
 <?php
     $sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("DBPass"));
     $sql->Open();    
