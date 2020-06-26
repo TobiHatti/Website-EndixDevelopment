@@ -44,40 +44,11 @@ $${
     </div>
     
 
-
-
-    <!--<h3>Featured</h3>
-    <hr />
-    <br />
-    <div class=" featuredProjects">
-
-        <?php
-        $i = 1;
-        foreach($sql->ExecuteQuery("SELECT * FROM projects ORDER BY IsFeatured DESC, RAND() ASC LIMIT 3") as $project): ?>
-
-        <input type="checkbox" id="pchb<?= $i ?>" />
-        <label for="pchb<?= $i++ ?>">
-            <img src="<?= $project["ProjectBanner"] ?>" />
-            <span class="sfIgnore">
-                <b><?= $project["ProjectNameShort"] ?></b>
-                <?= $project["ProjectFlavorText"] ?>
-            </span>
-            <x-pnav>
-                <a href="/project/<?= $project["ProjectID"]?>"><i class="fas fa-play"></i> View Project</a>
-                <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>"><i class="fab fa-github"></i> Visit on GitHub</a>
-                <a href="/download/<?= $project["ProjectID"] ?>"><i class="fas fa-download"></i> Download</a>
-            </x-pnav>
-        </label>
-
-        <?php endforeach; ?>
-
-    </div>
-    <br />-->
     <br />
     <h3>All Projects</h3>
     <a name="all"></a>
     <br />
-    <?php $projectCatoryResultSet = $sql->ExecuteQuery("SELECT * FROM projectcategories WHERE (SELECT COUNT(*) FROM projects WHERE CategoryID = projectCategories.ID AND projects.IsHidden = 0) > 0 ORDER BY projectCategories.SortOrder ASC"); ?>
+    <?php $projectCatoryResultSet = $sql->ExecuteQuery("SELECT * FROM projectcategories WHERE (SELECT COUNT(*) FROM projects WHERE CategoryID = projectcategories.ID AND projects.IsHidden = 0) > 0 ORDER BY projectcategories.SortOrder ASC"); ?>
    
     <div class="projectBrowser">
         <ul>

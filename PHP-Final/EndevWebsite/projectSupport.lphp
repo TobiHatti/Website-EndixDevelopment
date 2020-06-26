@@ -11,7 +11,7 @@ $${
         <input type="search" placeholder="Search for a topic or keyword..." name="search" required/>
         <button type="submit" >Search</button>
         <br />
-        <b>Can't find what you're looking for?<br /><a href="/support">Contact our support here!</a></b>
+        <b>Can't find what you're looking for?<br /><a href="/s/<?= $project["ProjectID"] ?>">Contact our support here!</a></b>
     </div>
 </form>
 
