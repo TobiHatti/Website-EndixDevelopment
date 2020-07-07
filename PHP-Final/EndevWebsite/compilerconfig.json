@@ -1,9 +1,5 @@
 ﻿[
   {
-    "outputFile": "styles/textElements.css",
-    "inputFile": "styles/textElements.scss"
-  },
-  {
     "outputFile": "styles/formElements.css",
     "inputFile": "styles/formElements.scss"
   },
@@ -38,5 +34,25 @@
   {
     "outputFile": "styles/layoutIFramePage.css",
     "inputFile": "styles/layoutIFramePage.scss"
+  },
+  {
+    "outputFile": "stylesV2/_styleMaster.css",
+    "inputFile": "stylesV2/_styleMaster.scss"
+  },
+  {
+    "outputFile": "stylesV2/styleTablet.css",
+    "inputFile": "stylesV2/styleTablet.scss"
+  },
+  {
+    "outputFile": "stylesV2/styleMobile.css",
+    "inputFile": "stylesV2/styleMobile.scss"
+  },
+  {
+    "outputFile": "stylesV2/styleDesktop.css",
+    "inputFile": "stylesV2/styleDesktop.scss"
+  },
+  {
+    "outputFile": "styles/textElements.css",
+    "inputFile": "styles/textElements.scss"
   }
 ]
