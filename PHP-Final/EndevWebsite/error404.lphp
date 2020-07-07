@@ -1,0 +1,17 @@
+$${
+    Layout = "layouts/_Layout.lphp";
+    set PageTitle = "Error 404";
+}
+
+<div class="stagFade">
+    <article>
+        <h1 style="font-size: 8em;">Error 404 <i class="far fa-sad-tear"></i></h1> 
+        <h3>Not Found. <i class="far fa-sad-cry"></i></h3> 
+        <h2>The page you where looking for does not exist or has been moved.</h2>
+        <br />
+        <br />
+        <p style="text-align: center;"><button><i class="fas fa-chevron-left"></i> Go back</button></p>
+    </article>
+</div>
+
+ 

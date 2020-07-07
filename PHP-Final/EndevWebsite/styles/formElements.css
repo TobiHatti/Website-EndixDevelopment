@@ -1,4 +1,34 @@
-﻿input[type="date"],
+﻿/*
+    =====================
+            Colors
+    =====================
+*/
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+button {
+  border-radius: 50px;
+  font-weight: lighter;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+  border: none;
+  background-color: dodgerblue;
+  color: white;
+  transition: color 0.3s ease-in-out;
+  font-size: 2em;
+  outline: none;
+  cursor: pointer; }
+
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+button:hover {
+  background-color: dodgerblue;
+  color: aqua;
+  transition: color 0.1s ease-in-out; }
+
+input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="email"],

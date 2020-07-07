@@ -18,6 +18,7 @@
     <Folder Include="layouts\" />
     <Folder Include="libraries\" />
     <Folder Include="data\" />
+    <Folder Include="errorPages\" />
     <Folder Include="stylesV2\" />
     <Folder Include="Properties\" />
     <Folder Include="tasks\" />
@@ -36,6 +37,11 @@
     <Content Include="contact.lphp" />
     <Content Include="cookies.lphp" />
     <Content Include="downloads.lphp" />
+    <Content Include="error400.lphp" />
+    <Content Include="error401.lphp" />
+    <Content Include="error403.lphp" />
+    <Content Include="error404.lphp" />
+    <Content Include="error500.lphp" />
     <Content Include="faq.lphp" />
     <Content Include="imprint.lphp" />
     <Content Include="index.lphp" />

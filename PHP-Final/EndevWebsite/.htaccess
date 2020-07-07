@@ -44,22 +44,27 @@ RewriteRule ^([^\.]+)$ $1.php [NC,L]
 ###############################
 #    Forbidden Directories    #
 ###############################
-RewriteRule (^|/)backup(/|$) - [F]
+RewriteRule (^|/)vendor(/|$) - [F]
+RewriteRule (^|/)data(/|$) - [F]
+RewriteRule (^|/)layouts(/|$) - [F]
+RewriteRule (^|/)libraries(/|$) - [F]
+RewriteRule (^|/)testPages(/|$) - [F]
+RewriteRule (^|/)templates(/|$) - [F]
 
 ###############################
 #       Error Ducuments       #
 ###############################
 # ERROR 400: Bad Request
-ErrorDocument 400 /400.php
+ErrorDocument 400 /error400.php
 
 # ERROR 401: Unauthorised
-ErrorDocument 401 /401.php
+ErrorDocument 401 /error401.php
 
 # ERROR 403: Forbidden
-ErrorDocument 403 /403.php
+ErrorDocument 403 /error403.php
 
 # Error 404: Not Found
-ErrorDocument 404 /404.php
+ErrorDocument 404 /error404.php
 
 # Error 500: Internal Server Error
-ErrorDocument 500 /500.php
+ErrorDocument 500 /error500.php

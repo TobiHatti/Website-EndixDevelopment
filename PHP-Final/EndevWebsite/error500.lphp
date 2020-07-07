@@ -1,0 +1,15 @@
+$${
+    Layout = "layouts/_Layout.lphp";
+    set PageTitle = "Error 500";
+}
+
+<div class="stagFade">
+    <article>
+        <h1 style="font-size: 8em;">Error 500 <i class="far fa-sad-tear"></i></h1>
+        <h3>Internal Server Error. <i class="far fa-sad-cry"></i></h3> 
+        <h2>A server-error occured and could not process your request.</h2>
+        <br />
+        <br />
+        <p style="text-align: center;"><button><i class="fas fa-chevron-left"></i> Go back</button></p>
+    </article>
+</div>
