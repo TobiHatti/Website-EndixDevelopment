@@ -3,9 +3,6 @@
             Colors
     =====================
 */
-x-test {
-  background-color: deepskyblue; }
-
 body {
   grid-template-rows: 0 auto; }
 

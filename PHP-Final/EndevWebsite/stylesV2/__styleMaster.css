@@ -1,9 +1,4 @@
 ﻿@charset "UTF-8";
-/*
-    =====================
-            Colors
-    =====================
-*/
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth; }
@@ -1252,7 +1247,6 @@ form.voteBox {
 
 .featuredSlideContainer {
   width: 100vw;
-  margin-left: -20vw;
   left: 0;
   height: 700px;
   overflow: hidden;
@@ -1463,7 +1457,6 @@ form.voteBox {
 .servicesContainer {
   position: relative;
   width: 100vw;
-  margin-left: -20vw;
   left: 0;
   overflow: hidden;
   white-space: nowrap;

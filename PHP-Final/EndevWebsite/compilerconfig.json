@@ -54,5 +54,53 @@
   {
     "outputFile": "styles/textElements.css",
     "inputFile": "styles/textElements.scss"
+  },
+  {
+    "outputFile": "stylesV2/__layoutMaster.css",
+    "inputFile": "stylesV2/__layoutMaster.scss"
+  },
+  {
+    "outputFile": "stylesV2/_layoutDesktop.css",
+    "inputFile": "stylesV2/_layoutDesktop.scss"
+  },
+  {
+    "outputFile": "stylesV2/_layoutMobile.css",
+    "inputFile": "stylesV2/_layoutMobile.scss"
+  },
+  {
+    "outputFile": "stylesV2/_layoutTablet.css",
+    "inputFile": "stylesV2/_layoutTablet.scss"
+  },
+  {
+    "outputFile": "stylesV2/layoutContentPage.css",
+    "inputFile": "stylesV2/layoutContentPage.scss"
+  },
+  {
+    "outputFile": "stylesV2/layoutStartPage.css",
+    "inputFile": "stylesV2/layoutStartPage.scss"
+  },
+  {
+    "outputFile": "stylesV2/layoutProjectPage.css",
+    "inputFile": "stylesV2/layoutProjectPage.scss"
+  },
+  {
+    "outputFile": "stylesV2/layoutIFramePage.css",
+    "inputFile": "stylesV2/layoutIFramePage.scss"
+  },
+  {
+    "outputFile": "stylesV2/__styleMaster.css",
+    "inputFile": "stylesV2/__styleMaster.scss"
+  },
+  {
+    "outputFile": "stylesV2/_styleTablet.css",
+    "inputFile": "stylesV2/_styleTablet.scss"
+  },
+  {
+    "outputFile": "stylesV2/_styleMobile.css",
+    "inputFile": "stylesV2/_styleMobile.scss"
+  },
+  {
+    "outputFile": "stylesV2/_styleDesktop.css",
+    "inputFile": "stylesV2/_styleDesktop.scss"
   }
 ]

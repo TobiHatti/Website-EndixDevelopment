@@ -54,51 +54,117 @@
     <Content Include="projectTechInfo.lphp" />
     <Content Include="references.lphp" />
     <Content Include="scripts\jquery-3.5.1.min.js" />
-
-	
-
-	
-	<Content Include="stylesV2\styleDesktop.css">
+    <Content Include="stylesV2\-commonMixins.scss" />
+    <Content Include="stylesV2\-commonVariables.scss" />
+    <Content Include="stylesV2\__layoutMaster.css">
       <SubType>Content</SubType>
-      <DependentUpon>stylesV2\styleDesktop.scss</DependentUpon>
+      <DependentUpon>stylesV2\__layoutMaster.scss</DependentUpon>
     </Content>
-    <Content Include="stylesV2\styleDesktop.min.css">
+    <Content Include="stylesV2\__layoutMaster.min.css">
       <SubType>Content</SubType>
-      <DependentUpon>stylesV2\styleDesktop.scss</DependentUpon>
+      <DependentUpon>stylesV2\__layoutMaster.scss</DependentUpon>
     </Content>
-    <Content Include="stylesV2\styleDesktop.scss" />
-
-	<Content Include="stylesV2\styleMobile.css">
+    <Content Include="stylesV2\__layoutMaster.scss" />
+    <Content Include="stylesV2\layoutContentPage.css">
       <SubType>Content</SubType>
-      <DependentUpon>stylesV2\styleMobile.scss</DependentUpon>
+      <DependentUpon>stylesV2\layoutContentPage.scss</DependentUpon>
     </Content>
-    <Content Include="stylesV2\styleMobile.min.css">
+    <Content Include="stylesV2\layoutContentPage.min.css">
       <SubType>Content</SubType>
-      <DependentUpon>stylesV2\styleMobile.scss</DependentUpon>
+      <DependentUpon>stylesV2\layoutContentPage.scss</DependentUpon>
     </Content>
-    <Content Include="stylesV2\styleMobile.scss" />
-	
-	<Content Include="stylesV2\styleTablet.css">
+    <Content Include="stylesV2\layoutContentPage.scss" />
+    <Content Include="stylesV2\layoutIFramePage.css">
       <SubType>Content</SubType>
-      <DependentUpon>stylesV2\styleTablet.scss</DependentUpon>
+      <DependentUpon>stylesV2\layoutIFramePage.scss</DependentUpon>
     </Content>
-    <Content Include="stylesV2\styleTablet.min.css">
+    <Content Include="stylesV2\layoutIFramePage.min.css">
       <SubType>Content</SubType>
-      <DependentUpon>stylesV2\styleTablet.scss</DependentUpon>
+      <DependentUpon>stylesV2\layoutIFramePage.scss</DependentUpon>
     </Content>
-    <Content Include="stylesV2\styleTablet.scss" />
-
-    <Content Include="stylesV2\_styleMaster.css">
+    <Content Include="stylesV2\layoutIFramePage.scss" />
+    <Content Include="stylesV2\layoutProjectPage.css">
       <SubType>Content</SubType>
-      <DependentUpon>stylesV2\_styleMaster.scss</DependentUpon>
+      <DependentUpon>stylesV2\layoutProjectPage.scss</DependentUpon>
     </Content>
-    <Content Include="stylesV2\_styleMaster.min.css">
+    <Content Include="stylesV2\layoutProjectPage.min.css">
       <SubType>Content</SubType>
-      <DependentUpon>stylesV2\_styleMaster.scss</DependentUpon>
+      <DependentUpon>stylesV2\layoutProjectPage.scss</DependentUpon>
     </Content>
-    <Content Include="stylesV2\_styleMaster.scss" />
-	
-	<Content Include="styles\formElements.css">
+    <Content Include="stylesV2\layoutProjectPage.scss" />
+    <Content Include="stylesV2\layoutStartPage.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\layoutStartPage.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\layoutStartPage.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\layoutStartPage.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\layoutStartPage.scss" />
+    <Content Include="stylesV2\_layoutDesktop.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\_layoutDesktop.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\_layoutDesktop.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\_layoutDesktop.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\_layoutDesktop.scss" />
+    <Content Include="stylesV2\_layoutMobile.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\_layoutMobile.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\_layoutMobile.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\_layoutMobile.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\_layoutMobile.scss" />
+    <Content Include="stylesV2\_layoutTablet.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\_layoutTablet.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\_layoutTablet.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\_layoutTablet.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\_layoutTablet.scss" />
+    <Content Include="stylesV2\_styleDesktop.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\_styleDesktop.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\_styleDesktop.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\_styleDesktop.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\_styleDesktop.scss" />
+    <Content Include="stylesV2\_styleMobile.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\_styleMobile.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\_styleMobile.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\_styleMobile.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\_styleMobile.scss" />
+    <Content Include="stylesV2\_styleTablet.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\_styleTablet.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\_styleTablet.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\_styleTablet.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\_styleTablet.scss" />
+    <Content Include="stylesV2\__styleMaster.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\__styleMaster.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\__styleMaster.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>stylesV2\__styleMaster.scss</DependentUpon>
+    </Content>
+    <Content Include="stylesV2\__styleMaster.scss" />
+    <Content Include="styles\formElements.css">
       <SubType>Content</SubType>
       <DependentUpon>styles\formElements.scss</DependentUpon>
     </Content>
@@ -107,9 +173,7 @@
       <DependentUpon>styles\formElements.scss</DependentUpon>
     </Content>
     <Content Include="styles\formElements.scss" />
-	
-	
-	<Content Include="styles\layoutAdvancedProject.css">
+    <Content Include="styles\layoutAdvancedProject.css">
       <SubType>Content</SubType>
       <DependentUpon>styles\layoutAdvancedProject.scss</DependentUpon>
     </Content>
@@ -118,9 +182,7 @@
       <DependentUpon>styles\layoutAdvancedProject.scss</DependentUpon>
     </Content>
     <Content Include="styles\layoutAdvancedProject.scss" />
-	
-	
-	<Content Include="styles\layoutContentPage.css">
+    <Content Include="styles\layoutContentPage.css">
       <SubType>Content</SubType>
       <DependentUpon>styles\layoutContentPage.scss</DependentUpon>
     </Content>
@@ -129,9 +191,7 @@
       <DependentUpon>styles\layoutContentPage.scss</DependentUpon>
     </Content>
     <Content Include="styles\layoutContentPage.scss" />
-	
-	
-	<Content Include="styles\layoutGeneral.css">
+    <Content Include="styles\layoutGeneral.css">
       <SubType>Content</SubType>
       <DependentUpon>styles\layoutGeneral.scss</DependentUpon>
     </Content>
@@ -140,10 +200,7 @@
       <DependentUpon>styles\layoutGeneral.scss</DependentUpon>
     </Content>
     <Content Include="styles\layoutGeneral.scss" />
-	
-	
-	
-	<Content Include="styles\layoutIFramePage.css">
+    <Content Include="styles\layoutIFramePage.css">
       <SubType>Content</SubType>
       <DependentUpon>styles\layoutIFramePage.scss</DependentUpon>
     </Content>
@@ -152,9 +209,7 @@
       <DependentUpon>styles\layoutIFramePage.scss</DependentUpon>
     </Content>
     <Content Include="styles\layoutIFramePage.scss" />
-	
-	
-	<Content Include="styles\layoutSimpleProject.css">
+    <Content Include="styles\layoutSimpleProject.css">
       <SubType>Content</SubType>
       <DependentUpon>styles\layoutSimpleProject.scss</DependentUpon>
     </Content>
@@ -163,9 +218,7 @@
       <DependentUpon>styles\layoutSimpleProject.scss</DependentUpon>
     </Content>
     <Content Include="styles\layoutSimpleProject.scss" />
-	
-
-	<Content Include="styles\layoutStartPage.css">
+    <Content Include="styles\layoutStartPage.css">
       <SubType>Content</SubType>
       <DependentUpon>styles\layoutStartPage.scss</DependentUpon>
     </Content>
@@ -174,9 +227,7 @@
       <DependentUpon>styles\layoutStartPage.scss</DependentUpon>
     </Content>
     <Content Include="styles\layoutStartPage.scss" />
-
-
-	<Content Include="styles\style.css">
+    <Content Include="styles\style.css">
       <SubType>Content</SubType>
       <DependentUpon>styles\style.scss</DependentUpon>
     </Content>
@@ -185,10 +236,8 @@
       <DependentUpon>styles\style.scss</DependentUpon>
     </Content>
     <Content Include="styles\style.scss" />
-
-
-	<Content Include="styles\textElements.css">
-      <SubType>Content</SubType> 
+    <Content Include="styles\textElements.css">
+      <SubType>Content</SubType>
       <DependentUpon>styles\textElements.scss</DependentUpon>
     </Content>
     <Content Include="styles\textElements.min.css">
@@ -196,9 +245,8 @@
       <DependentUpon>styles\textElements.scss</DependentUpon>
     </Content>
     <Content Include="styles\textElements.scss" />
-	
-	<Content Include="styles\staggeredFade.css">
-      <SubType>Content</SubType> 
+    <Content Include="styles\staggeredFade.css">
+      <SubType>Content</SubType>
       <DependentUpon>styles\staggeredFade.scss</DependentUpon>
     </Content>
     <Content Include="styles\staggeredFade.min.css">
@@ -206,8 +254,6 @@
       <DependentUpon>styles\staggeredFade.scss</DependentUpon>
     </Content>
     <Content Include="styles\staggeredFade.scss" />
-
-    
     <Content Include="support.lphp" />
     <Content Include="supportFooter.lphp" />
     <Content Include="supportForm.lphp" />
@@ -235,7 +281,7 @@
     <Content Include="scripts\PageLayout.js" />
     <Content Include="styles\fontawesome.min.css" />
     <Content Include="styles\_commonVariables.scss" />
-	<Content Include="styles\_commonMixins.scss" />
+    <Content Include="styles\_commonMixins.scss" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="data\dbConnect.php" />

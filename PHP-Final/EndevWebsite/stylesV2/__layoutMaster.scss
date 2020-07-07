@@ -1,0 +1,448 @@
+﻿@import '-commonVariables';
+@import '-commonMixins';
+
+$defaultHeaderHeight: 200px;
+$defaultFooterHeight: 200px;
+$defaultNavHeight: 50px;
+$defaultNavTopOffset: 50px;
+
+$defaultLogoTopOffset: 50px;
+$defaultLogoLeftOffset: 50px;
+$defaultLogoHeight: 100px;
+
+html {
+    overflow-x: hidden;
+    min-width: 300px;
+}
+
+html::-webkit-scrollbar-track {
+    @include CustomScrollbar-Track();
+}
+
+html::-webkit-scrollbar {
+    @include CustomScrollbar();
+}
+
+html::-webkit-scrollbar-thumb {
+    @include CustomScrollbar-Thumb();
+}
+
+a {
+    color: $linkIdleColor1;
+}
+
+a:hover {
+    color: $linkHoverColor1;
+}
+
+hr {
+    border-width: 0.5px;
+    border-color: dodgerblue;
+    box-shadow: #dedede 0 1px 1px;
+}
+
+iframe {
+    border: none;
+}
+
+
+hr.style-six {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body {
+    margin: 0;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "main";
+    grid-template-rows: $defaultHeaderHeight auto;
+}
+
+header {
+    overflow: hidden;
+    grid-area: header;
+    @include HeaderGradient();
+    z-index: 110;
+
+    h1 {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        color: white;
+        top: 30vh;
+        font-size: 15vw;
+        text-shadow: 0px 0px 30px black;
+    }
+
+    @media screen and (min-width: 1200px) {
+        h1 {
+            font-size: 150pt;
+        }
+    }
+
+    div#headerBGImage {
+        overflow: hidden;
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 80vh;
+        background-attachment: fixed;
+        background-position-x: center;
+        background-position-y: -10vh;
+        background-size: cover;
+    }
+
+    div#bannerCover {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 80vh;
+        background-color: rgb($overlayBlendColorR,$overlayBlendColorG,$overlayBlendColorB);
+        opacity: 0.1;
+    }
+
+    div.endevLogo {
+        position: absolute;
+        margin: 5px;
+        animation: endevLogoFadeIn;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        background-repeat: no-repeat;
+    }
+
+    div.endevLogoSticky {
+        position: fixed;
+        left: 20px;
+        top: 0;
+        height: $defaultNavHeight - 10px;
+        margin: 5px;
+        opacity: 1;
+        animation: endevLogoFadeIn;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        background-size: auto #{$defaultNavHeight - 10px};
+        background-repeat: no-repeat;
+        z-index: 121;
+    }
+}
+
+@keyframes endevLogoFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+header.sticky {
+    height: $defaultNavHeight;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-position: bottom;
+    background-size: 100vw $defaultHeaderHeight;
+}
+
+main {
+    grid-area: main;
+    background-color: white;
+    min-height: 100vh;
+    margin-bottom: $defaultFooterHeight;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+article {
+    padding: 0 2%;
+}
+
+nav {
+    transition: width 0.2s ease-in-out;
+
+    div.fullWidthMenu, div.mobileMenu {
+        box-sizing: border-box;
+        z-index: 120;
+        background: rgb(0,0,0);
+        background: -moz-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 5%);
+        background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 5%);
+        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 5%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+        color: #eee;
+        padding-left: 50px;
+
+        a {
+            font-weight: bolder;
+            color: #ccc;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            margin: 0;
+            transition: color 0.4s ease-in-out;
+        }
+
+        a:hover {
+            transition: color 0.1s ease-in-out;
+            color: #fff;
+        }
+    }
+
+    div.mobileMenu {
+        position: relative;
+        font-size: 20pt;
+        padding-right: 20px;
+        width: 100%;
+
+        span {
+            width: calc(100% - 20px);
+            text-align: center;
+            display: inline-block;
+            padding-left: 40px;
+            box-sizing: border-box;
+        }
+
+        a {
+            right: 0;
+            width: 20px;
+            display: inline-block;
+            text-align: right;
+        }
+
+        input {
+            display: none;
+        }
+
+        div.mobileMenuOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.96);
+            display: none;
+            z-index: 200;
+
+            a {
+                width: 100%;
+                line-height: 12vh;
+                height: 12vh;
+                display: block;
+                text-align: center;
+            }
+
+            label {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+
+
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+nav.default {
+    position: absolute;
+}
+
+nav.sticky {
+    position: fixed;
+}
+
+
+footer {
+    position: fixed;
+    background-color: #111;
+    color: #555;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: $defaultFooterHeight;
+    z-index: 90;
+    padding: 20px 10%;
+    box-sizing: border-box;
+
+    span {
+        display: block;
+        width: 100%;
+    }
+
+    div {
+        display: block;
+        width: 100%;
+        display: flex;
+        align-content: space-evenly;
+
+        p {
+            color: #666;
+            width: 30%;
+
+            a {
+                color: #777;
+                text-decoration: none;
+                margin-left: 10px;
+
+                i {
+                    margin-right: 10px;
+                    transition: margin-right 0.3s ease-in-out;
+                }
+            }
+
+            a:hover {
+                i {
+                    margin-right: 20px;
+                    transition: margin-right 0.1s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+aside {
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: top 0.005s linear, width 0.3s ease-in-out;
+    background-color: rgba(255,255,255,0.8);
+    box-sizing: border-box;
+    border: 1px solid gainsboro;
+    border-radius: 20px;
+    margin-top: 20vh;
+    left: 10px;
+    z-index: 115;
+
+    ul {
+        padding: 0;
+
+        li {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            list-style: none;
+            margin: 25px 20px;
+            color: $asideIdleFontColor;
+
+            span {
+                transition: all 0.2s ease-in-out;
+            }
+
+            i {
+                width: 20px;
+                color: $asideIdleFAIconColor;
+                transition: all 0.1s ease-in-out;
+            }
+        }
+
+        li:hover {
+            color: $asideHoverFontColor;
+
+            i {
+                color: $asideHoverFAIconColor;
+            }
+        }
+
+        li::before {
+            position: absolute;
+            left: -15px;
+            bottom: -8px;
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            @include UnderlineGradient();
+            transition: all 0.5s ease-in-out;
+        }
+
+        li:hover::before {
+            width: 100%;
+            transition: all 0.1s ease-in-out;
+        }
+    }
+}
+
+$asideBreakpoint: 1100px;
+
+@media only screen and (min-width: $asideBreakpoint) {
+    aside {
+        width: 200px;
+        min-height: 200px;
+
+        ul {
+            li {
+                span {
+                    opacity: 1;
+                }
+
+                i {
+                    font-size: 12pt;
+                    display: block;
+                    width: 20px;
+                    text-align: center;
+                }
+            }
+
+            li::before {
+                left: -15px;
+                bottom: -8px;
+            }
+
+            li:hover {
+                margin-left: 30px;
+                margin-right: 0;
+                transition: all 0.1s ease-in-out;
+            }
+        }
+    }
+}
+
+table {
+    tr {
+        td {
+            border-right: 1px solid gainsboro;
+            border-bottom: 1px solid gainsboro;
+            padding: 5px 10px;
+        }
+
+        td:last-of-type {
+            border-right: none;
+        }
+    }
+
+    tr:last-of-type {
+        td {
+            border-bottom: none;
+        }
+    }
+}
+
+x-md {
+    width: 100%;
+    display: block;
+
+    img {
+        width: auto;
+        max-width: 100%;
+    }
+
+    pre {
+        background-color: gainsboro;
+        border-radius: 5px;
+        padding: 5px;
+        box-sizing: border-box;
+        overflow-x: scroll;
+
+        code {
+            font-family: Consolas, monospace;
+        }
+    }
+}

@@ -1,0 +1,94 @@
+﻿@import '-commonVariables';
+@import '-commonMixins';
+
+$defaultHeaderHeight: 200px;
+$defaultFooterHeight: 200px;
+$defaultNavHeight: 50px;
+$defaultNavTopOffset: 50px;
+
+$defaultLogoTopOffset: 50px;
+$defaultLogoLeftOffset: 50px;
+$defaultLogoHeight: 100px;
+
+.breakpointCheck {
+    display: none;
+    content: 'Mobile';
+}
+
+header {
+    div.endevLogo {
+        left: 20px;
+        top: $defaultNavTopOffset;
+        height: #{$defaultNavHeight - 10px};
+        width: $defaultNavHeight * $fullLogoDimensionRatio;
+        background-size: auto #{$defaultNavHeight - 10px};
+        background-image: url("../../content/EndevBanner.svg");
+        z-index: 121;
+    }
+
+    div.endevLogoSticky {
+        background-image: url("../../content/EndevBanner.svg");
+        width: 160px;
+    }
+}
+
+main {
+    padding: 20px 0;
+}
+
+nav {
+    width: 100%;
+
+    div.fullWidthMenu {
+        display: none;
+    }
+
+    div.mobileMenu {
+        display: block;
+    }
+}
+
+aside {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+    background-color: white;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    border-top: 1px solid #222;
+    overflow-x: scroll;
+
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+
+        li {
+            margin: 0 0;
+            display: inline-block;
+
+            span {
+                opacity: 0;
+                display: none;
+            }
+
+            i {
+                width: auto;
+                padding: 0 10px;
+                font-size: 22pt;
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+            }
+        }
+
+        li::before {
+            position: absolute;
+            left: 0px;
+            bottom: -8px;
+            height: 2px;
+        }
+    }
+}

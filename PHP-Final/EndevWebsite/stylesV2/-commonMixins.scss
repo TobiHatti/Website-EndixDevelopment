@@ -1,0 +1,52 @@
+﻿@mixin HeaderGradient() {
+    /*background: rgb(0,18,89);
+    background: -moz-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
+    background: -webkit-linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);
+    background: linear-gradient(80deg, rgba(0,18,89,1) 2%, rgba(19,5,175,1) 5%, rgba(86,12,170,1) 20%, rgba(10,164,125,1) 45%, rgba(10,164,125,1) 55%, rgba(86,12,170,1) 80%, rgba(19,5,175,1) 95%, rgba(0,18,89,1) 98%);*/
+    background: rgb(16,0,255);
+    background: -moz-linear-gradient(80deg, rgba(16,0,255,1) 0%, rgba(0,146,255,1) 8%, rgba(41,214,214,1) 45%, rgba(41,214,214,1) 55%, rgba(0,146,255,1) 92%, rgba(16,0,255,1) 100%);
+    background: -webkit-linear-gradient(80deg, rgba(16,0,255,1) 0%, rgba(0,146,255,1) 8%, rgba(41,214,214,1) 45%, rgba(41,214,214,1) 55%, rgba(0,146,255,1) 92%, rgba(16,0,255,1) 100%);
+    background: linear-gradient(80deg, rgba(16,0,255,1) 0%, rgba(0,146,255,1) 8%, rgba(41,214,214,1) 45%, rgba(41,214,214,1) 55%, rgba(0,146,255,1) 92%, rgba(16,0,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1000ff",endColorstr="#1000ff",GradientType=1);
+}
+
+@mixin UnderlineGradient() {
+    background: rgb(16,0,255);
+    background: -moz-linear-gradient(45deg, rgba(16,0,255,1) 0%, rgba(0,146,255,1) 8%, rgba(41,214,214,1) 45%, rgba(41,214,214,1) 55%, rgba(0,146,255,1) 92%, rgba(16,0,255,1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(16,0,255,1) 0%, rgba(0,146,255,1) 8%, rgba(41,214,214,1) 45%, rgba(41,214,214,1) 55%, rgba(0,146,255,1) 92%, rgba(16,0,255,1) 100%);
+    background: linear-gradient(45deg, rgba(16,0,255,1) 0%, rgba(0,146,255,1) 8%, rgba(41,214,214,1) 45%, rgba(41,214,214,1) 55%, rgba(0,146,255,1) 92%, rgba(16,0,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1000ff",endColorstr="#1000ff",GradientType=1);
+}
+
+@mixin SmallBoxGradient() {
+    background: rgb(16,0,255);
+    background: -moz-linear-gradient(45deg, rgba(16,0,255,1) 0%, rgba(0,146,255,1) 50%, rgba(0,224,255,1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(16,0,255,1) 0%, rgba(0,146,255,1) 50%, rgba(0,224,255,1) 100%);
+    background: linear-gradient(45deg, rgba(16,0,255,1) 0%, rgba(0,146,255,1) 50%, rgba(0,224,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1000ff",endColorstr="#00e0ff",GradientType=1);
+}
+
+@mixin BigBoxGradient() {
+    background: rgb(0,146,255);
+    background: -moz-linear-gradient(45deg, rgba(0,146,255,1) 0%, rgba(41,214,214,1) 50%, rgba(0,224,255,1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(0,146,255,1) 0%, rgba(41,214,214,1) 50%, rgba(0,224,255,1) 100%);
+    background: linear-gradient(45deg, rgba(0,146,255,1) 0%, rgba(41,214,214,1) 50%, rgba(0,224,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0092ff",endColorstr="#00e0ff",GradientType=1);
+}
+
+
+@mixin CustomScrollbar() {
+    width: 4px;
+    background-color: #ccc;
+}
+
+@mixin CustomScrollbar-Track() {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+@mixin CustomScrollbar-Thumb() {
+    border-radius: 10px;
+    background-color: #222;
+    z-index: 110;
+}

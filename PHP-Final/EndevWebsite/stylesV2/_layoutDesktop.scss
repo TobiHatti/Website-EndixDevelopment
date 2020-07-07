@@ -1,0 +1,67 @@
+﻿@import '-commonVariables';
+@import '-commonMixins';
+
+$defaultHeaderHeight: 200px;
+$defaultFooterHeight: 200px;
+$defaultNavHeight: 50px;
+$defaultNavTopOffset: 50px;
+
+$defaultLogoTopOffset: 50px;
+$defaultLogoLeftOffset: 50px;
+$defaultLogoHeight: 100px;
+
+.breakpointCheck {
+    display: none;
+    content: 'DesktopFull';
+}
+
+
+header {
+    div.endevLogo {
+        left: $defaultLogoLeftOffset;
+        top: $defaultLogoTopOffset;
+        height: $defaultLogoHeight;
+        width: $defaultLogoHeight * $fullLogoDimensionRatio;
+        background-size: auto $defaultLogoHeight;
+        background-image: url("../../content/EndevBanner.svg");
+    }
+
+    div.endevLogoSticky {
+        background-image: url("../../content/EndevBanner.svg");
+        width: 160px;
+    }
+}
+
+main {
+    padding: 20px 20%;
+}
+
+nav {
+    width: 60%;
+    padding-left: 50px;
+    height: $defaultNavHeight;
+
+    a {
+        line-height: $defaultNavHeight;
+        height: 100%;
+        width: 100px;
+    }
+
+    div.fullWidthMenu {
+        display: block;
+    }
+
+    div.mobileMenu {
+        display: none;
+    }
+}
+
+nav.default {
+    top: $defaultNavTopOffset;
+    right: 0;
+}
+
+nav.sticky {
+    top: 0;
+    right: 0;
+}
