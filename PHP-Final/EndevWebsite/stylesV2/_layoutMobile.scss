@@ -22,13 +22,13 @@ header {
         height: #{$defaultNavHeight - 10px};
         width: $defaultNavHeight * $fullLogoDimensionRatio;
         background-size: auto #{$defaultNavHeight - 10px};
-        background-image: url("../../content/EndevBanner.svg");
+        background-image: url("../../content/EndevLogo.svg");
         z-index: 121;
     }
 
     div.endevLogoSticky {
-        background-image: url("../../content/EndevBanner.svg");
-        width: 160px;
+        background-image: url("../../content/EndevLogo.svg");
+        width: 40px;
     }
 }
 

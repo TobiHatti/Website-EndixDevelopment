@@ -8,12 +8,12 @@ header div.endevLogo {
   height: 40px;
   width: 193px;
   background-size: auto 40px;
-  background-image: url("../../content/EndevBanner.svg");
+  background-image: url("../../content/EndevLogo.svg");
   z-index: 121; }
 
 header div.endevLogoSticky {
-  background-image: url("../../content/EndevBanner.svg");
-  width: 160px; }
+  background-image: url("../../content/EndevLogo.svg");
+  width: 40px; }
 
 main {
   padding: 20px 0; }
