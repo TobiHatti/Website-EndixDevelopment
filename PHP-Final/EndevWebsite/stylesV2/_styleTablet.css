@@ -19,4 +19,25 @@
   margin-left: -20vw; }
 
 .featuredSlideContainer {
-  margin-left: -20vw; }
+  margin-left: -20vw;
+  height: 600px; }
+  .featuredSlideContainer .featureSlide .textContainer {
+    top: 10%;
+    left: 10%;
+    width: 50%; }
+    .featuredSlideContainer .featureSlide .textContainer h1 {
+      font-size: 4em; }
+    .featuredSlideContainer .featureSlide .textContainer p {
+      font-size: 2em; }
+  .featuredSlideContainer .featureSlide a.featureButton {
+    width: auto; }
+  .featuredSlideContainer .featureSlide a.featureButton:first-of-type {
+    font-size: 1.8em;
+    bottom: 80px;
+    left: 70px;
+    padding: 6px 20px; }
+  .featuredSlideContainer .featureSlide a.featureButton:nth-of-type(2) {
+    font-size: 1.8em;
+    bottom: 80px;
+    right: 70px;
+    padding: 6px 20px; }

@@ -22,7 +22,7 @@ $${
 
     <div class="servicesContainer">
         <div class="blur"></div>
-        <h2>Web, Desktop, Microcontrollers</h2>
+        <h2>Web, Desktop, Embeded</h2>
         <span>Development on many platforms for a wide range of applications</span>
 
         <div class="serviceBoxes">

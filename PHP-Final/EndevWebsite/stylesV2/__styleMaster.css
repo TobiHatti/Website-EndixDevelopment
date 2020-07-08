@@ -1233,7 +1233,6 @@ form.voteBox {
 .featuredSlideContainer {
   width: 100vw;
   left: 0;
-  height: 700px;
   overflow: hidden;
   white-space: nowrap;
   position: relative; }
@@ -1242,7 +1241,10 @@ form.voteBox {
     height: 100%;
     display: inline-block;
     margin: 0;
-    background-position-y: -240px;
+    margin-left: -4px;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
     position: relative;
     transition: transform 0.8s cubic-bezier(0.5, 0, 0.5, 1);
     transform: translateX(0%); }
@@ -1253,15 +1255,10 @@ form.voteBox {
       opacity: 0.8; }
     .featuredSlideContainer .featureSlide .textContainer {
       position: absolute;
-      top: 15%;
-      left: 15%;
-      width: 50%;
       color: white; }
       .featuredSlideContainer .featureSlide .textContainer h1 {
-        text-align: left;
-        font-size: 80pt; }
+        text-align: left; }
       .featuredSlideContainer .featureSlide .textContainer p {
-        font-size: 30pt;
         font-weight: lighter;
         width: 100%;
         word-wrap: break-all;
@@ -1276,24 +1273,12 @@ form.voteBox {
       border-radius: 50px;
       font-weight: lighter;
       text-decoration: none;
-      width: 200px;
       text-align: center;
       background-color: dodgerblue;
       color: white; }
     .featuredSlideContainer .featureSlide a.featureButton:hover {
       background-color: dodgerblue;
       color: aqua; }
-    .featuredSlideContainer .featureSlide a.featureButton:first-of-type {
-      font-size: 22pt;
-      top: 40%;
-      right: 20%;
-      padding: 8px 20px; }
-    .featuredSlideContainer .featureSlide a.featureButton:nth-of-type(2) {
-      font-size: 18pt;
-      top: 60%;
-      right: 20%;
-      padding: 8px 0;
-      margin: 0 20px; }
   .featuredSlideContainer .bulletSelector {
     position: absolute;
     bottom: 10px;

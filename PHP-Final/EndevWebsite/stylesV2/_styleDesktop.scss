@@ -26,4 +26,39 @@
 
 .featuredSlideContainer {
     margin-left: -20vw;
+    height: 700px;
+
+    .featureSlide {
+        .textContainer {
+            top: 15%;
+            left: 15%;
+            width: 50%;
+
+            h1 {
+                font-size: 6em;
+            }
+
+            p {
+                font-size: 2.8em;
+            }
+        }
+
+        a.featureButton {
+            width: 250px;
+        }
+
+        a.featureButton:first-of-type {
+            font-size: 2.5em;
+            right: 50px;
+            top: 200px;
+            padding: 8px 25px;
+        }
+
+        a.featureButton:nth-of-type(2) {
+            font-size: 2.2em;
+            right: 50px;
+            top: 350px;
+            padding: 8px 25px;
+        }
+    }
 }

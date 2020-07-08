@@ -16,10 +16,12 @@ html::-webkit-scrollbar-thumb {
   z-index: 110; }
 
 a {
-  color: royalblue; }
+  color: royalblue;
+  transition: color 0.3s ease-in-out; }
 
 a:hover {
-  color: deepskyblue; }
+  color: deepskyblue;
+  transition: color 0.1s ease-in-out; }
 
 hr {
   border-width: 0.5px;

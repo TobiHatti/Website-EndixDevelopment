@@ -1712,9 +1712,7 @@ form.voteBox {
 
 .featuredSlideContainer {
     width: 100vw;
-    
     left: 0;
-    height: 700px;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
@@ -1724,11 +1722,13 @@ form.voteBox {
         height: 100%;
         display: inline-block;
         margin: 0;
-        background-position-y: -240px;
+        margin-left: -4px;
+        background-position-x: center;
+        background-position-y: center;
+        background-size: cover;
         position: relative;
         transition: transform 0.8s cubic-bezier(0.5, 0, 0.5, 1);
         transform: translateX(0%);
-
 
         .featureBackgroundBlur {
             background-color: rgb($overlayBlendColorR, $overlayBlendColorG, $overlayBlendColorB);
@@ -1739,19 +1739,13 @@ form.voteBox {
 
         .textContainer {
             position: absolute;
-            top: 15%;
-            left: 15%;
-            width: 50%;
             color: white;
-
 
             h1 {
                 text-align: left;
-                font-size: 80pt;
             }
 
             p {
-                font-size: 30pt;
                 font-weight: lighter;
                 width: 100%;
                 word-wrap: break-all;
@@ -1773,7 +1767,6 @@ form.voteBox {
             border-radius: 50px;
             font-weight: lighter;
             text-decoration: none;
-            width: 200px;
             text-align: center;
             background-color: $btnBackgroundIdleColor;
             color: $btnFontIdleColor;
@@ -1782,21 +1775,6 @@ form.voteBox {
         a.featureButton:hover {
             background-color: $btnBackgroundHoverColor;
             color: $btnFontHoverColor;
-        }
-
-        a.featureButton:first-of-type {
-            font-size: 22pt;
-            top: 40%;
-            right: 20%;
-            padding: 8px 20px;
-        }
-
-        a.featureButton:nth-of-type(2) {
-            font-size: 18pt;
-            top: 60%;
-            right: 20%;
-            padding: 8px 0;
-            margin: 0 20px;
         }
     }
 
