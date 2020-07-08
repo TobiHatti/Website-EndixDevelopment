@@ -52,6 +52,7 @@
 
             h1 {
                 font-size: 3em;
+                margin: 5px 0;
             }
 
             p {
@@ -77,5 +78,29 @@
             left: 30px;
             padding: 3px 15px;
         }
+    }
+}
+
+.indexTitleContainer {
+    h1 {
+        font-size: 2.8em;
+
+        img {
+            height: 55px;
+            margin-bottom: -12px;
+        }
+    }
+}
+
+
+.homeSubarticle2 {
+    a {
+        font-size: 1.2em;
+        padding: 6px 12px;
+    }
+
+    em {
+        font-size: 1.2em;
+        margin: 0 5px;
     }
 }

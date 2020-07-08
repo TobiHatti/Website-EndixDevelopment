@@ -1991,7 +1991,6 @@ form.voteBox {
 .servicesContainer {
     position: relative;
     width: 100vw;
-    
     left: 0;
     overflow: hidden;
     white-space: nowrap;
@@ -2017,6 +2016,7 @@ form.voteBox {
         display: block;
         position: relative;
         margin-bottom: 0px;
+        white-space: pre-wrap;
     }
 
     span {
@@ -2026,6 +2026,7 @@ form.voteBox {
         width: 100%;
         margin-bottom: 15px;
         color: lightgray;
+        white-space: pre-wrap;
     }
 
     .serviceBoxes {
@@ -2120,23 +2121,16 @@ form.voteBox {
 
     a {
         display: block;
-        font-size: 1.6em;
         text-decoration: none;
         background-color: $btnBackgroundIdleColor;
         color: $btnFontIdleColor;
         border-radius: 30px;
         display: inline-block;
-        padding: 10px 20px;
         transition: color 0.3s ease-in-out;
     }
 
     a:hover {
         color: $btnFontHoverColor;
         transition: color 0.1s ease-in-out;
-    }
-
-    em {
-        font-size: 1.5em;
-        margin: 0 30px;
     }
 }

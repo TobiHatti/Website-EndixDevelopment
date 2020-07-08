@@ -41,3 +41,17 @@
     bottom: 80px;
     right: 70px;
     padding: 6px 20px; }
+
+.indexTitleContainer h1 {
+  font-size: 3em; }
+  .indexTitleContainer h1 img {
+    height: 60px;
+    margin-bottom: -15px; }
+
+.homeSubarticle2 a {
+  font-size: 1.4em;
+  padding: 10px 20px; }
+
+.homeSubarticle2 em {
+  font-size: 1.2em;
+  margin: 0 10px; }

@@ -11,8 +11,8 @@ $${
     $sql = new WrapMySQL(getenv("DBHost"),getenv("DBName"),getenv("DBUser"),getenv("DBPass"));
     $sql->Open();    
 ?>
-    <article>
-        <h1>Endev <img src="/content/EndevLogo.svg" style="height: 80px; margin-bottom: -20px;"/> Software solutions for every case</h1>
+    <article class="indexTitleContainer">
+        <h1>Endev <img src="/content/EndevLogo.svg"/> Software solutions for every case</h1>
         <p>
 
         </p>
