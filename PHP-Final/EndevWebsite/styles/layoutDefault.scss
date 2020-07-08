@@ -1,0 +1,84 @@
+﻿@import 'commonVariables';
+
+$headerHeight: 200px;
+$footerHeight: 200px;
+$navHeight: 50px;
+$navTopOffset: 50px;
+
+$logoTopOffset: 50px;
+$logoLeftOffset: 50px;
+$logoHeight: 100px;
+
+body {
+    grid-template-rows: $headerHeight auto;
+}
+
+header { 
+
+    div.endevLogo {
+        @media only screen and (min-width: $navBreakpoint1) {
+            left: $logoLeftOffset;
+            top: $logoTopOffset;
+            height: $logoHeight;
+            width: $logoHeight * $fullLogoDimensionRatio;
+            background-size: auto $logoHeight;
+        }
+
+        @media only screen and (max-width: $navBreakpoint1) {
+            top: $navTopOffset;
+            height: #{$navHeight - 10px};
+            width: #{$navHeight - 10px};
+            background-size: auto #{$navHeight - 10px};
+        }
+
+        @media only screen and (max-width: $navBreakpoint2) {
+            top: $navTopOffset;
+            height: #{$navHeight - 10px};
+            width: #{$navHeight - 10px};
+            background-size: auto #{$navHeight - 10px};
+        }
+    }
+}
+
+header.sticky {
+    height: $navHeight;
+    background-size: 100vw $headerHeight;
+}
+
+// Desktop small
+@media only screen and (max-width: $navBreakpoint1) {
+
+    nav {
+        height: $navHeight;
+
+        a {
+            line-height: $navHeight;
+        }
+    }
+
+    nav.default {
+        top: $navTopOffset;
+    }
+}
+
+
+// Desktop full
+@media only screen and (min-width: $navBreakpoint1) {
+
+    nav {
+        height: $navHeight;
+
+        a {
+            line-height: $navHeight;
+        }
+    }
+
+    nav.default {
+        top: $navTopOffset;
+    }
+}
+
+
+footer {
+    height: $footerHeight;
+}

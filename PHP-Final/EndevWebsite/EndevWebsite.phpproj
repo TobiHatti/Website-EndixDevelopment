@@ -197,6 +197,12 @@
       <DependentUpon>styles\layoutContentPage.scss</DependentUpon>
     </Content>
     <Content Include="styles\layoutContentPage.scss" />
+    <Content Include="styles\layoutDefault.css" />
+    <Content Include="styles\layoutDefault.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>styles\layoutDefault.css</DependentUpon>
+    </Content>
+    <Content Include="styles\layoutDefault.scss" />
     <Content Include="styles\layoutGeneral.css">
       <SubType>Content</SubType>
       <DependentUpon>styles\layoutGeneral.scss</DependentUpon>

@@ -102,5 +102,9 @@
   {
     "outputFile": "stylesV2/_styleDesktop.css",
     "inputFile": "stylesV2/_styleDesktop.scss"
+  },
+  {
+    "outputFile": "styles/layoutDefault.css",
+    "inputFile": "styles/layoutDefault.scss"
   }
 ]

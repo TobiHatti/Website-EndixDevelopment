@@ -14,6 +14,7 @@ if (preg_match('~MSIE|Internet Explorer~i', $userAgent) || (strpos($userAgent, '
 <html>
 <head>
     $$RenderPage("../templates/_DefaultHeader.lphp") 
+    <link href="/styles/layoutDefault.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -23,10 +24,7 @@ if (preg_match('~MSIE|Internet Explorer~i', $userAgent) || (strpos($userAgent, '
         </a>
         $$RenderPage("../templates/_Menu.lphp")
     </header>
-    <main>
-        $$RenderBody()
-        
-    </main>
+    <main>$$RenderBody()</main>
     $$RenderPage("../templates/_Footer.lphp")
 </body>
 </html> 
