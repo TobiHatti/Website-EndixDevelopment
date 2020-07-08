@@ -38,6 +38,12 @@
 
 .servicesContainer {
     margin-left: 0;
+
+    .serviceBoxes {
+        div {
+            width: 280px;
+        }
+    }
 }
 
 .featuredSlideContainer {
@@ -102,5 +108,22 @@
     em {
         font-size: 1.2em;
         margin: 0 5px;
+    }
+}
+
+.supportCategoryContainer {
+    a {
+        width: 240px;
+        height: auto;
+    }
+}
+
+.downloadProjectRaster {
+    .rasterBox {
+        margin: 10px 5px;
+
+        img {
+            max-width: 250px;
+        }
     }
 }

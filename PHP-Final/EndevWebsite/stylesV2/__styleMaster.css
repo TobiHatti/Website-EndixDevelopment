@@ -1213,22 +1213,19 @@ form.voteBox {
   justify-content: center;
   width: 100%;
   margin: 0 auto; }
-  .downloadProjectRaster .rasterBox {
-    margin: 20px 10px; }
-    .downloadProjectRaster .rasterBox img {
-      max-width: 300px;
-      border: 1px solid gainsboro;
-      border-bottom: none;
-      border-radius: 25px 25px 0 0;
-      margin: 0; }
-    .downloadProjectRaster .rasterBox .boxInfo {
-      padding: 0 5px 20px;
-      text-align: center;
-      width: 100%; }
-      .downloadProjectRaster .rasterBox .boxInfo a {
-        text-decoration: none; }
-        .downloadProjectRaster .rasterBox .boxInfo a h5 {
-          border-bottom: 1px solid gainsboro; }
+  .downloadProjectRaster .rasterBox img {
+    border: 1px solid gainsboro;
+    border-bottom: none;
+    border-radius: 25px 25px 0 0;
+    margin: 0; }
+  .downloadProjectRaster .rasterBox .boxInfo {
+    padding: 0 5px 20px;
+    text-align: center;
+    width: 100%; }
+    .downloadProjectRaster .rasterBox .boxInfo a {
+      text-decoration: none; }
+      .downloadProjectRaster .rasterBox .boxInfo a h5 {
+        border-bottom: 1px solid gainsboro; }
 
 .featuredSlideContainer {
   width: 100vw;
@@ -1308,8 +1305,6 @@ form.voteBox {
   flex-wrap: wrap; }
   .supportCategoryContainer a {
     align-self: center;
-    width: 300px;
-    height: 140px;
     margin: 20px;
     border-radius: 25px;
     border: none;
@@ -1467,7 +1462,6 @@ form.voteBox {
       color: black;
       height: 300px;
       background-color: white;
-      width: 300px;
       white-space: pre-wrap;
       margin: 10px;
       padding: 10px;

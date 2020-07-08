@@ -17,6 +17,8 @@
 
 .servicesContainer {
   margin-left: -20vw; }
+  .servicesContainer .serviceBoxes div {
+    width: 300px; }
 
 .featuredSlideContainer {
   margin-left: -20vw;
@@ -55,3 +57,12 @@
 .homeSubarticle2 em {
   font-size: 1.2em;
   margin: 0 10px; }
+
+.supportCategoryContainer a {
+  width: 300px;
+  height: 140px; }
+
+.downloadProjectRaster .rasterBox {
+  margin: 20px 10px; }
+  .downloadProjectRaster .rasterBox img {
+    max-width: 300px; }

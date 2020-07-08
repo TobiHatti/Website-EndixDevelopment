@@ -32,7 +32,7 @@ $${
         <h4><i class="fas fa-user"></i> About me</h4>
         <p>
             Tobias Hattinger, Upper Austria, Austria.<br />
-            To find out more about me, visit my <a href="https://www.linkedin.com/in/tobias-hattinger-ba0932192" target="_blank" style="text-decoration: none;"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+            To find out more about me, visit my <a href="https://www.linkedin.com/in/tobias-hattinger-ba0932192" target="_blank" style="text-decoration: none; white-space: nowrap;"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
         </p>
     </article>
 </div>

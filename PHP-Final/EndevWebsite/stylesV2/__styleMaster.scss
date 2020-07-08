@@ -1681,10 +1681,7 @@ form.voteBox {
     margin: 0 auto;
 
     .rasterBox {
-        margin: 20px 10px;
-
         img {
-            max-width: 300px;
             border: 1px solid gainsboro;
             border-bottom: none;
             border-radius: 25px 25px 0 0;
@@ -1814,8 +1811,7 @@ form.voteBox {
 
     a {
         align-self: center;
-        width: 300px;
-        height: 140px;
+        
         margin: 20px;
         border-radius: 25px;
         border: none;
@@ -2040,7 +2036,7 @@ form.voteBox {
             color: black;
             height: 300px;
             background-color: white;
-            width: 300px;
+            
             white-space: pre-wrap;
             margin: 10px;
             padding: 10px;

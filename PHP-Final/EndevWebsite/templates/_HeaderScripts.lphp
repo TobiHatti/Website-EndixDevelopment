@@ -4,8 +4,8 @@ $${
 
 <!-- Shared scripts -->
 <script src="/scripts/jquery-3.5.1.min.js"></script>
-<script src="/scripts/PageLayout.js"></script>
-<script src="/scripts/CommonScripts.js"></script>
+<script src="/scripts/PageLayout.js?<?= $build ?>"></script>
+<script src="/scripts/CommonScripts.js?<?= $build ?>"></script>
 
 
 

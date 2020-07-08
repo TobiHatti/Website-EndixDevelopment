@@ -73,7 +73,7 @@ header {
     overflow: hidden;
     display: none;
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 80vh;
     background-attachment: fixed;
     background-position-x: center;
@@ -145,11 +145,6 @@ nav {
   nav div.fullWidthMenu, nav div.mobileMenu {
     box-sizing: border-box;
     z-index: 120;
-    background: black;
-    background: -moz-linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
-    background: -webkit-linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
-    background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
     color: #eee;
     padding-left: 50px; }
     nav div.fullWidthMenu a, nav div.mobileMenu a {
@@ -163,11 +158,18 @@ nav {
     nav div.fullWidthMenu a:hover, nav div.mobileMenu a:hover {
       transition: color 0.1s ease-in-out;
       color: #fff; }
+  nav div.fullWidthMenu {
+    background: black;
+    background: -moz-linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
+    background: -webkit-linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
+    background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1); }
   nav div.mobileMenu {
     position: relative;
     font-size: 20pt;
     padding: 0 20px;
     width: 100%;
+    background: rgba(0, 0, 0, 0.5);
     box-sizing: border-box; }
     nav div.mobileMenu span {
       width: calc(100% - 20px);
@@ -225,7 +227,6 @@ footer {
     display: block;
     width: 100%; }
   footer div {
-    display: block;
     width: 100%;
     display: flex;
     align-content: space-evenly; }
