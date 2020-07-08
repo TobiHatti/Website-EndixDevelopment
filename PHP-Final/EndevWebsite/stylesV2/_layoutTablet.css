@@ -15,6 +15,10 @@ header div.endevLogoSticky {
   background-image: url("../../content/EndevLogo.svg");
   width: 40px; }
 
+header .mobileLogo {
+  display: block;
+  width: 50%; }
+
 main {
   padding: 20px 20%; }
 

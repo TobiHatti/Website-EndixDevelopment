@@ -30,6 +30,11 @@ header {
         background-image: url("../../content/EndevBanner.svg");
         width: 160px;
     }
+
+    .mobileLogo {
+        display: none;
+        width: 0;
+    }
 }
 
 main {

@@ -25,6 +25,7 @@ if (preg_match('~MSIE|Internet Explorer~i', $userAgent) || (strpos($userAgent, '
             <div class="endevLogoSticky" id="endevLogoSticky"></div>
         </a>
         $$RenderPage("../templates/_Menu.lphp")
+        <img class="mobileLogo" src="/content/EndevLogoText.svg" />
     </header>
     <main>$$RenderBody()</main> 
     $$RenderPage("../templates/_Footer.lphp")

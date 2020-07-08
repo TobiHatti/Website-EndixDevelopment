@@ -17,7 +17,7 @@ $${
 <!-- <link href="/styles/layoutGeneral.min.css" rel="stylesheet" /> -->
 <link type="text/css" href="/stylesV2/__layoutMaster.min.css" rel="stylesheet" />
 <link type="text/css" href="/stylesV2/_layoutMobile.min.css" media="(max-width: 690px)" rel="stylesheet" />
-<link type="text/css" href="/stylesV2/_layoutTablet.min.css" media="(min-width: 690px)" rel="stylesheet" />
+<link type="text/css" href="/stylesV2/_layoutTablet.min.css" media="(min-width: 690px) and (max-width: 1139px)" rel="stylesheet" />
 <link type="text/css" href="/stylesV2/_layoutDesktop.min.css" media="(min-width: 1140px)" rel="stylesheet" />
 
 

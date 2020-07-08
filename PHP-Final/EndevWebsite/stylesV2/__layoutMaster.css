@@ -108,6 +108,11 @@ header {
     background-size: auto 40px;
     background-repeat: no-repeat;
     z-index: 121; }
+  header .mobileLogo {
+    position: relative;
+    margin: 200px auto 0;
+    width: 80%;
+    z-index: 90; }
 
 @keyframes endevLogoFadeIn {
   0% {
@@ -136,7 +141,8 @@ article {
   padding: 0 2%; }
 
 nav {
-  transition: width 0.2s ease-in-out; }
+  transition: width 0.2s ease-in-out;
+  z-index: 120; }
   nav div.fullWidthMenu, nav div.mobileMenu {
     box-sizing: border-box;
     z-index: 120;
