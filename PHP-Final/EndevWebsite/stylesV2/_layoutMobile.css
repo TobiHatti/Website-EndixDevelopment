@@ -16,7 +16,8 @@ header div.endevLogoSticky {
   width: 40px; }
 
 header .mobileLogo {
-  display: block; }
+  display: block;
+  width: 80%; }
 
 main {
   padding: 20px 0; }
@@ -42,7 +43,8 @@ aside {
   overflow-x: scroll; }
   aside ul {
     display: flex;
-    justify-content: space-evenly; }
+    justify-content: space-evenly;
+    width: 700px; }
     aside ul li {
       margin: 0 0;
       display: inline-block; }
