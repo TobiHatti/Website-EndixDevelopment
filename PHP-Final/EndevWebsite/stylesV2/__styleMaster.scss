@@ -9,31 +9,14 @@
 
 .cookieNotify {
     position: fixed;
-    height: 140px;
-    bottom: 0;
-    left: 0;
-    right: 0;
     z-index: 300;
-    box-shadow: #333 0 -15px 30px;
     color: white;
-    padding: 10px 50px 30px;
     box-sizing: border-box;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    
     @include SmallBoxGradient();
     transition: bottom 0.4s ease-in-out;
 
     div {
-        margin: 0 30px;
-
-
-        h6 {
-            margin-bottom: 5px;
-            margin-left: 50px;
-            white-space: nowrap;
-        }
-
         h6::before, h6::after {
             content: " \f564 ";
             font-family: "Font Awesome 5 Free";

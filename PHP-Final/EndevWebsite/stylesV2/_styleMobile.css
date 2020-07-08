@@ -1,4 +1,33 @@
-﻿.servicesContainer {
+﻿.cookieNotify {
+  top: 20%;
+  bottom: 20%;
+  left: 10%;
+  right: 10%;
+  box-shadow: #333 0 0 30px;
+  border-radius: 15%;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  min-width: 260px; }
+  .cookieNotify div {
+    margin: 0 auto;
+    display: block;
+    text-align: center; }
+    .cookieNotify div h6 {
+      text-align: center;
+      margin-bottom: 5px;
+      margin-left: 0;
+      white-space: nowrap;
+      font-size: 2em; }
+    .cookieNotify div a {
+      color: white; }
+  .cookieNotify button {
+    display: block;
+    margin: 0 auto; }
+
+.servicesContainer {
   margin-left: 0; }
 
 .featuredSlideContainer {

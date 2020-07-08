@@ -5,35 +5,20 @@
 
 .cookieNotify {
   position: fixed;
-  height: 140px;
-  bottom: 0;
-  left: 0;
-  right: 0;
   z-index: 300;
-  box-shadow: #333 0 -15px 30px;
   color: white;
-  padding: 10px 50px 30px;
   box-sizing: border-box;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   background: #1000ff;
   background: -moz-linear-gradient(45deg, #1000ff 0%, #0092ff 50%, #00e0ff 100%);
   background: -webkit-linear-gradient(45deg, #1000ff 0%, #0092ff 50%, #00e0ff 100%);
   background: linear-gradient(45deg, #1000ff 0%, #0092ff 50%, #00e0ff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1000ff",endColorstr="#00e0ff",GradientType=1);
   transition: bottom 0.4s ease-in-out; }
-  .cookieNotify div {
-    margin: 0 30px; }
-    .cookieNotify div h6 {
-      margin-bottom: 5px;
-      margin-left: 50px;
-      white-space: nowrap; }
-    .cookieNotify div h6::before, .cookieNotify div h6::after {
-      content: " \f564 ";
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      margin: 0 10px; }
+  .cookieNotify div h6::before, .cookieNotify div h6::after {
+    content: " \f564 ";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin: 0 10px; }
   .cookieNotify button {
     font-size: 1.5em;
     border-radius: 30px;
