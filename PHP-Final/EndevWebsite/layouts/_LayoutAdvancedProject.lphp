@@ -14,7 +14,7 @@ if (preg_match('~MSIE|Internet Explorer~i', $userAgent) || (strpos($userAgent, '
 <html>
 <head>
     $$RenderPage("../templates/_DefaultHeader.lphp")
-    <link href="/styles/layoutAdvancedProject.css" rel="stylesheet" />
+    <link href="/stylesV2/layoutProjectPage.css" rel="stylesheet" />
 </head>
 <body>
     <header style="overflow: hidden;">

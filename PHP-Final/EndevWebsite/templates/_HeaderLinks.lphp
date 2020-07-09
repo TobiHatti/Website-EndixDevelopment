@@ -5,10 +5,10 @@ $${
 <?php $build = 301; ?>
 
 <!-- Shared Stylesheets -->
-<link href="/styles/fontawesome.min.css?<?= $build ?>" rel="stylesheet" />
-<link href="/styles/staggeredFade.min.css?<?= $build ?>" rel="stylesheet" />
-<link href="/styles/textElements.min.css?<?= $build ?>" rel="stylesheet" />
-<link href="/styles/formElements.min.css?<?= $build ?>" rel="stylesheet" />
+<link href="/stylesV2/fontawesome.min.css?<?= $build ?>" rel="stylesheet" />
+<link href="/stylesV2/staggeredFade.min.css?<?= $build ?>" rel="stylesheet" />
+<link href="/stylesV2/textElements.min.css?<?= $build ?>" rel="stylesheet" />
+<link href="/stylesV2/formElements.min.css?<?= $build ?>" rel="stylesheet" />
 
 <!-- <link href="/styles/style.min.css" rel="stylesheet" /> -->
 <link type="text/css" href="/stylesV2/__styleMaster.min.css?<?= $build ?>" rel="stylesheet" />

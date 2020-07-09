@@ -14,7 +14,7 @@ if (preg_match('~MSIE|Internet Explorer~i', $userAgent) || (strpos($userAgent, '
 <html>
 <head>
     $$RenderPage("../templates/_DefaultHeader.lphp") 
-    <link href="/styles/layoutDefault.min.css" rel="stylesheet" />
+    <link href="/stylesV2/layoutDefault.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>

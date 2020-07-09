@@ -1,24 +1,31 @@
 ﻿body {
-  grid-template-rows: 50px auto; }
+  grid-template-rows: 200px auto; }
 
 @media only screen and (min-width: 1140px) {
   header div.endevLogo {
-    left: 20px;
-    top: 0;
-    height: 40px;
-    width: 154.4px;
-    background-size: auto 40px; } }
+    left: 50px;
+    top: 50px;
+    height: 100px;
+    width: 386px;
+    background-size: auto 100px; } }
 
 @media only screen and (max-width: 1140px) {
   header div.endevLogo {
-    top: 0px;
+    top: 50px;
+    height: 40px;
+    width: 40px;
+    background-size: auto 40px; } }
+
+@media only screen and (max-width: 690px) {
+  header div.endevLogo {
+    top: 50px;
     height: 40px;
     width: 40px;
     background-size: auto 40px; } }
 
 header.sticky {
   height: 50px;
-  background-size: 100vw 50px; }
+  background-size: 100vw 200px; }
 
 @media only screen and (max-width: 1140px) {
   nav {
@@ -26,7 +33,7 @@ header.sticky {
     nav a {
       line-height: 50px; }
   nav.default {
-    top: 0px; } }
+    top: 50px; } }
 
 @media only screen and (min-width: 1140px) {
   nav {
@@ -34,7 +41,7 @@ header.sticky {
     nav a {
       line-height: 50px; }
   nav.default {
-    top: 0px; } }
+    top: 50px; } }
 
 footer {
   height: 200px; }

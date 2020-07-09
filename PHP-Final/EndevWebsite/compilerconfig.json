@@ -106,5 +106,9 @@
   {
     "outputFile": "styles/layoutDefault.css",
     "inputFile": "styles/layoutDefault.scss"
+  },
+  {
+    "outputFile": "stylesV2/layoutDefaultPage.css",
+    "inputFile": "stylesV2/layoutDefaultPage.scss"
   }
 ]

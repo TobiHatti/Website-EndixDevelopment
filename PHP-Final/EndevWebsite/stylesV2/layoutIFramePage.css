@@ -1,1 +1,44 @@
-﻿
+﻿body {
+  grid-template-rows: 0 auto; }
+
+@media only screen and (min-width: 1140px) {
+  header div.endevLogo {
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 0;
+    background-size: auto 0; } }
+
+@media only screen and (max-width: 1140px) {
+  header div.endevLogo {
+    top: 0;
+    height: -10px;
+    width: -10px;
+    background-size: auto -10px; } }
+
+header.sticky {
+  height: 0;
+  background-size: 100vw 0; }
+
+@media only screen and (max-width: 1140px) {
+  nav {
+    height: 0; }
+    nav a {
+      line-height: 0; }
+  nav.default {
+    top: 0; } }
+
+@media only screen and (min-width: 1140px) {
+  nav {
+    height: 0; }
+    nav a {
+      line-height: 0; }
+  nav.default {
+    top: 0; } }
+
+main {
+  min-height: 0;
+  padding: 0; }
+
+footer {
+  height: 0; }

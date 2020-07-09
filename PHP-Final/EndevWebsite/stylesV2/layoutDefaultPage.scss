@@ -1,4 +1,4 @@
-﻿@import 'commonVariables';
+﻿@import '-commonVariables';
 
 $headerHeight: 200px;
 $footerHeight: 200px;
@@ -16,7 +16,7 @@ body {
 header { 
 
     div.endevLogo {
-        @media only screen and (min-width: $navBreakpoint1) {
+        @media only screen and (min-width: $DesktopTabletBreakpoint) {
             left: $logoLeftOffset;
             top: $logoTopOffset;
             height: $logoHeight;
@@ -24,14 +24,14 @@ header {
             background-size: auto $logoHeight;
         }
 
-        @media only screen and (max-width: $navBreakpoint1) {
+        @media only screen and (max-width: $DesktopTabletBreakpoint) {
             top: $navTopOffset;
             height: #{$navHeight - 10px};
             width: #{$navHeight - 10px};
             background-size: auto #{$navHeight - 10px};
         }
 
-        @media only screen and (max-width: $navBreakpoint2) {
+        @media only screen and (max-width: $TabletMobileBreakpoint) {
             top: $navTopOffset;
             height: #{$navHeight - 10px};
             width: #{$navHeight - 10px};
@@ -46,7 +46,7 @@ header.sticky {
 }
 
 // Desktop small
-@media only screen and (max-width: $navBreakpoint1) {
+@media only screen and (max-width: $DesktopTabletBreakpoint) {
 
     nav {
         height: $navHeight;
@@ -63,7 +63,7 @@ header.sticky {
 
 
 // Desktop full
-@media only screen and (min-width: $navBreakpoint1) {
+@media only screen and (min-width: $DesktopTabletBreakpoint) {
 
     nav {
         height: $navHeight;

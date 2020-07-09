@@ -1,4 +1,4 @@
-﻿@import 'commonVariables';
+﻿@import '-commonVariables';
 
 input[type="button"],
 input[type="reset"],
@@ -44,7 +44,7 @@ input[type="week"],
 select,
 textarea {
     border: 1px solid #aaa;
-    font-size: 12pt;
+    font-size: 1.1em;
     padding: 5px 8px;
     box-sizing: border-box;
     border-radius: 25px;
