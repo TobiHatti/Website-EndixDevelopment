@@ -10,6 +10,10 @@ $defaultLogoTopOffset: 50px;
 $defaultLogoLeftOffset: 50px;
 $defaultLogoHeight: 100px;
 
+html {
+    font-size: 12pt;
+}
+
 .breakpointCheck {
     display: none;
     content: 'DesktopSmall';
@@ -84,7 +88,7 @@ aside {
             }
 
             i {
-                font-size: 20pt;
+                font-size: 1.5em;
                 display: block;
                 margin: 0 auto;
                 text-align: center;

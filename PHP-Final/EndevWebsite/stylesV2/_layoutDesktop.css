@@ -1,4 +1,7 @@
-﻿.breakpointCheck {
+﻿html {
+  font-size: 14pt; }
+
+.breakpointCheck {
   display: none;
   content: 'DesktopFull'; }
 

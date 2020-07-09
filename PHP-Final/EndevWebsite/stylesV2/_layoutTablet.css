@@ -1,4 +1,7 @@
-﻿.breakpointCheck {
+﻿html {
+  font-size: 12pt; }
+
+.breakpointCheck {
   display: none;
   content: 'DesktopSmall'; }
 
@@ -51,7 +54,7 @@ aside {
     aside ul li span {
       opacity: 0; }
     aside ul li i {
-      font-size: 20pt;
+      font-size: 1.5em;
       display: block;
       margin: 0 auto;
       text-align: center; }

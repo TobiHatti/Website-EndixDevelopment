@@ -1,11 +1,15 @@
 ﻿@import '-commonVariables';
 @import '-commonMixins';
 
-* {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    scroll-behavior: smooth;
+@font-face {
+    font-family: ModernSans;
+    src: url(/content/ModernSans.otf);
 }
 
+* {
+    font-family: ModernSans, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
 
 .cookieNotify {
     position: fixed;
@@ -285,7 +289,7 @@ $defaultButtonHeight: 36px;
     display: block;
     text-align: center;
     margin: 20px auto;
-    font-size: 30pt;
+    font-size: 2.2em;
     color: #fff;
     text-shadow: 0px 3px 4px #000;
     transition: all 0.3s ease-in-out;
@@ -298,13 +302,13 @@ $defaultButtonHeight: 36px;
         span {
             margin: 10px 0;
             display: block;
-            font-size: 20pt;
+            font-size: 0.7em;
         }
 
         pre {
             margin: 5px 0;
             display: block;
-            font-size: 8pt;
+            font-size: 0.4em;
             font-family: monospace;
             text-shadow: none;
         }
@@ -317,7 +321,7 @@ $defaultButtonHeight: 36px;
         bottom: 0px;
         width: 80px;
         height: 100%;
-        font-size: 45pt;
+        font-size: 1.7em;
         line-height: 100px;
         padding: 30px 0;
         box-sizing: border-box;
@@ -394,14 +398,14 @@ $defaultButtonHeight: 36px;
 
 @media only screen and (max-width: $TabletMobileBreakpoint) {
     .downloadLatestPrerelease, .downloadLatestRelease {
-        font-size: 20pt;
+        font-size: 1.5em;
         width: 80%;
         min-width: 220px;
         padding-left: 55px;
 
         i {
             width: 50px;
-            font-size: 30pt;
+            font-size: 1.6em;
         }
     }
 }
@@ -475,7 +479,7 @@ $defaultButtonHeight: 36px;
     bottom: 40px;
     width: 50px;
     height: 50px;
-    font-size: 28pt;
+    font-size: 2em;
     text-align: center;
     line-height: 40px;
     border-radius: 15px;
@@ -498,7 +502,7 @@ $defaultButtonHeight: 36px;
 
 $featuredProjectBreakpoint: 510px;
 
-.featuredProjects {
+/*.featuredProjects {
     display: block;
     margin: auto;
     width: 100%;
@@ -658,7 +662,7 @@ $featuredProjectBreakpoint: 510px;
         }
     }
 }
-
+*/
 .projectBrowser {
     position: relative;
     display: grid;
@@ -816,16 +820,16 @@ $featuredProjectBreakpoint: 510px;
                         border: none;
                         background-color: $btnBackgroundIdleColor;
                         color: $btnFontIdleColor;
-                        font-size: 13pt;
+                        font-size: 1em;
                         border-radius: 25px;
                         transition: color 0.3s ease-in-out;
-                        padding-left: 7%;
+                        padding-left: 10%;
                         box-sizing: border-box;
 
                         i {
-                            font-size: 14pt;
+                            font-size: 1em;
                             position: absolute;
-                            left: 5%;
+                            left: 6%;
                             top: 20%;
                         }
                     }
@@ -974,7 +978,7 @@ $featuredProjectBreakpoint: 510px;
 
             b {
                 display: block;
-                font-size: 25pt;
+                font-size: 1.8em;
                 font-weight: lighter;
                 color: $linkIdleColor1;
             }
@@ -1007,9 +1011,10 @@ $featuredProjectBreakpoint: 510px;
             width: 150px;
             text-align: center;
             text-decoration: none;
-            font-size: 12pt;
+            font-size: 0.9em;
             transition: all 0.3s ease-in-out;
             color: $linkIdleColor4;
+            padding: 3px;
         }
 
         a.githubBtn:hover {
@@ -1050,7 +1055,7 @@ $featuredProjectBreakpoint: 510px;
                     float: right;
                     font-style: normal;
                     color: #555;
-                    font-size: 9pt;
+                    font-size: 0.7em;
                 }
             }
 
@@ -1070,7 +1075,7 @@ $featuredProjectBreakpoint: 510px;
 .otherReleases {
     strong {
         font-weight: normal;
-        font-size: 14pt;
+        font-size: 0.5em;
         margin-left: 20px;
         color: #aaa;
     }
@@ -1081,7 +1086,7 @@ $featuredProjectBreakpoint: 510px;
         text-decoration: none;
         color: #fff;
         text-shadow: 0 1px 3px #000;
-        font-size: 15pt;
+        font-size: 1em;
         padding: 3px 5px;
         margin: 6px;
         padding-left: 30px;
@@ -1117,7 +1122,7 @@ $featuredProjectBreakpoint: 510px;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 font-style: normal;
                 font-weight: normal;
-                font-size: 12pt;
+                font-size: 1em;
                 text-align: left;
                 padding: 0 5px;
                 box-sizing: border-box;
@@ -1213,12 +1218,12 @@ $featuredProjectBreakpoint: 510px;
         color: white;
         display: block;
         text-shadow: 0 2px 2px #000;
-        font-size: 26pt;
+        font-size: 2.2em;
         margin: 12px 0;
     }
 
     input[type="search"] {
-        font-size: 18pt;
+        font-size: 1.8em;
         width: 90%;
         border: none;
         border-radius: 25px;
@@ -1232,7 +1237,7 @@ $featuredProjectBreakpoint: 510px;
     button[type="submit"] {
         display: block;
         margin: 20px auto;
-        font-size: 20pt;
+        font-size: 1.8em;
         background-color: $btnBackgroundIdleColor;
         color: $btnFontIdleColor;
         border: none;
@@ -1264,11 +1269,11 @@ $featuredProjectBreakpoint: 510px;
     b {
         font-weight: normal;
         color: white;
-        font-size: 14pt;
+        font-size: 1em;
         text-shadow: 0 1px 1px #000;
 
         a {
-            font-size: 16pt;
+            font-size: 1.2em;
             color: $linkIdleColor2;
             transition: all 0.3s ease-in-out;
         }
@@ -1312,7 +1317,7 @@ ul.faqContainer {
             .voteCounter {
                 text-align: center;
                 align-self: center;
-                font-size: 30pt;
+                font-size: 3em;
                 color: #666;
             }
         }
@@ -1329,7 +1334,7 @@ ul.faqContainer {
                 b {
                     display: block;
                     font-weight: normal;
-                    font-size: 16pt;
+                    font-size: 1.5em;
                     border-bottom: 1px solid #eee;
                     margin-bottom: 8px;
                     white-space: nowrap;
@@ -1408,7 +1413,7 @@ form.voteBox {
     button {
         border: none;
         background-color: white;
-        font-size: 14pt;
+        font-size: 1.5em;
         transition: color 0.3s ease-in-out;
         cursor: pointer;
     }
@@ -1455,7 +1460,7 @@ form.voteBox {
     div {
         width: 50%;
         text-align: center;
-        font-size: 16pt;
+        font-size: 1.5em;
         cursor: pointer;
         transition: color 0.3s ease-in-out;
     }
@@ -1595,7 +1600,7 @@ form.voteBox {
         }
 
         span {
-            font-size: 14pt;
+            font-size: 1em;
             color: #333;
         }
 

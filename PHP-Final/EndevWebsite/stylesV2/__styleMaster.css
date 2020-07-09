@@ -1,6 +1,10 @@
 ﻿@charset "UTF-8";
+@font-face {
+  font-family: ModernSans;
+  src: url(/content/ModernSans.otf); }
+
 * {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: ModernSans, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth; }
 
 .cookieNotify {
@@ -232,7 +236,7 @@
   display: block;
   text-align: center;
   margin: 20px auto;
-  font-size: 30pt;
+  font-size: 2.2em;
   color: #fff;
   text-shadow: 0px 3px 4px #000;
   transition: all 0.3s ease-in-out;
@@ -242,11 +246,11 @@
   .downloadLatestPrerelease div span, .downloadLatestRelease div span {
     margin: 10px 0;
     display: block;
-    font-size: 20pt; }
+    font-size: 0.7em; }
   .downloadLatestPrerelease div pre, .downloadLatestRelease div pre {
     margin: 5px 0;
     display: block;
-    font-size: 8pt;
+    font-size: 0.4em;
     font-family: monospace;
     text-shadow: none; }
   .downloadLatestPrerelease i, .downloadLatestRelease i {
@@ -256,7 +260,7 @@
     bottom: 0px;
     width: 80px;
     height: 100%;
-    font-size: 45pt;
+    font-size: 1.7em;
     line-height: 100px;
     padding: 30px 0;
     box-sizing: border-box;
@@ -307,13 +311,13 @@
 
 @media only screen and (max-width: 690px) {
   .downloadLatestPrerelease, .downloadLatestRelease {
-    font-size: 20pt;
+    font-size: 1.5em;
     width: 80%;
     min-width: 220px;
     padding-left: 55px; }
     .downloadLatestPrerelease i, .downloadLatestRelease i {
       width: 50px;
-      font-size: 30pt; } }
+      font-size: 1.6em; } }
 
 /*.filterWIP, .filterSale, .filterDiscontinued {
     overflow: hidden;
@@ -372,7 +376,7 @@
   bottom: 40px;
   width: 50px;
   height: 50px;
-  font-size: 28pt;
+  font-size: 2em;
   text-align: center;
   line-height: 40px;
   border-radius: 15px;
@@ -393,121 +397,167 @@
   text-shadow: 0px 5px 2px #111;
   line-height: 20px; }
 
-.featuredProjects {
-  display: block;
-  margin: auto;
-  width: 100%;
-  text-align: center; }
-  @media only screen and (min-width: 510px) {
-    .featuredProjects label {
-      min-width: 345px;
-      min-height: 195px; } }
-  @media only screen and (max-width: 510px) {
-    .featuredProjects label {
-      width: 100%;
-      padding-bottom: 56.25%; } }
-  .featuredProjects label {
-    position: relative;
-    margin: 0px;
-    display: inline-block;
-    text-align: left;
-    border-radius: 25px;
-    overflow: hidden; }
-    .featuredProjects label img {
-      position: absolute;
-      display: block;
-      width: 100%;
-      transition: all 0.5s ease-in-out;
-      image-rendering: optimizeQuality; }
-    .featuredProjects label span {
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-color: rgba(25, 25, 112, 0);
-      color: white;
-      padding: 10px;
-      box-sizing: border-box;
-      opacity: 0;
-      transition: all 0.5s ease-in-out; }
-      .featuredProjects label span b {
-        font-size: 30pt;
-        display: block;
-        margin: 0;
-        font-weight: normal;
-        text-align: left; }
-    .featuredProjects label span::after {
-      content: "\A\A Click for more information";
-      white-space: pre-wrap; }
-    .featuredProjects label x-pnav {
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-color: rgba(25, 25, 112, 0);
-      opacity: 0;
-      cursor: default;
-      transition: background-color 0.5s ease-in-out; }
-      .featuredProjects label x-pnav a {
-        position: relative;
-        text-decoration: none;
-        line-height: 35px;
-        cursor: pointer;
-        display: none;
-        text-align: center;
-        margin: 5% auto;
-        width: 80%;
-        max-width: 200px;
-        height: 20%;
-        max-height: 35px;
-        border: none;
-        background-color: dodgerblue;
-        color: white;
-        font-size: 13pt;
-        border-radius: 30px;
-        transition: color 0.3s ease-in-out; }
-        .featuredProjects label x-pnav a i {
-          font-size: 16pt;
-          position: absolute;
-          left: 7%;
-          top: 20%; }
-      .featuredProjects label x-pnav a:hover {
-        transition: color 0.1s ease-in-out;
-        color: aqua;
-        background-color: dodgerblue; }
-      .featuredProjects label x-pnav a:disabled {
-        transition: background-color 0.1s ease-in-out;
-        background-color: gray;
-        color: lightgray; }
-  @media only screen and (max-width: 510px) {
-    .featuredProjects label {
-      border-radius: 0; } }
-  .featuredProjects label:hover {
-    cursor: pointer; }
-    .featuredProjects label:hover img {
-      width: 120%;
-      transition: all 3s ease-out;
-      margin-left: -10%;
-      margin-top: -10%; }
-    .featuredProjects label:hover span {
-      opacity: 1;
-      background-color: rgba(25, 25, 112, 0.7);
-      transition: all 0.1s ease-in-out; }
-  .featuredProjects input[type="checkbox"] {
-    display: none; }
-  .featuredProjects input[type="checkbox"]:checked + label {
-    outline: none; }
-    .featuredProjects input[type="checkbox"]:checked + label x-pnav {
-      background-color: rgba(25, 25, 112, 0.9);
-      transition: opacity 0.1s ease-in-out;
-      opacity: 1; }
-      .featuredProjects input[type="checkbox"]:checked + label x-pnav a {
-        display: block; }
+/*.featuredProjects {
+    display: block;
+    margin: auto;
+    width: 100%;
+    text-align: center;
 
+
+    @media only screen and (min-width: $featuredProjectBreakpoint) {
+        label {
+            min-width: 345px;
+            min-height: 195px;
+        }
+    }
+
+    @media only screen and (max-width: $featuredProjectBreakpoint) {
+        label {
+            // Maintains 16:9 aspect ratio (https://stackoverflow.com/questions/1495407/maintain-the-aspect-ratio-of-a-div-with-css)
+            width: 100%;
+            padding-bottom: 56.25%;
+        }
+    }
+
+    label {
+        position: relative;
+        margin: 0px;
+        display: inline-block;
+        text-align: left;
+        border-radius: 25px;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            display: block;
+            width: 100%;
+            transition: all 0.5s ease-in-out;
+            image-rendering: optimizeQuality;
+        }
+
+        span {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba($overlayBlendColorR,$overlayBlendColorG,$overlayBlendColorB, 0);
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+
+            b {
+                font-size: 30pt;
+                display: block;
+                margin: 0;
+                font-weight: normal;
+                text-align: left;
+            }
+        }
+
+        span::after {
+            content: "\A\A Click for more information";
+            white-space: pre-wrap;
+        }
+
+        x-pnav {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba($overlayBlendColorR,$overlayBlendColorG,$overlayBlendColorB, 0);
+            opacity: 0;
+            cursor: default;
+            transition: background-color 0.5s ease-in-out;
+
+            a {
+                position: relative;
+                text-decoration: none;
+                line-height: 35px;
+                cursor: pointer;
+                display: none;
+                text-align: center;
+                margin: 5% auto;
+                width: 80%;
+                max-width: 200px;
+                height: 20%;
+                max-height: 35px;
+                border: none;
+                background-color: $btnBackgroundIdleColor;
+                color: $btnFontIdleColor;
+                font-size: 13pt;
+                border-radius: 30px;
+                transition: color 0.3s ease-in-out;
+
+                i {
+                    font-size: 16pt;
+                    position: absolute;
+                    left: 7%;
+                    top: 20%;
+                }
+            }
+
+            a:hover {
+                transition: color 0.1s ease-in-out;
+                color: $btnFontHoverColor;
+                background-color: $btnBackgroundHoverColor;
+            }
+
+            a:disabled {
+                transition: background-color 0.1s ease-in-out;
+                background-color: gray;
+                color: lightgray;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $featuredProjectBreakpoint) {
+        label {
+            border-radius: 0;
+        }
+    }
+
+    label:hover {
+        cursor: pointer;
+
+        img {
+            width: 120%;
+            transition: all 3s ease-out;
+            margin-left: -10%;
+            margin-top: -10%;
+        }
+
+        span {
+            opacity: 1;
+            background-color: rgba($overlayBlendColorR,$overlayBlendColorG,$overlayBlendColorB, 0.7);
+            transition: all 0.1s ease-in-out;
+        }
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked + label {
+        outline: none;
+
+        x-pnav {
+            background-color: rgba($overlayBlendColorR,$overlayBlendColorG,$overlayBlendColorB, 0.9);
+            transition: opacity 0.1s ease-in-out;
+            opacity: 1;
+
+            a {
+                display: block;
+            }
+        }
+    }
+}
+*/
 .projectBrowser {
   position: relative;
   display: grid;
@@ -623,15 +673,15 @@
             border: none;
             background-color: dodgerblue;
             color: white;
-            font-size: 13pt;
+            font-size: 1em;
             border-radius: 25px;
             transition: color 0.3s ease-in-out;
-            padding-left: 7%;
+            padding-left: 10%;
             box-sizing: border-box; }
             .projectBrowser div.browser .projectTab div.projectItem div:nth-of-type(3) a i {
-              font-size: 14pt;
+              font-size: 1em;
               position: absolute;
-              left: 5%;
+              left: 6%;
               top: 20%; }
           .projectBrowser div.browser .projectTab div.projectItem div:nth-of-type(3) a:hover {
             transition: color 0.1s ease-in-out;
@@ -727,7 +777,7 @@
       text-decoration: none; }
       .versionBox div.generalInfo a b {
         display: block;
-        font-size: 25pt;
+        font-size: 1.8em;
         font-weight: lighter;
         color: royalblue; }
       .versionBox div.generalInfo a b:hover {
@@ -749,9 +799,10 @@
       width: 150px;
       text-align: center;
       text-decoration: none;
-      font-size: 12pt;
+      font-size: 0.9em;
       transition: all 0.3s ease-in-out;
-      color: #222; }
+      color: #222;
+      padding: 3px; }
     .versionBox div.generalInfo a.githubBtn:hover {
       color: dodgerblue;
       border-color: dodgerblue;
@@ -780,7 +831,7 @@
           float: right;
           font-style: normal;
           color: #555;
-          font-size: 9pt; }
+          font-size: 0.7em; }
       .versionBox div.generalInfo ul.assets li:nth-child(even) {
         background: #eee; }
     .versionBox div.generalInfo hr {
@@ -788,7 +839,7 @@
 
 .otherReleases strong {
   font-weight: normal;
-  font-size: 14pt;
+  font-size: 0.5em;
   margin-left: 20px;
   color: #aaa; }
 
@@ -798,7 +849,7 @@
   text-decoration: none;
   color: #fff;
   text-shadow: 0 1px 3px #000;
-  font-size: 15pt;
+  font-size: 1em;
   padding: 3px 5px;
   margin: 6px;
   padding-left: 30px;
@@ -830,7 +881,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-style: normal;
       font-weight: normal;
-      font-size: 12pt;
+      font-size: 1em;
       text-align: left;
       padding: 0 5px;
       box-sizing: border-box;
@@ -897,10 +948,10 @@
     color: white;
     display: block;
     text-shadow: 0 2px 2px #000;
-    font-size: 26pt;
+    font-size: 2.2em;
     margin: 12px 0; }
   .faqSearch input[type="search"] {
-    font-size: 18pt;
+    font-size: 1.8em;
     width: 90%;
     border: none;
     border-radius: 25px;
@@ -910,7 +961,7 @@
   .faqSearch button[type="submit"] {
     display: block;
     margin: 20px auto;
-    font-size: 20pt;
+    font-size: 1.8em;
     background-color: dodgerblue;
     color: white;
     border: none;
@@ -933,10 +984,10 @@
   .faqSearch b {
     font-weight: normal;
     color: white;
-    font-size: 14pt;
+    font-size: 1em;
     text-shadow: 0 1px 1px #000; }
     .faqSearch b a {
-      font-size: 16pt;
+      font-size: 1.2em;
       color: orange;
       transition: all 0.3s ease-in-out; }
     .faqSearch b a:hover {
@@ -968,7 +1019,7 @@ ul.faqContainer {
       ul.faqContainer li div.votes .voteCounter {
         text-align: center;
         align-self: center;
-        font-size: 30pt;
+        font-size: 3em;
         color: #666; }
     ul.faqContainer li a {
       padding: 10px;
@@ -980,7 +1031,7 @@ ul.faqContainer {
       ul.faqContainer li a div.faq b {
         display: block;
         font-weight: normal;
-        font-size: 16pt;
+        font-size: 1.5em;
         border-bottom: 1px solid #eee;
         margin-bottom: 8px;
         white-space: nowrap;
@@ -1028,7 +1079,7 @@ form.voteBox {
   form.voteBox button {
     border: none;
     background-color: white;
-    font-size: 14pt;
+    font-size: 1.5em;
     transition: color 0.3s ease-in-out;
     cursor: pointer; }
   form.voteBox button:hover {
@@ -1056,7 +1107,7 @@ form.voteBox {
   .issueStateSelector div {
     width: 50%;
     text-align: center;
-    font-size: 16pt;
+    font-size: 1.5em;
     cursor: pointer;
     transition: color 0.3s ease-in-out; }
   .issueStateSelector div:hover {
@@ -1159,7 +1210,7 @@ form.voteBox {
     .overviewSideContent .downloadShortcuts em {
       display: block; }
     .overviewSideContent .downloadShortcuts span {
-      font-size: 14pt;
+      font-size: 1em;
       color: #333; }
     .overviewSideContent .downloadShortcuts span::before {
       content: "— "; }

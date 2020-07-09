@@ -1,20 +1,5 @@
-﻿h1 {
-  font-size: 36pt; }
-
-h2 {
-  font-size: 28pt; }
-
-h3 {
-  font-size: 23pt; }
-
-h4 {
-  font-size: 19pt; }
-
-h5 {
-  font-size: 16pt; }
-
-h6 {
-  font-size: 15pt; }
+﻿html {
+  font-size: 14pt; }
 
 .breakpointCheck {
   display: none;
@@ -72,7 +57,7 @@ aside {
       aside ul li i {
         width: auto;
         padding: 0 10px;
-        font-size: 22pt;
+        font-size: 2em;
         display: block;
         margin: 0 auto;
         text-align: center; }
@@ -84,7 +69,8 @@ aside {
 
 footer {
   overflow-y: scroll;
-  font-size: 0.8em; }
+  font-size: 0.8em;
+  padding-bottom: 100px; }
   footer div {
     flex-wrap: wrap; }
     footer div p {

@@ -82,7 +82,7 @@ header {
 
     @media screen and (min-width: 1200px) {
         h1 {
-            font-size: 150pt;
+            font-size: 11em;
         }
     }
 
@@ -135,7 +135,7 @@ header {
 
     .mobileLogo{
         position: relative;
-        margin: 200px auto 0;
+        margin: 170px auto 0;
         
         z-index: 90;
     }
@@ -210,7 +210,7 @@ nav {
 
     div.mobileMenu {
         position: relative;
-        font-size: 20pt;
+        font-size: 1.8em;
         padding: 0 20px;
         width: 100%;
         background: rgba(0,0,0,0.5);
@@ -399,7 +399,7 @@ $asideBreakpoint: 1100px;
                 }
 
                 i {
-                    font-size: 12pt;
+                    font-size: 1.1em;
                     display: block;
                     width: 20px;
                     text-align: center;
