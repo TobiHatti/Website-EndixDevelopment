@@ -69,7 +69,7 @@
   align-items: flex-start;
   justify-content: start; }
 
-.downloadButtonRelease, .downloadButtonPrerelease {
+.downloadButtonRelease, .downloadButtonPrerelease, .downloadButtonGithub {
   display: inline-block;
   text-align: center;
   border-bottom: 3px solid;
@@ -88,11 +88,11 @@
   box-sizing: border-box;
   height: 36px; }
 
-.downloadButtonRelease.large, .downloadButtonPrerelease.large {
+.downloadButtonRelease.large, .downloadButtonPrerelease.large, .downloadButtonGithub.large {
   height: 75px;
   line-height: 72px; }
 
-.downloadButtonRelease:hover, .downloadButtonPrerelease:hover {
+.downloadButtonRelease:hover, .downloadButtonPrerelease:hover, .downloadButtonGithub:hover {
   transition: color 0.1s ease-in-out; }
 
 .downloadButtonRelease::after, .downloadButtonPrerelease::after {
@@ -107,7 +107,19 @@
   padding-right: 3px;
   height: 100%; }
 
-.downloadButtonRelease::before, .downloadButtonPrerelease::before {
+.downloadButtonGithub::after {
+  content: "\f09b";
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+  line-height: 1.5em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 33px;
+  padding-right: 3px;
+  height: 100%; }
+
+.downloadButtonRelease::before, .downloadButtonPrerelease::before, .downloadButtonGithub::before {
   content: "";
   position: absolute;
   left: 0;
@@ -115,7 +127,7 @@
   width: 33px;
   height: 100%; }
 
-.large.downloadButtonRelease::after, .large.downloadButtonPrerelease::after {
+.large.downloadButtonRelease::after, .large.downloadButtonPrerelease::after, .large.downloadButtonGithub::after {
   line-height: 80px; }
 
 .downloadButtonRelease::before {
@@ -123,6 +135,9 @@
 
 .downloadButtonPrerelease::before {
   background-color: orangered; }
+
+.downloadButtonGithub::before {
+  background-color: dodgerblue; }
 
 .downloadButtonRelease {
   background-color: limegreen;
@@ -132,17 +147,27 @@
   background-color: darkorange;
   border-color: orangered; }
 
+.downloadButtonGithub {
+  background-color: deepskyblue;
+  border-color: dodgerblue; }
+
 .downloadButtonRelease:hover {
   color: orange; }
 
 .downloadButtonPrerelease:hover {
   color: lime; }
 
+.downloadButtonGithub:hover {
+  color: aqua; }
+
 .downloadButtonRelease::after {
   color: lime; }
 
 .downloadButtonPrerelease::after {
   color: orange; }
+
+.downloadButtonGithub::after {
+  color: aqua; }
 
 .downloadButtonRelease:hover::after, .downloadButtonPrerelease:hover::after {
   animation: downloadSpin;
@@ -1351,7 +1376,7 @@ form.voteBox {
   align-content: space-evenly;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   text-align: center;
   flex-wrap: wrap; }
   .supportCategoryContainer a {

@@ -6,7 +6,7 @@ $${
 <script src="/scripts/jquery-3.5.1.min.js"></script>
 <script src="/scripts/PageLayout.js?<?= $build ?>"></script>
 <script src="/scripts/CommonScripts.js?<?= $build ?>"></script>
-
+<script src="/scripts/progressiveImage.js?<?= $build ?>"></script>
 
 
 <script>

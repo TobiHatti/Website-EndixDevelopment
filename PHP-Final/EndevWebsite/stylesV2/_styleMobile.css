@@ -82,3 +82,8 @@
   margin: 10px 5px; }
   .downloadProjectRaster .rasterBox img {
     max-width: 250px; }
+
+.overviewSideContent {
+  display: block;
+  float: none;
+  margin: 20px auto; }

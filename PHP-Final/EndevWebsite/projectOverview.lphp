@@ -6,6 +6,9 @@ $${
 <article>
     
     <div class="overviewSideContent">
+        <?php if($project["IsGithubOnlyDownload"]): ?>
+            <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>" target="_blank" class="downloadButtonGithub large sfIgnore">View on Github</a>
+        <?php endif; ?>
         <?php if(is_countable($releases) AND count($releases) > 0): ?>
         <div class="downloadShortcuts">
             <a download href="<?= (count($releases[0]->assets) > 0) ? $releases[0]->assets[0]->browser_download_url : $releases[0]->zipball_url ?>" class="<?= ($releases[0]->prerelease) ? "downloadButtonPrerelease" : "downloadButtonRelease" ?> large sfIgnore">
@@ -28,9 +31,13 @@ $${
         </form>
 
         <div class="socialInfo">
+            <?php if(!$project["IsGithubOnlyDownload"]): ?>
             <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>" target="_blank">
                 <i class="fab fa-github"></i> View this project on Github!
             </a>
+            <?php else: ?>
+            <a style="display: none;"></a>
+            <?php endif; ?>
             <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/network/members" target="_blank">
                 <img alt="GitHub forks" src="https://img.shields.io/github/forks/TobiHatti/<?= $project["GithubID"] ?>?label=Forks&style=social">
             </a>

@@ -32,7 +32,9 @@ $sql->Open();
                 <a href="/project/<?= $project["ProjectID"] ?>"><img src="<?= $project["ProjectBanner"] ?>" /></a>
                 <div class="boxInfo">
                     <a href="/project/<?= $project["ProjectID"] ?>"><h5><?= $project["ProjectNameShort"] ?></h5></a>
-                    <?php if($released): ?>
+                    <?php if($project["IsGithubOnlyDownload"]): ?>
+                        <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>" target="_blank" class="downloadButtonGithub">View on Github</a>
+                    <?php elseif($released): ?>
                         <span>Latest version: <?= $releases[0]->tag_name ?></span><br />
                         <a href="<?= (count($releases[0]->assets) > 0) ? $releases[0]->assets[0]->browser_download_url : $releases[0]->zipball_url ?>" download class="downloadButtonRelease" style="margin: 0 auto;">Download Latest</a><br />
                         <a href="/project/<?= $project["ProjectID"] ?>/downloads" class="downloadButtonPrerelease">Earlier Releases</a>
@@ -67,7 +69,9 @@ $sql->Open();
                 <a href="/project/<?= $project["ProjectID"] ?>"><img src="<?= $project["ProjectBanner"] ?>" /></a>
                 <div class="boxInfo">
                     <a href="/project/<?= $project["ProjectID"] ?>"><h5><?= $project["ProjectNameShort"] ?></h5></a>
-                    <?php if($released): ?>
+                    <?php if($project["IsGithubOnlyDownload"]): ?>
+                        <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>" target="_blank" class="downloadButtonGithub">View on Github</a>
+                    <?php elseif($released): ?>
                         <span>Latest version: <?= $releases[0]->tag_name ?></span>
                     <?php else: ?>
                         Not available for Download.

@@ -2,13 +2,14 @@ $${
     NoCompile=true;
 }
 
-<?php $build = 303; ?>
+<?php $build = 304; ?>
 
 <!-- Shared Stylesheets -->
 <link href="/stylesV2/fontawesome.min.css?<?= $build ?>" rel="stylesheet" />
 <link href="/stylesV2/staggeredFade.min.css?<?= $build ?>" rel="stylesheet" />
 <link href="/stylesV2/textElements.min.css?<?= $build ?>" rel="stylesheet" />
 <link href="/stylesV2/formElements.min.css?<?= $build ?>" rel="stylesheet" />
+<link href="/stylesV2/progressiveImage.css?<?= $build ?>" rel="stylesheet" />
 
 <!-- <link href="/styles/style.min.css" rel="stylesheet" /> -->
 <link type="text/css" href="/stylesV2/__styleMaster.min.css?<?= $build ?>" rel="stylesheet" />

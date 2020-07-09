@@ -90,7 +90,7 @@ $defaultButtonHeight: 36px;
     justify-content: start;
 }
 
-.downloadButtonRelease, .downloadButtonPrerelease {
+.downloadButtonRelease, .downloadButtonPrerelease, .downloadButtonGithub {
     display: inline-block;
     text-align: center;
     border-bottom: 3px solid;
@@ -110,16 +110,16 @@ $defaultButtonHeight: 36px;
     height: $defaultButtonHeight;
 }
 
-.downloadButtonRelease.large, .downloadButtonPrerelease.large {
+.downloadButtonRelease.large, .downloadButtonPrerelease.large, .downloadButtonGithub.large {
     height: 75px;
     line-height: 72px;
 }
 
-.downloadButtonRelease:hover, .downloadButtonPrerelease:hover {
+.downloadButtonRelease:hover, .downloadButtonPrerelease:hover, .downloadButtonGithub:hover {
     transition: color 0.1s ease-in-out;
 }
 
-.downloadButtonRelease::after, .downloadButtonPrerelease::after {
+.downloadButtonRelease::after, .downloadButtonPrerelease::after{
     content: "\f019";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -132,7 +132,20 @@ $defaultButtonHeight: 36px;
     height: 100%;
 }
 
-.downloadButtonRelease::before, .downloadButtonPrerelease::before {
+.downloadButtonGithub::after {
+    content: "\f09b";
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
+    line-height: 1.5em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 33px;
+    padding-right: 3px;
+    height: 100%;
+}
+
+.downloadButtonRelease::before, .downloadButtonPrerelease::before, .downloadButtonGithub::before {
     content: "";
     position: absolute;
     left: 0;
@@ -141,7 +154,7 @@ $defaultButtonHeight: 36px;
     height: 100%;
 }
 
-.large.downloadButtonRelease::after, .large.downloadButtonPrerelease::after {
+.large.downloadButtonRelease::after, .large.downloadButtonPrerelease::after, .large.downloadButtonGithub::after {
     line-height: 80px;
 }
 
@@ -153,6 +166,10 @@ $defaultButtonHeight: 36px;
     background-color: $prereleaseColorDark;
 }
 
+.downloadButtonGithub::before {
+    background-color: $gitreleaseColorDark;
+} 
+  
 .downloadButtonRelease {
     background-color: $releaseColorMedium;
     border-color: $releaseColorDark;
@@ -163,6 +180,11 @@ $defaultButtonHeight: 36px;
     border-color: $prereleaseColorDark;
 }
 
+.downloadButtonGithub {
+    background-color: $gitreleaseColorMedium;
+    border-color: $gitreleaseColorDark;
+}
+
 .downloadButtonRelease:hover {
     color: $prereleaseColorLight;
 }
@@ -171,12 +193,20 @@ $defaultButtonHeight: 36px;
     color: $releaseColorLight;
 }
 
+.downloadButtonGithub:hover {
+    color: $gitreleaseColorLight;
+}
+
 .downloadButtonRelease::after {
     color: $releaseColorLight;
 }
 
 .downloadButtonPrerelease::after {
     color: $prereleaseColorLight;
+}
+
+.downloadButtonGithub::after {
+    color: $gitreleaseColorLight;
 }
 
 .downloadButtonRelease:hover::after, .downloadButtonPrerelease:hover::after {
@@ -1810,7 +1840,7 @@ form.voteBox {
     align-content: space-evenly;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     text-align: center;
     flex-wrap: wrap;
 
