@@ -11,7 +11,7 @@ $defaultLogoLeftOffset: 50px;
 $defaultLogoHeight: 100px;
 
 html {
-    font-size: 14pt;
+    font-size: 11pt;
 }
 
 .breakpointCheck {
@@ -37,6 +37,7 @@ header {
 
     .mobileLogo {
         display: block;
+        max-height: 340px;
         width: 80%;
     }
 }

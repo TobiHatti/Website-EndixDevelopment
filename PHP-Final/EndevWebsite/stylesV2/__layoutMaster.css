@@ -191,7 +191,7 @@ nav {
       bottom: 0;
       background-color: rgba(0, 0, 0, 0.96);
       display: none;
-      z-index: 200; }
+      z-index: 2147483647; }
       nav div.mobileMenu div.mobileMenuOverlay a {
         width: 100%;
         line-height: 12vh;
@@ -236,7 +236,9 @@ footer {
       footer div p a {
         color: #777;
         text-decoration: none;
-        margin-left: 10px; }
+        margin-left: 10px;
+        display: inline-block;
+        margin-top: 5px; }
         footer div p a i {
           margin-right: 10px;
           transition: margin-right 0.3s ease-in-out; }

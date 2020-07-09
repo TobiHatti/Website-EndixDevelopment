@@ -376,7 +376,7 @@
   bottom: 40px;
   width: 50px;
   height: 50px;
-  font-size: 2em;
+  font-size: 2.5em;
   text-align: center;
   line-height: 40px;
   border-radius: 15px;
@@ -676,7 +676,7 @@
             font-size: 1em;
             border-radius: 25px;
             transition: color 0.3s ease-in-out;
-            padding-left: 10%;
+            padding-left: 25px;
             box-sizing: border-box; }
             .projectBrowser div.browser .projectTab div.projectItem div:nth-of-type(3) a i {
               font-size: 1em;
@@ -1351,7 +1351,7 @@ form.voteBox {
   align-content: space-evenly;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100vw;
   text-align: center;
   flex-wrap: wrap; }
   .supportCategoryContainer a {
@@ -1514,7 +1514,7 @@ form.voteBox {
       height: 300px;
       background-color: white;
       white-space: pre-wrap;
-      margin: 10px;
+      margin: 30px 10px 10px;
       padding: 10px;
       position: relative;
       box-sizing: border-box;
@@ -1543,7 +1543,7 @@ form.voteBox {
         margin: 0 16px;
         transition: margin 0.1s ease-in-out; }
     .servicesContainer .serviceBoxes div:hover {
-      margin: -10px 10px 20px;
+      margin: 10px 10px 30px;
       transition: margin 0.1s ease-in-out; }
     .servicesContainer .serviceBoxes div::before {
       content: "";

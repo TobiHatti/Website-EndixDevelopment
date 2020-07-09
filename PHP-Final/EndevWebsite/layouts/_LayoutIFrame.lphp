@@ -14,7 +14,7 @@ if (preg_match('~MSIE|Internet Explorer~i', $userAgent) || (strpos($userAgent, '
 <html>
 <head>
     $$RenderPage("../templates/_IFrameHeader.lphp")
-    <link href="/stylesV2/layoutIFramePage.css" rel="stylesheet" />
+    <link href="/stylesV2/layoutIFramePage.min.css?<?= $build ?>" rel="stylesheet" />
 </head>
 <body>
     <main>

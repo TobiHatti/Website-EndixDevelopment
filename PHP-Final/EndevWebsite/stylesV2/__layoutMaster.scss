@@ -136,7 +136,6 @@ header {
     .mobileLogo{
         position: relative;
         margin: 170px auto 0;
-        
         z-index: 90;
     }
 }
@@ -242,7 +241,7 @@ nav {
             bottom: 0;
             background-color: rgba(0, 0, 0, 0.96);
             display: none;
-            z-index: 200;
+            z-index: 2147483647;
 
             a {
                 width: 100%;
@@ -306,6 +305,8 @@ footer {
                 color: #777;
                 text-decoration: none;
                 margin-left: 10px;
+                display: inline-block;
+                margin-top: 5px;
 
                 i {
                     margin-right: 10px;

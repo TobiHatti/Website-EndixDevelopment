@@ -1,5 +1,5 @@
 ﻿html {
-  font-size: 14pt; }
+  font-size: 11pt; }
 
 .breakpointCheck {
   display: none;
@@ -20,6 +20,7 @@ header div.endevLogoSticky {
 
 header .mobileLogo {
   display: block;
+  max-height: 340px;
   width: 80%; }
 
 main {
