@@ -2,7 +2,7 @@ $${
     NoCompile=true;
 }
 
-<?php $build = 304; ?>
+<?php $build = 310; ?>
 
 <!-- Shared Stylesheets -->
 <link href="/stylesV2/fontawesome.min.css?<?= $build ?>" rel="stylesheet" />
