@@ -763,7 +763,7 @@
 
 .versionBox {
   display: grid;
-  grid-template-columns: 110px auto;
+  grid-template-columns: min-content auto;
   grid-template-rows: 1fr;
   grid-template-areas: "tagInfo generalInfo";
   width: 100%;
@@ -774,7 +774,8 @@
     box-sizing: border-box;
     border-right: 2px solid #ccc; }
     .versionBox div.tagInfo span {
-      margin: 5px 5px; }
+      margin: 5px 5px;
+      white-space: nowrap; }
     .versionBox div.tagInfo span.release, .versionBox div.tagInfo span.prerelease {
       border-radius: 3px;
       box-sizing: border-box;
