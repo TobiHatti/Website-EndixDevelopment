@@ -7,9 +7,4 @@ require("data/dbConnect.php");
 require("libraries/WrapMySQL.php");
 require("libraries/Parsedown.php");
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-require("vendor/autoload.php");
 ?>
