@@ -9,7 +9,7 @@ $$RenderPage("_HeaderMeta.lphp")
 
 <!-- Other -->
 <title>$$?PageTitle | Endev</title> 
-<link rel="shortcut icon" type="image/x-icon" href="/content/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/content/favicon.ico" />
 <?php 
     
 if(isset($_SESSION["CookieSessionAccepted"]) AND !isset($_COOKIE["CookiesAccepted"]))

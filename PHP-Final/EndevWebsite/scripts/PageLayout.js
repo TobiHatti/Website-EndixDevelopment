@@ -50,19 +50,19 @@ function SetPageLayout() {
 
     try {
         // Header-BG-Image Manipulation
-        var blurFactor = window.scrollY / 25;
+        //var blurFactor = window.scrollY / 25;
         var transparencyFactor = window.scrollY / 750 + 0.5;
 
-        if (transparencyFactor > 0.7) transparencyFactor = 0.7;
+        if (transparencyFactor > 0.9) transparencyFactor = 0.9;
         document.getElementById("bannerCover").style.opacity = transparencyFactor;
 
-        if (getComputedStyle(document.querySelector('.breakpointCheck'), '').content != '"Mobile"')
-        { 
-            if (blurFactor > 50) blurFactor = 50;
-            document.getElementById("headerBGImage").style.filter = "blur(" + blurFactor + "px)";
-            document.getElementById("headerBGImage").style.webkitFilter = "blur(" + blurFactor + "px)";
-            document.getElementById("headerBGImage").style.marginTop = "-" + (blurFactor * 1.5) + "px";
-        }
+        //if (getComputedStyle(document.querySelector('.breakpointCheck'), '').content != '"Mobile"')
+        //{ 
+            //if (blurFactor > 50) blurFactor = 50;
+            //document.getElementById("headerBGImage").style.filter = "blur(" + blurFactor + "px)";
+            //document.getElementById("headerBGImage").style.webkitFilter = "blur(" + blurFactor + "px)";
+            //document.getElementById("headerBGImage").style.marginTop = "-" + (blurFactor * 1.5) + "px";
+        //}
     }
     catch{ }
 }
