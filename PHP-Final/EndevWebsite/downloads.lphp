@@ -29,7 +29,7 @@ $sql->Open();
                 else $released = true;
             ?>
             <div class="rasterBox">
-                <a href="/project/<?= $project["ProjectID"] ?>"><img src="<?= $project["ProjectBanner"] ?>" /></a>
+                <a href="/project/<?= $project["ProjectID"] ?>"><img src="<?= $project["ProjectBanner"] ?>" loading="lazy"/></a>
                 <div class="boxInfo">
                     <a href="/project/<?= $project["ProjectID"] ?>"><h5><?= $project["ProjectNameShort"] ?></h5></a>
                     <?php if($project["IsGithubOnlyDownload"]): ?>
@@ -66,7 +66,7 @@ $sql->Open();
                 else $released = true;
             ?>
             <div class="rasterBox">
-                <a href="/project/<?= $project["ProjectID"] ?>"><img src="<?= $project["ProjectBanner"] ?>" /></a>
+                <a href="/project/<?= $project["ProjectID"] ?>"><img src="<?= $project["ProjectBanner"] ?>" loading="lazy"/></a>
                 <div class="boxInfo">
                     <a href="/project/<?= $project["ProjectID"] ?>"><h5><?= $project["ProjectNameShort"] ?></h5></a>
                     <?php if($project["IsGithubOnlyDownload"]): ?>

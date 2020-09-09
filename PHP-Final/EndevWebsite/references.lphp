@@ -15,7 +15,7 @@ $${
             <?php foreach($sql->ExecuteQuery("SELECT * FROM projects WHERE IsReference = 1") as $project): ?>
             <ul class="projectListView">
                 <li>
-                    <img src="<?= $project["ProjectLogo"] ?>" class="sfIgnore"/>
+                    <img src="<?= $project["ProjectLogo"] ?>" class="sfIgnore" loading="lazy"/>
                     <span><?= $project["ProjectName"] ?></span>
                     <a href="/p/<?= $project["ProjectID"] ?>"> View project-info</a>
                 </li>

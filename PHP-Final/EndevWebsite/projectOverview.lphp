@@ -33,13 +33,13 @@ $${
                 <a style="display: none;"></a>
                 <?php endif; ?>
                 <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/network/members" target="_blank">
-                    <img alt="GitHub forks" src="https://img.shields.io/github/forks/TobiHatti/<?= $project["GithubID"] ?>?label=Forks&style=social">
+                    <img alt="GitHub forks" src="https://img.shields.io/github/forks/TobiHatti/<?= $project["GithubID"] ?>?label=Forks&style=social" loading="lazy">
                 </a>
                 <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/stargazers" target="_blank">
-                    <img alt="GitHub stars" src="https://img.shields.io/github/stars/TobiHatti/<?= $project["GithubID"] ?>?label=Stars&style=social">
+                    <img alt="GitHub stars" src="https://img.shields.io/github/stars/TobiHatti/<?= $project["GithubID"] ?>?label=Stars&style=social" loading="lazy">
                 </a>
                 <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/watchers" target="_blank">
-                    <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/TobiHatti/<?= $project["GithubID"] ?>?label=Watchers&style=social">
+                    <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/TobiHatti/<?= $project["GithubID"] ?>?label=Watchers&style=social" loading="lazy">
                 </a>
             </div>
             <div class="reports">
@@ -56,7 +56,7 @@ $${
                 <input type="hidden" name="cmd" value="_s-xclick" />
                 <input type="hidden" name="hosted_button_id" value="9ZEZF276ZAFXN" />
                 <input type="image" src="https://www.paypalobjects.com/en_US/AT/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                <img alt="" border="0" src="https://www.paypal.com/en_AT/i/scr/pixel.gif" width="1" height="1" />
+                <img alt="" border="0" src="https://www.paypal.com/en_AT/i/scr/pixel.gif" width="1" height="1" loading="lazy"/>
             </form>
         </div>
     </div>
@@ -77,7 +77,7 @@ $${
                 preg_match('/https?\:\/\/[\S\s]*?(?=\")/', $line, $httpLink);
                 if(count($httpLink) > 0)
                 {
-                    $rawFileContent = str_replace($line, '<img align="right" width="80" height="80" src="'.$httpLink[0].'">', $rawFileContent);
+                    $rawFileContent = str_replace($line, '<img align="right" width="80" height="80" src="'.$httpLink[0].'" loading="lazy">', $rawFileContent);
                 }
                 else $rawFileContent = str_replace($line, '', $rawFileContent);
             }

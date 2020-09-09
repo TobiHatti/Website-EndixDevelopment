@@ -24,7 +24,7 @@ $${
         <?php foreach($sql->ExecuteQuery("SELECT * FROM projectbadges WHERE Category = 'Status' AND ProjectID = ?", $project["ProjectID"]) as $status): ?>
         <tr>
             <td><?= $status["Title"] ?></td>
-            <td><img alt="<?= $status["Title"] ?>" src="<?= $status["Badge"] ?>"></td>
+            <td><img alt="<?= $status["Title"] ?>" src="<?= $status["Badge"] ?>" loading="lazy"></td>
         </tr>
         <?php endforeach; ?>
     </table>
@@ -37,7 +37,7 @@ $${
         <?php foreach($sql->ExecuteQuery("SELECT * FROM projectbadges WHERE Category = 'BuildAndTestResults' AND ProjectID = ?", $project["ProjectID"]) as $buildAndTest): ?>
         <tr>
             <td><?= $buildAndTest["Title"] ?></td>
-            <td><img alt="<?= $buildAndTest["Title"] ?>" src="<?= $buildAndTest["Badge"] ?>"></td>
+            <td><img alt="<?= $buildAndTest["Title"] ?>" src="<?= $buildAndTest["Badge"] ?>" loading="lazy"></td>
         </tr>
         <?php endforeach; ?>
     </table>
@@ -48,60 +48,60 @@ $${
     <table>
         <tr>
             <td>Created-Date</td>
-            <td><img alt="GitHub Created" src="https://img.shields.io/badge/created-<?= date_format(date_create($projectData->created_at)," j. M Y") ?>-yellow"></td>
+            <td><img alt="GitHub Created" src="https://img.shields.io/badge/created-<?= date_format(date_create($projectData->created_at)," j. M Y") ?>-yellow" loading="lazy"></td>
         </tr>
         <tr>
             <td>Last Updated</td>
-            <td><img alt="GitHub Updated" src="https://img.shields.io/badge/updated-<?= date_format(date_create($projectData->updated_at)," j. M Y") ?>-green"></td>
+            <td><img alt="GitHub Updated" src="https://img.shields.io/badge/updated-<?= date_format(date_create($projectData->updated_at)," j. M Y") ?>-green" loading="lazy"></td>
         </tr>
         <tr>
             <td>Last Commit</td>
-            <td><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/TobiHatti/<?= $project["GithubID"]?>"></td>
+            <td><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/TobiHatti/<?= $project["GithubID"]?>" loading="lazy"></td>
         </tr>
         <tr>
             <td>Last Release</td>
             <td>
-                <img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/TobiHatti/<?= $project["GithubID"]?>?include_prereleases"><br />
-                <img alt="GitHub (Pre-)Release Date" src="https://img.shields.io/github/release-date-pre/TobiHatti/<?= $project["GithubID"]?>">
+                <img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/TobiHatti/<?= $project["GithubID"]?>?include_prereleases" loading="lazy"><br />
+                <img alt="GitHub (Pre-)Release Date" src="https://img.shields.io/github/release-date-pre/TobiHatti/<?= $project["GithubID"]?>" loading="lazy">
             </td>
         </tr>
         <tr>
             <td>Downloads</td>
-            <td><img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/TobiHatti/<?= $project["GithubID"]?>/total"></td>
+            <td><img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/TobiHatti/<?= $project["GithubID"]?>/total" loading="lazy"></td>
         </tr>
         <tr>
             <td>Primary Programming Language</td>
-            <td><img alt="GitHub top language" src="https://img.shields.io/github/languages/top/TobiHatti/<?= $project["GithubID"]?>"></td>
+            <td><img alt="GitHub top language" src="https://img.shields.io/github/languages/top/TobiHatti/<?= $project["GithubID"]?>" loading="lazy"></td>
         </tr>
         <tr>
             <td>All Programming Languages</td>
             <td>
-                <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/TobiHatti/<?= $project["GithubID"]?>"><br />
+                <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/TobiHatti/<?= $project["GithubID"]?>" loading="lazy"><br />
 
                 <?php foreach($languages as $key => $language): ?>
-                <img alt="language" src="https://img.shields.io/badge/-<?= urlencode($key) ?>-blue" />
+                <img alt="language" src="https://img.shields.io/badge/-<?= urlencode($key) ?>-blue" loading="lazy"/>
                 <?php endforeach; ?>
             </td>
         </tr>
         <tr>
             <td>License</td>
-            <td><img alt="GitHub" src="https://img.shields.io/github/license/TobiHatti/<?= $project["GithubID"]?>"></td>
+            <td><img alt="GitHub" src="https://img.shields.io/github/license/TobiHatti/<?= $project["GithubID"]?>" loading="lazy"></td>
         </tr>
         <tr>
             <td>Repository Size</td>
-            <td><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/TobiHatti/<?= $project["GithubID"]?>"></td>
+            <td><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/TobiHatti/<?= $project["GithubID"]?>" loading="lazy"></td>
         </tr>
         <tr>
             <td>Raw Code Size</td>
-            <td><img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/TobiHatti/<?= $project["GithubID"]?>"></td>
+            <td><img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/TobiHatti/<?= $project["GithubID"]?>" loading="lazy"></td>
         </tr>
         <tr>
             <td>Open Issues</td>
-            <td><img alt="GitHub issues" src="https://img.shields.io/github/issues/TobiHatti/<?= $project["GithubID"]?>"></td>
+            <td><img alt="GitHub issues" src="https://img.shields.io/github/issues/TobiHatti/<?= $project["GithubID"]?>" loading="lazy"></td>
         </tr>
         <tr>
             <td>Open Pull-Requests</td>
-            <td><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/TobiHatti/<?= $project["GithubID"]?>"></td>
+            <td><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/TobiHatti/<?= $project["GithubID"]?>" loading="lazy"></td>
         </tr>
     </table>
 

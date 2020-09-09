@@ -72,7 +72,7 @@ $${
                     <div class="projectItem">
                         <div>
                             <a href="/project/<?= $subRow["ProjectID"] ?>">
-                                <img src="<?= $subRow["ProjectBanner"] ?>" />
+                                <img src="<?= $subRow["ProjectBanner"] ?>" loading="lazy"/>
                             </a>
                         </div>
                         <div>

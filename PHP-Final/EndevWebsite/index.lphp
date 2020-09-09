@@ -12,7 +12,7 @@ $${
     $sql->Open();    
 ?>
     <article class="indexTitleContainer">
-        <h1>Endev <img src="/content/EndevLogo.svg"/> Software solutions for every case</h1>
+        <h1>Endev <img src="/content/EndevLogo.svg" loading="lazy"/> Software solutions for every case</h1>
         <p>
 
         </p>

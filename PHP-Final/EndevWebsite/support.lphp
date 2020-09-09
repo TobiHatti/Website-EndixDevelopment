@@ -26,7 +26,7 @@ $sql->Open();
 
         <ul class="projectListView">
             <li>
-                <img src="<?= $project["ProjectLogo"] ?>" class="sfIgnore"/>
+                <img src="<?= $project["ProjectLogo"] ?>" loading="lazy" class="sfIgnore"/>
                 <span><?= $project["ProjectName"] ?></span>
                 <a href="/project/<?= $project["ProjectID"] ?>/support#content"> Go to project-support</a>
             </li>
