@@ -2,61 +2,98 @@ $${
     NoCompile = true;
 }
 
-<h1>Overview</h1>
 <article>
-    
+
     <div class="overviewSideContent">
-        <?php if($project["IsGithubOnlyDownload"]): ?>
+        <div>
+            <?php if($project["IsGithubOnlyDownload"]): ?>
             <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>" target="_blank" class="downloadButtonGithub large sfIgnore">View on Github</a>
-        <?php endif; ?>
-        <?php if(is_countable($releases) AND count($releases) > 0): ?>
-        <div class="downloadShortcuts">
-            <a download href="<?= (count($releases[0]->assets) > 0) ? $releases[0]->assets[0]->browser_download_url : $releases[0]->zipball_url ?>" class="<?= ($releases[0]->prerelease) ? "downloadButtonPrerelease" : "downloadButtonRelease" ?> large sfIgnore">
-                Download latest
-            </a>
-            <em>Latest version: <?= $releases[0]->tag_name ?></em>
-            <span>or</span>
-            <br />
-            <a onclick="SelectProjectPage(3, '<?= $project["ProjectID"] ?>', 'Downloads')" class="downloadButtonPrerelease sfIgnore">
-                View prev. versions
-            </a>
-        </div>
-        <?php endif; ?>
-
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick" />
-        <input type="hidden" name="hosted_button_id" value="9ZEZF276ZAFXN" />
-        <input type="image" src="https://www.paypalobjects.com/en_US/AT/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-        <img alt="" border="0" src="https://www.paypal.com/en_AT/i/scr/pixel.gif" width="1" height="1" />
-        </form>
-
-        <div class="socialInfo">
-            <?php if(!$project["IsGithubOnlyDownload"]): ?>
-            <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>" target="_blank">
-                <i class="fab fa-github"></i> View this project on Github!
-            </a>
-            <?php else: ?>
-            <a style="display: none;"></a>
             <?php endif; ?>
-            <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/network/members" target="_blank">
-                <img alt="GitHub forks" src="https://img.shields.io/github/forks/TobiHatti/<?= $project["GithubID"] ?>?label=Forks&style=social">
-            </a>
-            <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/stargazers" target="_blank">
-                <img alt="GitHub stars" src="https://img.shields.io/github/stars/TobiHatti/<?= $project["GithubID"] ?>?label=Stars&style=social">
-            </a>
-            <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/watchers" target="_blank">
-                <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/TobiHatti/<?= $project["GithubID"] ?>?label=Watchers&style=social">
-            </a>
+            <?php if(is_countable($releases) AND count($releases) > 0): ?>
+            <div class="downloadShortcuts">
+                <a download href="<?= (count($releases[0]->assets) > 0) ? $releases[0]->assets[0]->browser_download_url : $releases[0]->zipball_url ?>" class="<?= ($releases[0]->prerelease) ? "downloadButtonPrerelease" : "downloadButtonRelease" ?> large sfIgnore">
+                    Download latest
+                </a>
+                <em>Latest version: <?= $releases[0]->tag_name ?></em>
+                <span>or</span>
+                <br />
+                <a onclick="SelectProjectPage(3, '<?= $project["ProjectID"] ?>', 'Downloads')" class="downloadButtonPrerelease sfIgnore">
+                    View prev. versions
+                </a>
+            </div>
+            <?php endif; ?>
         </div>
-        
-        <div class="reports">
-            <a href="/support">
-                <i class="fas fa-exclamation-circle"></i>
-                Report a problem
-            </a>
+        <div>
+            <div class="socialInfo">
+                <?php if(!$project["IsGithubOnlyDownload"]): ?>
+                <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>" target="_blank">
+                    <i class="fab fa-github"></i> View this project on Github!
+                </a>
+                <?php else: ?>
+                <a style="display: none;"></a>
+                <?php endif; ?>
+                <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/network/members" target="_blank">
+                    <img alt="GitHub forks" src="https://img.shields.io/github/forks/TobiHatti/<?= $project["GithubID"] ?>?label=Forks&style=social">
+                </a>
+                <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/stargazers" target="_blank">
+                    <img alt="GitHub stars" src="https://img.shields.io/github/stars/TobiHatti/<?= $project["GithubID"] ?>?label=Stars&style=social">
+                </a>
+                <a href="https://github.com/TobiHatti/<?= $project["GithubID"] ?>/watchers" target="_blank">
+                    <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/TobiHatti/<?= $project["GithubID"] ?>?label=Watchers&style=social">
+                </a>
+            </div>
+            <div class="reports">
+                <a href="/support">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Report a problem
+                </a>
+            </div>
+        </div>
+        <div>
+            <span>Please consider donating<br />to support this project!</span>
+            <br /><br />
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input type="hidden" name="hosted_button_id" value="9ZEZF276ZAFXN" />
+                <input type="image" src="https://www.paypalobjects.com/en_US/AT/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                <img alt="" border="0" src="https://www.paypal.com/en_AT/i/scr/pixel.gif" width="1" height="1" />
+            </form>
         </div>
     </div>
-    <div class="sfIgnore">
-    <?= $parsedown->text($project["ProjectDescription"]) ?>
-    </div>
+
+    
+    <h2>Readme (via GitHub)</h2>
+    <hr />
+
+    <?php 
+
+    function CheckRMDataImage($rawFileContent)
+    {
+        $lines =  explode("\n", $rawFileContent);
+        foreach($lines as $line)
+        {
+            if(strpos($line, "data-rmimg")) 
+            {
+                preg_match('/https?\:\/\/[\S\s]*?(?=\")/', $line, $httpLink);
+                if(count($httpLink) > 0)
+                {
+                    $rawFileContent = str_replace($line, '<img align="right" width="80" height="80" src="'.$httpLink[0].'">', $rawFileContent);
+                }
+                else $rawFileContent = str_replace($line, '', $rawFileContent);
+            }
+        }
+        return $rawFileContent;
+    }
+
+    if(isset($readme->content)):
+    ?>
+
+    <x-md><?= CheckRMDataImage($parsedown->text(base64_decode($readme->content))) ?></x-md>
+
+    <?php else: ?>
+
+    <h2>The Readme could not be found, or no Readme exists.</h2>
+    <h3>Error 404</h3>
+
+    <?php endif; ?>
 </article>

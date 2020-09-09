@@ -5,25 +5,6 @@ $${
 <h1>Readme (GitHub)</h1>
 <article>
     <?php 
-
-    function CheckRMDataImage($rawFileContent)
-    {
-        $lines =  explode("\n", $rawFileContent);
-        foreach($lines as $line)
-        {
-            if(strpos($line, "data-rmimg")) 
-            {
-                preg_match('/https?\:\/\/[\S\s]*?(?=\")/', $line, $httpLink);
-                if(count($httpLink) > 0)
-                {
-                    $rawFileContent = str_replace($line, '<img align="right" width="80" height="80" src="'.$httpLink[0].'">', $rawFileContent);
-                }
-                else $rawFileContent = str_replace($line, '', $rawFileContent);
-            }
-        }
-        return $rawFileContent;
-    }
-
         if(isset($readme->content)):
     ?>
 

@@ -41,7 +41,7 @@ if($project == null)
         <li onclick="SelectProjectPage(2, '<?= $project["ProjectID"] ?>', 'Issues')"><i class="fas fa-exclamation-circle"></i> <span>Issues</span></li>
         <li onclick="SelectProjectPage(3, '<?= $project["ProjectID"] ?>', 'Downloads')"><i class="fas fa-download"></i> <span>Downloads</span></li>
         <li onclick="SelectProjectPage(4, '<?= $project["ProjectID"] ?>', 'Version-History')"><i class="fas fa-history"></i> <span>Version History</span></li>
-        <li onclick="SelectProjectPage(5, '<?= $project["ProjectID"] ?>', 'Readme')"><i class="fas fa-book-reader"></i> <span>Readme</span></li>
+        <!--<li onclick="SelectProjectPage(5, '<?= $project["ProjectID"] ?>', 'Readme')"><i class="fas fa-book-reader"></i> <span>Readme</span></li>-->
         <li onclick="SelectProjectPage(6, '<?= $project["ProjectID"] ?>', 'Tech-Info')"><i class="fas fa-cogs"></i> <span>Tech. Information</span></li>
         <li onclick="SelectProjectPage(7, '<?= $project["ProjectID"] ?>', 'License')"><i class="fas fa-file-alt"></i> <span>License</span></li>
     </ul>
@@ -137,9 +137,9 @@ foreach($sql->ExecuteQuery("SELECT * FROM apicache WHERE ProjectID = ?", $projec
     <div class="projectSubpage stagFade" style="display: <?= TabPageSelected(4) ?>">
         $$RenderPage("projectHistory.lphp")
     </div>
-    <div class="projectSubpage stagFade" style="display: <?= TabPageSelected(5) ?>">
+    <!--<div class="projectSubpage stagFade" style="display: <?= TabPageSelected(5) ?>">
         $$RenderPage("projectReadme.lphp")
-    </div>
+    </div>-->
     <div class="projectSubpage stagFade" style="display: <?= TabPageSelected(6) ?>">
         $$RenderPage("projectTechInfo.lphp")
     </div>
