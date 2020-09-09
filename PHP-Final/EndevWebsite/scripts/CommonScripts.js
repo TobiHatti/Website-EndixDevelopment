@@ -111,14 +111,14 @@ function AcceptCookies() {
 
 function HideCookieBar()
 {
-    if (getComputedStyle(document.querySelector('.breakpointCheck'), '').content == '"Mobile"')
-    {
+    //if (getComputedStyle(document.querySelector('.breakpointCheck'), '').content == '"Mobile"')
+    //{
         document.getElementsByClassName("cookieNotify")[0].style.opacity = "0";
-    }
-    else
-    {
-        document.getElementsByClassName("cookieNotify")[0].style.bottom = "-200px";
-    }
+    //}
+    //else
+    //{
+    //    document.getElementsByClassName("cookieNotify")[0].style.bottom = "-200px";
+    //}
 
     setTimeout(function () {
         document.getElementsByClassName("cookieNotify")[0].style.display = "none";
