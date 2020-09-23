@@ -17,9 +17,8 @@ RewriteRule ^project/([a-zA-Z0-9-]+)/Support$ project.php?projectID=$1&page=1 [N
 RewriteRule ^project/([a-zA-Z0-9-]+)/Issues$ project.php?projectID=$1&page=2 [NC,QSA,L]
 RewriteRule ^project/([a-zA-Z0-9-]+)/Downloads$ project.php?projectID=$1&page=3 [NC,QSA,L]
 RewriteRule ^project/([a-zA-Z0-9-]+)/Version-History$ project.php?projectID=$1&page=4 [NC,QSA,L]
-RewriteRule ^project/([a-zA-Z0-9-]+)/Readme$ project.php?projectID=$1&page=5 [NC,QSA,L]
-RewriteRule ^project/([a-zA-Z0-9-]+)/Tech-Info$ project.php?projectID=$1&page=6 [NC,QSA,L]
-RewriteRule ^project/([a-zA-Z0-9-]+)/License$ project.php?projectID=$1&page=7 [NC,QSA,L]
+RewriteRule ^project/([a-zA-Z0-9-]+)/Tech-Info$ project.php?projectID=$1&page=5 [NC,QSA,L]
+RewriteRule ^project/([a-zA-Z0-9-]+)/License$ project.php?projectID=$1&page=6 [NC,QSA,L]
 
 
 RewriteRule ^s$ support.php [NC,QSA,L]
